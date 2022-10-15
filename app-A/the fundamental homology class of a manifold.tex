@@ -1,0 +1,46 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{The Fundamental Homology Class of a Manifold}
+We will now use the infinite cyclic group $\mathbb Z$ as coefficient domain. For each $x \in M$, recall that \[\homology_i(M, M - x; \mathbb Z) \cong \homology_i({\mathbb R}^n, {\mathbb R}^n - 0; \mathbb Z)\] is infinite cyclic for $i = n$ and is zero for $i \ne n$. 
+
+\begin{definition}
+A \defemph{local orientation} $\mu_x$ for $M$ at $x$ is a choice of one of the two possible generators for $\homology_n(M, M - x; \mathbb Z)$. 
+\end{definition}
+
+Note that such a $\mu_x$ determines local orientations $\mu_y$ for all points $y$ in a small neighborhood of $x$. To be precise, if $B$ is a ball around $x$ (in terms of some local coordinate system), then for each $y \in B$ the isomorphisms \[\homology_\bullet(M, M - x) \xleftarrow{\rho_x} \homology_\bullet(M, M - B) \varrightarrow{\rho_y} \homology_\bullet(M, M - y)\] determines a local orientation $\mu_y$. 
+
+\begin{definition}
+An \defemph{orientation} for $M$ is a function which assigns to each $x \in M$ a local orientation $\mu_x$ which ``varies continuously'' with $x$, in the following sense: For each $x$ there should exist a compact neighborhood $N$ and a class\newline $\mu_N \in \homology_n(M, M - N)$ so that $\rho_y(\mu_N) = \mu_y$ for each $y \in N$.
+\end{definition}
+
+The pair consisting of manifold and orientation is called an \defemph{oriented manifold}.
+
+\begin{theorem}
+\label{thm:A.8}
+For any oriented manifold $M$ and any compact $K \subset M$, there is one and only one class $\mu_K \in \homology_n(M, M - K)$ which satisfies $\rho_x(\mu_K) = \mu_x$ for each $x \in K$. 
+\end{theorem}
+
+In particular, if $M$ is itself compact, then there is one and only one $\mu_M \in \homology_n M$ with the required property. This class $\mu = \mu_M$ is called the \defemph{fundamental homology class} of $M$. 
+
+\begin{proof}[Proof of \ref{thm:A.8}]
+The uniqueness of $\mu_K$ follows immediately from Lemma~\ref{lem:A.7}. The existence proof will be divided into three steps.
+
+\defemph{Case $1$}. If $K$ is contained in a sufficiently small neighborhood of some given point, then the existence of $\mu_K$ follows from the definition of orientation. 
+
+\defemph{Case $2$}. Suppose that $K = K_1 \cup K_2$ where $\mu_{K_1}$ and $\mu_{K_2}$ exist. As in \ref{lem:A.7} there is an exact sequence \[\ldots \to 0 \to \homology_n(M, M - K) \varrightarrow{s} \homology_n(M, M - K_1) \oplus \homology_n(M, M - K_2) \varrightarrow{t} \homology_n(M, M - K_1 \cap K_2) \to \ldots\] where 
+\begin{align*}
+s(\alpha) & = \rho_{K_1}(\alpha) \oplus \rho_{K_2}(\alpha), \\ t(\beta \oplus \gamma) & = \rho_{K_1 \cap K_2}(\beta) - \rho_{K_1 \cap K_2}(\gamma). 
+\end{align*}
+Now $t(\mu_{K_1} \oplus \mu_{K_2}) = 0$, by the uniqueness theorem applied to $K_1 \cap K_2$, hence $\mu_{K_1} \oplus \mu_{K_2} = s(\alpha)$ for some unique $\alpha \in \homology_n(M, M - K)$. This $\alpha$ is the required $\mu_K$. 
+
+\defemph{Case $3$}. $K$ arbitrary. Then $K = K_1 \cup \ldots \cup K_r$ where the $\mu_{K_i}$ exist by Case 1. The class $\mu_K$ is now constructed by induction on $r$. 
+\end{proof}
+%TODO: this needs to be counted separately from the lemma/theorem counter
+\begin{remark}
+For any coefficient domain $\Lambda$, the unique homomorphism $\mathbb Z \longrightarrow \Lambda$ gives rise to a class in $\homology_n(M, M - K; \Lambda)$ which will also be denoted by $\mu_K$. The case $\Lambda = {\mathbb Z}/2$ is particularly important, since the mod $2$ homology class \[\mu_K \in \homology_n(M, M - K; {\mathbb Z}/2)\] can be constructed directly for an arbitrary manifold, without making any assumption of orientability. 
+\end{remark}
+
+\begin{remark}
+Similar considerations apply to an oriented manifold--with--boundary $M$. For each compact subset $K \subset M$, there exists a unique class\newline $\mu_K \in \homology_n(M, (M - K) \cup \partial M)$ with the property that $\rho_x(\mu_K) = \mu_x$ for each $x \in K \cap (M - \partial M)$. In particular, if $M$ is compact, then there is a unique fundamental homology class $\mu_M \in \homology_n(M, \partial M)$ with the required property. It can be shown that the natural homomorphism \[\partial : \homology_n(M, \partial M) \longrightarrow \homology_{n - 1}(\partial M)\] maps $\mu_M$ to the fundamental homology class of $\partial M$. (Compare \cite[p. 304]{spanier1981}.)
+\end{remark}
+\end{document}

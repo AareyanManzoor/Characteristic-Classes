@@ -1,0 +1,110 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+It is often useful to consider vector bundles in which each fiber is a
+vector space over the complex numbers. Let $B$ be a topological space. 
+
+\begin{definition}
+A \defemphi{complex vector bundle}\index{vector bundle!\indexline complex} $\omega$ of complex dimension $n$ over $B$ (or briefly a \defemph{complex $n$-plane bundle}) consists of a topological space $E$ and projection map $\pi:E\varrightarrow{}B$, together with the structure of a complex vector space in each fibre $\pi^{-1}(b)$, subject to the following:
+
+\renewcommand{\thecondition}{\thechapter.\arabic{condition}}
+\begin{condition}[local triviality]\label{cond:13.1}\index{local triviality}
+Each point of $B$ must possess a neighborhood $U$ so that the inverse image $\pi^{-1}(U)$ is homeomorphic to $U\times \mathbb{C}^n$ under a homeomorphism which maps each fiber $\pi^{-1}(b)$ complex linearly onto $b\times \mathbb{C}^n$.
+\end{condition}\renewcommand{\thecondition}{\arabic{condition}}
+Here $\mathbb{C}^n$ stands for the coordinate space of $n$-tuples of complex numbers, and $b\times \mathbb{C}^n$ is made into a complex vector space by ignoring the $b$ coordinate.
+\end{definition}
+Just as in \S\ref{ch:3}, we can form new complex vector bundles out of old ones by forming Whitney sums\index{Whitney sum} or tensor products\index{tensor product $\otimes$} (over the complex numbers $\mathbb{C}$) or by forming induced vector bundles.\index{induced bundle}
+
+One method of constructing a complex $n$-plane bundle is to start with
+a real $2n$-plane bundle, attempting to give each fiber the additional structure of a complex vector space. 
+
+\begin{definition}
+A \defemph{complex structure}\index{complex structure $\complexstructure$} on a real $2n$-plane bundle $\xi$ is a continuous mapping 
+\[\complexstructure: E(\xi)\longrightarrow E(\xi)\]
+From the total space to itself which maps each fiber $\mathbb{R}$-linearly into itself,and which satisfies the identity $\complexstructure(\complexstructure(v))=-v$ for every vector $v$ in $E(\xi)$.
+
+\end{definition}
+
+Given such a complex structure, we can make each fiber $F_b(\xi)$ into a complex vector space by setting 
+\[(x+iy)v= xv+\complexstructure(yv)\]
+for every ocmplex number $x+iy$. The local triviality condition \ref{cond:13.1} is easily verified, so that $\xi$ becomes a complex vector bundle.
+
+Conversely of course, given any complex $n$-plane bundle $\omega$ we can simply forget about the complex structure and think of each fibre as a real vector space of dimension $2n$. Thus we obtain the \defemph{underlying real $2n$-plane bundle $\omega_\mathbb{R}$}\index{underlying real bundle $\omega_\bR$}.Note that this real bundle $\omega_\mathbb{R}$ and the original complex bundle $\omega$ both have the same total space, base space and the same projection map.
+
+Perhaps the most important example of a complex vector bundle is provided by the tangent bundle of a ``complex manifold''. We will look at a special case first.
+
+\renewcommand{\theexample}{\thechapter.\arabic{example}}
+\setcounter{example}{1}
+\begin{example}\label{ex:13.2}
+Let $U$ be the open subset of coordinate space $\mathbb{C}^n$. Then the tangent bundle $\tangentbundle{U}$, with total space $\tangentTS{U}=U\times \mathbb{C}^n$, has a cannonical complex structure $\complexstructure_0$ defined by 
+\[\complexstructure_0(u,v)= (u,iv)\]
+for every $u\in U$ and $v\in \mathbb{C}^n$.
+
+Now consider a smooth mapping $f:U\varrightarrow{} U'$, where $U'\subset \mathbb{C}^p$ is also an open subset of complex coordinate space. We can ask whether the $\mathbb{R}$-linear mapping $\differential{f}{u}:\tangentspace{U}{u}\varrightarrow{}\tangentspace{U'}{f(u)}$ is actually complex linear for all $u$, so that
+\[\dd f\circ\complexstructure_0=\complexstructure_0\circ \dd f\]
+If the derivative is complex linear, one says that f satisfies the \defemphi{Cauchy-Riemann equations}, or that $f$ is \defemphi{holomorphic} or \defemphi{complex analytic}. A standard theorem asserts that $f$ can then be expressed locally as the sum of a convergent complex power series.(Compare \cite{hormander1973introduction} and \cite{gunning2009analytic}.)
+\end{example}
+\renewcommand{\theexample}{\arabic{example}}
+
+Let $M$ be a smooth manifold of dimension $2n$. A complex structure on the tangent bundle of $M$ is sometimes called an ``almost complex structure''\index{almost complex structure} on $M$.
+\begin{customdef}{13.3}\label{def:13.3}\index{tangent bundle $\tangentbundle{M}$!\indexline complex}
+A \defemph{complex structure on the manifold $M$} is a complex structure $\complexstructure$ on the tangent bundle $\tangentbundle{M}$ which satisfies the following extremely stringent condition: \defemph{Every point of $M$ must possess an open neighborhood which is diffeomorphic to an open subset of $\mathbb{C}^n$ under a diffeomorphism\index{diffeomorphism} $h$ whose derivative is everywhere complex linear: $\dd{h} \circ \complexstructure = \complexstructure_0\circ \dd h$.}
+
+The pair $(M,\complexstructure)$ is then called a \defemphi{complex manifold} of \defemph{complex dimension $n$}. In practice, by abuse of notation, we will usually use the single symbol $M$ for a complex manifold.
+\end{customdef}
+
+\begin{definition}
+A smooth mapping $f:M\varrightarrow{} N$ between complex manifolds is holomorphic if $\dd{f}$ is complex linear, $\dd f \circ \complexstructure = \complexstructure \circ \dd f$.
+\end{definition}
+
+\begin{remark}
+A fundamental theorem of \cite{newlander} asserts that a smooth almost complex structure $\complexstructure$ is actually a complex structure if and only if it satisfies a certain system of quadratic first order partial differential equations. In terms of the bracket product of vector fields, these equations can be written as
+\[[\complexstructure v, \complexstructure w]= \complexstructure[v,\complexstructure w]+\complexstructure[\complexstructure v,w]+[v,w]\]
+where $v$ and $w$ are arbitrary smooth vector fields on $M$.
+\end{remark}
+The most classical (and often the most convenient) procedure for
+assigning a complex structure to a smooth manifold is the following. One gives a collection of diffeomorphisms $h_\alpha:U_\alpha\varrightarrow{}V_\alpha$ where the $U_\alpha$ are open subsets of $\mathbb{C}^n$ and the $V_\alpha$ are open sets covering the manifold. It is only necessary to verify that each composition
+\[h_\beta^{-1} \circ h_\alpha: h_\alpha^{-1}(V_\alpha\cap V_\beta)\varrightarrow{} h_\beta^{-1}(V_\alpha\cap B_\beta)\]
+is holomorphic.
+
+In conclusion here are some exercises for the reader.
+
+\begin{problem}
+\label{prob:13.A} Show that a complex structure $\complexstructure: E(\xi)\varrightarrow{} E(\xi)$ on a real vector bundle automatically satisfies the complex local triviality\index{local triviality} condition \ref{cond:13.1}.
+\end{problem}
+
+\begin{problem}
+\label{prob:13.B} If $M$ is a complex manifold, show that $\tangentTS{M}$ is a complex manifold. Similarly, if $f:M\varrightarrow{}N$ is holomorphic, show that $\differential{f}{}:\tangentTS{M}\varrightarrow{}\tangentTS{N}$ is holomorphic.
+\end{problem}
+
+\begin{problem}
+\label{prob:13.C} If $M$ is a compact complex manifold, show that every holomorphic map $f:M\varrightarrow{}\mathbb{C}$ is constant.
+\end{problem}
+
+\begin{problem}\index{projective space!\indexline complex $\projective^n(\bC)$}\index{Grassmannian manifold!\indexline complex}
+\label{prob:13.D} Show that the projective space $\projective^n(\mathbb{C})$ , consisting of all complex lines through the origin in $\bC^{n+1}$, can be given the structure of a complex manifold. (Note that $\projective^1(\bC)$ can be identified with the complex line $\bC$ thogether with a single point at infinity.) More generally show the space $\grassmannian_k(\bC^n)$ of complex $k$ planes through the origin in $\bC^n$ is a complex manifold of complex dimension $k(n-k)$.
+\end{problem}
+
+\begin{problem}\index{cannonical bundle!\indexline complex $\tautological^n$}
+\label{prob:13.E} Let $\tautological^1_n$ denote the canonical complex line bundle over $\projective^n(\mathbb{C}^n)$. Thus the total space $E(\tautological^1_n)$ consists of all pairs $(L,v)$ where $L$ is a complex line throuigh the origin in $\bC$ and $v\in L$. Show that $\tautological_n^1$ does not possess any holomorphic cross-section\index{cross-section}, other than the zero cross-section. Show, however, that the dual bundle $\Hom_\bC(\tautological_n^1,\bC)$ posses atleast $n+1$ holomorphic cross-sections which are linearly independent over $\bC$.
+\end{problem}
+
+\begin{problem}\label{prob:13.F}
+If $M$ is a complex $n$-manifold, then the real bundle $\Hom_\bR(\tangentbundle{M},\bR)$ of  tangent covetors\index{dual bundle} does not possess any natural complex structure. Show however, that its ``complexification''\index{complexification $-\otimes \bC$}
+\[\Hom_\bR(\tangentbundle{M},\bR)\otimes_\bR \bC\cong \Hom_\bR(\tangentbundle{M},\bC)\]
+is a complex $2n$-plane bundle which splits canonically as a Whitney sum
+\[\Hom_\bC(\tangentbundle{M},\bC) \oplus \xoverline{\Hom}_\bC(\tangentbundle{M},\bC)\]
+Here $\xoverline{\Hom}_\bC(\tangentspace{M}{x},\bC)$ denote the complex vectort space of conjugate linear mappings, $\,h(\lambda v)=\xoverline{\lambda} h(v)$. If $U\subset \bC^n$ is an open set with coordinate functions $z_1,\dots,z_n:U\varrightarrow{} \bC$, show that the local differentials $\dd z_1(u),\dots \dd z_n(u)$ form a basis for $\Hom_\bC(\tangentspace{U}{u},\bC)$, and that $\dd\xoverline{z}_1(u),\dots,\dd \xoverline{z}_n(u)$ form a basis for $\xoverline{\Hom}_\bC(\tangentspace{U}{u} , \bC)$.
+
+If $f$ is a smooth (but not necessarily holomorphic) complex valued funciton on $U$, it follows that $\dd f$ can be written uniquely as a linear combination of $\dd z_1(u),\dots \dd z_n(u),\dd\xoverline{z}_1(u),\dots,\dd \xoverline{z}_n(u)$, with coefficients which are also smooth complex valued functions on $U$. These coefficients are customarily denoted by 
+\[\dfrac{\partial f}{\partial z_1}, \dots, \dfrac{\partial f}{\partial z_n},\dfrac{\partial f}{\partial \xoverline{z}_1},\dots,\dfrac{ \partial f}{\partial \xoverline{z}_n}\]
+respectively. Thus the total differential $\dd{f}$ can be expressed uniquely as a sum $\partial f +\xoverline{\partial}f$ where 
+\[\partial f = \sum \dfrac{\partial f}{\partial z_j}\dd z_j \quad \text{ and }\quad \xoverline{\partial}f = \sum \dfrac{ \partial f}{\partial \xoverline{z}_j}\dd{\xoverline{z}_j}.\]
+The former is a section of $\Hom_\bC(\tangentbundle{M},\bC)$ and the latter is a section of $\xoverline{\Hom}_\bC(\tangentbundle{M},\bC)$. 
+
+Setting $z_j = x_j+iy_j$, show that \[\dfrac{\partial f}{\partial z_j}=\dfrac{1}{2}\bigg(\dfrac{\partial f}{\partial x_j}+\dfrac{\partial f}{\partial y_j}\bigg).\] Show the Cauchy-Riemann equations\index{Cauchy-Riemann equations} for $f$ can be written as $\dfrac{\partial f}{\partial \xoverline{z}_j}=0$, or briefly $\xoverline{\partial}f=0$.
+\end{problem}
+
+\begin{problem}
+\label{prob:13.G} Show that the complex vector space spanned by the differential operators\index{differential operator} $\partial/\partial z_1,\dots, \partial/\partial z_n$ at $z$ is canonically isomorphic to the tangent space $\tangentspace{U}{z}$.
+\end{problem}
+\end{document}

@@ -1,0 +1,86 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Regular Values and Transversality}
+Let $M$ and $N$ be smooth manifolds of dimensions $m$ and $n$ respectively, and let $f : M \longrightarrow N$ be a smooth map. A point $y \in N$ is called a \defemphi{regular value} of $f$, or equivalently the map $f$ is said to be \defemph{transverse}\index{transversality} to $y$, if for each point $x \in f^{-1}(y)$ the induced map \[(\dd f)_x : \tangentspace M x \longrightarrow \tangentspace N y\] of tangent spaces is surjective. [More generally, we say that $f$ has $y$ as regular value \defemph{throughout} some subset $X \subset M$ if this condition is satisfied for every $x \in f^{-1}(y) \cap X$.] If $M$ is compact, note that the set of regular value is an open subset of $N$. 
+
+Of course if the dimension $m$ is less than $n$, then the condition can only be satisfied vacuously: the point $y \in N$ is a regular value of $f$ if and only if $f^{-1}(y)$ is vacuous. However, if $m \ge n$, then the set $f^{-1}(y)$ may well be non--vacuous. 
+
+\defemph{If $y$ is a regular value, note that the inverse image $f^{-1}(y)$ is a (possibly vacuous) smooth manifold of dimension $m - n$.} This statement follows easily from the Implicit Function Theorem\index{implicit function theorem}. See for example \cite[p. 138]{graves}. 
+
+The following extremely useful theorem is due to Arthur B. Brown and (in a sharper version) to Arthur Sand. %"Theorem of Brown"
+\begin{theorem*}[Brown]\label{brown}\index{Sard's theorem}
+Let $f : W \longrightarrow {\mathbb R}^n$ be a smooth (i.e., infinitely differentiable) mapping, where $W$ is an open subset of ${\mathbb R}^m$. Then the set of regular values of $f$ is everywhere dense in ${\mathbb R}^n$. 
+\end{theorem*}
+
+Proofs may be found, for example, in \cite{brown}, \cite{sard},\cite{sternberg1999lectures} and \cite{milnor1965}.
+
+It follows easily that for any smooth map $f : M \longrightarrow N$, assuming only that there is a countable basis for the topology of $M$, the set of regular values is a countable intersection of dense open sets, and hence is everywhere dense in $N$. 
+
+Now suppose that we are given a smooth submanifold $Y \subset N$ of dimension $n - k$. A smooth map $f : M \longrightarrow N$ is said to be \defemph{transverse} to $Y$, if for every $x \in f^{-1}(Y)$ the composition \[\tangentspace M x \varrightarrow{(\dd f)_x} \tangentspace N y \varrightarrow{} (\tangentspace N y)/(\tangentspace Y y)\] from the tangent space at $x$\index{tangent space $\tangentspace{M}{x}$} to the normal space at $f(x) = y$ is surjective. [More generally, if $f$ is tranverse to $Y$ \defemph{throughout} some subset of $X$ of $M$ if this condition is satisfied for every $x \in X \cap f^{-1}(Y)$.]
+
+\defemph{If $f$ is transverse to $Y$, then using the Implicit Function Theorem one verifies that the inverse image $f^{-1}(Y)$ is a (possibly vacuous) smooth manifold of dimension $m - k$.}
+
+If $\nu^k$ is the normal bundle of $Y$ in $N$, then it is not difficult to show that the bundle over $f^{-1}(Y)$ induced from $\nu^k$ by $f$ can be identified with the normal bundle of $f^{-1}(Y)$ in $M$. \defemph{In particular, if $\nu^k$ is an oriented vector bundle, and if $M$ is an oriented manifold, then it follows that $f^{-1}(Y)$ is an oriented manifold.} \index{normal bundle}
+
+In order to actually construct such transversal mappings, we proceed in two steps, starting with the theorem of Brown and Sard. Consider again an open set $W \subset {\mathbb R}^m$ and consider a smooth map $f : W \longrightarrow {\mathbb R}^k$. Suppose that $f$ has the origin as a regular value throughout some relatively closed subset $X \subset W$. Let $K$ be a compact subset of $W$.
+
+\begin{lemma}\label{lem:18.5}
+There exists a smooth map $g : W \longrightarrow {\mathbb R}^k$ which coincides with $f$ outside of a compact set, and which has the origin as a regular value throughout $X \cup K$. In fact, given $\varepsilon > 0$, we can choose $g$ uniformly close to $f$ so that $|f(x) - g(x)| < \varepsilon$ for all $x$. 
+\end{lemma}
+
+\begin{proof}
+Using a smooth partition of unity\index{partition of unity}, construct a smooth map $\lambda : W \longrightarrow [0, 1]$ which takes the value $1$ on a neighborhood of $K$ and vanishes outside of a larger compact set $K' \subset W$. If $y$ is any regular value of $f$, with $|y| < \varepsilon$, then the function $g$ defined by \[g(x) = f(x) - \lambda(x) y\] will certainly:
+
+\begin{enumerate}[label=(\alph*)]
+    \item have $0$ as a regular value throughout $K$,
+    \item coincide with $f$ outside $K'$, and
+    \item satisfy $|g(x) - f(x)| < \varepsilon$.
+\end{enumerate}
+
+In fact, by Brown's theorem, $y$ can be chosen arbitrarily close to the origin $0$. If $y$ is chosen sufficiently close to $0$, we claim that $g$ also has $0$ as regular value throughout the intersection $K' \cap X$. For by choosing $|y|$ small, we not only guarantee that $g$ will be uniformly close to $f$, but also that the partial derivatives $\partial g_i/\partial x_j$ will be uniformly close to the derivatives $\partial f_i/\partial x_j$. Therefore, since $f$ has $0$ as regular value throughout the compact set $K' \cap X$, it will follow easily that $g$ also has $0$ as regular value throughout $K' \cap X$. (See Problem~\ref{prob:18.A}.) Together with (a) and (b) this implies that $g$ has $0$ as regular value throughout the union $X \cup K$, as required.
+\end{proof}
+
+Now let $\xi$ be a smooth oriented $k$--plane bundle. The base space $B$ of $\xi$ is smoothly embedded\index{embedding} as the zero cross--section in the total space $E(\xi)$, and hence in the Thom space\index{Thom space} $\thom = \thom(\xi)$. 
+
+Given any continuous map $f$ from the sphere $\sphere^m$ to the Thom space $\thom$, we would like to first approximate $f$ by a ``smooth'' map. This does not quite make sense, since $\thom$ is not a manifold. However $\thom - t_0$, the complement of the base point, certainly does have the structure of a smooth manifold, and it is not difficult to approximate $f$ by a homotopic map $f_0$ which coincides with $f$ on $f^{-1}(t_0) = f_0^{-1}(t_0)$ and is smooth throughout the complement $f_0^{-1}(\thom - t_0)$. The necessary techniques are described, for example, in \cite[\S6.7]{steenrod1951}. 
+
+\begin{theorem}
+\label{thm:18.6}
+Every continuous map $f : \sphere^m \longrightarrow \thom(\xi)$ is homotopic to a map $g$ which is smooth throughout $g^{-1}(\thom - t_0)$, and is transverse to the zero cross--section $B$. The oriented cobordism\index{oriented cobordism} class of the resulting smooth $(m - k)$--dimensional manifold $g^{-1}(B)$ depends only on the homotopy class of $g$. Hence the correspondence \[g \mapsto g^{-1}(B)\] gives rise to a homomorphism from the homotopy group $\pi_m(\thom, t_0)$ to the oriented cobordism group $\orientedCobordism_{m - k}$. \index{homotopy groups}
+\end{theorem}
+
+\begin{proof}
+As noted above, we can first approximate $f$ by a map $f_0$ which is smooth throughout $f_0^{-1}(\thom - t_0)$. Choose a covering of the compact set $f_0^{-1}(B)$ by open subsets $W_1, \ldots, W_r$ of $f^{-1}(\thom - t_0)$ which are small enough so that each image \[f_0(W_i) \subset \thom - t_0 \subset E(\xi)\] is contained in some product coordinate patch \[\pi^{-1}(U_i) \cong U_i \times {\mathbb R}^k\] for the vector bundle $\xi$. Here $U_i$ denotes an open subset of $B$ which is small enough so that the bundle $\xi \restr_{U_i}$ is trivial. 
+
+Choose compact sets $K_i \subset W_i$ so that $f_0^{-1}(B)$ is contained in the interior of $K_1 \cup \ldots \cup K_r$. Then we will modify $f_0$ within one open set $W_i$ after another, constructing mapping $f_1, f_2, \ldots, f_r$ satisfying following three conditions. 
+
+\begin{enumerate}[label=(\arabic*)]
+    \item Each $f_i$ is smooth throughout $f_i^{-1}(\thom - t_0) = f_0^{-1}(\thom - t_0)$, and coinciding with $f_{i - 1}$ outside of a compact subset of $W_i$.
+    \item Each $f_i$ is transverse to $B$ throughout the set $K_1 \cup K_2 \cup \ldots \cup K_i$.
+    \item The projection $\pi(f_i(x)) \in B$ is equal to $\pi(f_0(x))$ for all $x \in f_0^{-1}(\thom - t_0)$.
+\end{enumerate}
+
+Furthermore we will choose each $f_i$ ``close'' to $f_{i - 1}$ in a sense to be made precise later. To begin the construction, we assume inductively that a map $f_{i - 1}$ has been chosen so as to satisfy (1), (2) and (3). It follows from Condition (3) that $f_{i - 1}$ must map the open set $W_i$ into the product coordinate patch $\pi^{-1}(U)$. Using the product structure \[\pi^{-1}(U_i) \cong U_i \times {\mathbb R}^k,\] let $\rho_i : \pi^{-1}(U_i) \longrightarrow {\mathbb R}^k$ be the projection map to the second factor. We want to choose a new map $x \mapsto f_i(x)$ for $x \in W_i$. The first coordinate $\pi(f_i(x))$ is already determined by (3), so we need only choose the second coordinate $\rho_i(f_i(x))$. 
+
+Since $f_{i - 1}$ satisfies Condition (2), it follows easily that the composition \newline $x \mapsto \rho_i(f_{i - 1}(x))$ has the origin of ${\mathbb R}^k$ as a regular value throughout the relatively closed subset $(K_1 \cup \ldots \cup K_{i - 1}) \cap W_i$ of $W_i$. Hence, by Lemma \ref{lem:18.5}, we can approximate this composition by a map from $W_i$ to ${\mathbb R}^k$ which
+
+\begin{enumerate}[label=(\alph*)]
+    \item agrees with $\rho_i \circ f_{i - 1}$ outside of a compact subset of $W_i$, and
+    \item has the origin as regular value throughout $(K_1 \cup \ldots \cup K_i) \cap W_i$.
+\end{enumerate}
+
+Taking this approximating map to be $\rho_i \circ f_i$, we have evidently, in view of Conditions (1) and (3), defined $f_i(x)$ for all $x$. Furthermore, it is clear that this new map $f_i$ will satisfy Condition (2). 
+
+Thus, proceeding by induction, we can construct maps $f_1, f_2, \ldots, f_r$, all satisfying the Conditions (1), (2), (3). Let $g = f_r$. Clearly $g$ is transverse to $B$ throughout the compact set $K_{1} \cup \ldots \cup K_{r}$. If we can guarantee that the entire inverse image $g^{-1}(B)$ is contained in $K_{1} \cup \ldots \cup K_{\mathrm{r}}$, then we will be sure that $g$ is transverse to $B$ everywhere, as required.
+
+For each $t \in \thom - t_0 \cong E - A$ let $0 \le |t| < 1$ denote the Euclidean norm, so that $|t| = 0$ if and only if $t \in B$. It is convenient to set $|t_0| = 1$. Since $K_1 \cup \ldots \cup K_r$ is a neighborhood of $f_0^{-1}(B)$ in the compact space $\sphere^m$, there exists a constant $c > 0$ so that \[|f_0(x)| \ge c\] for all $x \not \in K_1 \cup \ldots \cup K_r$. Suppose that each $f_i$ is chosen so close to $f_{i - 1}$ that \[|f_i(x) - f_{i - 1}(x)| < c/r\] for all $x$. Then evidently \[|g(x) - f_0(x)| < c.\] Therefore $|g(x)| \ne 0$ for $x \not \in K_1 \cup \ldots \cup K_r$, and the entire inverse image $g^{-1}(B)$ must be contained in $K_1 \cup \ldots \cup K_r$. Hence $g$ is transverse to $B$ everywhere, and the inverse image $g^{-1}(B)$ is a smooth, compact, oriented $(m - k)$--dimensional manifold. This proves the first part of \ref{thm:18.6}. 
+
+Next consider two homotopic maps $g$ and $g'$ from $\sphere^m$ to $\thom$, both being smooth on the inverse image of $\thom - t_0$ and both being transverse to $B$. Then it is not difficult to construct a homotopy \[h_0 : \sphere^m \times [0, 1] \longrightarrow \thom\] which is smooth throughout $h_0^{-1}(\thom - t_0)$, and which satisfies
+\begin{align*}
+h_0(x, t) & = g(x) \quad \text { for } t \in [0, 1], \\ h_0(x, t) & = g'(x) \quad \text { for } t \in [2, 3].
+\end{align*}
+Proceeding as above, we can then construct a new map $h : \sphere^m \times [0, 3] \longrightarrow \thom$ which coincides with $h_0$ except on a compact subset of $\sphere^m \times (0, 3)$, and which is transverse to $B$. The construction is inductive, making sure each stage that transversality throughout the set $\sphere^m \times [0, 1] \cup \sphere^m \times [2, 3]$ is not lost. The inverse image $h^{-1}(B)$ under this new homotopy will then provide the required oriented cobordism between $g^{-1}(B)$ and ${g'}^{-1}(B)$. \defemph{Thus the oriented cobordism class of $g^{-1}(B)$ depends only on the homotopy class of $B$.}
+
+Since the composition operations in the homotopy group $\pi_m(\thom, t_0)$ clearly corresponds to the disjoint union operation for the manifolds $g^{-1}(B)$, it follows that this correspondence $g \mapsto g^{-1}(B)$ gives rise to a well defined homomorphism from $\pi_m(\thom, t_0)$ to the cobordism group $\orientedCobordism_{m - k}$. 
+\end{proof}
+\end{document}

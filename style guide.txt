@@ -1,0 +1,33 @@
+%under construction, please don't start TeXing before this is up
+
+Carefully read the operators[preamble].tex. This contains everything we have macro'd and we will require the usage of said macros to ensure that things are easier to change globally.
+
+use `` '' for quotations.
+
+always use \[\] for displaymode instead of $$ $$
+
+don't use \left \right, use \big \Big \bigg \Bigg for the correct sizes.
+
+the book uses f|U for f restricted to U. Use f|_U instead.
+
+for cup product, use \smile. (\cup in the book, this is NOT a union in most cases).
+
+Use \mathbb for R and C.
+
+Use \bigwedge for exterior powers. Use \otimes for tensor and \oplus for internal whitney sums.
+
+Use \xoverline, \xhat and \xtilde for the respective operations.
+
+If you come across a citation, use \plscite{citation}, so it can be filled in later after the bib is done.
+
+The original book has a lot of things inline that should not be. Use your judgement here to make things that look awkward inline into display mode. I think a good rule for this is, if the equation has 2 or more equals (or > or < etc), then it probably should be display mode. If there are a lot of fractions then that is also a good thing to display mode.
+
+Use the theorem etc environments as written in preamble.tex
+
+After each theorem/lemma etc, label it. The way we are going to do it is \label{thm/lem/etc:xx.xx} so chapter 11 theorem 2 is \label{thm:11.02}. epilogue counts as ch21, appendix A as 22 and so on in this count. Do these for exercises also, with \label{ex:xx.xx}. reference these with \ref{}, don't worry if the label is undefined it will be filled in later when the other section is done being typed up for example.
+
+use \defemph when things are emphasized in the original text.
+
+use \footnote{} for footnotes.
+
+Two extra lines of space between theorem environments (so theorem, definition, proposition, lemma, corollary), one extra space for a new line in the pdf. Basically put two extra lines of space when it's a new part in the pdf and put one extra line when it's just a new line in the pdf. Don't indent the within the theorem environments, do indent the tikzcd and enumerate. Have one extra line of space between each \item in enumerate. Indent with four spaces. (this is for readability and making proofreading easy, this is not strict)

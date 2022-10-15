@@ -1,0 +1,19 @@
+\documentclass[../main]{subfiles}
+\begin{document}\index{Chern class $\chernclass_i$}
+We will first prove the following statement.
+
+\begin{lemma}
+\label{lem:14.1}\label{thm:14.1}
+If $\omega$ is a complex vector bundle, then the underlying real vector bundle $\omega_{\mathbb R}$ has a canonical preferred orientation. 
+\end{lemma}
+
+Applying this lemma to the special case of a tangent bundle, it follows that \defemph{any complex manifold has a canonical preferred orientation}. For we have seen on Lemma \ref{lem:11.6} that every orientation for the tangent bundle of a manifold gives rise to a unique orientation of the manifold.
+
+\begin{proof}[Proof of \ref{thm:14.1}]
+Let $V$ be any finite dimensional complex vector space. Choosing a basis $a_1, \ldots, a_n$ for $V$ over $\mathbb C$, note that the vectors $a_1, ia_1, a_2, i a_2, \ldots, a_n, i a_n$ form a real basis for the underlying real vector space $V_{\mathbb R}$. This ordered basis determines the required orientation for $V_{\mathbb R}$. To show that this orientation does not depend on the choice of complex basis, we need only note that the linear group $\GL_n(\mathbb C)$\index{linear group $\GL_n$!\indexline complex} is connected. Hence we can pass from any given complex basis to any other complex basis by a continuous deformation, which cannot alter the induced orientation.
+
+Now if $\omega$ is a complex vector bundle, then applying this construction to every fiber of $\omega$, we obtain the required orientation for $\omega_{\mathbb R}$.
+\end{proof}
+
+As an application of \ref{thm:14.1}, for any complex $n$--plane bundle $\omega$ over the base space $B$, note that the Euler class\index{Euler class $\eulerclass$} \[\eulerclass(\omega_{\mathbb R}) \in \homology^{2n}(B; \mathbb Z)\] is well--defined. If $\omega'$ is a complex $m$--plane bundle over the same base space $B$, note that \[\eulerclass((\omega \oplus \omega')_{\mathbb R}) = \eulerclass(\omega_{\mathbb R})\eulerclass(\omega'_{\mathbb R}).\] For if $a_1, \ldots, a_n$ is a basis for a fiber $F$ for $\omega$, and $b_1, \ldots, b_m$ is a basis for the corresponding fiber $F'$ of $\omega'$, then the preferred orientation $a_1, i a_1, \ldots, a_n, i a_n$ for $F_{\mathbb R}$ followed by the preferred orientation $b_1, i b_1, \ldots, b_m, i b_m$ for $F'_{\mathbb R}$ yields the preferred orientation $a_1, i a_1, \ldots, i a_n, b_1, i b_1, \ldots, i b_m$ for $(F \oplus F')_{\mathbb R}$. Thus $\omega_{\mathbb R} \oplus \omega'_{\mathbb R}$ is isomorphic \defemph{as an oriented bundle}\index{oriented bundle} to $(\omega \oplus \omega')_{\mathbb R}$, and the conclusion follows.
+\end{document}

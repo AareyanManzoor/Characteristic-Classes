@@ -1,0 +1,248 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+\setcounter{chapter}{5}
+\chapter{A Cell Structure for Grassmann Manifolds}\label{ch:6}
+
+This section will describe a canonical cell subdivision, due to Ehresmann \cite{ehresmann1934}, which makes the infinite Grassmann manifold $\grassmannian_{n}(\bR^\infty)$ into a CW-complex. Each finite Grassmann manifold $\grassmannian_{n}(\bR^{n+k})$ appears as a finite subcomplex. This cell structure has been used by Pontrjagin \cite{pontryagin1947} and by Chern \cite{chern1948} as a basis for the theory of characteristic classes. The reader should consult these sources, as well as \cite{wu1948} for further information. For a thorough treatment of cell complexes in general, consult \cite{lundellweingram1969}. Grassmann manifolds appear there on p. 17.
+
+First recall some definitions. Let $\disk^{p}$ denote the \defemph{unit disk} in $\bR^p$, consisting of all vectors $v$ with $| v | \leq 1$. The \defemph{interior} of $\disk^{p}$ is defined to be the subset consisting of all $v$ with $|v|<1$. For the special case $p=0$, both $\disk^{p}$ and its interior consist of a single point.
+
+Any space homeomorphic to $\disk^{p}$ is called a \defemph{closed $p$-cell}; and any space homeomorphic to the interior of $\disk^{p}$ is called an \defemph{open $p$-cell}. For example $\bR^p$ is an open $p$-cell.
+
+\begin{customdef}{6.1}[J. H. C. Whitehead, 1949]
+\label{def:06.01}
+A \defemphi{CW-complex} consists of a Hausdorff space $K$, called the \defemph{underlying space}, together with a partition of $K$ into a collection $\{e_{\alpha}\}$ of disjoint subsets, such that four conditions are satisfied:
+\begin{enumerate}[label=\arabic*)]
+	\item Each $e_{\alpha}$ is topologically an open cell of dimension $n(\alpha) \geq 0$. Furthermore for each cell $e_{\alpha}$ there exists a continuous map
+    \[
+    f:{\disk^{n(\alpha)}}\varrightarrow{} K
+    \]
+    which carries the interior of the disk $\disk^{n(\alpha)}$ homeomorphically onto $e_{a}$. (This $f$ is called a \defemphi{characteristic map} for the cell $e_{\alpha}$.)
+    \item Each point $x$ which belongs to the closure $\xoverline{e}_{\alpha}$, but not to $e_{\alpha}$ itself, must lie in a cell $e_\beta$ of lower dimension.
+\end{enumerate}
+If the complex is \defemph{finite} (i.e., if there are only finitely many $e_{a}$), then these two conditions suffice. However in general two further conditions are needed. A subset of $K$ is called a [finite] \defemph{subcomplex} if it is a closed set and is a union of [finitely many] $e_{a}$ 's.
+\begin{enumerate}[label=\arabic*)]
+	\setcounter{enumi}{2}
+	\item \defemphi{Closure finiteness.} Each point of $K$ is contained in a finite subcomplex.
+	\item \defemph{Whitehead topology.} $K$ is topologized as the direct limit\index{direct limit} of its finite subcomplexes. I.e., a subset of $K$ is closed if and only if its intersection with each finite subcomplex is closed.
+\end{enumerate}
+\end{customdef}
+Note that the closure $\xoverline{e}_{\alpha}$ of a cell of $K$ need not be a cell. For example the sphere $\sphere^{n}$ can be considered as a CW-complex with one $0$-cell and one $n$-cell. In this case the closure of the $n$-cell is equal to the entire sphere.
+
+A theorem of Miyazaki \cite{miyazaki1952} asserts that every CW-complex is paracompact\index{paracompact}. (Compare \cite[p.~419]{dugundji1966}.)
+
+The cell structure for the Grassmann manifold $\grassmannian_{n}(\bR^{m})$ is obtained as follows. Recall that $\bR^m$ contains subspaces
+\[
+\bR^{0} \subset \bR^{1} \subset \bR^{2} \subset\dots \subset \bR^m;
+\]
+where $\bR^{k}$ consists of all vectors of the form $v=(v_{1},\dots, v_{k}, 0,\dots, 0)$. Any $n$-plane $X \subset \bR^m$ gives rise to a sequence of integers
+\[
+0 \leq \dim(X \cap \bR^{1}) \leq \dim(X \cap \bR^{2}) \leq\dots \leq \dim(X \cap \bR^m)=n.
+\]
+Two consecutive integers in this sequence differ by at most $1$. This fact is proved by inspecting the exact sequence
+\[
+0 \varrightarrow{} X \cap \bR^{k-1} \varrightarrow{} X \cap \bR^{k}\varrightarrow{k\text{-th coordinate }}  \bR.
+\]
+Thus the above sequence of integers contains precisely $n$ ``jumps''. By a \defemph{Schubert symbol}\index{Schubert symbol $\sigma$} $\sigma=(\sigma_{1},\dots, \sigma_{n})$ is meant a sequence of $n$ integers satisfying
+\[
+1 \leq \sigma_{1}<\sigma_{2}<\dots<\sigma_{n} \leq m.
+\]
+For each Schubert symbol $\sigma$, let $e(\sigma) \subset \grassmannian_{n}(\bR^m)$ denote the set of all $n$-planes $X$ such that
+\[
+\dim(X \cap \bR^{\sigma_{i}})=i,\; \dim(X \cap \bR^{\sigma_{i}-1})=i-1
+\]
+for $i=1,\dots, n$. Evidently each $X \in \grassmannian_{n}(\bR^m)$ belongs to precisely one of the sets $e(\sigma)$. We will see presently that $e(\sigma)$ is an open cell\footnote{The closure $\xoverline{e}(\sigma)$ is called a Schubert variety\index{Schubert cell, Schubert variety}. (Compare  \cite{schubert}.) In the notation of Chern and Wu, the cell $e(\sigma)$ is indexed not by the sequence $\sigma=(\sigma_{1},\dots, \sigma_{n})$ but rather by the modified sequence $(\sigma_{1}-1, \sigma_{2}-2,\dots, \sigma_{n}-n)$, which is more convenient to use for many purposes.}
+of dimension \[d(\sigma)=(\sigma_{1}-1)+(\sigma_{2}-2)+\dots+(\sigma_{n}-n).\]
+
+Let $\halfspace^{k} \subset \bR^{k}$ denote the open half-space\index{half-space} consisting of all $x= (\xi_{1},\dots, \xi_{k}, 0,\dots, 0)$ with $\xi_{k}>0 $. Note that an $n$-plane $X$ belongs to $e(\sigma)$ if and only if it possesses a basis $x_{1},\dots, x_{n}$ so that
+\[
+x_{1} \in \halfspace^{\sigma_{1}},\dots, x_{n} \in \halfspace^{\sigma_{n}}.
+\]
+For if $X$ possesses such a basis, then the exact sequence above shows that
+\[
+\dim(X \cap \bR^{\sigma_{i}})>\dim(X \cap \bR^{\sigma_{i}-1})
+\]
+for $i=1,\dots, n$, hence $X \in e(\sigma) $. The converse is proved similarly. In terms of matrices, the $n$-plane $X$ belongs to $e(\sigma)$ if and only if it can be described as the row space of an $n \times m$ matrix $[x_{ij}]$ of the form
+\[\begin{bmatrix}
+	* & \dots & *10 & \dots & 000 & \dots & 000 & \dots & 0 \\
+	* & \dots & *** & \dots & *10 & \dots & 000 & \dots & 0 \\
+	\vdots &  & \vdots &  & \vdots &  & \vdots &  & \vdots \\
+	* & \dots & *** & \dots & *** & \dots & *10 & \dots & 0
+\end{bmatrix}\]
+where the $i$-th row has $\sigma_{i}$-th entry positive (say equal to $1$), and all subsequent entries zero.
+\setcounter{theorem}{1}
+\begin{lemma}
+\label{lem:06.02}
+Each $n$-plane $X \in e(\sigma)$ possesses a unique orthonormal basis $(x_{1},\dots, x_{n})$ which belongs to $\halfspace^{\sigma_{1}} \times\dots \times \halfspace^{\sigma_{n}}$.
+\end{lemma}
+\begin{proof}
+The vector $x_{1}$ is required to lie in the $1$-dimensional vector space $X \cap \bR^{\sigma_{1}}$, and to be a unit vector. This leaves only two possibilities for $x_{1}$, and the condition that the $\sigma_{1}$-th coordinate be positive specifies one of these two. Now $x_{2}$ is required to be a unit vector in the $2$ dimensional space $X\cap\bR^{\sigma_{2}}$, and to be orthogonal to $x_{1} $. Again this leaves two possibilities, and the condition that the $\sigma_{2}$-th coordinate be positive specifies one of these two. Continuing by induction, it follows that $x_{3}, x_{4},\dots, x_{n}$ are also uniquely determined.
+\end{proof}
+
+\begin{definition}
+\label{def:06.02}
+Let $e^{\prime}(\sigma)=\StiefelManifold_{n}^{0}(\bR^m) \cap(\halfspace^{\sigma_{1}} \times\dots \times \halfspace^{\sigma_{n}})$ denote the set of all orthonormal $n$-frames\index{frame}\index{n-frame@$n$-frame} $(x_{1},\dots, x_{n})$ such that each $x_{i}$ belongs to the open half-space $\halfspace^{\sigma_i}$. Let $\xoverline{e}^{\prime}(\sigma)$ denote the set of orthonormal frames $(x_{1},\dots, x_{n})$ such that each $x_{i}$ belongs to the closure $\xoverline{\halfspace}^{\sigma_{i}}$.
+\end{definition}
+
+\begin{lemma}
+\label{lem:06.03}
+The set $\xoverline{e}^{\prime}(\sigma)$ is topologically a closed cell of dimension\newline $d(\sigma)=(\sigma_{1}-1)+(\sigma_{2}-2)+\dots+(\sigma_{n}-n)$, with interior $e^{\prime}(\sigma)$. Furthermore $q$ maps the interior $e^{\prime}(\sigma)$ homeomorphically onto $e(\sigma)$.
+\end{lemma}
+Thus $e(\sigma)$ is actually an open cell of dimension $d(\sigma)$. Furthermore the map
+\[
+q |_{\xoverline{e}^{\prime}(\sigma)}:{\xoverline{e}^{\prime}(\sigma)} \varrightarrow{} {\grassmannian_{n}(\bR^m)}
+\]
+will serve as a characteristic map for this cell.
+\begin{proof}
+The proof of \ref{lem:06.03} will be by induction on $n$. For $n=1$ the set $\xoverline{e}^{\prime}(\sigma_{1})$ consists of all vectors
+\[
+x_{1}=(x_{11}, x_{12},\dots, x_{1 \sigma_{1}}, 0,\dots, 0)
+\]
+with $\sum x_{1 i}^{2}=1, x_{1 \sigma_{1}} \geq 0 $. Evidently $\xoverline{e}^{\prime}(\sigma_{1})$ is a closed hemisphere of dimension $\sigma_{1}-1$, and therefore is homeomorphic to the disk $\disk^{\sigma_{1}-1}$.
+
+Given unit vectors $u, v \in \bR^{m}$ with $u \neq-v$, let $T(u, v)$ denote the unique rotation of $\bR^m$ which carries $u$ to $v$, and leaves everything orthogonal to $u$ and $v$ fixed. Thus $T(u, u)$ is the identity map and $T(v, u)=T(u, v)^{-1} .$ Alternatively $T(u, v)$ can be defined by the formula
+\[
+T(u, v)\: x = x-\frac{(u+v) \cdot x}{1+u \cdot v}(u+v)+2(u \cdot x) v
+\]
+In fact the function $T(u, v)$ defined in this way is linear in $x$, and has the correct effect on the vectors $u, v$, and on all vectors orthogonal to $u$ and $v$. It follows from this formula that:
+\begin{enumerate}[label=\arabic*)]
+	\item $T(u, v) \: x$ is continuous as a function of three variables; and
+	
+	\item if $u, v \in \bR^{k}$ then $T(u, v) \: x \equiv x$ (modulo $\bR^{k}$).
+\end{enumerate}
+
+Let $b_{i} \in \halfspace^{\sigma_{i}}$ denote the vector with $\sigma_{i}$-th coordinate equal to $1$, and all other coordinates zero. Thus $(b_{1},\dots, b_{n}) \in e^{\prime}(\sigma) $. For any $n$-frame $(x_{1},\dots, x_{n}) \in \xoverline{e}^{\prime}(\sigma)$ consider the rotation
+\[
+T=T(b_{n}, x_{n}) \circ T(b_{n-1}, x_{n-1}) \circ\dots \circ T(b_{1}, x_{1})
+\]
+of $\bR^m$. This rotation carries the $n$ vectors $b_{1},\dots, b_{n}$ to the vectors $x_{1},\dots, x_{n}$ respectively. In fact the rotations $T(b_{1}, x_{1}),\dots, T(b_{i-1}, x_{i-1})$ leave $b_{i}$ fixed (since $b_{i} \cdot b_{j}=b_{i} \cdot x_{j}=0$ for $i>\mathrm{j}$ ); the rotation $T(b_{i}, x_{i})$ carries $b_{i}$ to $x_{i} ;$ and the rotations $T(b_{i+1}, x_{i+1}),\dots, T(b_{n}, x_{n})$ leave $x_{i}$ fixed.
+
+Given an integer $\sigma_{n+1}>\sigma_{n}$ let $D$ denote the set of all unit vectors $u \in \xoverline{\halfspace}^{\sigma_{n+1}}$ with
+\[
+b_{1} \cdot u=\dots=b_{n} \cdot u=0.
+\]
+Evidently $D$ is a closed hemisphere of dimension $\sigma_{n+1}-n-1$, and hence is topologically a closed cell. We will construct a homeomorphism
+\[f:{\xoverline{e}^{\prime}(\sigma_{1},\dots, \sigma_{n}) \times D} \varrightarrow{} {\xoverline{e}^{\prime}(\sigma_{1},\dots, \sigma_{n+1})}.
+\]
+In fact $f$ is defined by the formula
+\[
+f((x_{1},\dots, x_{n}), u)=(x_{1},\dots, x_{n}, Tu)
+\]
+where the rotation $T$ depends on $x_{1},\dots, x_{n}$, as above. To prove that $(x_{1},\dots, x_{n}, Tu)$ actually belongs to $\xoverline{e}^{\prime}(\sigma_{1},\dots, \sigma_{n+1})$ we note that
+\[
+x_{i} \cdot Tu=Tb_{i} \cdot Tu=b_{i} \cdot u=0
+\]
+for $i \leq n$, and that
+\[
+Tu \cdot Tu=u \cdot u=1
+\]
+where $Tu \in \xoverline{\halfspace}^{\sigma_{n+1}}$ since $Tu \equiv u\pmod{\bR^{\sigma_{n}}}$. Evidently $f$ maps $\xoverline{e}^{\prime}(\sigma_{1},\dots, \sigma_{n}) \times D$ continuously to $\xoverline{e}^{\prime}(\sigma_{1},\dots, \sigma_{n+1}) $. Similarly the formula
+\[
+u=T^{-1} x_{n+1}=T(x_{1}, b_{1}) \circ\dots \circ T(x_{n}, b_{n})\: x_{n+1} \in D
+\]
+shows that $f^{-1}$ is well defined and continuous.
+
+Thus $\xoverline{e}^{\prime}(\sigma_{1},\dots, \sigma_{n+1})$ is homeomorphic to the product $\xoverline{e}^{\prime}(\sigma_{1},\dots, \sigma_{n}) \times D$ It follows by induction on $n$ that each $\xoverline{e}^{\prime}(\sigma)$ is a closed cell of dimension $d(\sigma) $. A similar induction shows that each $e^{\prime}(\sigma)$ is the interior of the cell $\xoverline{e}^{\prime}(\sigma) $. In fact the homeomorphism
+\[
+f:{\xoverline{e}^{\prime}(\sigma_{1},\dots, \sigma_{n}) \times D} \varrightarrow{} {\xoverline{e}^{\prime}(\sigma_{1},\dots, \sigma_{n+1})}
+\]
+carries the product $e^{\prime}(\sigma_{1},\dots, \sigma_{n}) \times \mathrm{Interior}\; D$ onto $e^{\prime}(\sigma_{1},\dots, \sigma_{n+1})$.
+
+\noindent\defemph{Proof that the map}
+\[
+q|_{e^{\prime}(\sigma)} : {e^{\prime}(\sigma)} \varrightarrow{} {e(\sigma)}
+\]
+\defemph{is a homeomorphism.} According to \ref{lem:06.02}, $q$ carries $e^{\prime}(\sigma)$ in one-one fashion onto $e(\sigma) $. On the other hand, if $(x_{1},\dots, x_{n})$ belongs to the \defemphi{boundary} $\xoverline{e}^{\prime}(\sigma)\setminus e^{\prime}(\sigma)$, then the $n$-plane $X=q(x_{1},\dots, x_{n})$ does not belong to $e(\sigma)$, for one of the vectors $x_{i}$ must lie in the boundary $\bR^{\sigma_{i}-1}$ of the half-space $\xoverline{\halfspace}^{\sigma_{i}}$. This implies that
+\[
+\dim(X \cap \bR^{\sigma_{i}-1}) \geq i,
+\]
+and hence that $X \notin e(\sigma)$.
+
+Now let $A \subset e^{\prime}(\sigma)$ be a relatively closed subset. Then $\xoverline{A} \cap e^{\prime}(\sigma)=A$, where the closure $\xoverline{A} \subset \xoverline{e}^{\prime}(\sigma)$ is compact, hence $q(\xoverline{A})$ is closed. The preceding paragraph implies that $q(\xoverline{A}) \cap e(\sigma)=q(A)$, and it follows that $q(A) \subset e(\sigma)$ is a relatively closed set. Thus $q$ maps the cell $e^{\prime}(\sigma)$ homeomorphically onto $e(\sigma)$.
+\end{proof}
+
+\begin{theorem}
+\label{thm:06.04}
+The $\binom{m}{n}$ sets $e(\sigma)$ form the cells of a CW-complex with underlying space $\grassmannian_{n}(\bR^m)$. Similarly taking the direct limit as $m \rightarrow \infty$, one obtains an infinite CW-complex with underlying space $\grassmannian_{n}=\grassmannian_{n}(\bR^\infty)$.
+\end{theorem}
+\begin{proof}
+We must first show that each point in the boundary of a cell $e(\sigma)$ belongs to a cell $e(\tangentbundle{})$ of lower dimension. Since $\overline{e}^{\prime}(\sigma)$ is compact, the image $q \overline{e}^{\prime}(\sigma)$ is equal to $\overline{e}(\sigma)$. Hence every $n$-plane $X$ in the boundary $\overline{e}(\sigma)-e(\sigma)$ has a basis $(x_{1},\dots, x_{n})$ belonging to $\overline{e}^{\prime}(\sigma)-e^{\prime}(\sigma)$ Evidently the vectors $x_{1},\dots, x_{n}$ are orthonormal, with $x_{i} \in \bR^{\sigma_{i}}$. It follows that $\dim(X \cap \bR^{\sigma_{i}}) \geq i$ for each $i$, thus the Schubert symbol $(\tangentbundle{1},\dots, \tangentbundle{n})$ associated with $X$ must satisfy
+\[
+\tangentbundle{1} \leq \sigma_{1},\dots, \tangentbundle{n} \leq \sigma_{n}.
+\]
+As above, one of the vectors $x_{i}$ must actually belong to $\bR^{\sigma_{i}-1} $; hence the corresponding integer $\tangentbundle{i}$ must be strictly less than $\sigma_{i}$. Therefore $d(\tangentbundle{})<d(\sigma)$. Together with \ref{lem:06.03}, this completes the proof that $\grassmannian_{n}(\bR^m)$ is a finite CW-complex.
+	
+Similarly $\grassmannian_{n}(\bR^\infty)$ is a CW-complex. The closure finiteness condition is satisfied since each $X \in \grassmannian_{n}(\bR^\infty)$ belongs to a finite subcomplex $\grassmannian_{n}(\bR^m)$. The space $\grassmannian_{n}(\bR^\infty)$ has the direct limit topology by definition.
+\end{proof}
+
+It is instructive to look at the special case $n=1$.
+
+\begin{corollary}
+\label{cor:06.05}
+The infinite projective space $\projective^{\infty}=\grassmannian_{1}(\bR^\infty)$\index{projective space!\indexline real $\projective^n$} is a CW-complex having one $r$-cell $e(r+1)$ for each integer $r \geq 0$. The closure $\xoverline{e}(r+1) \subset \projective^{\infty}$ is equal to the finite projective space $\projective^{r}$.
+\end{corollary}
+The proof is straightforward.
+
+Now let us count the number of $r$-cells in $\grassmannian_{n}(\bR^m)$ for arbitrary $n$. It is convenient to introduce the language of partitions. 
+\pagebreak
+\begin{definition}
+\label{def:06.06}
+A \defemph{partition of an integer}\index{partition} $r \geq 0$ is an unordered sequence $i_{1} i_{2} \dots i_{s}$ of positive integers with sum $\bR$. The number of partitions of $r$ is customarily denoted by $p(r) $. Thus for $r \leq 10$ one has the following table.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|l|lllllllllll|}
+	\hline
+	$r$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+	\hline
+	$p(r)$ & 1 & 1 & 2 & 3 & 5 & 7 & 11 & 15 & 22 & 30 & 42 \\
+	\hline
+\end{tabular}
+\caption{Partitions of $r$ for $r\leq 10$}
+\end{table}
+\end{definition}
+For example the integer 4 has five partitions, namely: 1 1 1 1, 1 1 2, 2 2, 1 3, and 4. The integer 0 has just one (vacuous) partition. (According to Hardy and Ramanujan the function $p(r)$ is asymptotic to $\exp (\pi \sqrt{2 r / 3}) / 4 r \sqrt{3}$ as $r\rightarrow \infty$. For further information see \cite{ostmann1956}.)
+
+To every Schubert symbol $(\sigma_{1},\dots, \sigma_{n})$ with $d(\sigma)=r$ and $\sigma_{n} \leq m$ there corresponds a partition $i_{1}\dots i_{s}$ of $r$, where $i_{1},\dots, i_{s}$ denotes the sequence obtained from $\sigma_{1}-1,\dots, \sigma_{n}-n$ by cancelling any zeros which may appear at the beginning of this sequence. Clearly
+\[
+1 \leq i_{1} \leq i_{2} \leq\dots \leq i_{s} \leq m-n
+\]
+and $s \leq n $. Thus
+\begin{corollary}
+\label{cor:06.07}
+The number of $r$-cells in $\grassmannian_{n}(\bR^m)$ is equal to the number of partitions of $r$ into at most $n$ integers each of which is $\leq m-n$.
+\end{corollary}
+In particular, if both $n$ and $m-n$ are $\geq r$, then the number of $r$-cells in $\grassmannian_{n}(\bR^m)$ is equal to $p(r)$.
+
+Note that this corollary remains true if $m$ is allowed to take the value $+\infty$.\medskip
+
+Here are five problems for the reader.
+\begin{problem}
+\label{prob:06.01}
+Show that a CW-complex is finite if and only if its underlying space is compact.
+\end{problem}
+\begin{problem}\label{prob-6-B}
+Show that the restriction homomorphism\index{cohomology!\indexline of $\grassmannian_n$}
+\[
+i^\ast : \homology^{p}(\grassmannian_{n}(\bR^{\infty}))\varrightarrow{} \homology^{p}(\grassmannian_{n}(\bR^{n+k}))
+\]
+is an isomorphism for $p<k$. Any coefficient group may be used. (Compare the description of cohomology for CW-complexes in \ref{app:A}.)
+\end{problem}
+\begin{problem}
+\label{prob:06.03}
+Show that the correspondence $X \varrightarrow{f} \bR^{1} \oplus X$ defines an embedding\index{embedding} of the Grassmann manifold $\grassmannian_{n}(\bR^m)$ into $\grassmannian_{n+1}(\bR^{1} \oplus \bR^{m})=\grassmannian_{n+1}(\bR^{m+1})$, and that $f$ is covered by a bundle map
+\[
+\trivialbundle^{1} \oplus \tautological^{n}(\bR^m) \varrightarrow{} \tautological^{n+1}(\bR^{m+1}).
+\]
+Show that $f$ carries the $r$-cell of $\grassmannian_{n}(\bR^{m})$ which corresponds to a given partition $i_{1}\dots i_{s}$ of $r$ onto the $r$-cell of $\grassmannian_{n+1}(\bR^{m+1})$ which corresponds to the same partition $i_{1}\dots i_{s}$.
+\end{problem}
+\begin{problem}
+\label{prob:06.04}
+Show that the number of distinct Stiefel-Whitney numbers\index{Stiefel-Whitney number} $\sw_{1}^{r_{1}}\dots \sw_{n}^{r_{n}}[M]$ for an $n$-dimensional manifold is equal to $p(n)$.
+\end{problem} 
+\begin{problem}
+\label{prob:06.05}
+Show that the number of $r$-cells in $\grassmannian_{n}(\bR^{n+k})$ is equal to the number of $r$-cells in $\grassmannian_{k}(\bR^{n+k})$ (or show that these two CW-complexes are actually isomorphic).
+\end{problem}
+\end{document}

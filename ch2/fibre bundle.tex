@@ -1,0 +1,26 @@
+\documentclass[../main]{subfiles}
+%claimed by twiceshy
+\begin{document}
+\section{Editor's Note: Fibre Bundles}\label{sec:2.2}
+The book uses the idea of fibre bundles with structure groups often, so we decided to give a definition. 
+
+\begin{definition}
+A \defemphi{fibre bundle} over $B$ with \defemph{fibre} $F$ and \defemphi{structural group} $G$ is:
+\begin{enumerate}[label = \arabic*)]
+    \item A topological space $E$ called the \defemphi{total space}.
+    \item A (continuous) map $\pi:E\varrightarrow{} B$ called the \defemphi{projection map}.
+    \item For each $b\in B$, $\pi^{-1}(b)$ is homeomorphic to $F$.
+    \item An action of the (topological) group $G$ on $F$.
+\end{enumerate}
+These have to have the condition of \defemphi{local triviality} just like vector bundles, but this time respecting the action of $G$. This means we require:
+\begin{enumerate}[label = \arabic*)]\setcounter{enumi}{4}
+    \item For each point $p\in B$, there is a neighborhood $p\in U\subset B$ and a homeomorphism $h:U\times F\varrightarrow{} \pi^{-1}(U)$. This is the same as asserting that there is an atlas $\{(U_\alpha,h_\alpha)\}$ of such maps with the $U_\alpha$ covering $B$.
+    \item For elements of the atlas $h_i:U_i\times F\varrightarrow{} \pi^{-1}(U_i)$ and \newline$h_j:U_j\times F\varrightarrow{} \pi^{-1}(U_j)$,  the map \[h_i^{-1}h_j:(U_i\cap U_j)\times F\varrightarrow{}(U_i\cap U_j)\times F\]  looks like $(b,x)\mapsto (b, g_{ij}(b)x) $ for some continuous $g_{ij}: U_i\cap U_j \varrightarrow{} G$.
+\end{enumerate}
+
+\end{definition}
+
+\begin{note}
+A $\mathbb{R}^n$-bundle with structure group $\GL_n(\mathbb{R})$ is a rank $n$ vector bundle. We can define \defemph{smooth fibre bundles}\index{fibre bundle!\indexline smooth} similarly.
+\end{note}
+\end{document}

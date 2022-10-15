@@ -1,0 +1,77 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+\section{The Universal Bundle \texorpdfstring{$\gamma^n$}{gamma n}}\label{5.2}
+
+A canonical bundle $\gamma^n$ over $\grassmannian_n$ is constructed, just as in the finite
+dimensional case, as follows. Let 
+\[
+\total(\gamma^n)\subset \grassmannian_n\times {\mathbb R}^\infty
+\]
+be the set of all pairs
+\[
+(n\text{-plane in }{\mathbb R}^\infty,\text{ vector in that $n$-plane}),
+\]
+topologized as a subset of the Cartesian product. Define $\pi: \total(\gamma^n) \to \grassmannian_n$
+by $\pi(X, x) = X$, and define the vector space structures in the fibers as
+before.
+
+\begin{lemma}\label{lem:05.04}
+ This vector bundle $\gamma^n$ satisfies the local triviality
+condition.
+\end{lemma}
+The proof will be essentially the same as that of \ref{lem:05.02}. However the
+following technical lemma will be needed. (Compare \cite[\S18.5]{whitehead1961}.)
+\begin{lemma}\label{lem:05.05}\index{Cartesian product} Let $A_1 \subset A_2 \subset \dots$ and $B_1 \subset B_2 \subset \dots$ be sequences
+of locally compact spaces with direct limits $A$ and $B$ respectively. Then the Cartesian product topology on $A \times B$ coincides
+with the direct limit topology which is associated with the sequence $A_1 \times B_1 \subset A_2 \times B_2 \subset\dots$
+\end{lemma}
+\begin{proof} Let $W$ be open in the direct limit topology, and let $(a, b)$ be
+any point of $W$. Suppose that $(a, b) \in A_i \times B_i$. Choose a compact neighborhood $K_i$ of $a$ in $A_i$ and a compact neighborhood $L_i$ of $b$ in $B_i$
+so that $K_i \times L_i \subset W$. It is now possible (with some effort) to choose compact neighborhoods $K_{i+1}$ of $K_i$ in $A_{i+1}$ and $L_{i+1}$ of $L_i$ in $B_{i+1}$ so
+that $K_{i+1} \times L_{i+1}\subset  W$. Continue by induction, constructing neighborhoods
+$K_i \subset K_{i+1} \subset K_{i+2} \subset\dots$ with union $U$ and $L_i \subset L_{i+1} \subset \dots$ with union $V$.
+Then $U$ and $V$ are open sets, and
+\[
+(a, b) \in U \times V \subset W.
+\]
+Thus $W$ is open in the product topology, which completes the proof of \ref{lem:05.05}.
+\end{proof}
+\begin{proof}[Proof of Lemma \ref{lem:05.04}] Let $X_0 \subset \mathbb{R}^\infty$ be a fixed $n$-plane, and let
+$U \subset \grassmannian_n$ be the set of all $n$-planes $Y$ which project \emph{onto} $X_0$ under the
+orthogonal projection $p\colon \mathbb{R}^\infty \to X_0$. This set $U$ is open since, for each
+finite $k$, the intersection
+\[
+U_k=U\cap \grassmannian_n(\mathbb{R}^{n+k})
+\]
+is known to be an open set. Defining
+\[
+h\colon U\times X_0\to \pi^{-1}U
+\]
+as in \ref{lem:05.02}, it follows from \ref{lem:05.02} that $h|_{U_k \times X_0}$ is continuous for each $k$.
+Now Lemma \ref{lem:05.05} implies that $h$ itself is continuous.
+
+As before, the identity $h^{-1}(Y,y) = (Y,py)$ implies that $h^{-1}$ is continuous. Thus $h$ is a homeomorphism. This completes the proof that
+$\gamma^n$ is locally trivial.
+\end{proof}
+
+The following two theorems assert that this bundle $\gamma^n$ over $\grassmannian_n$ is a
+``universal'' $\mathbb{R}^n$-bundle.\index{universal bundle}
+\begin{theorem}\label{thm:05.06} Any $\mathbb{R}^n$-bundle $\xi$ over a paracompact base space admits a bundle map\index{bundle map} $\xi\to \gamma^n$.
+\end{theorem}
+
+Two bundle maps, $f, g\colon \xi\to \gamma^n$ are called \defemph{bundle-homotopic}\index{bundle homotopy} if there
+exists a one-parameter family of bundle maps
+\[
+h_t\colon \xi\to \gamma^n, \quad 0\leq t\leq 1
+\]
+with $h_0 = f$, $h_1 = g$, such that $h$ is continuous as a function of both
+variables. In other words the associated function
+\[
+h\colon \total(\xi)\times [0,1]\to \total(\gamma^n)
+\]
+must be continuous.
+\begin{theorem}\label{thm:05.07} Any two bundle maps from an $\mathbb{R}^n$-bundle to $\gamma^n$
+are bundle-homotopic.
+\end{theorem}
+\end{document} 

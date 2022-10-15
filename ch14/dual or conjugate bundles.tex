@@ -1,0 +1,30 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Dual or Conjugate Bundles}
+
+
+If $\omega$ is a complex vector bundle, the \defemphi{conjugate bundle} $\xoverline{\omega}$ is defined to be the complex vector bundle with the same underlying real vector bundle\index{underlying real bundle $\omega_\bR$} \[\omega_\bR = \xoverline\omega_\bR,\] but with the ``opposite'' complex structure. Thus, the identity map \newline $f:\total(\omega)\varrightarrow{} \total(\xoverline\omega)$ is conjugate linear, \[f(\lambda e) = \xoverline{\lambda}f(e)\] for every complex number $\lambda$ and every $e\in\total(\omega)$. Here $\xoverline\lambda$ is the complex conjugate of $\lambda$. In particular, it follows that $f(ie) = -if(e)$.
+
+As an example, consider the tangent bundle $\tangentbundle{}^1$ of the complex manifold $\projective^1(\bC)$\index{projective space!\indexline complex $\projective^n(\bC)$}.(Ignoring the complex structure, this is jut the tangent bundle of the $2$-sphere). This bundle $\tangentbundle{}^1$ is \defemph{not} isomorphic to its conjugate tangent bundle $\xoverline{\tangentbundle{}}^1$. For any isomorphism $\tangentbundle{}^1\varrightarrow{}\xoverline{\tangentbundle{}}^1$ would have to map each tangent plane of the $2$-sphere onto itself so as to reverse the complex structure (rotation by $i$). Clearly any such map is obtained by reflection in some uniquely defined line in the plane. But we have seen in \ref{pro:09.03} that the 2-sphere does not admit any continuous field of tangent lines.
+
+The chern class of a conjugate bundle can be computed as follows.
+
+\begin{lemma}\label{lem:14.9}
+The Chern class $\chernclass_k(\xoverline{\omega})$ is equal to $(-1)^k \chernclass_k(\omega)$. Hence \[\chernclass(\xoverline{\omega}) = 1-\chernclass_1(\omega)+\chernclass_2(\omega)-\dots \pm \chernclass_n(\omega)\]
+\end{lemma}
+\begin{proof}
+For any fiber $F$ of $\omega$, choose a basis $v_1,\dots,v_n$ for $F$ over $\bC$. Then the basis $v_1,iv_1,\dots,v_n,iv_n$ for the underlying real vector space $F_\bR$ determines the preferred orientation for $F_\bR$. Similarly the basis $v_1,-iv_1,\dots,v_n,-iv_n$ determines the preferred orientation for the conjugate vector space. Thus the two oriented real vector bundles $\omega_\bR$ and $(\xoverline{\omega}_\bR$ have the same orientation if $n$ is even, but the opposite orientation if $n$ is odd. It follows immediately that the top Chern class
+\[\chernclass_n (\omega)=\eulerclass(\omega_\bR)\]
+is equal to $(-1)^n\chernclass_n(\xoverline{\omega})$. To compute $\chernclass_k(\xoverline{\omega})$ for $k<n$, we recall the definition $\chernclass_k(\omega)=\pi_0^{*-1} \chernclass_k(\omega_0)$ where $\omega_0$ is a canonical $(n-1)$-plane bundle over the space $E_0\subset E(\omega)$. It is easy to check that the conjugate bundle $\xoverline{(\omega_0)}$ is canonically isomorphic to $(\xoverline{\omega})_0$, so a straightforward induction shows that
+\[\chernclass_k(\xoverline{\omega}) = (-1)^k \chernclass_k(\omega)\]
+for all k
+\end{proof}
+
+Closely related to the conjugate bundle $\xoverline{\omega}$ is the \defemphi{dual bundle} $\Hom_\bC(\omega,\bC)$. By definition this is the complex vector bundle over the same base space whose typical fiber is equal to the dual $\Hom_\bC(F,\bC)$ of the corresponding fiber $F$ of $\omega$. (compare the analogous discussion for the real vector bundles on p. \pageref{functors on vectors}) To simplify the notation, we will usually omit the subscript $\bC$. 
+
+\defemph{If the complex vector bundle $\omega$ possesses a Hermitian metric\index{Hermitian metric}, not that its dual bundle $\Hom(\omega,\bC)$\index{Hom} is canonically isomorphic to the conjugate bundle $\xoverline\omega$}. For if we are given a Hermitian inner product
+\[\ip{v_1}{v_2}\in \bC\]
+on the typical fiber $F$, linear in the first variable and conjugate linear in the second, then the correspondence
+\[v_2\mapsto \ip{-}{v_2}\]
+maps the conjugate vector space $\xoverline{F}$ isomorphically to the dual vector space $\Hom(F,\bC)$.\newpage
+\end{document}

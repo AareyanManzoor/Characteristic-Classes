@@ -1,0 +1,7 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Cohomology with Compact Support}
+A cochain $c \in C^i M$ is said to have \defemph{compact support} if there exists a compact set $K \subset M$ so that $c$ belongs to the submodule $C^i(M, M - K) \subset C^i M$. In other words $c$ must annihilate every singular simplex in $M - K$. The cochains with compact support form a submodule which will be denoted by $C^i_{c} M \subset C^i M$. The cohomology groups of this complex $C^\bullet_{c} M$ will be denoted by $\homology^i_{c} M$. A straightforward argument \cite[p. 162]{spanier1981} shows that $\homology^i_{c} M$ is isomorphic to the direct limit of the groups $\homology^i(M, M - K)$ as $K$ varies over the directed set consisting of all compact subsets of $M$. If $M$ is compact, note that $\homology^i_{c} M \cong \homology^i M$. 
+
+If $M$ is oriented, then there is an important homomorphism \[\homology^n_{c} M \longrightarrow \Lambda\] which will be denoted by $a \mapsto a[M]$, and called \defemph{integration over $M$}. When $M$ is compact, this can be defined by \[a[M] = \ip a {\mu_M} \in \Lambda.\] In the general case it is necessary to choose some representative \newline $a' \in \homology^n(M, M - K)$ for $a$, and then to define \[a[M] = \ip {a'} {\mu_K}.\] The reader should verify that this definition does not depend on the choice of $K$ and $a'$. 
+\end{document}

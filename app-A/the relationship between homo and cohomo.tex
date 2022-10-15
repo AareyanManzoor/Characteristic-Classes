@@ -1,0 +1,26 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{The Relationship between Homology and Cohomology}
+Henceforth we will assume that $\Lambda$ is a principal ideal domain (for example the integers or a field). In order to simplify notation we will omit reference to $\Lambda$ whenever possible, writing $\homology_n X$ in place of $\homology_n(X; \Lambda)$ for example. The abbreviated notation $\homology_\ast X$ will often be used to denote the entire sequence of groups $(\homology_0 X, \homology_1 X, \homology_2 X, \ldots)$.
+
+\begin{theorem}\label{thm:A.1}
+Suppose that $\homology_{n - 1} X$ is zero or is a free $\Lambda$--module. Then $\homology^n X$ is canonically isomorphic to the module $\Hom_\Lambda(\homology_n X, \Lambda)$ consisting of all $\Lambda$--linear maps from $\homology_n X$ to $\Lambda$. There is a corresponding assertion for pairs $(X, A)$.
+\end{theorem}
+
+(Compare \cite[p. 77]{maclane_1975} or \cite[p. 243]{spanier1981}.) Note that the hypothesis is always satisfied if $\Lambda$ happens to be a field. 
+
+\begin{proof}
+Given elements $x \in \homology^n X$ and $\xi \in \homology_n X$ define the \defemphi{Kronecker index} $\ip x \xi \in \Lambda$ as follows. Choose a representative cocycle $z \in Z^n X$ for $x$ and a representative cycle $\zeta \in Z_n X$ for $\xi$; and set $\ip x \xi$ equal to $\ip z \xi \in \Lambda$. The reader should verify that this does not depend on the choice of $z$ and $\zeta$. Now define a homomorphism \[k : \homology^n X \longrightarrow \Hom_\Lambda(\homology_n X, \Lambda)\] by the identity $k(x)(\xi) = \ip x \xi$.
+
+\begin{proof}[Proof that the homomorphism $k$ is onto]
+First note that the submodule \newline $Z_n X \subset C_n X$ is a direct summand. This follows from the fact that the quotient module \[C_n X/Z_n X \cong B_{n - 1} X \subset C_{n - 1} X\] is a submodule of a free module, and hence is free. (See for example \cite{kaplansky2018infinite}.) Therefore any homomorphism $Z_n X \longrightarrow \Lambda$ can be extended over $C_n X$. 
+
+Let $f$ be an arbitrary element of $\Hom_\Lambda(\homology_n X, \Lambda)$. The composition \[Z_n X \varrightarrow{} \homology_n X \varrightarrow{f} \Lambda\] extends to a homomorphism $F : C_n X \longrightarrow \Lambda$. Since $F$ vanishes on boundaries, it follows that $\delta F = 0$. Let $x \in \homology^n X$ denote the cohomology class of the cocycle $F$. Then for any $\xi \in \homology_n X$ with representative $\zeta \in Z_n X$, we have \[\ip x \xi = F(\zeta) = f(\xi).\] Thus $k(x) = f$, which proves that $k$ is onto. 
+\end{proof}
+
+\emph{Proof that $k$ has kernel zero:}
+Let $z_0 \in Z^n X$ be such that $\ip {z_0} \zeta = 0$ for all cycles $\zeta \in Z_n X$. We must prove that $z_0$ is a coboundary. 
+
+Since $z_0$ annihilates cycles, it follows that the composition \newline $z_0 \partial^{-1} : B_{n - 1} X \longrightarrow \Lambda$ is well--defined. The quotient \[Z_{n - 1} X/B_{n - 1} X = \homology_{n - 1} X\] is assumed to be free, so it follows that $B_{n - 1} X$ is a direct summand of $Z_{n - 1} X$, and hence of $C_{n - 1} X$. Therefore the homomorphism $z_0 \partial^{-1}$ can be extended over $C_{n - 1} X$. Let \[f : C_{n - 1} X \longrightarrow \Lambda\] be such an extension; then \[\ip {\delta f} {[\sigma]} = \pm \ip f {\partial[\sigma]} = \pm z_0 \partial^{-1} (\partial[\sigma]) = \pm \ip {z_0} {[\sigma]}.\] Thus $\pm z_0$ is equal to the coboundary of $f$, as required.
+\end{proof}
+\end{document}

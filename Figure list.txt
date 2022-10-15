@@ -1,0 +1,15 @@
+Smooth manifolds - one figure, Figure 1. % Yohan, done
+
+Vector bundles - two figures, Figure 2, Figure 3. % done by old tex
+
+Constructing new bundles - one figure, Figure 4. % done by old tex
+
+Stiefel-whitney classes - two figure, figure 5, Page 53 % done by old tex group
+
+Grassmann Manifolds and universal bundles, ch5 - two figures, Figure 6, Figure 7. %Done, will be employed when it is texed
+
+Obstructions, ch12 - page 142 composed of two figures % yohan, Done.
+
+Pontriagin Classes, ch15 - page 176 % Yohan, Done 
+
+appenix C - page 313, Figure 8. % Yohan, Done

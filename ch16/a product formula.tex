@@ -1,0 +1,46 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{A Product Formula}
+Let $\omega$ be a complex $n$--plane bundle with base space $B$ and with total Chern class $\chernclass = 1 + \chernclass_1 + \ldots + \chernclass_n$. For any $k \ge 0$ and any partition $I$ of $k$ the cohomology class \[s_I(\chernclass_1, \ldots, \chernclass_k) \in \homology^{2k}(B; \mathbb Z)\] will be denoted briefly by the symbol $s_I(\chernclass)$ or $s_I(\chernclass(\omega))$.
+
+\begin{lemma}[Thom]\index{Thom, R.}
+\label{lem:16.2}\index{product formulas}\index{Chern class $\chernclass_i$}
+The characteristic class $s_I(\chernclass(\omega \oplus \omega'))$ of a Whitney sum is equal to \[\sum_{JK = I} s_J(\chernclass(\omega)) s_K(\chernclass(\omega')),\] to be summed over all partitions $J$ and $K$ with juxtaposition $JK$ equal to $I$. 
+\end{lemma}
+
+As an example, since the single element partition of $k$ can be expressed as a juxtaposition only in two trivial ways, we obtain the following. 
+
+\begin{corollary}
+The characteristic class $s_k(\chernclass(\omega \oplus \omega'))$ of a Whitney sum is equal to $s_k(\chernclass(\omega)) + s_k(\chernclass(\omega'))$. 
+\end{corollary}
+
+\begin{proof}[Proof of \ref{lem:16.2}]
+Consider a polynomial ring $\mathbb Z[t_1, \ldots, t_{2n}]$ in $2n$ indeterminates, and let $\omega_k$ [respectively $\sigma'_k$] be the $k$--th elementary symmetric function of the indeterminates $t_1, \ldots, t_n$ [respecitvely $t_{n + 1}, \ldots, t_{2n}$]. Then defining \[\sigma''_k = \sum_{i = 0}^k \sigma_i \sigma'_{k - i},\] it is clear that $\sigma''_k$ is equal to the $k$--th elementary symmetric function of $t_1, \ldots, t_{2n}$. We will verify the identity \[s_I(\sigma''_1, \ldots, \sigma''_k) = \sum_{JK = I} s_J(\sigma_1, \sigma_2, \ldots) s_K(\sigma'_1, \sigma'_2, \ldots)\] for any partition $I = i_1, \ldots, i_r$ of $k$. Since the classes $\omega_1, \ldots, \omega_k, \omega'_1, \ldots, \omega'_k$ are algebraically independent (assuming as we may that $k \le n$), this identity together with the product theorem for Chern classes will clearly complete the proof.
+
+By definition, the element \[s_I(\omega''_1, \ldots, \omega''_k) \in \mathbb Z[t_1, \ldots, t_{2m}]\] is equal to the sum of all monomials which can be written in the form $t_{\alpha_1}^{i_1} \ldots t_{\alpha_r}^{i_r}$, with $\alpha_1, \ldots, \alpha_r$ distinct numbers between $1$ and $2n$. For each such monomial let $J$ [respectively $K$] be the partition formed by those exponents $i_q$ such that $1 \le \alpha_q \le n$ [respectively $n + 1 \le \alpha_q \le 2n$]. The sum of all terms corresponding to a given decomposition $JK = I$ is clearly equal to \[s_J(\sigma_1, \sigma_2, \ldots) s_K(\sigma_1', \sigma_2', \ldots).\] Since every such decomposition occurs, this completes the proof. 
+\end{proof}
+
+Now consider a compact complex manifold $K^n$ of complex dimension $n$. For each partition $I$ of $n$ the notation $s_I(\chernclass)[K^n]$, or briefly $s_I[K^n]$, will stand for the characteristic number \[\ip {s_I(\chernclass(\tau^n))} {\mu_{2n}} \in \mathbb Z.\] This characteristic number is of course equal to a suitable linear combination of Chern numbers.
+
+\begin{corollary}\label{cor:16.4}
+The characteristic number $s_I[K^m \times L^n]$ of a product of complex manifolds is equal to \[\sum_{I_1 I_2 = I} s_{I_1}[K^m] s_{I_2} [L^n],\] to be summed over all partitions $I_1$ of $m$ and $I_2$ of $n$ with juxtaposition $I_1 I_2$ equal to $I$. 
+\end{corollary}
+
+\begin{proof}
+For the tangent bundle of $K^m \times L^n$ splits as a Whitney sum \[\tau \times \tau' \cong (\pi^\ast_1 \tau) \oplus (\pi^\ast_2 \tau')\] where $\pi_1$ and $\pi_2$ are the projection maps onto the two factors. Hence the characteristic number \[\ip {s_I(\tau \times \tau')} {\mu_{2n} \times \mu'_{2n}}\] is equal to \[\sum_{I_1 I_2 = I} \ip {s_{I_1}(\tau)} {\mu_{2m}} \ip {s_{I_2}(\tau')} {\mu'_{2n}}.\] There are no signs in this formula, since these classes are all even dimensional.
+\end{proof}
+
+As a special case, we clearly have the following.
+
+\begin{corollary}
+For any product $K^m \times L^n$ of complex manifolds of dimensions $m, n \ne 0$, the characteristic number $s_{m + n}[K^m \times L^n]$ is zero. 
+\end{corollary}
+
+This corollary suggests the importance of the characteristic number $s_m[K^m]$. Here is an example to show that this characteristic number is not always zero. 
+
+\begin{customexample}{16.6}\label{ex:16.6}
+For the complex projective space ${\mathbb P}^n(\mathbb C)$\index{projective space!\indexline complex $\projective^n(\bC)$}, since $\chernclass(\tau) = (1 + a)^{n + 1}$ it follows that $\chernclass_k(\tau)$ is equal to the $k$--th elementary symmetric function of $n + 1$ copies of $a$. Therefore $s_k(\chernclass_1, \ldots, \chernclass_k)$ is equal to the sum of $n + 1$ copies of $a^k$, that is \[s_k = (n + 1)a^k.\] Taking $k = n$, it follows that \[s_n[{\mathbb P}^n(\mathbb C)] = n + 1 \ne 0.\] Thus ${\mathbb P}^n(\mathbb C)$ cannot be expressed non--trivially as a product of complex manifolds. 
+\end{customexample}\setcounter{theorem}{6}
+
+Completely analogous formulas are true for Pontrjagin classes and Pontrjagin numbers. If $\xi$ is a real vector bundle over $B$, then for any partition $I$ of $n$ the characteristic classes\index{Pontrjagin number} \[s_I(\pontrjaginclass_1(\xi), \ldots, \pontrjaginclass_n(\xi)) \in \homology^{4n}(B; \mathbb Z)\] is denoted briefly by $s_I(\pontrjaginclass(\xi))$. The congruence \[s_I(\pontrjaginclass(\xi \oplus \xi')) = \sum_{JK = I} s_J(\pontrjaginclass(\xi)) s_K(\pontrjaginclass(\xi'))\] modulo elements of order $2$ clearly follows from the proof of \ref{lem:16.2}. Hence there is a corresponding equality \[s_I(\pontrjaginclass)[M \times N] = \sum_{JK = I} s_J(\pontrjaginclass)[M] s_K(\pontrjaginclass)[N]\] for characterisitc numbers. In particular, these characteristic numbers of $M \times N$ are zero unless the dimensions of $M$ and $N$ are divisible by $4$. 
+\end{document}

@@ -1,0 +1,43 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{The Tangent Bundle}
+Let $M$ be a Riemannian manifold. Then the product $M \times M$ also has the structure of a Riemannian manifold, the length of the tangent vector \[(u, v) \in \tangentspace M x \times \tangentspace M y \cong \tangentspace {(M \times M)} {(x, y)}\] being defined by \[|(u, v)|^2 = |u|^2 + |v|^2,\] and the inner product of two such vectors being defined by \[(u, v) \cdot (u', v') = u \cdot u' + v \cdot v'.\] Note that the diagonal mapping\index{diagonal $\Delta$} \[x \mapsto \Delta(x) = (x, x)\] embeds $M$ smoothly as a closed subset of $M \times M$. (This diagonal embedding is almost an isometry: it multiplies all lengths by $\sqrt 2$.)
+
+\begin{lemma}\label{lem:11.5}
+The normal bundle $\nu^n$\index{normal bundle} associated with the diagonal embedding of $M$ in $M \times M$ is canonically isomorphic to the tangent bundle of $M$.\index{tangent bundle $\tangentbundle{M}$} 
+\end{lemma}
+
+\begin{proof}
+Evidently a vector \[(u, v) \in \tangentspace M x \times \tangentspace M y \cong \tangentspace {(M \times M)} {(x, x)}\] is tangent to $\Delta(M)$ if and only if $u = v$, and normal to $\Delta(M)$ if and only if $u + v = 0$. Thus each tangent vector $v \in \tangentspace M x$ corresponds uniquely to a normal vector $(-v, v) \in \tangentspace {(M \times M)} {(x, x)}$. This correspondence \[(x, v) \mapsto ((x, x), (-v, v))\] maps the tangent manifold $\tangentTS M = E(\tangentbundle M)$ diffeomorphically onto the total space $E(\nu^n)$.
+\end{proof}
+
+We will be particularly interested in Riemannian manifolds\index{Riemannian manifold} $M$ for which the tangent bundle $\tangentbundle M$ is oriented. 
+
+\begin{lemma}\index{oriented manifold}
+\label{lem:11.6}
+Any orientation for the tangent bundle $\tangentbundle M$ gives rise to an orientation for the underlying topological manifold $M$, and conversely any orientation for $M$ gives rise to an orientation for $\tangentbundle M$. 
+\end{lemma}
+
+\begin{proof}
+As defined in Appendix \ref{app:A}, an \defemph{orientation} for a topological manifold $M$ is a function which assigns to each point $x$ of $M$ a preferred generator $\mu_x$ for the infinite cyclic group $\homology_n(M, M - x)$, using integer coefficients. These preferred generators are required to ``vary continuously'' with $x$, in the sense that $\mu_x$ corresponds to $\mu_y$ under the isomorphisms \[\homology_n(M, M - x) \longleftarrow \homology_n(M, M - N) \longrightarrow \homology_n(M, M - y),\] where $N$ denotes a nicely embedded $n$-cell neighborhood of $x$ and $y$ is any point of $N$. 
+
+Similarly, an orientation for the vector bundle $\tangentbundle M$ can be specified by assigning a preferred generator $\mu'_x$ to the infinite cyclic group $\homology_n(\tangentspace M x, \tangentspace M x - 0)$ for each $x$. These generators $\mu'_x$ must vary continuously with $x$, for example in the sense that $\mu_x'$ corresponds to $\mu_y'$ under the isomorphisms \[\homology_n(\tangentspace M x, \tangentspace M x - 0) \longrightarrow \homology_n(\tangentTS N, \tangentTS N - (N \times 0)) \longleftarrow \homology_n(\tangentspace M y, \tangentspace M y - 0)\] where $N$ denotes an $n$-cell neighborhood and $y \in N$. (Compare \S\ref{ch:9}.)
+
+But the homology group $\homology_n(M, M - x)$ is canonically isomorphic to\newline $\homology_n(\tangentspace M x, \tangentspace M x - 0)$ as one sees by applying Corollary \ref{cor:11.02} to the $0$-dimensional manifold $x$, embedded in $M$ as a closed subset with normal bundle $\tangentspace M x$. The proof that $\mu_x$ varies continuously with $x$ if and only if the corresponding generators $\mu_x'$ vary continuously with $x$ is not difficult. In fact, since the problem is purely local, it suffices to consider the special case where $M$ is Euclidean space with the standard metric. Details will be left to the reader.
+\end{proof}
+
+Let us study homology and cohomology of $M$ with coefficients in some fixed commutative ring $\Lambda$. \defemph{We will always assume either that $M$ is oriented or that $\Lambda = {\mathbb Z}/2$}. It follows from Corollary \ref{cor:11.02} that there is a fundamental cohomology class\index{diagonal $\Delta$}\index{fundamental class!\indexline cohomology} \[u' \in \homology^n(M \times M, M \times M - \Delta(M))\] with coefficients in $\Lambda$. By Lemma \ref{lem:11.13}, the restriction of $u'$ to the diagonal submanifold $\Delta(M) \cong M$ is equal to the Euler class\index{Euler class $\eulerclass$} \[\eulerclass(\nu^n) = \eulerclass(\tangentbundle M)\] with coefficient ring $\Lambda$, in the oriented case, or to the Stiefel-Whitney class $\sw_n(\tangentbundle M)$ in the mod $2$ case.
+
+This cohomology class $u'$ can be characterized more explicitly as follows. Note that each cohomology group $\homology^n(M, M - x)$ has a preferred generator $u_x$, defined by the condition \[\ip {u_x} {\mu_x} = 1.\] (In the mod $2$ case, $u_x$ is the unique non-zero element of $\homology^n(M, M - x)$.) Define the canonical embedding \[j_x : (M, M - x) \longrightarrow (M \times M, M \times M - \Delta(M))\] by setting $j_x(y) = (x, y)$. 
+
+\begin{lemma}
+\label{lem:11.7}
+The class $u' \in \homology^n(M \times M, M \times M - \Delta(M))$ is uniquely characterized by the property that its image $j_x^\ast(u')$ is equal to the preferred generator $u_x$ for every $x \in M$. 
+\end{lemma}
+
+\begin{proof}
+By its construction (Theorem \ref{thm:10.4} and Corollary \ref{cor:11.02}), the cohomology class $u'$ can be uniquely characterized as follows. For any $x$ and any small neighborhood $N$ of zero in the tangent space $\tangentspace M x$, consider the embedding \[(N, N - 0) \longrightarrow (M \times M, M \times M - \Delta(M))\] defined by the exponential map \[v \mapsto (\Exp(x, - v), \Exp(x, v)).\] Then the induced cohomology homomorphism must map $u'$ to the preferred generator for the module $\homology^n(N, N - 0) \cong \homology^n(\tangentspace M x, \tangentspace M x - 0)$ 
+
+Making use of the homotopy $(v, t) \mapsto (\Exp(x, - tv), \Exp(x, v))$ for $0 \le t \le 1$, it follows that we can equally well use the embedding of $(N, N - 0)$ in \newline $(M \times M, M \times M - \Delta(M))$ defined by \[v \mapsto (x, \Exp(x, v)).\] Since this is the composition of $j_x$ with the canonical embedding \[\Exp : (N, N - 0) \longrightarrow (M, M - x)\] which was used to prove \ref{lem:11.6}, the conclusion follows.\index{exponential map}
+\end{proof}
+\end{document}

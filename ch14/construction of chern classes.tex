@@ -1,0 +1,51 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Construction of Chern Classes}
+
+We will now give an inductive definition of characteristic classes for a complex $n$-plane bundle $\omega$. It is first necessary to construct a canonical $(n-1)$-plane bundle $\omega_{0}$ over the deleted total space $\total_{0}$. (As in the real case, $\total_{0}=\total_{0}(\omega)$\index{E0@$E_0$} denotes the set of all non-zero vectors in the total space $\total(\omega)=\total\left(\omega_{\bR}\right)$.) A point in $\total_{0}$ is specified by a fiber $F$ of $\omega$ together with a non-zero vector $v$ in that fiber. First suppose that a Hermitian metric has been specified on $\omega$.\defemph{Then the fiber of $\omega_{0}$ over $v$ is by definition, the orthogonal complement of $v$ in the vector space $F$}\index{orthogonal complement $\xi^\perp$}. This is a complex vector space of dimension $n-1$, and these vector spaces clearly can be considered as the fibers of a new vector bundle $\omega_{0}$ over $\total_{0}$.
+
+Alternatively, without using a Hermitian metric, the fiber of $\omega_0$ over $v$ can be defined as the quotient vector space $F/\bC v$ where $\bC v$ is the 1-dimensional subspace spanned by the vector $v\neq 0$. In the presence of a Hermitian metric, it is of course clear that this quotient space is canonically isomorphic to the orthogonal complement of $v$ in $F$.
+
+Recall (Theorem \ref{thm:12.02}) that any real oriented $2n$-plane bundle possesses an exact \defemphi{Gysin sequence} 
+\[
+\dots\varrightarrow{}\homology^{i-2n}(\B)\varrightarrow{\smile \eulerclass}\homology^i(\B)\varrightarrow{\pi_0^\ast}\homology^i(\total_0)\varrightarrow{}\homology^{i-2n+1}(\B)\varrightarrow{}\dots
+\]
+with integer coefficients. For $i<2n-1$ the groups $\homology^{i-2n}(\B)$ and $\homology^{i-2n+1}(\B)$ are zero, so it follows that $\pi_0^\ast:\homology^i(\B)\varrightarrow{}\homology^i(\total_0)$ is an isomorphism.
+\begin{definition}
+The Chern classes $\chernclass_i(\omega)\in\homology^{2i}(\B;\,\mathbb{Z})$ are defined as follows, by induction on the complex dimension $n$ of $\omega$. The \defemph{top Chern class}\index{Chern class $\chernclass_i$!\indexline top} $\chernclass_n(\omega)$ is equal to the Euler class\index{Euler class $\eulerclass$} $\eulerclass(\omega_\bR)$. For $i<n$ we set 
+\[\chernclass_i(\omega) = {\pi_0^\ast}^{-1}\chernclass_i(\omega_0).\]
+This expression makes sense since $\pi_0^\ast:\homology^{2i}(\B)\varrightarrow{}\homology^{2i}(\total_0)$ is an isomorphism for $i<n$. Finally, for $i>n$ the class $\chernclass_i(\omega)$ is defined to be zero.
+\end{definition}
+The formal sum $\chernclass(\omega) = 1+\chernclass_1(\omega)+\dots+\chernclass_n(\omega)$ in the ring $\homology^\Pi(\B;\,\mathbb{Z})$ is called the \defemph{total Chern class}\index{Chern class $\chernclass_i$!\indexline total} of $\omega$. Clearly $\chernclass(\omega)$ is a unit, so that the inverse 
+\[\chernclass(\omega)^{-1} = 1 - \chernclass_1(\omega) + (\chernclass_1(\omega)^2 - \chernclass_2(\omega)) + \dots\]
+is well-defined.
+\begin{lemma}[Naturality]
+\label{lem:14.02}
+If $f:B\varrightarrow{}B^\prime$ is covered by a bundle map from the complex $n$-plane bundle $\omega$ over $\B$ to the complex $n$-plane bundle $\omega^\prime$ over $\B^\prime$, then $\chernclass(\omega) = f^\ast \chernclass(\omega^\prime)$.
+\end{lemma}
+\begin{proof}[Proof by induction on $\mathrm{n}$.]
+The top Chern class is natural, $\chernclass_n(\omega) = f^\ast \chernclass_n(\omega^\prime)$, since Euler classes are natural (Property \ref{pro:09.02}). To prove the corresponding statement for lower Chern classes, first note that the bundle map $\omega\varrightarrow{}\omega^\prime$ gives rise to a map \[f_0:\total_0(\omega)\varrightarrow{}\total_0(\omega^\prime)\] which clearly is covered by a bundle map $\omega_0\varrightarrow{}\omega_0^\prime$ of $(n-1)$-plane bundles. Hence $\chernclass_i(\omega_0) = f^\ast_0\chernclass_i(\omega_0^\prime)$ by the induction hypothesis. Using the commutative diagram
+
+\begin{figure}[h]
+\centering
+\begin{tikzcd}
+	{\total_0(\omega)} && {\total_0(\omega^\prime)} \\
+	\\
+	\B && {\B^\prime}
+	\arrow["{\pi_0}", from=1-1, to=3-1]
+	\arrow["{f_0}", from=1-1, to=1-3]
+	\arrow["f", from=3-1, to=3-3]
+	\arrow["{\pi_0^\prime}", from=1-3, to=3-3]
+\end{tikzcd}
+\end{figure}
+
+\noindent and the identities $\chernclass_i(\omega_0)=\pi^\ast_0 \chernclass_i(\omega)$ and $\chernclass_i(\omega_0^\prime)={\pi_0^\prime}^\ast \chernclass_i(\omega^\prime)$ where $\pi_0^\prime$ is an isomorphism for $i<n$, it follows that $\chernclass_i(\omega) = f^\ast \chernclass_i(\omega^\prime)$, as required.
+\end{proof}
+\begin{lemma}
+\label{lem:14.03}
+If $\trivialbundle^k$ is the trivial complex $k$-bundle over $\B = \B(\omega)$, then \newline $\chernclass(\omega \oplus \trivialbundle^k) = \chernclass(\omega)$.
+\end{lemma}
+\begin{proof}
+It is sufficient to consider the special case $k=1$, since the general case then follows by induction. Let $\phi = \omega\oplus\trivialbundle^1$. Since the $(n+1)$-plane bundle $\phi$ has a non-zero cross-section, it follows by property \ref{pro:09.07} that the top Chern class $\chernclass_{n+1}(\phi) = \eulerclass(\phi_\bR)$ is zero, and hence equal to $\chernclass_{n+1}(\omega)$. Let $s:\B\varrightarrow{} \total_0(\omega\oplus\trivialbundle^1)$ be the obvious cross-section. Clearly $s$ is covered by a bundle map $\omega\varrightarrow{} \phi_0$, hence \[s^\ast \chernclass_i(\phi_0)=\chernclass_i(\omega)\] by \ref{lem:14.02}. Substituting $\pi^\ast_0 \chernclass_i(\phi)$ for $\chernclass_i(\phi_0)$, and using the formula $s^\ast \circ \pi_0^\ast = \id$, it follows that $\chernclass_i(\phi) = \chernclass_i(\omega)$, as required. 
+\end{proof}
+\end{document}

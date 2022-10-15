@@ -1,0 +1,44 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Division Algebras}\label{sec:4.2}\index{division algebra}
+
+Closely related is the question of the existence of real division algebras.
+
+\begin{theorem}[Stiefel]\index{Stiefel, E.}
+\label{thm:04.07}
+Suppose that there exists a bilinear\index{bilinear}
+product operation\footnote{This product operation is not required to be associative, or to have an identity element.}
+\[
+p:\bR^n\times\bR^n\varrightarrow{}\bR^n
+\]
+without zero divisors. Then the projective space $\projective^{n-1}$ is parallelizable\index{parallelizable}, hence $n$ must be a power of 2.
+\end{theorem}
+
+In fact such division algebras are known to exist for $n =1, 2, 4, 8$: namely the real numbers, the complex numbers, the quaternions\index{quaternions $\mathbb{H}$}, and the Cayley numbers\index{Cayley numbers}. It follows that the projective spaces $\projective^{1}, \projective^{3}$ and $\projective^{7}$ are parallelizable. That no such division algebra exists for $n > 8$ follows from the references cited above on parallelizability.	
+
+\begin{proof}[Proof of \ref{thm:04.07}]
+Let $b_1,\dots, b_n$ be the standard basis for the vector space $\bR^n$. Note that the correspondence $y\mapsto p(y,b_1)$ defines an isomorphism of $\bR^n$ onto itself. Hence the formula 
+\[
+v_{i}(p(y, b_{1}))=p(y, b_{i})
+\] 
+defines a linear transformation 
+\[
+v_i:\bR^n\varrightarrow{}\bR^n.
+\]
+Note that $v_{1}(x), \dots, v_{n}(x)$ are linearly independent for $x\neq 0$, and that $v_1(x) = x$.
+
+The functions $v_{2}, \dots, v_{n}$ give rise to $n-1$ linearly independent cross-sections of the vector bundle 
+\[
+\tau_{\projective^{n-1}}\cong\Hom(\tautological^1_{n-1},\tautological^\perp).
+\] 
+In fact for each line $L$ through the origin, a linear transformation
+\[
+\xoverline{v}_{i}:{L}\varrightarrow{} L^{\perp}
+\]
+is defined as follows. For $x \in L$, let $\xoverline{v}_{i}(x)$ denote the image of $v_{i}(x)$ under the orthogonal projection 
+\[
+\bR^{n} \longrightarrow L^{\perp}.
+\]
+Clearly $\xoverline{v}_{1}=0$, but $\xoverline{v}_{2}, \dots, \xoverline{v}_{n}$ are everywhere linearly independent. Thus the tangent bundle $\tau_{\projective^{n-1}}$ is a trivial bundle. This completes the proof of \ref{thm:04.07}.
+\end{proof}
+\end{document}

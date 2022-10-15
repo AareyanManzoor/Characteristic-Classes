@@ -1,0 +1,106 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{The Product Theorem for Chern Classes}
+Consider two complex vector bundles $\omega$ and $\phi$ over a common paracompact base space $\base$. We want to prove the formula\index{Chern product theorem}\index{product formulas}\index{Whitney sum}
+\[\tag{14.7}\label{eqn:14.07}
+\chernclass(\omega \oplus \phi)=\chernclass(\omega) \chernclass(\phi)
+\]
+which expresses the total Chern class of a Whitney sum $\omega \oplus \phi$ in terms of the total Chern classes of $\omega$ and $\phi$. As a first step in this direction, we prove the following.
+
+\setcounter{theorem}{7}
+\begin{lemma}\label{lem:14.08}
+ There exists one and only one polynomial
+\[
+p_{m, n}=p_{m, n}(\chernclass_{1}, \ldots, \chernclass_{m} ; \chernclass_{1}^{\prime}, \ldots, \chernclass_{n}^{\prime})
+\]
+with integer coefficients in $m+n$ indeterminates so that the identity
+\[
+\chernclass(\omega \oplus \phi)=p_{m, n}(\chernclass_{1}(\omega), \ldots, \chernclass_{m}(\omega) ; \chernclass_{1}(\phi), \ldots, \chernclass_{n}(\phi))
+\]
+is valid for every complex $m$-plane bundle $\omega$ and every complex n-plane bundle $\phi$ over a common paracompact base space $\base$.
+\end{lemma}
+
+\begin{proof} As a universal model for pairs of complex vector bundles over a common base space we take the two vector bundles $\tautological_{1}^{m}$ and $\tautological_{2}^{n}$ over $\grassmannian_{m} \times \grassmannian_{n}$ constructed as follows. Let $\tautological_{1}^{m}=\pi_{1}^{*}(\tautological^{m})$ where $\pi_{1}: \grassmannian_{m} \times \grassmannian_{n} \varrightarrow{} \grassmannian_{m}$ is the projection map to the first factor. Similarly let $y_{2}^{n}=\pi_{2}^{*}(\tautological^{n})$ where $\pi_{2}$ is the projection map to the second factor. Thus the Whitney sum $\tautological_{1}^{m} \oplus \tautological_{2}^{n}$ can be identified with the cartesian product bundle $\tautological^{m} \times \tautological^{n}$.
+
+We will make use of the fact that the external cohomology cross product operation\index{cross product}
+\[
+a, b \mapsto a \times b=\pi_{1}^{*} a \smile \pi_{2}^{*} b
+\]
+induces an isomorphism
+\[
+\homology^{*}(\grassmannian_{m}) \otimes \homology^{*}(\grassmannian_{n}) \varrightarrow{} \homology^{*}(\grassmannian_{m} \times \grassmannian_{n})
+\]
+of integral cohomology. In fact, for the case of finite CW-complexes $K$ and $L$ with $\homology^{*}(L)$ free abelian, the Künneth isomorphism\index{Künneth theorem} $\homology^{*}(K) \otimes \homology^{*}(L)\varrightarrow{\cong} \homology^{*}(K \times L)$ is established in Appendix \ref{app:A}. The corresponding assertion for our infinite CW-complexes'\index{CW-complex} $\grassmannian_{m}$ and $\grassmannian_{n}$ follows immediately, since each skeleton of $\grassmannian_{m}$ or $\grassmannian_{n}$ is finite.
+
+Therefore $\homology^{*}(\grassmannian_{m} \times \grassmannian_{n})$ is a polynomial ring over $\mathbb{Z}$ on the algebraically independent generators
+\[
+\pi_{1}^{*} \chernclass_{i}(\tautological^{m})=\chernclass_{i}(\tautological_{1}^{m}), \quad 1 \leq i \leq m
+\]
+and
+\[
+\pi_{2}^{*} \chernclass_{j}(\tautological^{n})=\chernclass_{j}(\tautological_{2}^{n}), \quad 1 \leq j \leq n .
+\]
+Hence the total Chern class of $\tautological_{1}^{m} \oplus \tautological_{2}^{n}$ can be expressed uniquely as a polynomial
+\[
+\chernclass(\tautological_{1}^{m} \oplus \tautological_{2}^{n})=p_{m, n}(\chernclass_{1}(\tautological_{1}^{m}), \ldots, \chernclass_{m}(\tautological_{1}^{m}) ; \chernclass_{1}(\tautological_{2}^{n}), \ldots, \chernclass_{n}(\tautological_{2}^{n})) .
+\]
+
+Now if $\omega$ is a complex $m$-plane bundle over $\base$ and $\phi$ is a complex n-plane bundle over $\base$, we can choose maps $f: \base \varrightarrow{} \grassmannian_{m}$ and $g: \base \varrightarrow{} \grassmannian_{n}$ so that
+\[
+f^{*}(\tautological^{m}) \cong \omega, \, g^{*}(\tautological^{n}) \cong \phi .
+\]
+Defining the map $h: \base \varrightarrow{} \grassmannian_{m} \times \grassmannian_{n}$ by $h(b)=(f(b), g(b))$, note that the following diagram is commutative.
+% https://q.uiver.app/?q=WzAsNSxbMiwwLCJcXGJhc2UiXSxbMCwxXSxbMCwyLCJcXGdyYXNzbWFubmlhbl9tIl0sWzIsMiwiXFxncmFzc21hbm5pYW5fbSBcXHRpbWVzIFxcZ3Jhc3NtYW5uaWFuX24iXSxbNCwyLCJcXGdyYXNzbWFubmlhbl9uIl0sWzAsMiwiZiJdLFswLDQsImciLDJdLFswLDMsImgiLDJdLFszLDIsIlxccGlfMSIsMl0sWzMsNCwiXFxwaV8yIiwyXV0=
+\[\begin{tikzcd}
+	&& \base \\
+	{} \\
+	{\grassmannian_m} && {\grassmannian_m \times \grassmannian_n} && {\grassmannian_n}
+	\arrow["f", from=1-3, to=3-1]
+	\arrow["g"', from=1-3, to=3-5]
+	\arrow["h"', from=1-3, to=3-3]
+	\arrow["{\pi_1}"', from=3-3, to=3-1]
+	\arrow["{\pi_2}"', from=3-3, to=3-5]
+\end{tikzcd}\]
+It follows that
+\[
+h^{*}(\tautological_{1}^{m}) \cong \omega,\, h^{*}(\tautological_{2}^{n}) \cong \phi
+\]
+and hence
+\[
+\begin{aligned}
+\chernclass(\omega \oplus \phi) &=h^{*} \chernclass(\tautological_{1}^{m}\oplus  \tautological_{2}^{n}) \\
+&=p_{m, n}(\chernclass_{1}(\omega), \ldots, \chernclass_{m}(\omega) ; \chernclass_{1}(\phi), \ldots, \chernclass_{n}(\phi))
+\end{aligned}
+\]
+as required.\end{proof}
+
+To actually compute these polynomials $p_{m, n}$ we proceed by induction on $m+n$ as follows. Suppose inductively that $\chernclass(\tautological_{1}^{m-1} \oplus \tautological_{2}^{n})$ is equal to
+\[
+(1+\chernclass_{1}(\tautological_{1}^{m-1})+\ldots+\chernclass_{m-1}(\tautological_{1}^{m-1}))(1+\chernclass_{1}(\tautological_{2}^{n})+\ldots+\chernclass_{n}(\tautological_{2}^{n})) .
+\]
+Consider the two vector bundles $\tautological_{1}^{m-1} \oplus \varepsilon^{1}$ and $\tautological_{2}^{n}$ over $\grassmannian_{m-1} \times \grassmannian_{n}$, where $\varepsilon^{1}$ is a trivial line bundle. By \ref{lem:14.08} we have
+\[\chernclass(\tautological_{1}^{m-1} \oplus \varepsilon^{1} \oplus \tautological_{2}^{n})=p_{m, n}(\chernclass_{1}(\tautological_{1}^{m-1} \oplus \varepsilon^{1}), \ldots, \chernclass_{m}(\tautological_{1}^{m-1} \oplus \varepsilon^{1}) ; \chernclass_{1}(\tautological_{2}^{n}), \ldots, \chernclass_{n}(\tautological_{2}^{n}))\]
+But according to \ref{lem:14.03} the $\varepsilon^{1}$ summand can always be ignored, so we have the alternative formula
+\[
+\begin{aligned}
+\chernclass(\tautological_{1}^{m-1} \oplus \tautological_{2}^{n}) &=\chernclass(\tautological_{1}^{m-1} \oplus \varepsilon^{1} \oplus \tautological_{2}^{n}) \\
+&=p_{m, n}(\chernclass_{1}(\tautological_{1}^{m-1}), \ldots, \chernclass_{m-1}(\tautological_{1}^{m-1}), 0 ; \chernclass_{1}(\tautological_{2}^{n}), \ldots, \chernclass_{n}(\tautological_{2}^{n})) .
+\end{aligned}
+\]
+Comparing the induction hypothesis, and substituting indeterminates $\chernclass_{i}$ and $\chernclass_{j}^{\prime}$ for the algebraically independent elements $\chernclass_{i}(\tautological_{1}^{m-1})$ and $\chernclass_{j}(\tautological_{2}^{n})$, this yields
+\[
+p_{m, n}(\chernclass_{1}, \ldots, \chernclass_{m-1}, 0 ; \chernclass_{1}^{\prime}, \ldots, \chernclass_{n}^{\prime})=(1+\chernclass_{1}+\ldots+\chernclass_{m-1})(1+\chernclass_{1}^{\prime}+\ldots+\chernclass_{n}^{\prime})
+\]
+Introducing a new indeterminate $\chernclass_{m}$, it follows that the congruence
+\[p_{m, n}(\chernclass_{1}, \ldots, \chernclass_{m} ; \chernclass_{1}^{\prime}, \ldots, \chernclass_{n}^{\prime}) \equiv(1+\chernclass_{1}+\ldots+\chernclass_{m})(1+\chernclass_{1}^{\prime}+\ldots+\chernclass_{n}^{\prime}) \quad(\bmod \chernclass_{m})\] is valid in the polynomial ring $\mathbb{Z}[\chernclass_{1}, \ldots, \chernclass_{m}, \chernclass_{1}^{\prime}, \ldots, \chernclass_{n}^{\prime}]$. A similar inductive argument shows that these two polynomials are congruent modulo $\chernclass_{n}^{\prime}$. Since \newline $\mathbb{Z}[\chernclass_{1}, \ldots, \chernclass_{m}, \chernclass_{1}^{\prime}, \ldots, \chernclass_{n}^{\prime}]$ is a unique factorization domain, it follows that they are congruent modulo the product $\chernclass_{m} \chernclass_{n}^{\prime}$; that is
+\[
+p_{m, n}(\chernclass_{1}, \ldots, \chernclass_{m} ; \chernclass_{1}^{\prime}, \ldots, \chernclass_{n}^{\prime})=(1+\chernclass_{1}+\ldots+\chernclass_{m})(1+\chernclass_{1}^{\prime}+\ldots+\chernclass_{n}^{\prime})+u\chernclass_{m} \chernclass_{n}^{\prime}
+\]
+for some polynomial $u$. Here $u$ must be zero dimensional, hence an integer, since otherwise the whitney sum $\tautological_1^m\oplus \tautological_2^n$ would have non-zero Chern classes in dimensions greater than $2(m+n)$.
+
+But the top Chern class $\chernclass_{m+n}(\omega \oplus \phi)$ can be identified with the Euler class
+\[
+\eulerclass((\omega \oplus \phi)_{\mathbb{R}})=\eulerclass(\omega_{\mathbb{R}} \oplus \phi_{\mathbb{R}}),
+\]
+and hence is equal to the product $\chernclass_{m}(\omega) \chernclass_{n}(\phi)$. (Compare \ref{pro:09.06} and the discussion following \ref{thm:14.1}.) Therefore the coefficient $u$ must be zero, and we have proved the product formula \ref{eqn:14.07}.\newpage
+\end{document}

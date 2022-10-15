@@ -1,0 +1,24 @@
+\documentclass[../main]{subfiles}
+\chapter{Obstructions}
+\begin{document}
+\section{The Gysin Sequence of a Vector Bundle}
+Let $\xi$ be an $n$--plane bundle with projection map $\pi : E \longrightarrow B$. Restricting $\pi$ to the space $E_0$\index{E0@$E_0$} of non--zero vectors in $E$, we obtain an associated projection map $\pi_0 : E_0 \longrightarrow B$. 
+
+\begin{theorem}\label{thm:12.02}\index{Gysin sequence}
+To any oriented $n$--plane bundle $\xi$ there is associated an exact sequence of the form \[\cdots \varrightarrow{} \homology^i(B) \varrightarrow{\smile \eulerclass} \homology^{i + n}(B) \varrightarrow{\pi_0^\ast} \homology^{i + n}(E_0) \varrightarrow{} \homology^{i + 1}(B) \varrightarrow{\smile \eulerclass} \cdots,\] using integer coefficients.
+\end{theorem}
+
+Here the symbol $\smile \eulerclass$ stands for the homomorphism $a \mapsto a \smile \eulerclass(\xi)$. \index{Euler class $\eulerclass$}
+
+\begin{proof}
+Starting with the cohomology exact sequence \[\ldots \varrightarrow{} \homology^j(E, E_0) \varrightarrow{} \homology^j(E) \varrightarrow{} \homology^j(E_0) \varrightarrow{\delta} \homology^{j + 1}(E, E_0) \varrightarrow{} \ldots\] of the pair $(E, E_0)$, use the isomorphism \[\smile u : \homology^{j - n}(E) \longrightarrow \homology^j(E, E_0)\] of \S\ref{ch:10}, to substitute the isomorphic group $\homology^{j - n}(E)$ in place of $\homology^j(E, E_0)$. Thus we obtain an exact sequence of the form \[\ldots \varrightarrow{} \homology^{j - n}(E) \varrightarrow{g} \homology^j(E) \varrightarrow{} \homology^j(E_0) \varrightarrow{} \homology^{j - n + 1}(E) \varrightarrow{} \ldots,\] where \[g(x) = (x \smile u) \restr_E = x \smile (u \restr_E).\] Now substitute the isomorphic cohomology ring $\homology^\ast(B)$ in place of $\homology^\ast(E)$. Since the cohomology class $u \restr_E$ in $\homology^n(E)$ corresponds to the Euler class in $\homology^n(B)$, this yields the required exact sequence \[\cdots \varrightarrow{} \homology^{j - n}(B) \varrightarrow{\smile \eulerclass} \homology^j(B) \varrightarrow{} \homology^j(E_0) \varrightarrow{} \homology^{j - n + 1}(B) \varrightarrow{} \ldots\] 
+\end{proof}
+
+Similarly, for an unoriented bundle, there is a corresponding exact sequence with mod $2$ coefficients, using the Stiefel--Whitney class $\sw_n(\xi)$ in place of the Euler class. (Compare the proof of \ref{thm:11.3}) As an example, consider the twisted line bundle $\gamma_n^1$ over the projective space ${\mathbb P}^n$\index{projective space!\indexline real $\projective^n$}. Since the space $E_0(\gamma_n^1)$ can be identified with ${\mathbb R}^{n + 1} - 0$, it contains the unit sphere $\sphere^n$ as deformation retract. Thus we obtain an exact sequence \[\cdots \varrightarrow{} \homology^{j - 1}({\mathbb P}^n) \varrightarrow{\smile \sw_1} \homology^j({\mathbb P}^n) \varrightarrow{} \homology^j(\sphere^n) \varrightarrow{} \homology^j({\mathbb P}^n) \varrightarrow{} \cdots\] with mod $2$ coefficients, where $\sw_1 = \sw_1(\gamma_n^1)$. 
+
+More generally, consider any $2$--fold covering ${\xtilde B} \longrightarrow B$. That is assume that each point of $B$ has an open neighborhood $U$ whose inverse image consists of two disjoint open copies of $U$. Then we can construct a line bundle $\xi$ over $B$ whose total space $E$ is obtained from ${\xtilde E} \times \mathbb R$ by identifying each pair $(x, t)$ with $(x', -t)$, where $x$ and $x'$ are the two distinct points of ${\xtilde B}$ lying over one point of $B$. Evidently the open subset $E_0$ contains ${\xtilde B}$ as deformation retract. Thus we have proved the following. 
+
+\begin{corollary}\label{cor:12.3}\index{covering space}
+To any $2$--fold ${\xtilde B} \longrightarrow B$ there is associated an exact sequence of the form \[\ldots \varrightarrow{} \homology^{j - 1}(B) \varrightarrow{\smile \sw_1} \homology^j(B) \varrightarrow{} \homology^j({\xtilde B}) \varrightarrow{} \homology^j(B) \varrightarrow{} \ldots\] with mod $2$ coefficients, where $\sw_1 = \sw_1(\xi)$. 
+\end{corollary}
+\end{document}

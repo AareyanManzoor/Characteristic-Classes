@@ -1,0 +1,33 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Homotopy Groups Modulo \texorpdfstring{$\abfin$}{Ab<infinity}}\label{sec:18.2}
+In order to relate homology groups to homotopy groups\index{homotopy groups}, we use some results of \cite{serre}\index{Serre, J.P.}. \defemph{Let $\abfin$ denote the class of all finite abelian groups}. A homomorphism $h : A \longrightarrow B$ between abelian groups is called a \defemph{$\abfin$--isomorphism}\index{Ab-isomorphism@$\abfin$--isomorphism} if both the kernel $h^{-1}(0)$ and the cokernel $B/h(A)$ belong to $\abfin$. 
+
+\begin{theorem}\index{Hurewicz homomorphism}
+\label{thm:18.3}
+Let $X$ be a finite complex which is $(k - 1)$--connected, $k \ge 2$. Then the Hurewicz homomorphism \[\pi_r(X) \longrightarrow \homology_r(X; \mathbb Z)\] is a $\abfin$--isomorphism for $r < 2 k - 1$.
+\end{theorem}
+
+\begin{proof}
+This Theorem will be established by assembling several results of Serre. First note that the Theorem is true for the special case of a sphere $\sphere^n$, $n \ge k$, for the homotopy groups $\pi_r(\sphere^n)$ are finite for $r < 2 n - 1$, $r \ne n$. (See for example \cite[pp. 515-516]{spanier1981}.)
+
+Next note that it is true for any finite bouquet of spheres. In fact if the Theorem is true for two $(k - 1)$--connected complexes $X$ and $Y$ then, using the Künneth\index{Künneth theorem} theorem, it is certainly true for the product $X \times Y$. Hence, applying the relative Hurewicz theorem to the pair $(X \times Y, X \vee Y)$, we see that \[\pi_r(X \vee Y) \cong \pi_r(X \times Y) \cong \pi_r(X) \oplus \pi_r(Y)\quad \text{ for }r < 2 k - 1,\] and it follows that the theorem is true for $X \vee Y$ also. 
+
+Finally, consider an arbitrary $(k - 1)$--connected finite complex $X$. Since the homotopy groups $\pi_r(X)$ are finitely generated \cite[pp. 509]{spanier1981}, we can choose a finite basis for the torsion free part of $\pi_r(X)$ for each $r < 2 k$. Represent each basis element by a base point preserving map $\sphere^{r_i} \longrightarrow X$, and combine these maps to form a single map \[f : \sphere^{r_1} \vee \ldots \vee \sphere^{r_p} \longrightarrow X.\] Since the Theorem has already been established for this bouquet of spheres, we see easily that $f$ induces a $\abfin$--isomorphism of homotopy groups in dimension less than $2 k - 1$, and a $\abfin$--surjection in dimension $2 k - 1$. Therefore, by the generalized Whitehead theorem\index{Whitehead theorems} \cite[pp. 512]{spanier1981}, it follows that $f$ also induces a $\abfin$--isomorphism of homology groups in dimensions less than $2 k - 1$. Thus, since the Theorem is true for the bouquet of spheres, it must also be true for $X$. 
+\end{proof}
+
+\begin{proof}[Alternative Proof]
+The corresponding statement for cohomotopy groups\index{cohomotopy groups} and cohomology groups is proved in \cite{serre}, hence the present Theorem follows by Spanier-Whitehead duality \cite{spanier-whitehead}.
+\end{proof}
+
+\begin{corollary}\index{Thom isomorphism}
+\label{cor:18.4}
+If $\thom$ is the Thom space of an oriented $k$--plane bundle over the finite complex $B$, then there is a $\abfin$--isomorphism \[\pi_{n + k}(T) \longrightarrow \homology_n(B; \mathbb Z)\] for all dimensions $n < k - 1$. 
+\end{corollary}
+
+\begin{proof}
+This follows immediately from Lemma \ref{lem:18.2} and \ref{thm:18.3}.
+\end{proof}
+
+Now we must show how to apply this corollary to the computation of cobordism groups.
+\end{document}

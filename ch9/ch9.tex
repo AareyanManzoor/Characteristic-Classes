@@ -1,0 +1,200 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+\chapter{Oriented Bundles and the Euler Class}\label{ch:9}
+Up to this point we have always used the coefficient group $\mathbb{Z} / 2$ for our cohomology. This of necessity means that we have overlooked much interesting structure. Now we will take a closer look, using the integers $\mathbb{Z}$ as coefficient group. But in order to do this it will be necessary to impose the additional structure of an orientation on our vector bundles. In particular we will need an orientation in order to construct the fundamental cohomology class $u \in \homology^{n}(\total, \total_{0})$\index{fundemental class!\indexline cohomology} with integer coefficients.
+
+First consider the case of a single vector space.
+
+\begin{definition}
+An orientation of a real vector space\index{oriented vector space}\index{vector space!\indexline oriented} $V$ of dimension $n>0$ is an equivalence class of bases, where two (ordered) bases\index{basis} $v_{1}, \ldots, v_{n}$ and $v_{1}^{\prime}, \ldots, v_{n}^{\prime}$ are said to be equivalent if and only if the matrix $[a_{i j}]$ defined by the equation $v_{i}^{\prime}=\sum a_{i j} v_{j}$ has positive determinant. Evidently every such vector space $V$ has precisely two distinct orientations. Note that the coordinate space $\mathbb{R}^n$ has a canonical orientation, corresponding to its canonical ordered basis.
+\end{definition} 
+
+In algebraic topology, it is customary to specify the orientation of a simplex\index{oriented simplex}\index{simplex $\Delta^n$!\indexline oriented} by choosing some ordering of its vertices. Our concept of orientation is related as follows. Let $\Sigma^{n}$ be an $n$-simplex\index{simplex $\Delta^n$}, linearly embedded in the $n$-dimensional vector space $V$, with ordered vertices $A_{0}, A_{1}, \ldots, A_{n}$. Then taking the vector from $A_{0}$ to $A_{1}$ as first basis vector, the vector from $A_{1}$ to $A_{2}$ as second, and so on, we obtain a corresponding orientation for the vector space $V$.
+
+Note that a choice of orientation for $V$ corresponds to a choice of one of the two possible generators for the singular homology group $\homology_{n}(V, V_{0} ; \mathbb{Z})$. In fact let $\Delta^{n}$ denote the standard $n$-simplex, with canonically ordered vertices. Choose some orientation preserving linear embedding
+\[
+\sigma: \Delta^{n} \varrightarrow{} V
+\]
+which maps the barycenter of $\Delta^{n}$ to the zero vector (and hence maps the bouncary of $\Delta^{n}$ into $V_{0}$). Then $\sigma$ is a singular $n$-simplex representing an element in the group of relative $n$-cycles $Z_{n}(V, V_{0} ; \mathbb{Z})$. The homology class of this $n$-cycle $\sigma$ is now the preferred generator $\mu_{V}$ for the homology group $\homology_{n}(V, V_{0} ; \mathbb{Z})$.
+
+Similarly the cohomology group $\homology^{n}(V, V_{0} ; \mathbb{Z})$ associated with an oriented vector space $V$ has a preferred generator which we denote by the symbol $u_{V}$, determined by the equation $\langle u_{V}, \mu_{V}\rangle=+1$.
+
+Now consider a vector bundle $\xi$ of fiber dimension $n>0$.
+
+\begin{definition} An \defemph{orientation}\index{oriented bundle} for $\xi$ is a function which assigns an orientation to each fiber $F$ of $\xi$, subject to the following local compatibility condition. For every point $b_{0}$ in the base space there should exist a local coordinate system $(N, h)$, with $b_{0} \in n$ and $h: N \times \mathbb{R}^{n} \varrightarrow{} \pi^{-1}(N)$, so that for each fiber $F=\pi^{-1} (b)$ over $N$ the homomorphism $x \mapsto h(b, x)$ from $\mathbb{R}^n$ to $F$ is orientation preserving. (Or equivalently there should exist sections $s_{1}, \ldots, s_{n}: N \varrightarrow{} \pi^{-1}(N)$ so that the basis $s_{1}(b), \ldots, s_{n}(b)$ determines the required orientation of $\pi^{-1}(b)$ for each $b$ in $n$.)
+
+\end{definition}
+
+In terms of cohomology, this means that to each fiber $F$ there is assigned a preferred generator
+\[
+u_{F} \in \homology^{n}(F, F_{0} ; \mathbb{Z}) .
+\]
+The local compatibility condition implies that for every point in the base space there exists a neighborhood $N$ and a cohomology class
+\[
+u \in \homology^{n}(\pi^{-1}(N), \pi^{-1}(N)_{0} ; \mathbb{Z})
+\]
+so that for every fiber $F$ over $N$ the restriction
+\[
+u|_{(F, F_{0})} \in \homology^{n}(F, F_{0} ; \mathbb{Z})
+\]
+is equal to $u_{F}$. The proof is straightforward.
+
+The following important result will be proved in $\S$\ref{ch:10} (Compare Theorem \ref{thm:08.01})
+
+\begin{theorem}\label{thm:09.01} Let $\xi$ be an oriented $n$-plane bundle with total space $\total$. Then the cohomology group $\homology^{i}(\total, \total_{0} ; \mathbb{Z})$ is zero for $i<n$, and $\homology^{n}(\total, \total_{0} ; \mathbb{Z})$ contains one and only one cohomology class $u$ whose restriction
+\[
+u |_{(F, F_{0})} \in \homology^{n}(F, F_{0} ; \mathbb{Z})
+\]
+is equal to the preferred generator $u_{F}$ for every fiber $F$ of $\xi$. Furthermore the correspondence y $\mapsto y \smile u$ maps $\homology^{k}(\total ; \mathbb{Z})$ isomorphically onto $\homology^{k+n}(\total, \total_{0} ; \mathbb{Z})$ for every integer $k$.
+
+\end{theorem}
+
+In more technical language, this theorem can be summarized by saying that $\homology^{*}(\total, \total_{0} ; \mathbb{Z})$ is a free $\homology^{*}(\total ; \mathbb{Z})$-module on one generator $u$ of degree $n$. (More generally, any ring with unit could be used as coefficient group.)
+
+It follows of course that $\homology^{k+n}(\total, \total_{0} ; \mathbb{Z})$ is isomorphic to the cohomology group $\homology^{k}(\base ; \mathbb{Z})$ of the base space. In fact the \defemphi{Thom isomorphism}
+\[
+\phi: \homology^{k}(\base ; \mathbb{Z}) \varrightarrow{} \homology^{k+n}(\total, \total_{0} ; \mathbb{Z})
+\]
+can be defined by the formula
+\[
+\phi(x)=(\pi^{*} x) \smile u,
+\]
+just as in $\S$\ref{ch:8}.
+
+We are now ready to define an important new characteristic class. Given an oriented $n$-plane bundle $\xi$, the inclusion ($\total$, empty set) $\subset(\total, \total_{0})$ gives rise to a restriction homomorphism
+\[
+\homology^{*}(\total, \total_{0} ; \mathbb{Z}) \varrightarrow{} \homology^{*}(\total ; \mathbb{Z})
+\]
+which we denote by $y \mapsto y |_{\total}$. In particular, applying this homomorphism to the fundamental class $u \in \homology^{n}(\total, \total_{0} ; \mathbb{Z})$, we obtain a new cohomology class
+\[
+u |_{\total} \in \homology^{n}(\total ; \mathbb{Z}) .
+\]
+But $\homology^{n}(\total ; \mathbb{Z})$ is canonically isomorphic to the cohomology group $\homology^{n}(\base ; \mathbb{Z})$ of the base space.
+
+\begin{definition} The \defemph{Euler class}\index{Euler class $\eulerclass$} of an oriented $n$-plane bundle $\xi$ is the cohomology class
+\[
+\eulerclass(\xi) \in \homology^{n}(\base ; \mathbb{Z})
+\]
+which corresponds to $u |_{\total}$ under the canonical isomorphism \newline$\pi^{*}: H^{n}(\base ; \mathbb{Z}) \varrightarrow{}\homology^{n}(\total ; \mathbb{Z})$.
+
+\end{definition}
+
+For the motivation for the name ``Euler class,'' we refer the reader to Section \ref{sec:11.5}. Here are some fundamental properties of the Euler class:
+\setcounter{property}{1}
+\renewcommand{\theproperty}{\thechapter.\arabic{property}}
+\begin{property}\label{pro:09.02} (Naturality). If $f: \base \varrightarrow{} \base^{\prime}$ is covered by an orientation preserving bundle map $\xi \varrightarrow{} \xi^{\prime}$, then $\eulerclass(\xi)=f^{*} \eulerclass(\xi^{\prime})$.\index{bundle map}
+
+\end{property}
+
+In particular, if $\xi$ is a trivial $n$-plane bundle, $n>0$, then $\eulerclass(\xi)=0$. For in this case we can take $\xi^{\prime}$ to be a bundle over a point.
+
+\begin{property}\label{pro:09.03}
+If the orientation of $\xi$ is reversed, then the Euler class $\eulerclass (\xi)$ changes sign.
+
+\end{property} 
+The proofs are immediate.
+
+\begin{property}\label{pro:09.04} If the fiber dimension $n$ is odd, then $\eulerclass(\xi)+\eulerclass(\xi)=0$.
+
+\end{property}
+Because of this, we will usually assume that the fiber dimension is even when making use of Euler classes.
+\begin{proof}[First proof] Any odd dimensional vector bundle possesses an orientation reversing automorphism $(b, v) \mapsto(b,-v)$. The required equation $\eulerclass(\xi)=-\eulerclass(\xi)$ now follows from \ref{pro:09.03}.
+
+\end{proof}
+
+\begin{proof}[Alternate proof] The Thom isomorphism\index{Thom isomorphism} $\phi(x)=\pi^{*}(x) \smile u.$ evidently maps $\eulerclass(\xi)$ to the cohomology class
+\[
+\pi^{*} \eulerclass(\xi) \smile u=(u |_{\total}) \smile u=u \smile u
+\]
+In other words
+\[
+\eulerclass(\xi)=\phi^{-1}(u \smile u)
+\]
+But using the identity
+\[
+a \smile b=(-1)^{(\dim a)(\dim b)} b \smile a
+\]
+we see that $u \smile u$ is an element of order 2 whenever the dimension $n$ is odd.
+
+\end{proof}
+
+\begin{property}\label{pro:09.05}
+ The natural homomorphism $\homology^{n}(\base ; \mathbb{Z}) \varrightarrow{}$ $\homology^{n}(\base ; \mathbb{Z} / 2)$ carries the Euler class $\eulerclass(\xi)$ to the top Stiefel-Whitney class $\sw_{n}(\xi)$.
+\end{property}
+\begin{proof} If we apply this homomorphism (induced by the coefficient surjection $\mathbb{Z} \varrightarrow{} \mathbb{Z} / 2$) to both sides of the equation $\eulerclass(\xi)=\phi^{-1}(u \smile u)$, then evidently the integer cohomology class $u$ maps to the mod 2 cohomology class $u$ of $\S$\ref{ch:8}, and $u \smile u$ maps to $\steenrod^{n}(u)$. Hence $\phi^{-1}(u \smile u)$ maps to $\phi^{-1} \steenrod^{n}(u)=\sw_{n}(\xi)$
+\end{proof}
+
+Several important properties of the characteristic class $\sw_{n}(\xi)$ apply equally well to $\eulerclass(\xi)$. 
+
+\begin{property}\label{pro:09.06}
+ The Euler class of a Whitney sum\index{Whitney sum} is given by \newline
+ $\eulerclass(\xi \oplus \xi^{\prime})=\eulerclass(\xi) \smile \eulerclass(\xi^{\prime})$\index{product formulas}. Similarly the Euler class of a cartesian product is given by $\eulerclass(\xi \times \xi^{\prime})=\eulerclass(\xi) \times \eulerclass(\xi^{\prime})$.
+\end{property} 
+
+Here we must specify that the direct sum $F \oplus F^{\prime}$ of two oriented vector spaces is to be oriented by taking an oriented basis for $F$ followed by an oriented basis for $F^{\prime}$.
+
+\begin{proof}[proof of 9.6]
+Let the fiber dimensions be $m$ and $n$ respectively. Taking account of our sign conventions as specified in Appendix \ref{app:A}, it is not difficult to check that the fundamental cohomology class of the Cartesian product\index{Cartesian product} is given by\index{fundamental class!\indexline cohomology}
+\[
+u(\xi \times \xi^{\prime})=(-1)^{mn} u(\xi) \times u(\xi^{\prime}) .
+\]
+(Compare the verification of Axiom \ref{axi:04.03} in $\S$\ref{ch:8}. If we used the classical system of sign conventions, as in \cite{spanier1981}, then there would be no sign here.) Now apply the restriction homomorphism
+\[
+\homology^{m+n}(\total \times \total^{\prime},(\total \times \total^{\prime})_{0}) \varrightarrow{} \homology^{m+n}(\total \times \total^{\prime}) \approx \homology^{m+n}(\base \times \base^{\prime})
+\]
+to both sides. It follows easily that
+\[
+\eulerclass(\xi \times \xi^{\prime})=(-1)^{mn} \eulerclass(\xi) \times \eulerclass(\xi^{\prime}) ;
+\]
+where the sign can be ignored since the right side of this equation is an element of order two whenever $m$ or $n$ is odd.
+
+Now suppose that $\base=\base^{\prime}$. Pulling both sides of this equation back to $\homology^{m+n}(\base ; \mathbb{Z})$ by means of the diagonal embedding\index{diagonal $\Delta$} $\base \varrightarrow{} \base \times \base$, we obtain the formula $\eulerclass(\xi \oplus \xi^{\prime})=\eulerclass(\xi^{\prime}) \smile \eulerclass(\xi^{\prime})$ for the Euler class of a Whitney sum.
+\end{proof} 
+
+\begin{remark*}
+Although this formula looks very much like the corresponding formula $\sw(\xi \oplus \xi^{\prime})=\sw(\xi) \smile \sw(\xi^{\prime})$ for Stiefel-Whitney classes, there is one essential difference. The total Stiefel-Whitney class $\sw(\xi)$ is a unit in the ring $H^{\Pi}(\base ; \mathbb{Z} / 2)$, hence it is easy to solve for $\sw(\xi^{\prime})$ as a function of $\sw(\xi)$ and $\sw(\xi \oplus \xi^{\prime})$. (Compare \ref{lem:04.01}.) However the Euler class $\eulerclass(\xi)$ is certainly not a unit in the integral cohomology ring of $\base$, and in fact it may well be zero or a zero-divisor. So the equation $\eulerclass(\xi \oplus \xi^{\prime})=\eulerclass(\xi) \smile \eulerclass(\xi^{\prime})$ cannot usually be solved for $\eulerclass(\xi^{\prime})$ as a function of $\eulerclass(\xi)$ and $\eulerclass(\xi \oplus \xi^{\prime})$\end{remark*}
+
+Here is an application of \ref{pro:09.06}. Let $\eta$ be a vector bundle for which $2 \eulerclass(\eta) \neq 0$. Then it follows that $\eta$ cannot split as the Whitney sum of two oriented odd dimensional vector bundles. As an example, let $M$ be a smooth compact manifold. Suppose that the tangent bundle $\tau$ of $M$ is oriented, and that $\eulerclass(\tau) \neq 0$. Then $\tau$ cannot admit any odd dimensional sub vector bundle. For if this sub-bundle $\xi$ were orientable, then the Euler class $\eulerclass(\tau)=\eulerclass(\xi) \smile \eulerclass(\xi^{\perp})$ would have to be an element of order two in the free abelian group $\homology^{n}(M ; \mathbb{Z})$. (Compare Appendix \ref{app:A}.) The case where $\xi$ is not orientable can be handled by passing to a suitable $2$-fold covering manifold of $M$. Details will be left to the reader.
+
+\begin{property}\label{pro:09.07} If the oriented vector bundle $\xi$ possesses a nowhere zero cross-section\index{cross-section}, then the Euler class $\eulerclass( \xi)$ must be zero.
+\end{property}
+
+\begin{proof} Let $s: \base \varrightarrow{} \total_{0}$ be a cross-section, so that the composition
+\[
+\base \varrightarrow{s} \total_{0} \subset \total \varrightarrow{\pi} \base
+\]
+is the identity map of $\base$. Then the corresponding composition
+\[
+\homology^{n}(\base) \varrightarrow{\pi^{*}} \homology^{n}(\total) \longrightarrow \homology^{n}(\total_{0}) \varrightarrow{s^{*}} \homology^{n}(\base)
+\]
+is the identity map of $\homology^{n}(\base)$. By definition the first homomorphism $\pi^{*}$ maps $\eulerclass(\xi)$ to the restriction $u |_{\total}$. Hence the first two homomorphisms in this composition map $\eulerclass(\xi)$ to the restriction $(u |_{\total}) |_{ \total_{0}}$ which is zero since the composition
+\[
+\homology^{n}(\total, \total_{0}) \varrightarrow{} \homology^{n}(\total) \varrightarrow{} \homology^{n}(\total_{0})
+\]
+is zero. Applying $s^{*}$, it follows that $\eulerclass(\xi)=s^{*}(0)=0$.
+
+\end{proof}
+
+[If the bundle $\xi$ possesses a Euclidean metric\index{Euclidean metric}, then an alternative proof can be given as follows: Let $\varepsilon$ be the trivial line bundle spanned by the cross-section $s$ of $\xi$. Then
+\[
+\eulerclass(\xi)=\eulerclass(\varepsilon) \smile \eulerclass(\varepsilon^{\perp})
+\]
+by \ref{pro:09.06}, where the class $\eulerclass(\varepsilon)$ is zero by \ref{pro:09.02}]
+
+To conclude this section we will describe some examples of bundles with non-zero Euler class. (See also $\S$\ref{ch:11} and $\S$\ref{ch:15}.)
+
+\begin{problem}\label{pro:9-A} Recall that $\tautological^{n}$ denotes the canonical $n$-plane bundle over the infinite Grassmann manifold $\grassmannian_{n}(\bR^{\infty})$. Show that $\tautological^{n} \oplus \tautological^{n}$ is an orientable vector bundle with $\sw_{2 n}(\tautological^{n} \oplus \tautological^{n}) \neq 0$, and hence $\eulerclass(\tautological^{n} \oplus \tautological^{n}) \neq 0$. If $n$ is odd, show that $2 \eulerclass(\tautological^{n} \oplus \tautological^{n})=0$.\index{Grassmannian manifold!\indexline $\grassmannian_n(\bR^\infty)$}
+
+\end{problem}
+
+\begin{problem}\label{pro:9-B} Now consider the complex Grassmann manifold $\grassmannian_{n}(\bC^{\infty})$\index{Grassmannian manifold!\indexline $\grassmannian_n(\bC^\infty)$}, consisting of all complex sub vector spaces of complex dimension $n$ in infinite complex coordinate space. (Compare $\S$\ref{ch:14}.) Since every complex $n$-plane can be thought of as a real oriented $2 n$-plane, it follows that there is a canonical oriented $2 n$-plane bundle $\xi^{2n}$ over $\grassmannian_{n}(\bC^{\infty})$. Show that the restriction of $\xi^{2 n}$ to the real sub-space $\grassmannian_{n}(\bR^{\infty})$ is isomorphic to $\tautological^{n} \oplus \tautological^{n}$, and hence that $\eulerclass(\xi^{2 n}) \neq 0$. (Remark: The group $\homology^{2 n}(\grassmannian_{n}(\bC^{\infty}) ; \mathbb{Z})$ is actually free abelian, with $\eulerclass(\xi^{2 n})$ as one of its generators\index{cohomology!\indexline of $\grassmannian_n(\bC^\infty)$}. See Lemma \ref{lem:14.03}.
+
+\end{problem}
+
+\begin{problem}\label{pro:9-C}Let $\tau$ be the tangent bundle of the n-sphere, and let $A \subset S^{n} \times S^{n}$ be the anti-diagonal, consisting of all pairs of antipodal unit vectors. Using stereographic projection, show that the total space $\total=\total(\tau)$ is canonically homeomorphic to $S^{n} \times S^{n}-A$. Hence, using excision and homotopy, show that \[\homology^{*}(\total, \total_{0}) \approx \homology^{*}(S^{n} \times S^{n}, S^{n} \times S^{n}-\text{diagonal}) \approx \homology^{*}(S^{n} \times S^{n}, A) \subset \homology^{*}(S^{n} \times S^{n})\]
+(Compare $\S$\ref{ch:11}.) Now suppose that $n$ is even. Show that the Euler class \newline
+$\eulerclass(\tau)=\phi^{-1}(u \smile u)$ is twice a generator of $\homology^{n}(S^{n} ; \mathbb{Z})$. As a corollary, show that $\tau$ possesses no non-trivial sub vector bundles.\index{sub-bundle}
+
+\end{problem}
+\end{document}

@@ -1,0 +1,110 @@
+Hello everyone, this is where to claim sections. We plan to get the first draft done by september 7, please pick your sections accordingly. Pick one section at a time, if you complete your section then you can indicate it and pick another section.
+
+EDIT: date extended, lets try september 17.
+
+pick a section example:
+``ch 1 (3-12): Aareyan ''
+done section example:
+``ch 1 (3-12): Aareyan %done'' 
+Feel free to ask for help with sections in this document and also on the discord.
+
+There is a latex scan in mathpix scan.tex, and the work of an older group in the folder tex from old group. Feel free to use these to aid your work.
+
+Please READ THE STYLE GUIDE before starting any typing.
+
+ch 1 (3-12): ................................................. George %ready for proofreading, needs figure
+        % proofread done --derivada.schwarziana
+ch 2
+    first part(13-20): ....................................... rokabe, done
+    Euclidean Vector Bundle(21-24): .......................... twiceshy %done
+        % proofread done --derivada.schwarziana
+ch 3 (25-36): ................................................ twiceshy %done
+ch 4
+    first part(37-38): ....................................... zxcvly % ready for proofreading
+    consequences of the four axioms(38-47): .................. zxcvly % ready for proofreading
+    Division Algebra(47-49): ................................. wordslinger% done
+    Immersions(49-50): ....................................... wordslinger% done
+    Stiefel-Whitney numbers(50-54): .......................... wordslinger% done
+ch5
+    first part(55-62): .......................................  Aareyan %done
+    infinite grassmanian manifolds(62-63): ................... George %ready for proofreading
+    the universal bundle(63-65): .............................domenico %done
+    paracompact spaces(65-68): ............................... George %ready for proofreading
+    characteristic classes of real n-plane bundles(68-71): ... George %ready for proofreading
+ch6 (72-81): ................................................. wordslinger %ready for proofread
+ch7: ......................................................... wordslinger %ready for proofread
+    first part(82-86): ....................................... wordslinger %done
+    uniqueness of stiefel-whitney classes(86-88): ............ wordslinger%done
+ch8: ......................................................... wordslinger %ready for proofread
+    first part (89-91): ...................................... wordslinger %done
+    verification of axioms(92-94): ........................... wordslinger %done
+ch9 (95-103): ................................................ Aareyan %done
+ch10 (106-114): .............................................. George %ready for proofreading
+ch11 
+    The normal bundle (115-121): ............................. twiceshy
+    The Tangent Bundle (121-124): ............................ George %ready for proofreading
+    The diagonal cohomology class in (124-127): ..............  Aareyan %done
+    Poincare Duality and the diagonal class(127-129): ........ wordslinger %can't finish // done: derivada.schwarziana
+    Euler Class and Euler Characteristic(129-130): ........... George %ready for proofreading
+    Wu's Formula for Stiefel-Whitney Classes (130-137): ...... derivada.schwarziana %done except citations
+ch12
+    first part (138-143): .................................... Aareyan %done
+    The Gysin Sequence of a Vector Bundle(143-146): .......... George %ready for proofreading
+    The Oriented Universal Bundle: ........................... George %ready for proofreading
+    The Euler Class as an Obstruction (146-148): ............. George %ready for proofreading
+ch13 (149-153): Aareyan %done
+ch14 
+    first part (155-156): .................................... George %ready for proofreading
+    Hermitian Metrics (156-157): ............................. George %ready for proofreading
+    Construction of Chern Classes (157-159): ................. wordslinger %ready for proofread
+    Complex grassmannian manifolds (159-163): ................ wordslinger %ready for proofread
+    The Product Theorem for Chern Classes (164-167): ......... Aareyan%done 
+    Dual or conjugate bundles (167-169): ..................... wordslinger 
+    The tangent bundle of complex projective space (169-172): ................... Aareyan %done
+ch15 
+    first part (173-179): ....................................................... ashivkum %ready for proofreading
+    The Cohomology of the Oriented Grassmann Manifold (179-182): ................ George %ready for proofreading
+ch16
+    partitions (183): ........................................................... George %ready for proofreading
+    chern numbers (183-185): .................................................... George %ready for proofreading
+    pontrjagin numbers (185-186): ............................................... George %ready for proofreading
+    symmetric function (186-190): ............................................... Aareyan %done 
+    A product function (190-193): ............................................... George %ready for proofreading
+    Linear Independence of Chern Numbers and of Pontrjagin Numbers (193-197): ...  Aareyan%done
+ch17 
+    smooth manifolds with boundary (198-200): ................................... George %ready for proofreading
+    oriented cobordism (201-203): ............................................... ashivkum %ready for proofreading (need direction on table formatting since there are no automatic linebreaks in tabular)
+ch18
+    the thom space of a euclidean vector bundle (204-207): ...................... George %ready for proofreading
+    homotopy groups modulo C (207-208): ......................................... George %ready for proofreading
+    Regular values and transversality (208-214): ................................ George %ready for proofreading
+    The main theorem(214-217): .................................................. George %ready for proofreading
+ch19 
+    first part (218-226): ..................................... ashivkum %ready for proofreading, with an eye to style issues (\ensuremath{\blacksquare})
+    Multiplicative Characteristic classes (227-230): .......... George %ready for proofreading
+ch20 
+    first part (231): ......................................... George %ready for proofreading
+    The differentiable case (231-234): ........................ George %ready for proofreading
+    The combinatorial Case (234-242): ......................... ashivkum %ready for proofreading, $\mathcal{C}$-isomorphism.??? needs two commutative diagrams (don't know style for those yet) diagrams finished - zxcvly
+    Applications (242-248): ...................................  Aareyan %done
+epilogue
+    Non-differentiable Manifolds(249-253): .................... ashivkum %ready for proofreading, many broken citations and possible style issues with B(\operatorname{F})
+    Smooth manifolds with additional structure(253-254): ...... George %ready for proofreading
+    Generalized cohomology theories(254-256): ................. George %ready for proofreading
+Appendix A
+    basic definitions(257-259): ............................... George %ready for proofreading
+    the relationship between homo and cohomo (259-260): ....... George %ready for proofreading
+    homology of a CW-complex (260-263): ....................... Kelvin Chan %diagram missed. Some problems are stated on the first few lines of the document. Diagram finished - zxcvly
+    cup products (263-265): ................................... Kelvin Chan % Problem is not solved. See first line.
+    cohomology of product spaces (265-270): ................... Kelvin Chan %diagram missed - diagrams finished zxcvly
+    homology of manifolds (270-272): .......................... George %ready for proofreading
+    the fundemental homology class of a manifold (273-275): ... George %ready for proofreading
+    cohomology with compact support (275): .................... George %ready for proofreading
+    The cap product operation (276-280): ...................... zxcvly
+Appendix B (281-287): ......................................... George %ready for proofreading
+Appendix C (288-314): 
+    up to fundamental lemma (288-296): ........................ 
+    up to gauss bonnet theorem (296-305): ..................... George %ready for proofreading 
+    rest (305-314): ........................................... George %ready for proofreading, needs figure
+
+    

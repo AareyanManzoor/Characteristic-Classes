@@ -1,0 +1,87 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+\section{Verification of the Axioms}\label{sec:7.1}
+
+With this definition, the four axioms for Stiefel-Whitney classes\index{Stiefel-Whitney class $\sw_i$!\indexline axioms} can be checked as follows.
+\begin{enumerate}
+\item[\textsc{Axiom} \ref{axi:04.01}.] Using properties \ref{8.2.1} and \ref{8.2.3} of the squaring operations, it is clear that $\sw_{i}(\xi) \in \homology^{i}(\B )$, with $\sw_{0}(\xi)=1$, and with $\sw_{i}(\xi)=0$ for $i$ greater than the fiber dimension $n$.
+\item[\textsc{Axiom} \ref{axi:04.02}.]  Any bundle map $f:\xi\varrightarrow{}\xi^\prime$ clearly induces a map $g:(\total, \total_{0})\varrightarrow{}(\total^{\prime}, \total_{0}^{\prime})$. Furthermore if $u^{\prime}$ denotes the fundamental cohomology class in $\homology^{n}(\total^{\prime}, \total_{0}^{\prime})$, then $g^{\ast}(u^{\prime})$ is equal to the class $u \in \homology^{ n }(\total, \total_{0})$ by the definition of $u$ (Theorem \ref{thm:08.01}). It now follows easily that the Thom isomorphisms $\phi$ and $\phi^{\prime}$ satisfy the naturality condition
+\[
+g^{\ast} \circ \phi^{\prime}=\phi \circ \xoverline{f}^\ast.
+\]
+Hence, using property \ref{8.2.2}, it follows that
+\[
+\xoverline{f}^\ast \sw_{i}(\xi^{\prime})=\sw_{i}(\xi),
+\]
+as required.
+\item[\textsc{Axiom} \ref{axi:04.03}.]  Let us first compute the Stiefel-Whitney classes of a Cartesian product\index{Cartesian product} $\xi^{\prime \prime}=\xi \times \xi^{\prime}$, with projection map $\pi \times \pi^{\prime}:{\total \times \total^{\prime}}\varrightarrow{} {\B  \times \B ^{\prime}}$. Consider the fundamental classes
+\[
+u \in \homology^{m}(\total, \total_{0}), \quad u^{\prime} \in \homology^{n}(\total^{\prime}, \total_{0}^{\prime})
+\]
+of $\xi$ and $\xi^{\prime}$. Since $\total_{0}$ is open in $\total$ and $\total_{0}^{\prime}$ is open in $\total^{\prime}$, the cross product\index{cross product}
+\[
+u \times u^{\prime} \in \homology^{m+ n }(\total \times \total^{\prime}, \total \times \total_{0}^{\prime} \cup \total_{0} \times \total^{\prime})
+\]
+is defined. (Compare Appendix \ref{app:A}.) Note that the open subset\newline $(\total \times \total_{0}^{\prime})\cup(\total_{0} \times \total^{\prime})$ in the total space $\total^{\prime \prime}=\total \times \total^{\prime}$ is precisely equal to the set $\total_{0}^{\prime \prime}$ of non-zero vectors in $\total^{\prime\prime}$. In fact we claim that $u \times u^{\prime}$ is precisely equal to the fundamental class $u^{\prime \prime} \in \homology^{m+n}(\total^{\prime \prime}, \total_{0}^{\prime \prime})$. In order to prove this, it suffices to show that the restriction
+\[
+u \times u^{\prime} |_{(F^{\prime \prime}, F_{0}^{\prime \prime})}
+\]
+is the non-zero cohomology class in $\homology^{m+ n }(F^{\prime \prime}, F_{0}^{\prime \prime})$ for every fiber \newline$F^{\prime \prime}=F \times F^{\prime}$ of $\xi^{\prime \prime}$. But this restriction is evidently equal to the cross product of $u|_{(F, F_{0})}$ and $u^{\prime} |_{(F^{\prime}, F_{0}^{\prime})}$, and hence is non-zero by \ref{sec:A.5} in the Appendix.
+
+It follows easily that the Thom isomorphisms for $\xi$, $\xi^{\prime}$, and $\xi^{\prime \prime}$ are related by the identity
+\[
+\phi^{\prime \prime}(a \times b)=\phi(a) \times \phi^{\prime}(b).
+\]
+In fact if $\xoverline{a}=\pi^{*}(a) \in \homology^{*}(\total)$ and $\xoverline{b}={\pi^{\prime}}^*(b) \in \homology^{*}(\total^{\prime})$, then this follows from the equation
+\[
+(\xoverline{a} \times \xoverline{b}) \smile(u \times u^{\prime})=(\xoverline{a} \smile u) \times(\xoverline{b} \smile u^{\prime}),
+\]
+where there is no sign since we are working modulo 2.
+
+The total Stiefel-Whitney class of $\xi^{\prime \prime}$ can now be computed by the formula
+\[
+\phi^{\prime \prime}(w(\xi^{\prime \prime}))=\steenrod(u^{\prime \prime})=\steenrod(u \times u^{\prime})=\steenrod(u) \times \steenrod(u^{\prime}).
+\]
+Setting the right side equal to
+\[
+\phi\left(w(\xi)\right) \times \phi^{\prime}\left(w(\xi^{\prime}))=\phi^{\prime \prime}(w(\xi) \times w(\xi^{\prime})\right),
+\]
+and then applying $(\phi^{\prime \prime})^{-1}$ to both sides, we have proved that
+\[
+w(\xi \times \xi^{\prime})=w(\xi) \times w(\xi^{\prime}).
+\]
+Now suppose that $\xi$ and $\xi^{\prime}$ are bundles over a common base space $\B$. Lifting both sides of this equation back to $\B$ by means of the diagonal embedding\index{diagonal $\Delta$} $\B  \longrightarrow \B \times \B $, we obtain the required formula
+\[
+w(\xi \oplus \xi^{\prime})=w(\xi) \smile w(\xi^{\prime}).
+\]
+\item[\textsc{Axiom} \ref{axi:04.04}.]  Let $\tautological_{1}^{1}$\index{cannonical bundle!\indexline line $\tautological^1$} be as usual the twisted line bundle over the circle $\projective^{1}$. Then the space of vectors of length $\leq 1$ in the total space $\total=\total(\tautological_{1}^{1})$ is evidently a M\"obius band\index{M\"obius band} $M$, bounded by a circle $\stackrel{\bullet}{M}$. Since $M$ is a deformation retract of $\total$, and $\stackrel{\bullet}{M}$ a deformation retract of $\total_{0}$, we have
+\[
+\homology^{*}(M, \stackrel{\bullet}{M})^{\prime} \cong \homology^{*}(\total, \total_{0}).
+\]
+On the other hand if we embed a $2$-cell $\disk^{2}$ in the projective plane $\projective^{2}$\index{projective space!\indexline real $\projective^n$}, then the closure of $\projective^{2}\setminus\disk^{2}$ is homeomorphic to $M$. Using the Excision Theorem of cohomology theory, it follows that
+\[
+\homology^{*}(M, \stackrel{\bullet}{M}) \cong \homology^{*}(\projective^{2}, \disk^{2}).
+\]
+Hence there are natural isomorphisms
+\[
+\homology^{i}(\total, \total_{0}) \longrightarrow \homology^{i}(M, \stackrel{\bullet}{M}) \longleftarrow \homology^{i}(\projective^{2}, \disk^{2}) \longrightarrow \homology^{i}(\projective^{2})
+\]
+for every dimension $i \neq 0$. The fundamental cohomology class $u \in \homology^{1}(\total, \total_{0})$ certainly cannot be zero. Hence it must correspond to the generator \newline$a \in \homology^{1}(\projective^{2})$ under the composite isomorphism. Hence $\steenrod^{1}(u)=u \smile u$ must correspond to $\steenrod^{1}(a)=a \smile a$. But $a \smile a \neq 0$ by \ref{lem:04.03}, so it follows that
+\[
+\sw_{1}(\tautological_{1}^{1})=\phi^{-1} \steenrod^{1}(u)
+\]
+must also be non-zero. This concludes the verification of the four axioms.
+\end{enumerate}
+\subsection*{Problems}
+\begin{problem}
+\label{prob:08.01}
+It follows from \ref{thm:07.01} that the cohomology class that the cohomology class $\steenrod^k \sw_m(\xi)$ can be expressed as a polynomial in $\sw_{1}(\xi), \dots, \sw_{m+k}(\xi)$. Prove Wu's explicit formula\index{binomial coefficients}\index{Wu's formula}
+\[\steenrod^{k}(\sw_{m})=\sw_{k} \sw_{m}+\binom{k-m}{1} \sw_{k-1} \sw_{m+1}+\dots+\binom{k-m}{k}\sw_{0} \sw_{m+k}\]
+where $\binom{x}{i} =x(x-1) \dots(x-i+1) / i !$, as follows. If the formula is true for $\xi$, show that it is true for $\xi \times \tautological^{1}$. Thus by induction it is true for $\tautological^{1} \times \dots \times \tautological^{1}$, and hence for all $\xi$.
+\end{problem}
+\begin{problem}
+\label{prob:08.02}
+If $\sw(\xi) \neq 1$, show that the smallest $n>0$ with $\sw_{ n }(\xi) \neq 0$ is a power of 2. (Use the fact that $\binom{x}{k}$ is odd whenever $x$ is an odd multiple of $k=2^{r}$.)
+\end{problem}
+\end{document}

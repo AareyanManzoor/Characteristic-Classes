@@ -1,0 +1,101 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+To obtain further information about real vector bundles we will need the following construction. Let $V$ be a real vector space. Then the tensor product $V \otimes \bC = V \otimes_{\bR} \bC$ of $V$ with the complex numbers is a complex vector space called the \defemph{complexification}\index{complexification $-\otimes \bC$} of $V$. Applying this construction to each fiber $F$ of the  real $n$-plane bundle $\xi$ we obtain a complex $n$-plane bundle with typical fiber $F  \otimes \bC$ over the same base space. We denote this new bundle by $\xi \otimes \bC$ and call it the \defemph{complexification} of the real vector bundle $\xi$.
+
+Note that every element in the complex vector space $F \otimes \bC$ can be written uniquely as a sum $x + iy$ with $x,y \in F$. Using this real direct sum decomposition \[F \otimes \bC = F \oplus iF \] it follows that \defemph{the underlying real vector bundle} $(\xi \otimes \bC)_\bR$ \defemph{is canonically isomorphic to the Whitney sum} $\xi \oplus \xi$. Evidently the given complex structure on $\xi \otimes \bC$ corresponds to the complex structure\index{complex structure $\complexstructure$} \[\complexstructure(x,y) = (-y,x) \] on this Whitney sum $\xi \oplus \xi$.
+
+\begin{lemma}
+\label{lem:15.01}
+The complexification $\xi \otimes \bC$\index{tensor product $\otimes$} of a real vector bundle is always isomorphic to its own conjugate bundle $\xoverline{\xi \otimes \bC}$. \index{conjugate bundle}
+\end{lemma}
+
+For the correspondence $f:x + iy \mapsto x -iy$, maps the total space $E(\xi \otimes \bC)$ homeomorphically onto itself, and is $\bR$-linear in each fiber with \newline$f(i(x+iy)) = -if(x+iy)$. \ensuremath{\blacksquare}
+
+Now consider the total Chern class\index{Chern class $\chernclass_i$} \[\chernclass(\xi \otimes \bC) = 1 + \chernclass_1(\xi \otimes \bC) + \chernclass_2(\xi \otimes \bC) + \cdots + \chernclass_n(\xi \otimes \bC)\] of this compleixfied $n$-plane bundle. Setting this equal to \[\chernclass(\xoverline{\xi \otimes \bC}) = 1-\chernclass_1(\xi \otimes \bC) + \chernclass_2(\xi \otimes \bC) - \cdots \pm \chernclass_n(\xi \otimes \bC)\] by \ref{lem:14.9}, we see that the odd Chern classes \[\chernclass_1(\xi \otimes \bC), \chernclass_3(\xi \otimes \bC), \cdots \] are all elements of order $2$. (Compare Problem \ref{prob:15-D}.)
+
+\begin{definition}
+Ignoring these elements of order $2$, the $i$-th \defemph{Pontrjagin class}\index{Pontrjagin class $\pontrjaginclass_i$} \[\pontrjaginclass_i(\xi) \in \homology^{4i}(B;\mathbb{Z})\] is defined to be the integral cohomology class $(-1)^i \chernclass_{2i}(\xi \otimes \bC)$. The sign $(-1)^i$ is introduced here so as to avoid a sign in later formulas (Corollary \ref{cor:15.08}, Example \ref{ex:15.06}). Evidently $\pontrjaginclass_i(\xi)$ is zero for $i > n/2$. The \defemph{total Pontrjagin class} is defined to be the unit
+\[\pontrjaginclass(xi) = 1 + \pontrjaginclass_1(\xi) + \cdots + \pontrjaginclass_{\lfloor n/2\rfloor}(\xi)\] in the ring $\homology^\Pi(B;\mathbb{Z})$. Here $\lfloor n/2\rfloor$ denotes the largest integer less than or equal to $n/2$.
+\end{definition}
+
+\begin{lemma}
+\label{lem:15.02}
+Pontrjagin classes are natural with respect to bundle maps. Furthermore, if $\trivialbundle^k$ is a trivial $k$-plane bundle, then $\pontrjaginclass(\xi \oplus \trivialbundle^k) = \pontrjaginclass(\trivialbundle)$.
+\end{lemma}
+\begin{proof}
+This follows immediately from \ref{lem:14.02} and \ref{lem:14.03}.
+\end{proof}
+
+In analogy with the other characteristic classes we have studied, we would like the Pontrjagin classes to satisfy a product formula. There is some difficulty however, since the odd Chern classes of $\xi \otimes \bC$ have been thrown away, so the best we can do is the following.
+
+\begin{theorem}
+\label{thm:15.03}\index{product formulas}
+The total Pontrjagin class $\pontrjaginclass(\xi \oplus \eta)$ of a Whitney sum is congruent to $\pontrjaginclass(\xi)\pontrjaginclass(\eta)$ modulo elements of order $2$. In otherwords\index{Whitney sum} \[2(\pontrjaginclass(\xi \oplus \eta) - \pontrjaginclass(\xi)\pontrjaginclass(\eta)) = 0.\]
+\end{theorem}
+\begin{proof}
+Since $(\xi \oplus \eta)\otimes \bC$ is clearly isomorphic to $(\xi \otimes \bC) \oplus (\eta \otimes \bC)$ we have \[\chernclass_k((\xi \oplus \eta)\otimes \bC) = \sum_{i+j=k} \chernclass_i(\xi \otimes \bC) \chernclass_j(\eta \otimes \bC).\] Ignoring the odd Chern classes, which are all elements of order $2$, it follows that \[\chernclass_{2k}((\xi \oplus \eta)\otimes \bC) = \sum_{i+j=k} \chernclass_{2i}(\xi \otimes \bC) \chernclass_{2j}(\eta \otimes \bC)\] modulo elements of order $2$. Multiplying both sides of this congruence by \newline $(-1)^k = (-1)^i(-1)^j$, it follows that \[\pontrjaginclass_k(\xi \oplus \eta) = \sum_{i+j = k} \pontrjaginclass_i(\xi)\pontrjaginclass_j(\eta),\] as required.
+\end{proof}
+
+\begin{example}
+For the tangent bundle $\tau^n$ of the $n$-sphere, since the Whitney sum $\tau^n \oplus \nu^1 \cong \tau^n \oplus \trivialbundle^1$ is trivial, it follows by \ref{lem:15.02} that the total Pontrjagin class $\pontrjaginclass(\tau^n)$ is equal to $1$.
+\end{example}
+
+Thus the Pontrjagin classes of the tangent bundle of a sphere are uninteresting. To obtain some interesting examples we will look at the complex projective spaces. But first we must develop a further relationship betwen Pontrjagin classes and Chern classes.
+
+At this point, we have a situation which can be represented schematically by Figure \ref{fig:figure11}.
+
+\begin{figure}[ht]
+    \centering
+    \scalebox{.7}{
+    \incfig{fig11}
+    }
+    \caption{}
+    \label{fig:figure11}
+\end{figure}
+
+Starting with the real $n$-plane bundle $\xi$, we can first form the induced complex $n$-plane bundle $\xi \otimes \bC$. Then, forgetting the complex structure, we obtain the underlying real\index{underlying real bundle $\omega_\bR$} $2n$-plane bundle $(\xi \otimes \bC)_\bR$ with a canonical preferred orientation. Finally, forgetting the orientation, this resulting real $2n$-plane bundle can be identified simply with the Whitney sum $\xi \oplus \xi$.
+
+However, instead of starting at the top of the circle (i.e., with a real vector bundle), we can equally well start somewhere else on the circle. After circumnavigating the circle we will then obtain a new bundle of the same type (complex or oriented) as the bundle we started with, but with twice the dimension of the original bundle. Suppose for example that we start with a complex vector bundle.
+
+\begin{lemma}
+\label{lem:15.04}
+For any complex vector bundle $\omega$, the complexification $\omega_{\bR} \otimes \bC$ of the underlying real vector bundle is canonically isomorphic to the Whitney sum $\omega \oplus \xoverline{\omega}$.\index{conjugate bundle}
+\end{lemma}
+\begin{proof}
+For any real vector space $V$, recall that $V \otimes \bC$ can be identified with the direct sum $V \oplus V$, made into a complex vector space by means of the complex structure $\complexstructure(x,y) = (-y,x)$. 
+
+Now suppose that $V = F_\bR$ where $F$ is the typical fiber of a complex vector bundle. Then it is easy to verify that the correspondence \[g:x \mapsto (x,-ix)\] from $F$ to $V \oplus V$ is complex lienar, that is $g(ix) = \complexstructure(g(x))$. Similarly the correspondence from $F$ to $V \oplus V$ is  conjugate linear. Since every point $(x,y)$ of $V \oplus V \cong F_\bR \otimes \bC$ can be written uniquely as the sum \[g\bigg(\frac{x+iy}{2}\bigg) + h\bigg(\frac{x-iy}{2}\bigg)\] of an elemnt in $g(F)$ and an element in $h(F)$, it follows that $F_\bR \otimes \bC$ is canonically isomorphic, \defemph{as complex vector space} to $F \oplus \xoverline{F}$. This is true for each fiber $F$ of $\omega$, so combining all of these isomorphisms it follows that $\omega_\bR \otimes \bC \cong \omega \oplus \xoverline{\omega}$ as asserted.
+\end{proof}
+
+\begin{corollary}
+\label{cor:15.05}
+For any complex $n$-plane bundle $\omega$, the Chern classes $\chernclass_i(\omega)$ determine the Pontrjagin classes $\pontrjaginclass_k(\omega_\bR)$ by the formula \[1-\pontrjaginclass_1+\pontrjaginclass_2 - \cdots \pm \pontrjaginclass_n = (1-\chernclass_1+\chernclass_2 -\cdots \pm \chernclass_n)(1+\chernclass_1 +\chernclass_2 + \cdots + \chernclass_n)\] Thus $\pontrjaginclass_k(\omega_\bR)$ is equal to \[ \chernclass_k(\omega)^2 - 2\chernclass_{k-1}(\omega)\chernclass_{k+1}(\omega) + \cdots \pm 2\chernclass_1(\omega)\chernclass_{2k-1}(\omega) \mp 2\chernclass_{2k}(\omega)\]
+\end{corollary}
+\begin{proof}
+This follows immediately, making use of \ref{eqn:14.07} and Lemma \ref{lem:14.9}.
+\end{proof}
+
+\begin{customexample}{15.6}
+\label{ex:15.06}
+Let $\tau$ be the tangent bundle of the complex projective space $\projective^n(\bC)$. Since the total Chern class $\chernclass(\tau)$ equals $(1+a)^{n+1}$ by Theorem \ref{thm:14.10}, it follows that  the Pontrjagin classes $\pontrjaginclass_k(\tau_\bR)$ are given by \[\begin{split}(1-\pontrjaginclass_1+\cdots \pm \pontrjaginclass_n) = (1-\chernclass_1 + \cdots \pm \chernclass_n)(1+\chernclass_1+\cdots+\chernclass_n) \\ = (1-a)^{n+1}(1+a)^{n+1} = (1-a^2)^{n+1}. \end{split}\] Therefore the total Pontrjagin class $1+\pontrjaginclass_1+\cdots+\pontrjaginclass_n$ is equal to $(1+a^2)^{n+1}$. In other words \index{projective space!\indexline real $\projective^n$}
+\[\pontrjaginclass_k(\projective^n(\bC)) = \binom{n+1}{k} a^{2k}\] for $1 \leq k \leq n/2$, where the higher Pontrjagin classes are zero since $\homology^{4k}(\projective^n(\bC))$ for $k > n/2$. Here we are using the abbreviation $\pontrjaginclass_k(M)$ for the tangential Pontrjagin class $\pontrjaginclass_k(\tau(M)_\bR)$ of a complex manifold $M$. Thus 
+\[\begin{split} &\pontrjaginclass(\projective^1(\bC)) = 1 \\ &\pontrjaginclass(\projective^2(\bC)) = 1 +3a^2 \\ &\pontrjaginclass(\projective^3(\bC)) = 1 + 4a^2 \\ &\pontrjaginclass(\projective^4(\bC)) = 1 + 5a^2 + 10a^4 \\ &\pontrjaginclass(\projective^5(\bC)) = 1 + 6a^2 + 15a^4 \\ &\pontrjaginclass(\projective^6(\bC))  = 1 + 7a^2 + 21a^4 + 35a^6, \end{split}\] and so on. From these examples we see that Pontrjagin classes can well be non-zero.
+\end{customexample}
+
+Now suppose we start with an oriented $n$-plane bundle $\xi$. Complexifying and then passing to the underlying real vector bundle, we obtain a $2n$-plane bundle $(\xi \otimes \bC)_\bR$ with a preferred orientation by \ref{thm:14.1}.\index{oriented bundle}
+\setcounter{theorem}{6}
+\begin{lemma}
+\label{lem:15.07}
+The real $2n$-plane bundle $(\xi \otimes \bC)_\bR$ is isomorphic to $\xi \oplus \xi$ under an isomorphism which either preserves or reverses orientation according as $n(n-1)/2$ is even or odd.
+\end{lemma}
+\begin{proof}
+Let $v_1,\cdots,v_n$ be an ordered basis for a typical fiber $F$ of $\xi$. Then the vectors $v_1,iv_1,\cdots,v_n,iv_n$ form an ordered basis determining the preferred orientation for $(F\otimes \bC)_\bR$. Identifying this with the real direct sum $F \oplus iF \cong F \oplus F$, the basis $v_1,\cdots,v_n$ for $F$ followed by the basis $iv_1,\cdots,iv_n$ for $iF$ gives a different ordered basis. Evidently the permutation which transforms one ordered basis to the other has sign $(-1)^{(n-1) + (n-2) + \cdots + 1} = (-1)^{n(n-1)/2}$.
+\end{proof}
+\begin{corollary}
+\label{cor:15.08}
+If $\xi$ is an oriented $2k$-plane bundle, then the Pontrjagin class $\pontrjaginclass_k(\xi)$ is equal to the square of the Euler class $\eulerclass(\xi)$.\index{Euler class $\eulerclass$}
+\end{corollary}
+For by definition $\pontrjaginclass_k(\xi)$ is equal to the $(-1)^k \chernclass_{2k}(\xi \otimes \bC) = (=1)^k \eulerclass((\xi \otimes \bC)_\bR)$. But, according to Lemma \ref{lem:15.07} and Property \ref{pro:09.06}, the Euler class $\eulerclass((\xi \otimes \bC)_\bR)$ is equal to $\eulerclass(\xi \oplus \xi) = \eulerclass(\xi)^2$ multiplied by the sign $(-1)^{2k(2k-1)/2} = (-1)^k$.
+
+
+\end{document}

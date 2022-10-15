@@ -1,0 +1,70 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{The Tangent Bundle of Complex Projective Space}\index{projective space!\indexline complex $\projective^n(\bC)$}
+As an application, consider the tangent bundle $\tangentbundle{}^n$ of the projective space $\projective^{n}(\mathbb{C})$\index{tangent bundle $\tangentbundle{M}$!\indexline complex}
+
+\begin{theorem}\label{thm:14.10} The total Chern class $\chernclass(\tangentbundle{}^n)$ is equal to $(1+a)^{n+1}$ where a is a suitably chosen generator for the group $\homology^{2}(\projective^{n}(\mathbb{C}) ; \mathbb{Z}).$
+
+\end{theorem} 
+
+In fact we will see that $a$ is the negative of the generator $\chernclass_{1}(\tautological^{1})$ which was used in \ref{thm:14.04}.
+
+\begin{proof} Let $\tautological^{1}=\tautological^{1}(\mathbb{C}^{n+1})$ be the canonical line bundle over $\projective^{n}(\mathbb{C})$, and let $\omega^{n}$ be its orthogonal complement, using the standard Hermitian metric on $\mathbb{C}^{n+1}$, so that the Whitney sum $\tautological^{1} \oplus \omega^{n}$ is a trivial complex $(n+1)$-plane bundle over $\projective^{n}(\mathbb{C})$. We will show that the complex vector bundle
+\[
+\Hom_{\mathbb{C}}(\tautological^{1}, \omega^{n})
+\]
+can be identified with the tangent bundle $\tangentbundle{}^n$ of $\projective^{n}(\mathbb{C})$. In fact if $L$ is a complex line through the origin in $\mathbb{C}^{n+1}$, and $L^{\perp}$\index{orthogonal complement $\xi^\perp$} is its orthogonal complement, then the vector space $\Hom(L, L^{\perp})$ can be identified, complex analytically, with the neighborhood of $L$ in $\projective^{n}(\mathbb{C})$ consisting of all lines $L^{\prime}$ which can be considered as graphs of linear maps from $L$ to $L^{\perp}$. (Compare pp. \pageref{lem:05.01},\pageref{prob-5-B} as well as Lemma \ref{lem:04.04}.) It follows easily that the tangent space of $\projective^{n}(\mathbb{C})$ at $L$ can be identified with $\Hom(L, L^{\perp})$, and hence that $\tangentbundle{}^n \cong \Hom(\tautological^{1}, \omega^{n})$.
+
+Now adding the trivial bundle $\trivialbundle^{1} \cong \Hom(\tautological^{1}, \tautological^{1})$ to both sides of the equation $\tangentbundle{}^n \cong \Hom(\tautological^{1}, \omega^{n})$ it follows that
+\[
+\begin{aligned}
+\tau^{n}\oplus \trivialbundle^1 & \cong \Hom(\tautological^{1}, \omega^{n} \oplus \tautological^{1}) \\
+& \cong \Hom(\tautological^{1}, \trivialbundle^{1} \oplus \ldots \oplus \trivialbundle^{1}) .
+\end{aligned}
+\]
+Clearly this can be identified with the Whitney sum of $n+1$ copies of the dual bundle $\Hom(\tautological^{1}, \trivialbundle^{1}) \cong \xoverline{\tautological}^{1}$. Thus the total Chern class $\chernclass(\tautological^{n})=\chernclass(\tangentbundle{}^n \oplus \trivialbundle^{1})$ is equal to
+\[
+\chernclass(\xoverline{\tautological}^{1})^{n+1}=(1-\chernclass_{1}(\tautological^{1}))^{n+1},
+\]
+using Lemma \ref{lem:14.9}. Setting $a=-\chernclass_{1}(\tautological^{1})$, the conclusion follows.\end{proof}
+
+\begin{remark*} It follows that the top Chern class $\chernclass_{n}(\tangentbundle{}^n)$ is equal to $(n+1) a^{n}$. Therefore the Euler number\index{Euler characteristic}
+\[
+\begin{aligned}
+\eulerclass[\projective^{n}(\mathbb{C})] &=\chernclass_{n}[\projective^{n}(\mathbb{C})] \\
+&=\langle\chernclass_{n}(\tangentbundle{}^n), \mu_{2 n}\rangle
+\end{aligned}
+\]
+is equal to $n+1$ multiplied by the sign $\langle a^{n}, \mu_{2 n}\rangle=\pm 1$. Here $\mu_{2 n}$ denotes the fundamental homology class of $\projective^{n}(\mathbb{C})$. Setting this Euler number equal to
+\[
+\sum(-1)^{i} \operatorname{rank} \homology^{i}(\projective^{n}(\mathbb{C}))=n+1
+\]
+by corollary \ref{cor:11.12}, it follows that the sign $\langle a^{n}, \mu_{2 n}\rangle$ is actually $+1$. \defemph{Thus $a^{n}$ is precisely the generator of $\homology^{2n}(\projective^n(\mathbb{C});\mathbb{Z})$ which is compatible with the preferred orientation.}\end{remark*}
+
+Here are some exercises for the reader.
+
+\begin{problem}\label{prob:14.A}Use Lemma \ref{lem:14.9} to give another proof that the tangent bundle of $\projective^{1}(\mathbb{C})$ is not isomorphic to its conjugate bundle.\index{conjugate bundle}
+\end{problem}
+
+\begin{problem}\label{prob:14.B} Using Property \ref{pro:09.05}, prove inductively that the coefficient homomorphism $\homology^{i}(\base ; \mathbb{Z}) \varrightarrow{} \homology^{i}(\base ; \mathbb{Z} / 2)$ maps the total Chern class $\chernclass(\omega)$ to the total Stiefel-Whitney class $\sw(\omega_{\mathbb{R}})$. In particular show that the odd Stiefel-Whitney classes of $\omega_{\mathbb{R}}$ are zero.\index{Chern class $\chernclass_i$}\index{Stiefel-Whitney class $\sw_i$}
+
+\end{problem} 
+
+\begin{problem}\label{prob:14.C}\index{Stiefel manifold} Let $\StiefelManifold_{n-q}(\mathbb{C}^{n})$ denote the complex Stiefel manifold consisting of all complex $(n-q)$-frames in $\mathbb{C}^{n}$, where $0 \leq q<n$. According to \cite[$\S$25.7]{steenrod1951} this manifold is $2 q$-connected, and
+\[
+\pi_{2 q+1} \StiefelManifold_{n-q}(\mathbb{C}^{n}) \cong \mathbb{Z}
+\]
+Given a complex $n$-plane bundle $\omega$ over a CW-complex\index{CW-complex} $\base$ with typical fiber $F$, construct an associated bundle $\StiefelManifold_{n-q}(\omega)$ over $\base$ with typical fiber $\StiefelManifold_{n-q}(F)$. Show that the primary obstruction\index{obstruction} to the existence of a cross-section of $\StiefelManifold_{n-q}(\omega)$ is a cohomology class in
+\[
+\homology^{2 q+2}(\base ;\{\pi_{2 q+1} \StiefelManifold_{n-q}(F)\})
+\]
+which can be identified with the Chern class $\chernclass_{q+1}(\omega)$.
+\end{problem}
+
+\begin{problem}\index{Grassmannian manifold!\indexline complex}\label{prob:14.D}In analogy with $\S $\ref{ch:6}, construct a cell subdivision for the complex Grassmann manifold $\grassmannian_{n}(\mathbb{C}^{\infty})$ with one cell of dimension $2 k$ corresponding to each partition\index{partition} of $k$ into at most $n$ integers. Show that the Chern class $\chernclass_{k}(\tautological^{n})$ corresponds to the cocycle which assigns $\pm 1$ to the Schubert\index{Schubert cell, Schubert variety} cell indexed by the partition $1,1, \ldots, 1$ of $k$, and zero to all other cells. (Compare Problem \ref{prob:06.03}.)
+
+\end{problem} 
+
+\begin{problem}\label{prob:14.E} In analogy with the construction of Chern classes, show that it is possible to define the Stiefel-Whitney classes of a real $n$-plane bundle inductively by the formula $\sw_{i}(\xi)=\pi_{0}^{*-1} \sw_{i}(\xi_{0})$ for $i<n$. Here the top Stiefel-Whitney class $\sw_{n}(\xi)$ must be constructed by the procedure of $\S$\ref{ch:9} (Property \ref{pro:09.05}), as a mod $2$ analogue of the Euler class. [In this approach there is some difficulty in showing that $\sw_{n-1}(\xi_{0})$ belongs to the image of $\pi_{0}^{*}$. It suffices to show that $\sw_{n-1}(\xi_{0})$ restricts to zero in each fiber $F_{0}$, or equivalently that the tangent bundle $\tau$ of the $(n-1)-$ sphere satisfies $\sw_{n-1}(\tau)=0$. Compare pp. \pageref{lem:04.03}. It is at this point that mod $2$ coefficients are essential, since $\eulerclass(\tau) \neq 0$ in general.] Using this construction of Stiefel-Whitney classes, verify the axioms of $\S 4$ without making any use of Steenrod squares.
+\end{problem}
+\end{document}

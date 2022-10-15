@@ -1,0 +1,97 @@
+\documentclass[../main]{subfiles}
+\chapter{Obstructions}
+\begin{document}
+In the original work of Stiefel and Whitney, characteristic classes were defined as obstructions\index{obstruction} to the existence of certain fields of linearly independent vectors\index{vector field}. A careful exposition from this point of view is given in \cite[\S 25.6,35 and 38]{steenrod1951}. The construction can be outlined roughly as follows.
+
+Let $\xi$ be an $n$-plane bundle with base space $\base$. For each fiber $F$ of $\xi$ consider the Stiefel manifold\index{Stiefel manifold} $\StiefelManifold_{k}(F)$ consisting of all $k$-frames in $F$. Here by a \defemph{$k$-frame}\index{frame}\index{n-frame@$n$-frame} we mean simply a $k$-tuple $(v_{1}, \ldots, v_{k})$ of linearly independent vectors of $F$; where $1 \leq k \leq n$. (Compare $\S$\ref{ch:5}. Steenrod uses orthonormal $k$-frames, but this modification does not affect the argument). These manifolds $\StiefelManifold_{k}(F)$ can be considered as the fibers of a new fiber bundle which we will denote by $\StiefelManifold_{k}(\xi)$ and call the \defemph{associated Stiefel manifold bundle}\index{associated bundle} over $\base$. By definition, the total space of $\StiefelManifold_{k}(\xi)$ consists of all pairs $(x,(v_{1}, \ldots, v_{k}))$ where $x$ is a point of $B$ and $(v_{1}, \ldots, v_{k})$ is a $k$-frame in the fiber $F_{x}$ over $x$. Note that a cross-section\index{cross-section} of this Stiefel manifold bundle is nothing but a $k$-tuple of linearly independent cross-sections of the vector bundle $\xi$.
+
+Now suppose that the base space $B$ is a CW-complex.\index{CW-complex}\footnote{Steenrod considers only the case of a finite cell complex but it is useful, and not much more difficult, to allow arbitrary CW-complexes.} As an example, if the base space is a smooth paracompact manifold\index{smooth manifold} then according to J. H. C. Whitehead it possesses a smooth triangulation\index{triangulation}, and hence can certainly be given the structure of a CW-complex. (Compare \cite{munkres2000topology}.)
+
+ Steenrod shows that the fiber $\StiefelManifold_{k}(F)$ is $(n-k-1)$-connected, so it is easy to construct a cross-section of $\StiefelManifold_{k}(\xi)$ over the $(n-k)$-skeleton of $B$. There exists a cross-section over the $(n-k+1)$-skeleton of $B$ if and only if a certain well defined \defemph{primary obstruction class} in
+\[
+\homology^{n-k+1}(B ;\{\pi_{n-k} \StiefelManifold_{k}(F)\})
+\]
+is zero. Here we are using cohomology with \defemphi{local coefficients}. The notation $\{\pi_{n-k}\StiefelManifold_{k}(F)\}$ is used to denote the system of local coefficients (= bundle of abelian groups) which associates to each point $x$ of $\base$ the coefficient group $\pi_{n-k} \StiefelManifold_{k}(F_{x})$. (In the special case $n-k=0, \pi_{0} X$ is defined to be the reduced singular group $\xtilde{\homology}_{0}(X ; \mathbb{Z}) .)$
+
+Setting $j=n-k+1$, we will use the notation
+\[
+\obstruction_{j}(\xi) \in \homology^{j}(\base ;\{\pi_{j-1}\StiefelManifold_{n-j+1}(F)\})
+\]
+for this primary obstruction class. If $j$ is even, and less than $n$, then Steenrod shows that the coefficient group $\pi_{j-1} \StiefelManifold_{n-j+1}(F)$ is cyclic of order $2$. Hence it is canonically isomorphic to $\mathbb{Z} / 2$. If $j$ is odd, or $j=n$, the group $\pi_{j-1}\StiefelManifold_{n-j+1}(F)$ is infinite cyclic. However it is not canonically isomorphic to $\mathbb{Z}$. The system of local coefficients $\{\pi_{j-1} \StiefelManifold_{n-j+1}(F)\}$ is twisted in general.
+
+In any case, there is certainly a unique non-trivial homomorphism $h$ from $\pi_{j-1} \StiefelManifold_{n-j+1}(F)$ to $\mathbb{Z} / 2$. Hence we can reduce the coefficients modulo $2$, obtaining an induced cohomology class $h_{*} \obstruction_{j}(\xi) \in \homology^{j}(B ; \mathbb{Z} / 2)$.
+
+\begin{theorem}\label{thm:12.01}
+This reduction modulo $2$ of the obstruction class $\obstruction_{j}(\xi)$ is equal to the Stiefel-Whitney class $\sw_{j}(\xi)$.\index{Stiefel-Whitney class $\sw_i$}
+\end{theorem} 
+
+\begin{proof} First consider the universal bundle $\tautological^{n}$ over $\grassmannian_{n}=\grassmannian_{n}(\mathbb{R}^{\infty})$. Since $\homology^{*}(\grassmannian_n ; \mathbb{Z} / 2)$ is a polynomial algebra on generators $\sw_{1}(\tautological^{n}), \ldots$, $\sw_{n}(\tautological^{n})$,\index{cohomology!\indexline of $\grassmannian_n$} it follows that
+\[
+h_{*} \obstruction_{j}(\tautological^{n})=f_{j}(\sw_{1}(\tautological^{n}), \ldots, \sw_{n}(\tautological^{n}))
+\]
+for some polynomial $f_{j}$ in $n$ variables. Since both the obstruction class and the Stiefel-Whitney classes are natural with respect to bundle mappings (see \cite[\S 35.7]{steenrod1951}), it follows that
+\[
+h_{*} \obstruction_{j}(\xi)=f_{j}(\sw_{1}(\xi), \ldots, \sw_{n}(\xi))
+\]
+for any $n$-plane bundle $\xi$ over a CW-complex.
+
+Since $f_{j}(\sw_{1}, \ldots, \sw_{n})$ is a cohomology class of dimension $j \leq n$, the polynomial $f_{j}$ can certainly be written uniquely as a sum
+\[
+f_{j}(\sw_{1}, \ldots, \sw_{n})=f^{\prime}(\sw_{1}, \ldots, \sw_{j-1})+\lambda \sw_{j}
+\]
+where $f^{\prime}=f_{j, n}^{\prime}$ is a polynomial and $\lambda=\lambda_{j, n}$ equals 0 or 1 .
+
+To compute $f^{\prime}$, consider the $n$-plane bundle $\eta=\tautological^{j-1} \oplus \varepsilon^{n-j+1}$ over $\grassmannian_{j-1}$, where $\varepsilon^{n-j+1}$ is a trivial bundle. This bundle $\eta$ admits $n-j+1$ linearly independent cross-sections, so the obstruction class
+\[
+\obstruction_{j}(\eta) \in \homology^{j}(\base ;\{\pi_{j-1}\StiefelManifold_{n-j+1}(~F)\})
+\]
+must be zero. Therefore the mod $2$ class
+\[
+\begin{aligned}
+h_{*} \obstruction_{j}(\eta) &=f^{\prime}(\sw_{1}(\eta), \ldots, \sw_{j-1}(\eta))+\lambda \sw_{j}(\eta) \\
+&=f^{\prime}(\sw_{1}(\tautological^{j-1}), \ldots, \sw_{j-1}(\tautological^{j-1}))+0
+\end{aligned}
+\]
+is equal to zero. Since the classes $\sw_{1}(\tautological^{j-1}), \ldots, \sw_{j-1}(\tautological^{j-1})$ are algebraically independent, this proves that $f^{\prime}=0$. Thus
+\[
+h_{*} \obstruction_{j}(\xi)=\lambda \sw_{j}(\xi)
+\]
+for any $n$-plane bundle $\xi$.
+
+\index{vector field}To prove that $\lambda=\lambda_{j, n}$ is equal to 1 , first consider the case $j=n$. Let $\xi=\tautological_{1}^{n}$\index{cannonical bundle!\indexline plane $\tautological^n$} be the restriction of the universal bundle $\tautological^{n}$ to the Grassmann manifold $\grassmannian_n(\mathbb{R}^{n+1})$ of $n$-planes in $(n+1)$-space. Identifying $\grassmannian_n(\mathbb{R}^{n+1})$ with the real projective space $\projective^{n}$ as in \ref{sec:5.1}, this bundle $\tautological_{1}^{n}$ can be described as follows. Corresponding to each pair of antipodal points $\{u,-u\}$ on the unit sphere $S^{n}$ one associates the fiber consisting of all vectors $v$ in $\mathbb{R}^{n+1}$ with $u \cdot v=0$
+
+\begin{figure}[ht]
+    \centering
+    \incfig{fig9}
+    \caption{}
+    \label{fig:figure9}
+\end{figure}
+
+A cross-section\index{cross-section} of $\tautological_{1}^{n}$ which is non-zero except at a single point $\{u_{0},-u_{0}\}$ of $\projective^{n}$ is given by the formula $\{u,-u\} \mapsto u_{0}-(u_{0} \cdot u) u$.
+
+\begin{figure}[ht]
+    \centering
+    \incfig{fig10}
+    \caption{}
+    \label{fig:figure10}
+\end{figure}
+
+Now choosing the point $u_{0}$ in the middle of the $n$-dimensional cell of $\projective^{n}$\index{projective space!\indexline real $\projective^n$} (compare $\S$\ref{cor:06.05}), we have a cross-section of $\StiefelManifold_{1}(\tautological_{1}^{n})$ over the $(n-1)$-skeleton, and the obstruction cocycle clearly assigns to the $n$-cell a generator of the cyclic group
+\[
+\pi_{n-1} \StiefelManifold_{1} F=\pi_{n-1}(F-0) \cong \mathbb{Z}.
+\]
+Thus $h_{*} \obstruction_{n}(\tautological_{1}^{n}) \neq 0$, so the coefficient $\lambda_{n, n}$ must be equal to 1 .\end{proof}
+
+The proof for $j<n$ is completely analogous. One uses the vector bundle $\tautological_{1}^{j} \oplus \varepsilon^{n-j}$ over $\grassmannian_{j}(\mathbb{R}^{j+1}) \cong \projective^{j}$, together with the description of the generator of the group $\pi_{j-1} v_{n-j+1}(\mathbb{R}^{n})$ which is given \cite[\S25.6]{steenrod1951}. 
+
+\begin{remark*}\index{triangulation}
+Closely related to the obstruction point of view is a curious description of the Stiefel-Whitney classes of a manifold $M$ which was conjectured by Stiefel and first proved by Whitney.\defemph{ Choosing any smooth triangulation of $M$, the sum of all simplices in the first barycentric subdivision is a mod $2$ cycle, representing the homology class $\sw \cap \mu$ which is Poincaré dual to the total Stiefel-Whitney class of $\tangentbundle{M}$.} A proof of this result has recently been published by \cite{halperinToledo}.\end{remark*}
+
+If we are given the Stiefel-Whitney classes $\sw_{j}(\xi)$ of an $n$-plane bundle, to what extent is it possible to reconstruct the obstruction classes $\obstruction_{j}(\xi)$? If $j=2 i$ is even and less than $n$, then the coefficient group $\pi_{j-1} \StiefelManifold_{n-j+1}(F)$ has order 2 , so we can write
+\[
+\obstruction_{2 i}(\xi)=\sw_{2 i}(\xi) \quad \text { for } \quad 2 i<n \text {, }
+\]
+without any danger of ambiguity. Furthermore, according to \cite[\S38.8]{steenrod1951}, the class $\obstruction_{2 i+1}(\xi)$ can be expressed as the image $\delta^{*} \obstruction_{2 i}(\xi)$ where $\delta^{*}$ is a suitably defined cohomology operation. \defemph{Thus the obstruction classes $\obstruction_{j}(\xi)$ with $j$ odd or $j<n$ are completely determined by the Stiefel-Whitney classes of $\xi$.}
+
+We will show that the highest obstruction class $\obstruction_{n}(\xi)$ can be identified with the Euler class $\eulerclass(\xi)$, provided that $\xi$ is oriented. We will make use of two important constructions in the proof.
+\end{document}

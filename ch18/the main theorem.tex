@@ -1,0 +1,60 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{The Main Theorem}
+In place of the smooth oriented $k$--plane bundle of Theorem \ref{thm:18.6}, let us substitute the universal oriented $k$--plane bundle ${\xtilde\tautological}^k$ over ${\xtilde\grassmannian}_k({\mathbb R}^\infty)$. The following result lies at the heart of Thom's theory. \index{Grassmannian manifold!\indexline oriented $\xtilde{\grassmannian}_n$}\index{universal bundle!\indexline oriented}
+%Label "Theorem of Thom"
+\begin{theorem*}[Thom]
+For $k > n + 1$ the homotopy group $\pi_{n + k}(\thom({\xtilde\tautological}^k), t_0)$ of the universal Thom space is canonically isomorphic to the oriented cobordism group $\orientedCobordism_n$\index{oriented cobordism}. Similarly the homotopy group $\pi_{n + k}(\thom(\tautological^k), t_0)$ associated with the unoriented universal bundle is canonically isomorphic to the unoriented cobordism group ${\unorientedCobordism}_n$. 
+\end{theorem*}
+
+\begin{remark*}
+Thom uses the notations $\MSO(k)$ and $\MO(k)$\index{MO(k),MSO(k)@$\MO(k),\MSO(k)$} for these two universal Thom spaces. These correspond to the standard notations $\BSO(k)$ and $\BO(k)$ for the associated universal base spaces. 
+\end{remark*} 
+
+To simplify our discussion, we will not prove all of Thom's theorem, but only the following partial statement. Let ${\xtilde\tautological}_p^k = {\xtilde\tautological}^k({\mathbb R}^{k + p})$ be the bundle of oriented $k$--planes in $(k + p)$--space. 
+
+\begin{lemma}
+\label{lem:18.7}
+If $k \ge n$ and $p \ge n$, then the homomorphism \[\pi_{n + k}(\thom({\xtilde\tautological}_p^k)) \longrightarrow \orientedCobordism_n\] of Theorem \ref{thm:18.6} is surjective. 
+\end{lemma}
+
+\begin{proof}
+Let $M^n$ be an arbitrary smooth, compact, oriented $n$--dimensional manifold. Then, by a theorem of \cite{whitney1944}, $M^n$ can be embedded\index{embedding} in the Euclidean space ${\mathbb R}^{n + k}$. Proceeding as in Theorem \ref{thm:11.01}\index{tubular neighborhood}, we can choose a neighborhood $U$ of $M^n$ in ${\mathbb R}^{n + k}$ which is diffeomorphic to the total space $E(\nu^k)$ of the normal bundle\index{normal bundle}. Using the Gauss map, we have \[U \cong E(\nu^k) \longrightarrow E({\xtilde\tautological}_n^k) \subset E({\xtilde\tautological}_p^k),\] and composing with the canonical map $E({\xtilde\tautological}_p^k) \longrightarrow \thom({\xtilde\tautological}_p^k)$, we obtain a map $g : U \longrightarrow \thom({\xtilde\tautological}_p^k)$ which is transverse to the zero cross--section $B$, and satisfies $g^{-1}(B) = M^n$.
+
+Now extend $g$ to the one--point compactification ${\mathbb R}^{n + k} \cup \{\infty\} \cong \sphere^{n + k}$ by mapping $\sphere^{n + k} - U$ to the base point $t_0$. The resulting map $\hat g : \sphere^{n + k} \longrightarrow \thom({\xtilde\tautological}_p^k)$ clearly gives rise, under the construction of Theorem \ref{thm:18.6}, to the cobordism class of $M^n$. 
+\end{proof}
+
+We are now ready to prove our main result.
+
+\begin{theorem}[Thom]\label{thm:18.8}
+The oriented cobordism group $\orientedCobordism_n$ is finite for $n \not \equiv 0 \pmod 4$, and is a finitely generated group with rank equal to $p(r)$\index{partition}, the number of partitions of $r$, when $n = 4r$. 
+\end{theorem}
+
+\begin{proof}
+By Lemma \ref{lem:18.7} the group $\orientedCobordism_n$ is a homomorphic image of $\pi_{n + k}(\thom({\xtilde\tautological}_p^k))$ for $k$ and $p$ large, and by Corollary \ref{cor:18.4} this latter group is $\abfin$--isomorphic to $\homology_n({\xtilde\grassmannian}_k({\mathbb R}^{k + p}); \mathbb Z)$. But using Theorem \ref{thm:15.9}, the group $\homology_n({\xtilde\grassmannian}_k({\mathbb R}^{k + p}); \mathbb Z)$ is finite for $n \not \equiv 0 \pmod 4$, and is finitely generated of rank $p(r)$ for $n = 4r$. Therefore $\orientedCobordism_n$ is finite for $n \not \equiv 0 \pmod 4$, and $\orientedCobordism_{4r}$ is finitely generated with \index{rank}\[\rank(\orientedCobordism_{4r}) \le p(r).\] Since $\rank(\orientedCobordism_{4r}) \ge p(r)$ by Corollary \ref{cor:17.05}, the conclusion follows. 
+\end{proof}
+
+If we kill torsion by tensoring the cobordism ring $\orientedCobordism_\ast$ with the rational numbers $\mathbb Q$, then evidently the products \[{\mathbb P}^{2 i_1}(\mathbb C) \times \ldots \times {\mathbb P}^{2 i_r}(\mathbb C),\] \index{projective space!\indexline complex $\projective^n(\bC)$}where $i_1, \ldots, i_r$ ranges over all partitions of $k$, will be linearly independent, and hence will form a basis for the vector space $\orientedCobordism_{4k} \otimes \mathbb Q$. (Compare Corollary \ref{cor:17.05}.) This proves the following. 
+
+\begin{corollary}\label{cor:18.9}
+The tensor product $\orientedCobordism_\ast \otimes \mathbb Q$ is a polynomial algebra over $\mathbb Q$ with independent generators ${\mathbb P}^2(\mathbb C)$, ${\mathbb P}^4(\mathbb C)$, ${\mathbb P}^6(\mathbb C)$, $\ldots$. 
+\end{corollary}
+
+Another immediate consequence is the following. 
+
+\begin{corollary}\label{cor:18.10}
+Let $M^n$ be smooth, compact and oriented. Then some positive multiple $M^n + \ldots + M^n$ is an oriented boundary if and only if every Pontrjagin number $\pontrjaginclass_I[M^n]$ is zero.\index{Pontrjagin number}
+\end{corollary}
+
+\begin{proof}
+For otherwise there would be too many linearly independent elements in $\orientedCobordism_n$. 
+\end{proof}
+
+\cite{wall} has proved the following much sharper statement. \defemph{The manifold $M^n$ itself is an oriented boundary if and only if all Pontrjagin numbers and all Stiefel--Whitney numbers of $M^n$ are zero.}\index{Stiefel-Whitney number} Thus the cobordism group $\orientedCobordism_n$ is always the direct sum of a number of copies of ${\mathbb Z}/2$ and (if $n \equiv 0 \mod 4$) a number of copies of $\mathbb Z$. 
+
+We conclude with a problem for the reader.
+
+\begin{problem}\label{prob:18.A}
+As in the proof of Lemma \ref{lem:18.5}, suppose that $f$ has the origin as regular value throughout a compact set $K'' \subset W \subset {\mathbb R}^m$. If $g$ is uniformly close to $f$ and the derivatives $\partial g_i/\partial x_j$ are uniformly close to the $\partial f_i/\partial x_j$, show that $g$ has the origin as regular value throughout $K''$. \index{regular value}
+\end{problem}
+\end{document}

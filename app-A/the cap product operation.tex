@@ -1,0 +1,138 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{The Cap Product Operation}\label{sec:A.9}
+
+For any space $X$ and any coefficient domain, there is a bilinear pairing operation
+\[
+\cap: C^i X \otimes C_n X \varrightarrow{} C_{n-i} X
+\]
+which can be characterized as follows. For each cochain $b \in C^{i} X$ and each chain $\xi \in C_{n} X$ the cap product $b \cap \xi$ is the unique element of $C_{n-i} X$ such that
+\[\tag{1}\label{eqn:A.1}\langle a, b \cap \xi\rangle=\langle ab, \xi\rangle\]
+for all $a \in C^{n-i} X$. More explicitly, for each generator $[\sigma]$ of $C_{n} X$, the cap product $b \cap[\sigma]$ can be defined as the product of the ring element \newline $(-1)^{i(n-i)} \langle b$, [back $i$-face of $\sigma] \rangle$ with the singular simplex [front $(n-i)$-face of $\sigma$].
+
+Combining the identity (1) with the standard properties of cup products, one can derive the following rules:
+\[\tag{2}\label{eqn:A.2}(bc) \cap \xi=b \cap(c \cap \xi)\]
+\[\tag{3}\label{eqn:A.3} 1\cap \xi=\xi\]
+\[\tag{4}\label{eqn:A.4}\partial(b \cap \xi)=(\delta b) \cap \xi+(-1)^{\dim b} b \cap \partial \xi.\]
+From (4) it follows that there is a corresponding operation
+\[ \homology^{i}X \otimes \homology_{n}X \varrightarrow{} \homology_{n-i}X \]
+which will also be denoted by $\cap$.
+
+In terms of this operation we can now state the duality theorem for compact manifolds, using any coefficient domain.
+
+\begin{theorem*}[Poincar\'e Duality]\label{thm:22.8} If $M$ is compact and oriented, then $\homology^{i}M$ is isomorphic to $\homology_{n-i}M$ under the correspondence $a \mapsto a \cap \mu_{M}$.
+\end{theorem*}
+
+For a non-orientable manifold the duality theorem is still true, but only if one uses the coefficient domain $\mathbb{Z}/2$. 
+
+\begin{proof}
+
+The proof will involve a more general situation. First observe that for any pair $(X, A)$, the cap product gives rise to a pairing
+\[ C^{i}(X, A) \otimes C_{n}(X, A) \varrightarrow{} C_{n-i} X \]
+and hence to a pairing
+\[ \cap: \homology^{i}(X, A) \otimes \homology_{n}(X, A) \varrightarrow{} \homology_{n-i} X. \]
+(In even greater generality one can define
+\[ \cap: \homology^{i}(X, A) \otimes \homology_{n}(X, A \cup B) \varrightarrow{} \homology_{n-i}(X, B) \]
+if $A$ and $B$ are open in $A \cup B$.) Now let $M$ be oriented but not necessarily compact. Define the duality map
+\[ D: \homology_{c}^{i} M \varrightarrow{} \homology_{n-i} M \]
+as follows.  For any $a \in \homology_{c}^{i} M = \displaystyle\lim_{\longrightarrow} \homology^i(M,M-K)$ choose a representative  $a' \in \homology^{i}(M, M-K)$ and set
+\[ D(a)=a' \cap \mu_{K}. \]
+This is well defined since, for $K \subset L$, the diagram
+
+\[
+\begin{tikzcd}
+	\homology^i(M,M-K) \arrow[rr] \arrow[rd, "\cap \mu_K"] & & \homology^i(M,M-L) \arrow["\cap\mu_L", ld] \\
+	& \homology_{n-i}M
+\end{tikzcd}
+\]
+
+is clearly commutative. In the special case where $M$ is compact, note that $D(a)=a \cap \mu_{M}$.
+Assuming the Theorem below, this proves Poincar\'e duality.
+\end{proof}
+
+\begin{theorem}[Duality theorem]\label{thm:22:9}
+The homomorphism D maps $\homology_{c}^{i} M$ isomorphically onto $\homology_{n-i} M$.
+\end{theorem}
+
+If $M$ is compact, then this implies that $\cap \mu_{M}$ maps $\homology^{i} M$ isomorphically onto $\homology_{n-i} M$, as previously asserted.
+
+\begin{proof}
+The proof will be divided into five cases.
+\begin{enumerate}[label = Case \arabic*.]
+    \item Suppose that $M=\mathbb{R}^{n}$.
+
+    Given any ball $B$ we clearly have $\homology_{n}(\mathbb{R}^{n}, \mathbb{R}^{n}-B) \cong \Lambda$ with generator $\mu_{B}$. (Compare Theorem~\ref{thm:A.8}, Case 1.) Hence $\homology^{n}(\mathbb{R}^{n}, \mathbb{R}^{n}-B) \cong \Lambda$ by Theorem~\ref{thm:A.1}, with a generator $a$ such that $\langle a, \mu_{B}\rangle=1$. Now the identity
+    \[
+    \langle 1 a, \mu_{B}\rangle=\langle 1, a \cap \mu_{B}\rangle
+    \]
+    shows that $a \cap \mu_{B}$ is a generator of $\homology_{0} \mathbb{R}^{n} \cong \Lambda$. Thus $\cap \mu_{B}$ maps \newline $\homology^{\bullet}(\mathbb{R}^{n}, \mathbb{R}^{n}-B)$ isomorphically to $\homology_{\bullet}(\mathbb{R}^{n})$, and passing to the direct limit as $B$ becomes larger it follows that the homomorphism $D$ maps $\homology_{c}^{\bullet}(\mathbb{R}^{n})$ isomorphically onto $\homology_{\bullet}(\mathbb{R}^{n})$.
+    
+    \item Suppose that $M=U \cup V$ where the theorem is true for the open subsets $U , V $ and $U  \cap V $.
+
+    We will construct a commutative diagram
+    \[
+    \begin{tikzcd}
+     \ldots \arrow[r,"\delta"] & \homology_{c}^{i} (U \cap V) \arrow[d,"D"] \arrow[r] & \homology_{c}^{i}U \oplus \homology_{c}^{i}V \arrow[d,"D"] \arrow[r] & \homology_{c}^{i}M \arrow[d,"D"] \arrow[r,"\delta"] & \ldots \\
+      \ldots \arrow[r,"\partial"] & \homology_{n-i} (U \cap V) \arrow[r] & \homology_{n-i} U \oplus \homology_{n-i}V \arrow[r] & \homology_{n-i}M  \arrow[r,"\delta"] & \ldots
+    \end{tikzcd}\]
+    where the bottom line is a Mayer-Vietoris sequence \cite[p. 37]{eilenbergsteenrod1952}. The construction of the bottom sequence is similar to that in the proof of Lemma~\ref{lem:A.7}. To construct the top exact sequence, note that for each compact $K \subset U$ and $L \subset V$ there is a relative Mayer-Vietoris sequence 
+    \[
+    \adjustbox{scale=.8}{
+    \begin{tikzcd}
+    \ldots \arrow[r,"\delta"] & \homology^i (M,M-K \cap L) \arrow[r] & \homology^i(M,M-K) \oplus \homology^i (M,M-L) \arrow[r] & \homology^i (M,M-K\cup L) \arrow[r] & \ldots,
+    \end{tikzcd}
+    }
+    \]
+    as in the proof of Lemma~\ref{lem:A.7}. By excision this can be rewritten as
+    \[
+    \adjustbox{scale=.8}{
+    \begin{tikzcd}
+    \ldots \arrow[r,"\delta"] & \homology^i (U \cap V, U \cap V-K\cap L) \arrow[r] & \homology^i(U,U-K) \oplus \homology^i (V,V-L) \arrow[r] & \homology^i (M,M-K\cup L) \arrow[r] & \ldots,
+    \end{tikzcd}
+    }
+    \]
+    Now passing to the direct limit as $K$ and $L$ become larger we obtain the required sequence.
+
+    Applying the Five Lemma to the resulting diagram, this completes the proof in Case $2 .$
+    
+    \item $M$ is the union of a nested family of open sets $U_{\alpha}$, where the duality theorem is true for each $U_{a}$.
+
+    Then $\homology_{c}^i M =\displaystyle \lim_{\longrightarrow} \homology_{c}^i U_{\alpha}$ and $\homology_{n-i}M = \displaystyle \lim_{\longrightarrow} \homology_{n-i}U_{\alpha}$.  (Both assertions follow easily from the fact that every compact subset of $M$ is contained in some $U _{a} .$) Since the direct limit of isomorphisms is an isomorphism, this completes the proof in Case $3 .$
+    
+    \item $M$ is an open subset of $\mathbb{R}^{n}$.
+
+    If $M$ is convex, then it is homeomorphic to $\mathbb{R}^{n}$, so the statement follows from Case 1. More generally choose convex open sets $V_{1}, V_{2}, V_{3}, \ldots$ with union $M$. Using Case 2 inductively, the theorem is true for each $V_{1} \cup V_{2} \cup \ldots \cup V_{k}$. Passing to the direct limit as $k \varrightarrow{} \infty$, it is true for $M$.
+    
+    \item  $M$ is arbitrary.
+
+    Cover $M$ by open sets $V_{a}$, each diffeomorphic to an open subset of $\mathbb{R}^{n}$, and choose a well ordering of the index set. (If $M$ has a countable basis, then we can use the positive integers as index set.) Now a straightforward transfinite induction, using Cases 2,3, and 4, shows that the theorem is true for each partial union $\bigcup_{\alpha<\beta} V_{\alpha}$. Hence, by Case 3, it is true for $M$.
+\end{enumerate}
+\end{proof}
+
+Here are two concluding problems for the reader.
+
+\begin{problem}\label{prob:A.1}
+For an oriented manifold-with-boundary construct the duality isomorphism
+\[
+\homology_{c}^{i} M \varrightarrow{}  \homology_{n-i}(M, \partial M).
+\]
+Alternatively, defining $\homology_{c}^{i}(M, \partial M)=\displaystyle\lim_{\longrightarrow} \homology^{i}(M,(M-K) \cup \partial M)$, construct the isomorphism
+\[
+\homology_{c}^{i}(M, \partial M) \varrightarrow{} \homology_{n-i} M.
+\]
+\end{problem}
+
+
+\begin{problem}[Alexander duality]\label{prob:A.2}
+Let $K$ be a compact subset of the sphere $S^{n}$ which is a retract of some neighborhood. (This hypothesis is needed since we are using singular, rather than $\check{\text{C}}$ech, cohomology.) Show that $\homology^{i} K$ is isomorphic to the direct limit $\displaystyle\lim_{\longrightarrow} \homology^{i} U$ as $U$ ranges over all neighborhoods of $K$. Show that $\homology^{i}(S^{n}, K)$ is isomorphic to
+\[
+\lim _{\longrightarrow} \homology^{i}(S^{n}, U) \cong \homology_{\text{c}}^{i}(S^{n}-K) \cong \homology_{n-i}(S^{n}-K).
+\]
+Finally, given $x \in K$ and $y \in S^{n}-K$, show that
+\[
+\homology^{i-1}(K, x) \cong \homology_{n-i}(S^{n}-K, y).
+\]
+
+\end{problem}
+
+\end{document}

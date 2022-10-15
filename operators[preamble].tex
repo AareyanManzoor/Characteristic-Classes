@@ -1,0 +1,127 @@
+\newcommand{\dd}{\mathrm{d}}%for differentials and such
+\DeclareMathOperator{\Hom}{Hom} %for Hom of bundles
+\newcommand{\Vect}{\mathcal{V}} %category of finite dimensional vector spaces, see page 32 of book.
+\DeclareMathOperator{\id}{id} %for identity function, ``identity'' in book.
+\DeclareMathOperator{\GL}{GL} %for general linear group
+\DeclareMathOperator{\SL}{SL} %special linear group
+\DeclareMathOperator{\PSL}{PSL} %projective linear group
+\DeclareMathOperator{\Orthogonal}{O}%orthogonal group
+\DeclareMathOperator{\U}{U} %unitary group
+\DeclareMathOperator{\SO}{SO} %special orthogonal
+\DeclareMathOperator{\SU}{SU} %special unitary
+\DeclareMathOperator{\Sp}{Sp} %symplectic group
+\DeclareMathOperator{\Spin}{Spin} %spin group
+\DeclareMathOperator{\grassmannian}{Gr} % for grassmannians, for example \grassmannian_n(V)
+\DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\BSO}{BSO}
+\DeclareMathOperator{\BO}{BO}
+\DeclareMathOperator{\MSO}{MSO}
+\DeclareMathOperator{\MO}{MO}
+\DeclareMathOperator{\BU}{BU}
+\DeclareMathOperator{\PL}{PL}
+\DeclareMathOperator{\Min}{Min}
+\DeclareMathOperator{\Max}{Max}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\volume}{volume}
+\DeclareMathOperator{\Orth}{O}
+
+\DeclareMathOperator{\StiefelManifold}{V} %for stiefel manifolds, e.g \StiefelManifold_n(V).
+%\DeclareMathOperator{\total}{E} %for total space of a bundle, e.g. \total(\xi)
+%\DeclareMathOperator{\base}{B} %for base space of a bundle, e.g. \base(\xi)
+\newcommand{\total}{E}
+\newcommand{\base}{B}
+\newcommand{\B}{B}
+\DeclareMathOperator{\homology}{H} %for homology/cohomology, \homology^i(M,\mathbb{Z}/2) for example
+\newcommand{\generalizedHomology}{\mathcal{H}} %generalized homology theories.
+\DeclareMathOperator{\K}{K} %K theory
+\DeclareMathOperator{\KO}{KO} %Real K theory
+\newcommand{\orientedCobordism}{\Omega} %to notate oriented cobordism groups, \cobordism_n for example.
+\newcommand{\unorientedCobordism}{\mathfrak{N}} %for unoriented cobordism groups.
+\newcommand{\disk}{\mathbb{D}} %for disk, \disk^p \subset \mathbb{R}^n for example
+\newcommand{\halfspace}{\mathbb{H}} %for upper half spaces H^k in book, \halfspace^k for example.
+\DeclareMathOperator{\steenrod}{Sq} %for the steenrod squares.
+\newcommand{\reducedSteenrod}{\mathcal{P}} %for reduced steenrod powers
+\DeclareMathOperator{\rank}{rank} %for rank of e.g. abelian groups
+\DeclareMathOperator{\thom}{Th} %for thom space of a bundle, T(\xi) in the book.
+\newcommand{\Ab}{\mathcal{C}}
+\newcommand{\steenrodReduced}{\mathcal{P}}
+\DeclareMathOperator{\Kernel}{Kernel}
+\DeclareMathOperator{\Image}{Image}
+\DeclareMathOperator{\Sq}{Sq}
+
+\DeclareMathOperator{\trace}{trace}
+
+\newcommand{\restr}{\big{|}} %function restrictions
+\newcommand{\ip}[2]{\langle#1,#2\rangle} %for inner product <1,2>
+\newcommand{\multilinecomment}[1]{}
+
+
+\newcommand{\trivialbundle}{\varepsilon} %trivial bundle,\varepsilon in book.
+\newcommand{\tangentspace}[2]{\mathbf{T}_{#2} #1} %tangentspace{M}{x} = tangent space of M at x
+\newcommand{\tangentspacemap}[2]{\dd #1_{#2}} %for maps between tangent space :\tangentspacemap{f}{x}= the differential of f at x.
+\newcommand{\differential}[2]{\tangentspacemap{#1}{#2}}
+\newcommand{\tangentbundlemap}[1]{\dd #1} %for maps between tangent bundles, \tangentbundlemap{f} = df:TM->TN
+\newcommand{\tangentTS}[1]{\mathbf{T}#1} %total space of the tangent bundle, DM in the book. 
+
+\newcommand{\tangentbundle}[1]{\tau_{#1}} %\tangentbundle{M} = tangent bundle of M (\tau_M) in the book
+\newcommand{\normalbundle}[1]{\nu_{#1}} %normal bundle corrosponding to immersion #1, \nu_{#1} in book.
+
+
+\newcommand{\projective}{\mathbb{P}} %projective space, P^n in book, do \projective^n
+\newcommand{\tautological}{\gamma} %tautological/cannonical or universal bundles over grassmananians/projective space, \gamma in the book.
+
+
+\newcommand{\diagonal}{\Delta} %(for diagonal embeddings)
+
+\DeclareMathOperator{\sw}{w} %stiefel-Whitney class, do \sw_i(\xi) or \sw(\xi) depending on context. w in text.
+\DeclareMathOperator{\eulerclass}{e} %eulerclass, do \eulerclass_i(\xi) or \eulerclass(\xi)
+\newcommand{\obstruction}{\mathfrak{o}} %for obstruction classes.
+\DeclareMathOperator{\chernclass}{c} %for chern class, \chernclass_i(\xi) or \chernclass(\xi)
+\DeclareMathOperator{\chernchar}{ch}
+\DeclareMathOperator{\pontrjaginclass}{p} %for pontrjagin classes
+\DeclareMathOperator{\multclass}{k} %for multiplicative classes
+\DeclareMathOperator{\steenrodReducedclass}{q} %see page 228
+
+\newcommand{\vectCat}{\mathbf{Vect}}
+
+\newcommand{\defemph}{\textbf} %to emphasize text
+\newcommand{\complexstructure}{\mathbf{J}} %for complex structures on bundles, given as J: E(\xi) -> E(\xi) in text.
+
+\newcommand{\defemphi}[1]{\defemph{#1}\index{#1}}
+
+%%use this to overset/underset things to arrows, and in general use \varrightarrow{} for maps 
+
+\makeatletter
+
+\def\@@varrightarrow#1#2#3{\begingroup%
+\setbox0=\hbox{$#1\xrightarrow[#3]{#2}$}%
+\setbox1=\hbox{$#1\longrightarrow$}%
+\ifdim\wd0<\wd1 \mathrel{\mathop{\longrightarrow}\limits^{#2}_{#3}}
+\else \xrightarrow[#3]{#2} \fi\endgroup}
+
+\def\@varrightarrow#1#2{\@@varrightarrow#1#2}
+
+% \varrightarrow[under material]{over material} puts material over and under a right arrow.
+% It automatically prints the longer option between an xrightarrow and a longrightarrow
+\newcommand\varrightarrow[2][]{\mathpalette\@varrightarrow{{#2}{#1}}}
+%%%%%
+
+\newcommand{\xoverline}[1]{\mskip.5\thinmuskip\overline{\mskip-.5\thinmuskip {#1} \mskip-.5\thinmuskip}\mskip.5\thinmuskip}
+\newcommand{\xhat}[1]{\mskip.5\thinmuskip\widehat{\mskip-.5\thinmuskip {#1} \mskip-.5\thinmuskip}\mskip.5\thinmuskip}
+\newcommand{\xtilde}[1]{\mskip.5\thinmuskip\widetilde{\mskip-.5\thinmuskip {#1} \mskip-.5\thinmuskip}\mskip.5\thinmuskip}
+
+\newcommand{\bR}{\mathbb R}
+\newcommand{\bC}{\mathbb C}
+\newcommand{\inv}{^{-1}}
+
+\newcommand{\br}[1]{\left(#1\right)}
+\newcommand{\sbr}[1]{\left[#1\right]}
+\newcommand{\brc}[1]{\left\{#1\right\}}
+
+\newcommand{\abfin}{\mathbf{Ab}_{<\infty}}
+
+%%%%redundant commands, feel free to ignore
+\newcommand{\sphere}{S} %no need for this, we are using S, but we will keep this
+\newcommand{\Sphere}{S} %no need for this, we are using S, but we will keep this
+\newcommand{\tangentBundle}[1]{\tau_{#1}} %\tangentbundle{M} = tangent bundle of M (\tau_M) in the book
+\newcommand{\map}[3]{#1:#2\varrightarrow{} #3}

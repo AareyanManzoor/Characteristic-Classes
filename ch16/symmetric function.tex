@@ -1,0 +1,89 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Symmetric Functions}\index{symmetric function}
+The following classical algebraic techniques will enable us to define and manipulate certain useful linear combinations of Chern numbers or Pontrjagin numbers.
+
+Let $t_{1}, \ldots, t_{n}$ be indeterminates. A polynomial function $f(t_{1}, \ldots, t_{n})$, say with integer coefficients, is called a \defemph{symmetric} function if it is invariant under all permutations of $t_{1}, \ldots, t_{n}$. Thus the symmetric functions form a sub-ring
+\[
+\mathcal{S} \subset \mathbb{Z}[t_{1}, \ldots, t_{n}]
+\]
+A familiar and fundamental theorem asserts that $\mathcal{S}$ itself is also a poly- nomial ring on $n$ algebraically independent generators
+\[
+\mathcal{S}=\mathbb{Z}[\sigma_{1}, \ldots, \sigma_{n}]
+\]
+where $\sigma_{k}=\sigma_{k}(t_{1}, \ldots, t_{n})$ denotes the \defemph{$k$-th elementary symmetric function}, uniquely characterized by the fact that $\sigma_{k}$ is a homogeneous polynomial of degree $k$ in $t_{1}, \ldots, t_{n}$ with
+\[
+1+\sigma_{1}+\sigma_{2}+\ldots+\sigma_{n}=(1+t_{1})(1+t_{2}) \ldots(1+t_{n}).
+\]
+(Compare with the proof of Lemma \ref{lem:07.02}.)
+
+If we make $\mathbb{Z}[t_{1}, \ldots, t_{n}]$ into a graded ring by assigning each $t_{i}$ the degree 1, then of course the symmetric functions form a graded subring $\mathcal{S}^{*}=\mathbb{Z}[\sigma_{1}, \ldots, \sigma_{n}]$, where each $\sigma_{k}$ has degree $k$. Thus a basis for the additive group $S^{k}$, consisting of homogeneous symmetric polynomials of degree $k$ in $t_{1}, \ldots, t_{n}$, is given by the set of monomials
+\[
+\sigma_{i_{1}} \ldots \sigma_{i_{r}}
+\]
+where $i_{1}, \ldots, i_{r}$ ranges over all partitions of $k$ into integers $\leq n$.
+
+A different and quite useful basis can be constructed as follows. Define two monomials in $t_{1}, \ldots, t_{n}$ to be \defemph{equivalent} if some permutation of $t_{1}, \ldots, t_{n}$ transforms one into the other. Define $\sum t_{1}^{a_{1}} \ldots t_{r}^{a_{r}}$ to be the summation of all monomials in $t_{1}, \ldots, t_{n}$ which are equivalent to $t_{1}^{a_{1}} \ldots t_{r}^{a_{r}}$. As an example, using this notation we can write $\sigma_{k}=\sum t_{1} t_{2} \ldots t_{k}$.
+
+\begin{lemma}\label{lem:16.1}
+An additive basis for $\delta^{k}$, the group of homogeneous symmetric polynomials of degree $k$ in $t_{1}, \ldots, t_{n}$, is given by the polynomials $\sum t_1^{a_1}\dots t_r^{a_r}$. Here $a_{1}, \ldots, a_{r}$ ranges over all partitions of $k$ with length $r \leq n$.
+
+\end{lemma} 
+\begin{proof}
+The proof is not difficult.
+\end{proof}
+
+
+Now for any partition $I=i_{1}, \ldots, i_{r}$ of $k$, define a polynomial $s_{I}$ in $k$ variables as follows. Choose $n \geq k$ so that the elementary symmetric functions $\sigma_{1}, \ldots, \sigma_{k}$ of $t_{1}, \ldots, t_{n}$ are algebraically independent, and let $s_{I}=s_{i_{1}, \ldots, i_{r}}$ be the unique polynomial satisfying
+\[
+s_{I}(\sigma_{1}, \ldots, \sigma_{k})=\sum t_1^{i_1}\ldots t_r^{i_r}
+\]
+This polynomial does not depend on $n$, as one easily verifies by introducing additional variables $t_{n+1}=\ldots=t_{n^{\prime}}=0$. In fact, even if $n<k$ the corresponding identity
+\[
+s_{I}(\sigma_{1}, \ldots, \sigma_{n}, 0, \ldots, 0)=\sum t_1^{i_1}\ldots t_r^{i_r}
+\]
+remains valid, as one verifies by a similar argument.
+
+If $n \geq k$, then evidently the $p(k)$ polynomials $s_{I}(\sigma_{1}, \ldots, \sigma_{k})$ are linearly independent, and form a basis for $\mathcal{S}^{k}$. The first twelve such polynomials are given by
+\allowdisplaybreaks
+\[\begin{aligned}
+& s(\,) & =& \,\, 1,\\
+\\
+& s_1(\sigma_1) &=& \,\, \sigma_1, \\
+\\\bmarkeq
+&s_2(\sigma_1,\sigma_2) &=& \,\,\sigma_1^2 & - 2\sigma_2,\\
+&s_{1,1} (\sigma_1,\sigma_2) &=& & +\,\,\,\sigma_2,\emarkeq\\
+\\\bmarkeq
+&s_3(\sigma_1,\sigma_2,\sigma_3) &=& \,\,\sigma_1^2 & -3\sigma_1\sigma_2 & +3\sigma_3,\\
+&s_{1,2} (\sigma_1,\sigma_2,\sigma_3) &=& &\sigma_1\sigma_2&-3\sigma_3,\\
+&s_{1,1,1}(\sigma_1,\sigma_2,\sigma_3) &=& \,\, & & +\,\,\,\sigma_3,\emarkeq\\
+\\
+\bmarkeq&s_3 &=& \,\, \sigma_1^4&-4\sigma_1^2\sigma_2& +2\sigma_2^2& +4\sigma_1\sigma_3&-4\sigma_4,\\
+&s_{1,3} &=& & +\,\,\,\sigma_1^2\sigma_2 &-2\sigma_2^2&-\,\,\,\sigma_1\sigma_3&+4\sigma_4,\\
+&s_{2,2} &=& && +\,\,\,\sigma_2^2 &-2\sigma_1\sigma_3&+2\sigma_4, \\
+&s_{1,1,2} &=& &&& +\,\,\,\sigma_1\sigma_3 &+4\sigma_4,\\
+&s_{1,1,1,1} &=& &&&& +\,\,\, \sigma_4.\emarkeq
+\end{aligned}
+\]
+
+For further information see Problem \ref{prob:16.A}, as well as \cite[Chapter 26, the exercises]{waerden1970}and \cite{macmahon2001combinatory} .
+
+The application of these ideas to Chern classes\index{Chern class $\chernclass_i$} or Pontrjagin classes is very similar to the application to Stiefel-Whitney classes in $\S$\ref{ch:7}. Thus if a complex $n$-plane bundle $\omega$ splits as a Whitney sum\index{Whitney sum} $\eta_{1} \oplus \ldots \oplus \eta_{n}$ of line bundles, then the formula
+\[
+1+\chernclass_{1}(\omega)+\ldots+\chernclass_{n}(\omega)=(1+\chernclass_{1}(\eta_{1})) \ldots(1+\chernclass_{1}(\eta_{n}))
+\]
+shows that the Chern class $\chernclass_{k}(\omega)$ can be identified with the k-th elementary symmetric function $\sigma_{k}(\chernclass_{1}(\eta_{1}), \ldots, \chernclass_{1}(\eta_{n}))$. The ``universal'' example of a Whitney sum of line bundles is provided by the $n$-fold cartesian product $\tautological^{1} \times \ldots \times \tautological^{1}$ over the product $\projective^{\infty}(\mathbb{C}) \times \ldots \times \projective^{\infty}(\mathbb{C})$\index{projective space!\indexline real $\projective^n$} of complex projective spaces. Note that the cohomology ring of this product is a polynomial ring $\mathbb{Z}[a_{1}, \ldots, a_{n}]$ where each $a_{i}$ has degree 2, and where
+\[
+\chernclass(\tautological^{1} \times \ldots \times \tautological^{1})=(1+a_{1}) \ldots(1+a_{n})
+\]
+Since the elementary symmetric functions are algebraically independent, it follows that the cohomology $\homology^{*}(\grassmannian_{n}(\mathbb{C}^{\infty}) ; \mathbb{Z})$\index{cohomology!\indexline of $\grassmannian_n(\bC^\infty)$} of the classifying space maps isomorphically to the ring
+\[
+\mathcal{S}^{*} \subset \mathbb{Z}[a_{1}, \ldots, a_{n}]
+\]
+of symmetric polynomials. (This is a theorem of \cite{Borel1953}\index{Borel, A.}, Compare with the proof of Lemma \ref{lem:07.02}) Thus our new basis for $\mathcal{S}^{*}$ gives rise to a new basis
+\[
+\{s_{I}(\chernclass_{1}, \ldots, \chernclass_{k})\}
+\]
+for the cohomology $\homology^{2k}(\grassmannian_n(\mathbb{C}^\infty);\mathbb{Z})$.
+
+\end{document}

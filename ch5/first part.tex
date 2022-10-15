@@ -1,0 +1,183 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+
+In classical differential geometry one encounters the ``spherical image''
+of a curve $M^1\subset \mathbb R^{k+1}$. This is the image of $M^1$ under the mapping
+\[t : M^1 \varrightarrow{} S^k\]
+which carries each point of $M^1$ to its unit tangent vector. Similarly Gauss\index{Gauss map} defined the spherical image of a hypersurface $M^k \subset \mathbb R^{k+1}$ as the image of $M^k$ under the mapping
+\[n : M^k \varrightarrow{} S^k\]
+which carries each point of $M$ to its unit normal vector. (Compare figure \ref{fig:figure6},\ref{fig:figure7}.) In order to specify the sign of the tangent or normal vector it is
+necessary to assume that $M^1$ or $M^k$ has a preferred orientation\index{oriented manifold}. (Compare
+\ref{ch:9}.) However without this orientation one can still define a corresponding
+map from the manifold to the real projective space $\projective^k$.\index{projective space!\indexline real $\projective^n$}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{fig7}
+    \caption{}
+    \label{fig:figure7}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{fig8}
+    \caption{}
+    \label{fig:figure8}
+\end{figure}
+
+More generally let $M$ be a smooth manifold of dimension $n$ in the coordinate space $\mathbb{R}^{n+k}$. Then to each point $x$ of $M$ one can assign the tangent space \newline $\tangentspace{M}{x} \subset \mathbb{R}^{n+k}$. We will think of $\tangentspace{M}{x}$ as determining a point in a new topological space $\grassmannian_n (\mathbb{R}^{n+k})$.
+\begin{definition}\label{def:5-1}
+The \defemph{Grassmann manifold} $\grassmannian_n (\mathbb{R}^{n+k})$ is the set of all $n$-dimensional planes through the origin of the coordinate space $\mathbb{R}^{n+k}$. This is to be topologized as a quotient space, as follows.
+An $n$-frame\index{frame}\index{n-frame@$n$-frame} in $\mathbb{R}^{n+k}$ is an $n$-tuple of linearly independent vectors of $\mathbb{R}^{n+k}$. The collection of all $n$-frames in $\mathbb{R}^{n+k}$ forms an open subset of the n-fold Cartesian product $\mathbb{R}^{n+k} \times \dots \times \mathbb{R}^{n+k}$, called the \defemphi{Stiefel manifold} $\StiefelManifold_n(\mathbb{R}^{n+k}) $. (Compare \cite[$\S$7.7]{steenrod1951}) There is a canonical function
+\[q:\StiefelManifold_n(\mathbb{R}^{n+k})\varrightarrow{}\grassmannian_n (\mathbb{R}^{n+k}) \]
+which maps each $n$-frame to the $n$-plane\index{n-plane@$n$-plane} which it spans. Now give $\grassmannian_n (\mathbb{R}^{n+k})$ the quotient topology: a subset $U \subset \grassmannian_n (\mathbb{R}^{n+k})$ is open if and only if its inverse image $q^{-1}(U) \subset \StiefelManifold_n(\mathbb{R}^{n+k})$ is open.
+
+Alternatively let $\StiefelManifold_n^0(\mathbb{R}^{n+k})$ denote the subset of $\StiefelManifold_n(\mathbb{R}^{n+k})$ consisting of all orthonormal $n$-frames, Then $\grassmannian_n (\mathbb{R}^{n+k})$ can also be considered as an identification space of $\StiefelManifold_n^0(\mathbb{R}^{n+k})$. One sees from the following
+commutative diagram that both constructions yield the same topology for $\grassmannian_n (\mathbb{R}^{n+k})$.
+\index{Gram-Schmidt process}
+\[\begin{tikzcd}
+	\StiefelManifold_n^0(\mathbb{R}^{n+k}) \arrow[r, hook] \arrow[rd, "q_0"'] & \StiefelManifold_n(\mathbb{R}^{n+k}) \arrow[d, "q"'] \arrow[rrrr, "\text{Gram-Schmidt Process}"] &  &  & & \StiefelManifold_n^0(\mathbb{R}^{n+k}) \arrow[lllld, "q_0"] \\
+	& \grassmannian_n (\mathbb{R}^{n+k})                                                         &  &  &   &                                     
+\end{tikzcd}\]
+Here $q_0$ denotes the restriction of $q$ to $\StiefelManifold_n^0(\mathbb{R}^{n+k})$.	
+\end{definition}
+\begin{lemma}\label{lem:05.01}
+	The Grassmann manifold $\grassmannian_n (\mathbb{R}^{n+k})$ is a compact topological manifold\index{topological manifold}\footnote{ A \defemph{topological manifold} of dimension $d$ is a Hausdorff space in which every
+		point has a neighborhood homeomorphic to $\mathbb{R}^d$.} of dimension $nk$. The correspondence $X \rightarrow X^{\perp}$, which assigns to each $n$-plane its orthogonal $k$-plane, defines a homeomorphism between $\grassmannian_n (\mathbb{R}^{n+k})$ and $\grassmannian_{k}(n+k)$.
+\end{lemma}
+\begin{remark*}
+	For the special case $k=1$ note that $\grassmannian_{1}(n+1)$ is equal to the real projective space $\projective^n$. It follows that the manifold $\grassmannian_{n}(n+1)$ of $n$-planes in $(n+1)$-space is canonically homeomorphic to $\projective^n$.
+\end{remark*}
+
+\begin{proof}[Proof of \ref{lem:05.01}]
+	In order to show that $\grassmannian_n (\mathbb{R}^{n+k})$ is a Hausdorff space it is sufficient to show that any two points can be separated by a continuous real valued function. For fixed $w \in \mathbb{R}^{n+k}$, let $\rho_{w}(X)$ denote the square of the Euclidean distance from $w$ to $X$. If $x_{1}, \dots, x_{n}$ is an orthonormal basis for $X$, then the identity
+	$$
+	\rho_{w}(X)=w \cdot w-(w \cdot x_{1})^{2}-\dots-(w \cdot x_{n})^{2}
+	$$
+	shows that the composition
+	\[
+	\StiefelManifold_n^0(\mathbb{R}^{n+k}) \varrightarrow{q_0}\grassmannian_n (\mathbb{R}^{n+k}) \varrightarrow{\rho_w}  \mathbb{R}
+	\]
+is continuous; hence that $\rho_{w}$ is continuous. Now if $X, Y$ are distinct $n$-planes, and $w$ belongs to $X$ but not $Y$, then $\rho_{w}(X) \neq \rho_{w}(Y)$. This proves that $\grassmannian_n (\mathbb{R}^{n+k})$ is a Hausdorff space.
+
+The set $\StiefelManifold_n^0(\mathbb{R}^{n+k})$ of orthonormal $n$-frames is a closed, bounded subset of $\mathbb{R}^{n+k} \times \dots \times \mathbb{R}^{n+k}$, and therefore is compact. It follows that
+\[\grassmannian_n (\mathbb{R}^{n+k})=q_{0}(\StiefelManifold_n^0(\mathbb{R}^{n+k}))\]
+is also compact.\\
+\begin{proof}[Proof that every point $X_{0}$ of $\grassmannian_n (\mathbb{R}^{n+k})$ has a neighborhood $U$ which is homeomorphic to $\mathbb{R}^{nk}$.]
+ It will be convenient to regard $\mathbb{R}^{n+k}$ as the direct sum $X_{0} \oplus X_{0}{ }^\perp$. Let $U$ be the open subset of $\grassmannian_n (\mathbb{R}^{n+k})$ consisting of all $n$-planes $Y$ such that the orthogonal projection
+\[p:X_0\oplus X_{0}^{\perp}\varrightarrow{}X_0\]
+maps $Y$ onto $X_{0}$ (i,e., all $Y$ such that $Y \cap X_{0}^{\perp}=0$ ). Then each $Y \in U$ can be considered as the graph of a linear transformation
+\[T(Y):X_{0}\varrightarrow{}X_{0}^{\perp}.\]
+This defines a one-to-one correspondence\index{Hom}
+\[T:U \varrightarrow{}\Hom(X_0,X_{0}^{\perp})\cong\mathbb{R}^{nk}.\]
+We will see that $T$ is a homeomorphism.
+
+Let $x_{1}, \dots, x_{n}$ be a fixed orthonormal basis for $X_{0}$. Note that each $n$-plane $Y \in U$ has a unique basis $y_{1}, \dots, y_{n}$ such that
+\[p(y_{1})=x_{1}, \dots, p(y_{n})=x_{n}.\]
+It is easily verified that the $n$-frame $(y_{1}, \dots, y_{n})$ depends continuously on $Y$.
+
+Now note the identity
+\[y_{i}=x_{i}+T(Y) x_{i}.\]
+Since $y_i$ depends continuously on $Y$, it follows that the image
+$T(Y)x_i\in X_0^\perp$ depends continuously on $Y$. Therefore the linear 
+transformation $T(Y)$ depends continuously on $Y$.
+
+On the other hand this identity shows that the $n$-frame $(y_1,\dots, y_n) $
+depends continuously on $T(Y)$, and hence that $Y$ depends continuously
+on $T(Y)$. Thus the function $T\inv$ is also continuous. This completes
+the proof that $\grassmannian_n (\mathbb{R}^{n+k})$ is a manifold.\\
+\end{proof}
+\begin{proof}[Proof that $Y^\perp$ depends continuously on $Y$.]
+Let $(\xoverline{x}_1,\dots,\xoverline{x}_k)$ be a fixed basis for $X_{0}{ }^{\perp}$. Define a function
+\[f:q\inv U \varrightarrow{}\StiefelManifold_k(\mathbb{R}^{n+k})\]
+as follows. For each $(y_{1}, \dots, y_{n}) \in q^{-1} U$, apply the Gram-Schmidt process\index{Gram-Schmidt process} to the vectors $(y_{1}, \dots, y_{n}, \xoverline{x}_{1}, \dots, \xoverline{x}_{k})$; thus obtaining an orthonormal $(n+k)$-frame $(y_{1}^{\prime}, \dots, y_{n+k}^{\prime})$ with $y_{n+1}^{\prime}, \dots, y_{n+k}^{\prime} \in Y^{\perp}$. Setting $f(y_{1}, \dots, y_{n})=(y_{n+1}^{\prime}, \dots, y_{n+k}^{\prime})$, it follows that the diagram
+\[\begin{tikzcd}
+	q\inv U \arrow[r, "f"] \arrow[d, "q"'] & \StiefelManifold_k(\mathbb{R}^{n+k}) \arrow[d, "q"'] \\
+	U \arrow[r, "\perp"]                   & \grassmannian_{k}(n+k)                    
+\end{tikzcd}\]
+is commutative. Now $f$ is continuous, so $q \circ f$ is continuous, therefore the correspondence $Y \mapsto Y^{\perp}$ must also be continuous. This completes the proof of \ref{lem:05.01}.
+\end{proof}
+\end{proof}
+A canonical vector bundle\index{cannonical bundle!\indexline $n$-plane $\tautological^n$} $\gamma^n(\mathbb{R}^{n+k})$ over $\grassmannian_n (\mathbb{R}^{n+k})$ is constructed
+as follows. Let
+\[\total=\total(\gamma^n(\mathbb{R}^{n+k}))\]
+be the set of all pairs\footnote{Here, and elsewhere, the expression ``$n$-plane'' means linear subspace of
+	dimension $n$. Thus we only consider $n$-planes through the origin.}
+\[
+ (\text {$n$-plane in } \mathbb{R}^{n+k}, \text { vector in that $n$-plane}). 
+\]
+This is to be topologized as a subset of $\grassmannian_n (\mathbb{R}^{n+k})\times \mathbb{R}^{n+k}$. The projection map $\pi:\total\varrightarrow{} \grassmannian_n (\mathbb{R}^{n+k})$ is defined by $\pi(X, x)=X$, and the vector space structure in the fiber over $X$ is defined by $t_{1}(X, x_{1})+t_{2}(X, x_{2})= (X, t_{1} X_{1}+t_{2} X_{2}) .$ (Note that $\gamma^{1}(\mathbb{R}^{n+1})$ is the same as the line bundle $\gamma_{n}^{1}$ described in \ref{ch:2}.)
+
+\begin{lemma}\label{lem:05.02}
+	The vector bundle $\gamma^{n}(\mathbb{R}^{n+k})$ constructed in this way satisfies the local triviality condition.
+\end{lemma}
+\begin{proof}
+	Let $U$ be the neighborhood of $X_{0}$ constructed as in \ref{def:5-1}. Define the coordinate homeomorphism
+	\[h:U\times X_0\varrightarrow{}\pi\inv U
+	\]
+	as follows. Let $h(Y, X)=(Y, y)$ where $y$ denotes the unique vector in $Y$ which is carried into $x$ by the orthogonal projection
+	\[p:\mathbb{R}^{n+k} \varrightarrow{}X_{0}. 
+	\]
+	The identities
+	\[
+	h(Y, x)=(Y, x+T(Y) x)
+	\]
+	and
+	\[
+	h^{-1}(Y, y)=(Y, py)
+	\]
+show that $h$ and $h^{-1}$ are continuous. This completes the proof of \ref{lem:05.02}.
+\end{proof}
+
+Given a smooth $n$-manifold $M \subset \mathbb{R}^{n+k}$ the \defemph{generalized Gauss map}\index{Gauss map!\indexline generalized}
+
+\[\map{\xoverline{g}}{M}{\grassmannian_n (\mathbb{R}^{n+k})},
+\]
+can be defined as the function which carries each $x \in M$ to its tangent space $\tangentspace{M}{x} \in \grassmannian_n (\mathbb{R}^{n+k})$. This is covered by a bundle map
+\[\map{g}{\total(\tangentbundle{M})}{\total(\gamma^{n}(\mathbb{R}^{n+k}))}.
+\]
+where $g(x, v)=(\tangentspace{M}{x}, v) $. We will use the abbreviated notation
+\[\map{g}{\tangentbundle{M}}{\gamma^{n}(\mathbb{R}^{n+k})}.
+\]
+It is clear that both $g$ and $\xoverline{g}$ are continuous.
+
+Not only tangent bundles, but most other $\mathbb{R}^{n}$-bundles can be mapped into the bundle $\gamma^{n}(\mathbb{R}^{n+k})$ providing that $k$ is sufficiently large. For this reason $\gamma^{n}(\mathbb{R}^{n+k})$ is called a \defemphi{universal bundle}. (Compare \ref{thm:05.06} and \ref{thm:05.07}, as well as \cite[$\S$ 19]{steenrodwhitehead1951}.)
+
+\begin{lemma}\label{lem:05.03}
+	For any $n$-plane\index{n-plane@$n$-plane} bundle $\xi$ over a compact base space $\B $ there exists a bundle map\index{bundle map} $\xi \rightarrow \gamma^{n}(\mathbb{R}^{n+k})$ provided that $k$ is sufficiently large.
+\end{lemma}
+
+In order to construct a bundle map $\map{f}{\xi}{\gamma^{n}(\mathbb{R}^{m})}$ it is sufficient to construct a map
+\[\map{\hat{f}}{\total(\xi)}{\mathbb{R}^{m}}
+\]
+which is linear and injective (i.e., has kernel zero) on each fiber of $\xi$. The required function $f$ can then be defined by
+\[
+f(e)=(\hat{f} (\text{fiber through } e), \hat{f}(e)).
+\]
+The continuity of $f$ is not difficult to verify, making use of the fact that $\xi$ is locally trivial.
+
+\begin{proof}[Proof of \ref{lem:05.03}]
+Choose open sets $U_{1}, \dots, U_{r}$ covering $\B $ so that each $\xi \mid _{U_{i}}$ is trivial. Since $\B $ is normal, there exist open sets $V_{1}, \dots, V_{r}$ covering $\B $ with $\xoverline{V}_{i} \subset U_{i}$. (Compare \cite[p. 171]{kelley1955}). Here $\xoverline{V}_{i}$ denotes the closure of $V_{i} .$ Similarly construct $W_{1}, \dots, W_{r}$ with $\xoverline{W}_{i} \subset V_{i} $. Let
+\[\map{\lambda_{i}}{\B }{\mathbb{R}}
+\]
+denote a continuous function which takes the value 1 on $\xoverline{W}_{i}$ and the value 0 outside of $V_{i}$.
+
+Since $\xi|_{ U_{i}}$ is trivial there exists a map
+\[\map{h_{i}}{\pi^{-1} U_{i}}{\mathbb{R}^{n}}
+\]
+which maps each fiber of $\xi| _{U_{i}}$ linearly onto $\mathbb{R}^{n}$. Define $\map{h_{i}^{\prime}}{\total(\xi)}{R^{n}}$ by
+
+\[
+h_{i}^{\prime}(e)=\begin{cases}
+	0 & \text { for } \pi(e) \notin V_{i} \\
+	\lambda_{i}(\pi(e)) h_{i}(e) & \text { for } \pi(e) \in U_{i}
+\end{cases}
+\]
+Evidently $h_{i}^{\prime}$ is continuous, and is linear on each fiber. Now define
+
+\[\map{\hat{f}}{\total(\xi)}{\mathbb{R}^{n} \oplus \dots \oplus \mathbb{R}^{n} \cong \mathbb{R}^{rn}}
+\]
+by $\hat{f}(e)=(h_{1}^{\prime}(e), h_{2}^{\prime}(e), \dots, h_{r}^{\prime}(e))$. Then $\hat{f}$ is also continuous and maps each fiber injectively. This completes the proof of \ref{lem:05.03}.	
+\end{proof}
+
+\end{document} 

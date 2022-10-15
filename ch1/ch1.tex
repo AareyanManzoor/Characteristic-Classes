@@ -1,0 +1,162 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+\chapter{Smooth Manifolds}\label{ch:1}
+This section contains a brief introduction to the theory of smooth manifolds\index{smooth manifold} and their tangent spaces\index{tangent space $\tangentspace{M}{x}$}.
+
+Let ${\mathbb R}^n$\index{R,Rn,RA,Rinfty,R0n@$\mathbb{R}, \mathbb{R}^n, \mathbb{R}^A, \mathbb{R}^\infty, \mathbb{R}_0^n$} denote the coordinate space\index{coordinate space} consisting of all $n$-tuples $x = (x_1, \ldots, x_n)$ of real numbers. For the special case $n = 0$ it is to be understood that ${\mathbb R}^0$ consists of a single point. The real numbers themselves will be denoted by $\mathbb R$. 
+
+The word ``smooth'' will be used as a synonym for ``differentiable of class $C^\infty$.'' Thus a function defined on an open set $U \subset {\mathbb R}^n$ with values in ${\mathbb R}^k$ is ``smooth'' if its partial derivatives of all orders exist and are continuous.
+
+For some purposes it is convenient to use a coordinate space\index{coordinate space} ${\mathbb R}^A$ which may be infinite dimensional. Let $A$ be any index set and let ${\mathbb R}^A$ denote the vector space\index{vector space} consisting of all functions\footnote{Of course our previous coordinate space ${\mathbb R}^n$ can be obtained as a special case of this more general concept, simply by taking $A$ to be the set of integers between $1$ and $n$.} $x$ from $A$ to $\mathbb R$. The value of a vector $x \in {\mathbb R}^A$ on $\alpha \in A$ will be denoted by $x_\alpha$ and called the $\alpha$-th coordinate of $x$. Similarly, for any function $f : Y \longrightarrow {\mathbb R}^A$, the $\alpha$-th coordinate of $f(y)$ will be denoted $f_\alpha(y)$. 
+
+We topologize this space ${\mathbb R}^A$ as a Cartesian product\index{Cartesian product} of copies of $\mathbb R$. For any subset $M \subset {\mathbb R}^A$, we give $M$ the relative topology. Thus a function \newline $f : Y \longrightarrow M \subset {\mathbb R}^A$ is continuous if and only if each of the associated functions $f_\alpha : Y \longrightarrow \mathbb R$ are continuous. Here $Y$ can be an arbitrary topological space. 
+
+\begin{definition}
+For $U \subset {\mathbb R}^n$, a function $f : U \longrightarrow M \subset {\mathbb R}^A$ is said to be \defemph{smooth}\index{smooth function} if each of the associated functions $f_\alpha : U \longrightarrow \mathbb R$ is smooth. If $f$ is smooth, then the partial derivative $\partial f/\partial u_i$ can be defined as the smooth function $U \longrightarrow {\mathbb R}^A$ whose $\alpha$-th coordinate is $\partial f_\alpha/\partial u_i$ for $i = 1, 2, \ldots, n$. 
+\end{definition}
+
+The most classical and familiar examples of smooth manifolds are curves and surfaces in the coordinate space ${\mathbb R}^3$. Generalizing the classical description of curves and surfaces, we will consider $n$-dimensional objects in a coordinate space ${\mathbb R}^A$. 
+
+\begin{definition}
+A subset $M \subset {\mathbb R}^A$ is a \defemph{smooth manifold}\index{smooth manifold} of dimension $n \ge 0$ if, for each $x \in M$ there exists a smooth function \[h : U \longrightarrow {\mathbb R}^A\] defined on an open set $U \subset {\mathbb R}^n$ such that
+
+\begin{enumerate}[label=\arabic*)]
+    \item $h$ maps $U$ homeomorphically onto an open neighborhood $V$ of $x$ in M, and
+    \item for each $u \in U$ the matrix $[\partial h_\alpha(u)/\partial u_j]$ has rank $n$\index{rank}. (In other words the $n$ vectors $\partial h/\partial u_1$, $\ldots$, $\partial h/\partial u_n$, evaluated at $u$, must be linearly independent.) 
+\end{enumerate}
+
+The image $h(U) = V$ of such a mapping will be called a \defemph{coordinate neighborhood}\index{coordinate neighborhood} in $M$, and the triple $(U, V, h)$ will be called a \defemph{local parameterization}\index{local coordinate system}\index{local parametization}\index{parametization}\footnote{The inverse $h^{-1} : V \longrightarrow U \subset {\mathbb R}^n$ is often called a ``local coordinate system'' or ``chart'' for $M$.} of $M$. 
+\end{definition}
+
+\begin{lemma}
+\label{lem:1.1}
+Let $(U, V, h)$ and $(U', V', h')$ be two local parameterizations of $M$ such that $V \cap V'$ is non-vacuous. Then the correspondence \[u' \mapsto h^{-1}(h'(u'))\] defines a smooth mapping from the open set $(h')^{-1}(V \cap V') \subset {\mathbb R}^n$ to the open set $h^{-1}(V \cap V') \subset {\mathbb R}^n$. 
+\end{lemma}
+
+\begin{proof}
+Let $\xoverline x = h(\xoverline u) = h(\xoverline u')$ be an arbitrary point of $V \cap V'$. Choose indices $\alpha_1, \ldots, \alpha_n \in A$ so that the $n \times n$ matrix $[\partial h_{\alpha_i}/\partial u_j]$, evaluated at $\xoverline u$, is non-singular. Then it follows from the inverse function theorem\index{inverse function theorem} that one can solve for $u_1, \ldots, u_n$ as smooth functions \[u_j = f_j(h_{\alpha_1}(u), \ldots, h_{\alpha_n}(u))\] for some $u$ in some neighborhood of $\xoverline u$. (See for example \cite[p.69]{whitney1957}.) Writing these equations in vector notation as $u = f(h_{\alpha_1}(u), \ldots, h_{\alpha_n}(u))$, and setting $h(u) = h'(u')$, it follows that the function \[u' \mapsto h^{-1}h'(u') = f(h'_{\alpha_1}(u), \ldots, h'_{\alpha_n}(u))\] is smooth throughout some neighborhood of $u'$. This completes the proof. 
+\end{proof}
+
+The concept of a tangent vector\index{tangent vector} can be defined as follows. Let $\xoverline x$ be a fixed point of $M$, and let $(-\epsilon, \epsilon)$ denote the set of real numbers $t$ with $-\epsilon < t < \epsilon$. A \defemph{smooth path}\index{smooth path} through $\xoverline x$ in $M$ will mean a smooth function \[p : (-\epsilon, \epsilon) \longrightarrow M \subset {\mathbb R}^A,\] defined on some interval $(-\epsilon, \epsilon)$ of real numbers, with $p(0) = \xoverline x$. The \defemph{velocity vector}\index{velocity vector} of such a path is defined to be the vector 
+\[\dfrac{\dd p}{\dd t} \Big|_{t = 0} \in {\mathbb R}^A\] whose $\alpha$-th component is $\dd p_\alpha/\dd t$. (Compare Figure \ref{fig:figure1}.) 
+
+\begin{definition}
+A vector $v \in {\mathbb R}^A$ is \defemph{tangent} to $M$ at $x$ if $v$ can be expressed as the velocity vector of some smooth path through $x$ in $M$. The set of all such tangent vectors will be called the \defemph{tangent space}\index{tangent space $\tangentspace{M}{x}$} of $M$ at $x$, and will be denoted $\tangentspace M x$. (In some presentations, the vector $v$ is identified with the collection of paths $p$ with common velocity vector $v$. This allows an intrinsic definition of tangent vector independent of the embedding in ${\mathbb R}^A$.)
+\end{definition}
+
+
+
+
+In terms of local parameterization $(U, V, h)$ with $h(\xoverline u) = \xoverline x$, the tangent space can be described as follows.
+\begin{lemma}
+\label{lem:1.2}
+A vector $v \in {\mathbb R}^A$ is tangent to $M$ at $\xoverline x$ if and only if $v$ can be expressed as a linear combination of the vectors \[\frac {\partial h} {\partial u_1}(\xoverline u), \ldots, \frac {\partial h} {\partial u_n} (\xoverline u).\] Thus $\tangentspace M {\xoverline x}$ is an $n$-dimensional vector space over the real numbers. 
+\end{lemma}
+
+The proof is straightforward. 
+
+\begin{figure}[ht]
+    \centering
+    \incfig{figure1}
+    \caption{}
+    \label{fig:figure1}
+\end{figure}
+The \defemph{tangent manifold}\index{tangent manifold $\tangentTS{M}$} of $M$ is defined to be the subspace \[\tangentTS M \subset M \times {\mathbb R}^A\] consisting of all pairs $(x, v)$ with $x \in M$ and $v \in \tangentspace M x$. It follows easily from Lemma~\ref{lem:1.2} that $\tangentTS M$, considered as a subset of ${\mathbb R}^A \times {\mathbb R}^A$, is a smooth manifold of dimension $2 n$. 
+
+Now consider two smooth manifolds $M \subset {\mathbb R}^A$ and $N \subset {\mathbb R}^B$, and a function $f : M \longrightarrow N$. Let $\xoverline x$ be a point of $M$ and $(U, V, h)$ a local parameterization of $M$ with $\xoverline x = h(\xoverline u)$.
+
+\begin{definition}\index{smooth function}
+The function $f$ is said to be smooth at $\xoverline x$ if the composition\footnote{The notation $f \circ g$ will be used for the composition of two functions $X \varrightarrow{g} Y \varrightarrow{f} Z$.} \[f \circ h : U \longrightarrow N \subset {\mathbb R}^B\] is smooth throughout some neighborhood of $\xoverline u$. 
+\end{definition} 
+
+It follows from Lemma~\ref{lem:1.1} that this definition does not depend on the choice of local parameterization. 
+
+\begin{definition}
+The function $f : M \longrightarrow N$ is \defemph{smooth}\index{smooth function} if it is smooth at every point $x \in M$. A function $f : M \longrightarrow N$ is called a \defemph{diffeomorphism}\index{diffeomorphism} if $f$ is one-to-one onto, and if both $f$ and the inverse function $f^{-1} : N \longrightarrow M$ are smooth. 
+\end{definition}
+
+\begin{lemma}
+\label{lem:1.3}
+The identity map of $M$ is always smooth. Furthermore the composition of two smooth maps $M \varrightarrow{g} M' \varrightarrow{f} M''$ is smooth.
+\end{lemma}
+
+The proof is similar to that of \ref{lem:1.1}. Details will be omitted. 
+
+Any map $f : M \longrightarrow N$ which is smooth at $x$ determines a linear map $\dd f_x$ from the tangent space $\tangentspace M x$ to $\tangentspace N {f(x)}$ as follows. Given $v \in \tangentspace M x$ express $v$ as the velocity vector \[v = \dfrac{\dd p}{\dd t} \Big|_{t = 0}\] of some smooth path through $x$ in $M$, and define $\dd f_x(v)$ to be the velocity vector \[\dfrac{\dd(f \circ p)}{\dd t} \Big|_{t = 0}\] of the image path $f \circ p : (-\epsilon, \epsilon) \longrightarrow N$. It is easily seen that this definition does not depend on the choice of $p$, and that $\dd f_x$ is a linear mapping. In fact, in terms of a local parameterization $(U, V, h)$, one has the explicit formula \[\differential f x \bigg(\sum c_i\dfrac{\partial h}{\partial u_i}\bigg) = \sum c_i \dfrac{\partial (f \circ h)}{\partial u_i},\] for any real numbers $c_1, \ldots, c_n$. 
+
+\begin{definition}
+The linear transformation $\differential f x$ is called the \defemph{derivative}\index{derivative}, or the \defemph{Jacobian}\index{Jacobian $\dd f_x$} of $f$ at $x$. 
+\end{definition}
+
+Now suppose that $f : M \longrightarrow N$ is smooth everywhere. Combining all of the Jacobians $\dd f_x$ one obtains the function \[\dd f : \tangentTS M \longrightarrow \tangentTS N\] where $\dd f(x, v) = (f(x), \dd f_x(v))$.
+
+\begin{lemma}
+\label{lem:1.4}
+$\tangentTS{}$ is a functor\footnote{For the concepts of category and functor, see for example \cite[Chapter IV]{eilenbergsteenrod1952}.} from the category\index{category} of smooth manifolds and smooth maps into itself. 
+\end{lemma}
+
+In other words: 
+\begin{enumerate}[label = (\arabic*)]
+    \item If $M$ is a smooth manifold, then $\tangentTS M$ is a smooth manifold.
+    \item If $f$ is a smooth map from $M$ to $N$ then $\dd f$ is a smooth map from $\tangentTS M$ to $\tangentTS N$.
+    \item If $I$ is the identity map of $M$ then $\dd I$ is the identity map of $\tangentTS M$; and
+    \item If the composition $f \circ g$ of two smooth maps is defined, then \newline $\dd (f \circ g) = (\dd f) \circ (\dd g)$.
+\end{enumerate}
+
+The proofs are straightforward.
+
+One immediate consequence is the following: If $f$ is a diffeomorphism\index{diffeomorphism} from $M$ to $N$ then $\dd f$ is a diffeomorphism from $\tangentTS M$ to $\tangentTS N$.
+
+\begin{remarks*}
+According to our definitions, the tangent space $\tangentspace {{\mathbb R}^n} x$ of the coordinate space ${\mathbb R}^n$ at $x$ is equal to the vector space ${\mathbb R}^n$ itself. In particular, for any real number $u$ the tangent space $\tangentspace {\mathbb R} u$ is equal to $\mathbb R$. Thus if $f : M \longrightarrow \mathbb R$ is a smooth real valued function, then the derivative $\differential f x : \tangentspace M x \longrightarrow \tangentspace {\mathbb R} {f(x)} = \mathbb R$ can be thought of as an element of the dual vector space\index{dual vector space}\index{vector space!\indexline dual} \[\Hom_{\mathbb R}(\tangentspace M x, \mathbb R).\] This element $\differential f x$ of the dual space, sometimes called the ``total differential'' of $f$ at $x$, is commonly denoted by $\dd f(x)$. Note that Leibniz's rule is satisfied: \[\differential {(fg)} x = f(x) \differential g x + g(x) \differential f x,\] where $f g$ stands for the product function $x \mapsto f(x) g(x)$. 
+\end{remarks*}
+
+For any tangent vector\index{tangent vector} $v \in \tangentspace M x$ the real number $\differential f x(v)$ is called the \defemph{directional derivative}\index{derivative!\indexline directional} of the real-valued function $f$ at $x$ in the direction $v$. If we keep $(x, v)$ fixed but let $f$ vary over the vector space $C^\infty(M, \mathbb R)$ consisting of all smooth real valued functions on $M$, then a linear differential operator\index{differential operator} \[X : C^\infty(M, \mathbb R) \longrightarrow \mathbb R\] can be defined by the formula $X(f) = \differential f x(v)$. Leibniz's rule now takes the form \[X(fg) = f(x) X(g) + X(f) g(x).\] In many expositions on the subject, the tangent vector $(x, v)$ is identified with this linear operator $X$. 
+
+One defect of the above presentation is that the ``smoothness'' of a manifold $M$ is made to depend on some particular embedding\index{embedding} of $M$ in a coordinate space. It is possible however to canonically embed any smooth manifold $M$ into one preferred coordinate space.
+
+Given a smooth manifold $M \subset {\mathbb R}^A$ let $F = C^\infty(M, \mathbb R)$\index{ring of smooth functions $C^\infty (M,\bR)$} denote the set of all smooth functions from $M$ to the real numbers $\mathbb R$. Define the embedding \[i : M \longrightarrow {\mathbb R}^F\] by $i_f(x) = f(x)$. Let $M_1$ denote the image $i(M) \subset {\mathbb R}^F$. 
+
+\begin{lemma}
+\label{lem:1.5}
+This image $M_1$ is a smooth manifold in ${\mathbb R}^F$, and the canonical map $i : M \longrightarrow M_1$ is a diffeomorphism.
+\end{lemma}
+
+The proof is straightforward. 
+
+Thus any smooth manifold has a canonical embedding in an associated coordinate space. This suggests the following definition. 
+%imbedding? 
+Let $M$ be a set and let $F$ be a collection of real valued functions on $M$ which separates points. (That is, given $x \ne y$ in $M$ there exists $f \in F$ such that $f(x) \ne f(y)$.) Then $M$ can be identified with its image under the canonical imbedding\footnote{Editor's note: The book uses embedding and imbedding interchangably, this is just a different spelling.} $i : M \longrightarrow {\mathbb R}^F$.
+
+\begin{definition}
+The collection $F$ is a \defemph{smoothness structure}\index{smoothness structure} on $M$ if the subset $i(M) \subset {\mathbb R}^F$ is a smooth manifold, and if $F$ is precisely the set of all smooth real valued functions on this smooth manifold.\index{smooth manifold}\footnote{If only the first condition is satisfied, then $F$ might be called a ``basis''\index{basis} for a smoothness structure on $M$.}
+\end{definition}
+
+\begin{note}
+This definition of ``smoothness'' is similar to that given by \cite{nomizu1956}. In the classical point of view the ``smoothness structure'' of a manifold is prescribed by the collection of local parameterizations. (See for example \cite[p.21]{steenrod1951}.) In still another point of view, one uses collections of smooth functions on open subsets. (Compare \cite{derham1955}.) All of these definitions are equivalent. 
+\end{note}
+
+In conclusion here are three problems for the reader. The first two of these will play an important role in later sections. 
+
+\begin{problem}
+\label{prob:1-A}
+Let $M_1 \subset {\mathbb R}^A$ and $M_2 \subset {\mathbb R}^B$ be smooth manifolds. Show that $M_1 \times M_2 \subset {\mathbb R}^A \times {\mathbb R}^B$ is a smooth manifold, and that the tangent manifold $\tangentTS {(M_1 \times M_2)}$ is canonically diffeomorphic to the product $\tangentTS {M_1} \times \tangentTS {M_2}$. Note that a function $x \mapsto (f_1(x), f_2(x))$ from $M$ to $M_1 \times M_2$ is smooth if and only if both $f_1 : M \longrightarrow M_1$ and $f_2 : M \longrightarrow M_2$ are smooth. 
+\end{problem}
+
+\begin{problem}
+\label{prob:1-B}
+Let ${\mathbb P}^n$\index{projective space!\indexline real $\projective^n$} denote the set of all lines through the origin in the coordinate space ${\mathbb R}^{n + 1}$. Define a function \[q : {\mathbb R}^{n + 1} - \{0\} \longrightarrow {\mathbb P}^n\] by $q(x) = {\mathbb R} x =$ line through $x$. Let $F$ denote the set of all functions $f : {\mathbb P}^n \longrightarrow \mathbb R$ such that $f \circ q$ is smooth. 
+
+\begin{enumerate}[label=\alph*)]
+    \item Show that $F$ is a smooth structure on ${\mathbb P}^n$. The resulting smooth manifold is called the \defemph{real projective space} of dimension $n$.
+    \item Show that the functions \[f_{ij}(\mathbb R x) = \dfrac{x_i x_j}{\sum_k x_k^2}\] define a diffeomorphism between ${\mathbb P}^n$ and the submanifold of $M_{n+1}(\mathbb{R})$\footnote{Editor's note: This is the set of $(n+1)\times (n+1)$ matrices given a smooth structure by identifying it with $\mathbb{R}^{(n+1)^2}$.} consisting of all symmetric $(n + 1) \times (n + 1)$ matrices $A$ of trace $1$ satisfying $A A = A$.
+    \item Show that ${\mathbb P}^n$ is compact, and that a subset $V \subset {\mathbb P}^n$ is open if and only if $q^{-1}(V)$ is open. 
+\end{enumerate} 
+\end{problem}
+
+\begin{problem}
+\label{prob:1-C}
+For any smooth manifold $M$ show that the collection $F = C^\infty(M, \mathbb R)$ of smooth real valued functions on $M$ can be made into a ring, and that every point $x \in M$ determines a ring homomorphism $F \longrightarrow \mathbb R$ and hence a maximal ideal in $F$. If $M$ is compact, show that every maximal ideal in $F$ arises this way from a point in $M$. More generally, if there is a countable basis for the topology of $M$, show that every ring homomorphism $F \longrightarrow \mathbb R$ is obtained in this way. (Make use of an element $f \ge 0$ in $F$ such that each $f^{-1}[0, c]$ is compact.) Thus the smooth manifold $M$ is completely determined by the ring $F$\index{smooth manifold}. For $x \in M$, show that any $\mathbb R$-linear mapping $X : F \longrightarrow \mathbb R$ satisfying $X(fg) = X(f)g(x) + f(x) X(g)$ is given by $X(f) = \differential f x(v)$ for some uniquely determined vector $v \in \tangentspace M x$. 
+\end{problem}
+\end{document}

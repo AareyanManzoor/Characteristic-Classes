@@ -1,0 +1,105 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\chapter{Bernoulli Numbers}\label{app:B}
+Since the appearance of Hirzebruch's signature theorem and his generalized Riemann--Roch theorem, it has become useful for topologists to know something about Bernoulli numbers and their number theoretic properties. This appendix will describe some of these properties.
+
+The \defemph{Bernoulli numbers}\index{Bernoulli numbers $B_n$} $B_1, B_2, \ldots$ can be defined as the coefficients that appear in the power series\index{power series} \[\frac x {\tanh x} = \frac {x \cosh x} {\sinh x} = 1 + \frac {B_1} {2!} (2x)^2 - \frac {B_2} {4!} (2x)^4 + \frac {B_3} {6!} (2x)^6 - + \ldots\] (convergent for $|x| < \pi$), or equivalently in the expansion \[\frac z {e^z - 1} = 1 - \frac z 2 + \frac {B_1} {2!} z^2 - \frac {B_2} {4!} z^4 + \frac {B_3} {6!} z^6 - + \ldots.\] These two series are related by the easily verified identity \[\frac x {\tanh x} = \frac {2 x} {e^{2x} - 1} + x.\] With this notation one has \[B_1 = \frac 1 6, B_2 = \frac 1 {30}, B_3 = \frac 1 {42}, B_4 = \frac 1 {30}, B_5 = \frac 5 {66}, B_6 = \frac {691} {2730}, B_7 = \frac 7 6, B_8 = \frac {3617} {510},\] and so on. (The reader should beware since other conflicting notations are also in common usage.) These numbers were first introduced by Jakob Bernoulli, the oldest of that famous family of mathematicians, in a work published posthumously in 1713. They can be computed for example by actually dividing the appropriate power series, or by a procedure based on the proof of Lemma~\ref{lem:B.1} below.
+
+Many related classical power series expansions can be derived from these. For example the identity \[\frac 1 {\sinh 2 x} = \frac 1 {\tanh x} - \frac 1 {\tanh 2 x}\] leads to the series \[\frac u {\sinh u} = 1 - (2^2 - 2) \frac {B_1} {2!} u^2 + (2^4 - 2) \frac {B_2} {4!} u^4 - + \ldots\] (compare Problem~\ref{prob:19.C}), and the identity \[\tanh x = \frac 2 {\tanh 2 x} - \frac 1 {\tanh x}\] leads to the series \[\tanh x = 2^2(2^2 - 1) \frac {B_1} {2!} x - 2^4(2^4 - 1) \frac {B_2} {4!} x^3 + - \ldots .\] Closely related, by means of the equation $\tanh i y = i \tan y$, is the series \[\tan y = 2^2(2^2 - 1) \frac {B_1} {2!} y + 2^4(2^4 - 1) \frac {B_2} {4!} y^3 + \ldots.\] This last can be used to prove an interesting number theoretic property.
+
+\begin{lemma}
+\label{lem:B.1}
+For each $n$ the number $2^{2n} (2^{2n} - 1)B_n/2n$ is a positive integer.
+\end{lemma}
+\begin{proof} 
+For the above Taylor expansion shows that $2^{2n}(2^{2n} - 1)B_n/2n$ is equal to the $(2n - 1)$--st derivative of $\tan y$ at the origin. But the identity \[\dfrac{\dd \tan^m y}{\dd y} = m(\tan^{m - 1} y + \tan^{m + 1} y)\] together with a straightforward induction shows that the $(2n - 1)$--st derivative of $\tan y$ equals \[a_{n0} + a_{n1} \tan^2 y + \ldots + a_{nn} \tan^{2n} y\] where the coefficients $a_{n0}, a_{n1}, \ldots, a_{nn}$ are positive integers. In particular the value $a_{n0}$ at the origin is a positive integer. 
+\end{proof}
+
+\begin{lemma}[Lipschitz--Sylvester]
+\label{lem:B.2}
+For any integer $k$, the expression $k^{2n}(k^{2n} - 1)B_n/2n$ is an integer.
+\end{lemma}
+
+\begin{proof}
+Consider the function $f(x) = 1 + e^x + e^{2x} + \ldots + e^{(k - 1) x} = (e^{k x} - 1)/(e^x - 1)$. Note that $f(0) = k$, and that the derivatives of $f$ at zero are all integers. Now consider the logarithmic derivative
+\[f'(x)/f(x) = \frac \dd {\dd x} (\log(e^{kx} - 1) - \log(e^x - 1)) = \dfrac{k e^{kx}}{e^{kx} - 1} - \dfrac{e^x}{e^x - 1}.\]
+Using the Taylor expansion 
+\[\frac {e^x} {e^x - 1} = \frac 1 x \frac {-x} {e^{-x} - 1} = \frac 1 x \bigg(1+ \frac x 2 + \frac {B_1} {2!} x^2 - \frac {B_2} {4!} x^4 + - \ldots\bigg),\]
+we obtain \[\dfrac{f'(x)}{f(x)} = \dfrac{k - 1}{2} + (k^2 - 1) \frac {B_1} {2!} x - (k^4 - 1) \frac {B_2} {4!} x^3 + - \ldots .\]
+Therefore the $(2n - 1)$--st derivative of $f'(x)/f(x)$ at the origin is equal to \newline $\pm (k^{2n} - 1)B_n/2n$. A straightforward induction shows that this derivative can be expressed as a polynomial in $f(x)$, $f'(x)$, $\ldots$, $f^{(2n)}(x)$ with integer coefficients, divided by $(f(x))^{2n}$. Setting $x = 0$, this yields \[\dfrac{(k^{2n} - 1)B_n}{2n} = \dfrac{\mathrm{integer}}{k^{2n}},\] as required.
+\end{proof}
+
+The following two theorems give more precise number theoretic information. The first was proved independently by T. Clausen and K. G. C von Staudt in 1840.
+
+\begin{theorem}
+\label{thm:B.3}
+The rational number $(-1)^n B_n$ is congruent mod $\mathbb Z$ to $\sum (1/p)$, to be summed over all primes $p$ such that $p - 1$ divides $2n$. Hence the denominator of $B_n$, expressed as a fraction in lowest terms, is equal to the product of all primes $p$ with $(p - 1) \mid 2n$. 
+\end{theorem}
+
+\begin{proof}
+Thus the denominator of $B_n$ is always square free and divisible by $6$. It is divisible by a prime $p > 3$ if and only if $n$ is a multiple of $(p - 1)/2$. For a proof the reader is referred to \cite[Section 7.10]{hardy2008introduction} or \cite[p. 384]{borevich1966}
+\end{proof}
+
+The next result was proved by von Staudt in 1845.
+
+\begin{theorem}
+\label{thm:B.4}
+A prime divides the denominator of $B_n/n$ (expressed as a fraction in lowest terms) if and only if it divides the denominator of $B_n$. 
+\end{theorem}
+
+It is now easy to compute the denominator of $B_n/n$ explicitly. For any prime $p$ with $(p - 1) \mid 2n$, let $p^\mu$ be the highest power of $p$ dividing $n$. Then clearly $p^{\mu + 1}$ is the highest power of $p$ dividing the denominator of $B_n/n$. As an example, for $n = 14$ since the primes $2, \, 3, \, 5, \, 29$ are the only ones satisfying $(p - 1) \mid 2n$, it follows that the denominator of $B_{14}/14$ is equal to $2^2 \cdot 3 \cdot 5 \cdot 29$. 
+
+\begin{remark*}
+This computation is of interest to homotopy theorists\index{homotopy groups}, in view of the theorem that the image of the stable $J$--homomorphism\index{J-homomorphism@$J$-homomorphism} \[J : \pi_{4n - 1} \SO_N \longrightarrow \pi_{4n - 1 + N} (\sphere^N)\] is a cyclic group of order equal to the denominator of $B_n/4n$. (Compare \cite{kervaire-milnor}, \cite{adams1965} and \cite{mahowald}.)
+\end{remark*}
+
+\begin{proof}[Proof of \ref{thm:B.4}]
+Let $p$ be an arbitrary prime. If $p$ divides the denominator of $B_n$, then it certainly divides the denominator of $B_n/n$. If $p$ does not divide the denominator of $B_n$, then $2n \not\equiv 0 \pmod {p - 1}$ by \ref{thm:B.3}. Choose a primitive root $k$ modulo $p$, that is, choose $k$ so that $k^r \equiv 1 \pmod p$ if and only if $r$ is a multiple of $p - 1$. Then \[k^{2n} \not\equiv 1 \pmod p,\] hence the integer $k^{2n}(k^{2n} - 1)/2$ is relatively prime to $p$. Therefore $B_n/n$, being equal to the integer $k^{2n}(k^{2n} - 1)B_n/2n$ divided by $k^{2n}(k^{2n} - 1)/2$, has denominator prime to $p$. 
+\end{proof}
+
+The numerator of the fraction $B_n/n$ is much more difficult to compute. For small values of $n$ it can be tabulated as follows. 
+
+
+\begin{tabular}{|c| c |c |c| c| c| c| c| c|}
+    \hline
+    $n$ & $\le$ 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+    \hline
+    $\mathrm{numerator} \big(\frac {B_n} n\big)$ & 1 & 691 & 1 & 3617 & 43867 & 174611 & 77683 & 236364091 \\
+    \hline 
+\end{tabular}
+
+\begin{remark*}
+This numerator is of interest to differential topologists in view of the theorem that the group consisting of all diffeomorphism classes of exotic $(4n - 1)$--spheres which bound parallelizable manifolds is a cyclic group of order \[2^{2n - 2}(2^{2n - 1} - 1) \times \mathrm{numerator} \bigg( \dfrac{4B_n}{n}\bigg)\] for $n \ge 2$. (See \cite{kervaire-milnor}.) It of interest in number theory since Kummer, in 1850, proved Fermat's last theorem for any prime exponent $p$ which \defemph{does not} divide the numerator of any $B_n/n$. (See \cite{borevich1966}.) Such primes are called ``regular''. The smallest irregular prime is $37$, which divides the numerator $7709321041217$ of $B_{16}$. If two integers $m$ and $n$ satisfy $m \equiv n \not\equiv 0 \pmod {(p - 1)/2}$ for some prime $p$, then Kummer showed that $p$ divides the numerator of \[\dfrac{(-1)^m B_m}{m} - \dfrac{(-1)^n B_n}{n}.\] Therefore, in order to test a given prime $p$ for regularity, it suffices to examine the numerators of those $B_n$ with $1 \le n < (p - 1)/2$. 
+
+The numerator of $B_n/n$ is non--trivial for $n \ge 8$, and grows very rapidly with $n$. To see this, recall the famous formula 
+\[1 + \frac 1 {2^{2n}} + \frac 1 {3^{2n}} + \frac 1 {4^{2n}} + \ldots = \dfrac{B_n(2\pi)^{2n}}{2(2n)!}\] 
+of Euler. (See Problem~\ref{prob:B-4} below.) Using Stirling's formula \[1 < \frac {m!} {m^m e^{-m} \sqrt {2 \pi m}} < e^{1/12m}\] 
+(see \cite{artin2015gamma}), this implies that
+\[B_n > \dfrac{2(2n)!}{(2\pi)^{2n}} > 4 \bigg(\frac n {\pi e}\bigg)^{2n} \sqrt {\pi n}\] (where all three expressions are asymptotically equal as $n \to \infty$). Therefore 
+\[\mathrm{numerator} \bigg(\frac {B_n} n\bigg) > \frac {B_n} n > \frac 4 {\sqrt e} \bigg(\frac n {\pi e}\bigg)^{2n - \frac 1 2} > 1\] for all $n > \pi e = 8.539 \ldots$.
+
+For further information concerning Bernoulli numbers, the reader is referred to \cite{nielson} or \cite{borevich1966}.
+\end{remark*} 
+
+We conclude with some exercises.
+
+\begin{problem}[J. F. Adams]
+\label{prob:B-1}\index{Adams, J. F.}
+If all prime factors of $n$ have the form $6 k + 1$, show that the denominator of $B_n/n$ is equal to $6$. 
+\end{problem}
+
+\begin{problem}[J. F. Adams]
+\label{prob:B-2}
+Given constants $N > \log_2(4n)$ show that the greatest common divisor of the integers \[2^N(2^{2n} - 1), 3^N(3^{2n} - 1), 4^N(4^{2n} - 1), \ldots\] is equal to the denominator of $B_n/4n$. 
+\end{problem}
+
+\begin{problem}
+\label{prob:B-3}
+Let $D = \dfrac \dd {\dd t}$ denote the differentiation operator $f(t) \mapsto f'(t)$ applied to any polynomial $f(t)$. Show that the operator \[e^D = 1 + D + \frac 1 {2!} D^2 + \ldots\] maps $f(t)$ to $f(t + 1)$, and show that the operator \[\frac D {e^D - 1} = 1 - \frac 1 2 D + \frac {B_1} {2!} D^2 - + \ldots\] maps $f(t)$ to a polynomial \[g(t) = f(t) - \frac 1 2 f'(t) + \frac {B_1} {2!} f''(t) - \frac {B_2} {4!} f'''(t) + - \ldots\] which satisfies the difference equation \[g(t + 1) - g(t) = f'(t).\] In this way prove the Euler--Maclaurin summation formula \[f'(0) + f'(1) + \ldots + f'(k - 1) = g(k) - g(0).\]
+\end{problem}
+
+\begin{problem}
+\label{prob:B-4}
+Taking $f(t) = t^m/m!$, the corresponding polynomial \[g(t) = \dfrac{t^m}{m!} - \frac 1 2 \dfrac{t^{m - 1}}{(m - 1)!} + \frac {B_1} {2!} \dfrac{t^{m - 2}}{(m - 2)!} + - \ldots\] may be called the $m$--th ``Bernoulli polynomial'' $p_m(t)$. Show that these Bernoulli polynomials can be characterized inductively, starting with $p_0(t) = 1$, by the property that each $p_m(t)$, $m \ge 1$, is an indefinite integral of $p_{m - 1}(t)$ and satisfies $\int_0^1 p_m(t) \dd t = 0$. Compute the integral \[\int_0^1 p_m(t) e^{-2 \pi i k t} \dd t = -\dfrac{1}{(2 \pi i k)^m}\] inductively, for $k \ne 0$, $m \ge 1$, using integration by parts, and hence establish the uniformly convergent Fourier series expansion \[p_m(t) = -\sum_{k \ne 0} \dfrac{e^{2 \pi i k t}}{(2 \pi i k)^m}\] for $m \ge 2$, $0 \le t \le 1$. Evaluating at $t = 0$, prove Euler's formula \[\dfrac{B_n}{(2n)!} = 2 \sum_{k = 1}^\infty \dfrac{1}{(2 \pi k)^{2n}}.\]
+\end{problem}
+\end{document}

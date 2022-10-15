@@ -1,0 +1,301 @@
+\chapter{Grassmann Manifolds and Universal Bundles}
+
+\section*{title}\label{sec5.8}
+
+
+
+\subsection*{Infinite Grassmann Manifolds}
+
+A similar argument applies if the base space $B$ is paracompact and finite dimensional. (Compare \cref{prob-5-E}.) However in order to take care of bundles over more exotic base spaces it is necessary to allow the dimension of $\R^{n+k}$ to tend to infinity, thus yielding an infinite Grassmann "manifold" $g_{n}(r^{\infty})$.
+
+Let $\R^{\infty}$ denote the vector space consisting of those infinite sequences
+\[
+x=(x_{1}, x_{2}, x_{3}, \dots\ )
+\]
+of real numbers for which all but a finite number of the $X_{i}$ are zero. (Thus $\R^{\infty}$ is much smaller than the infinite coordinate spaces utilized in \cref{ch-1}.)
+
+For fixed $k$, the subspace consisting of all
+
+\[
+x=(x_{1}, x_{2}, \dots, x_{k}, 0,0, \dots\ )
+\]
+
+will be identified with the coordinate space $\R^{k}$. Thus $\R^{1} \subset \R^{2} \subset \R^{3} \subset \dots$ with union $\R^{\infty}$.
+
+\begin{definition}\label{def:5-2}
+	The infinite Grassmann manifold
+	\[
+	\mathsf{G}_{n}=\grass{n}{\infty}
+	\]
+	is the set of all $n$-dimensional linear sub-spaces of $\R^{\infty}$, topologized as the direct limit\footnote{It is customary in algebraic topology to call this the ``weak topology," a weak topology being one with many open sets. This usage is unfortunate since analysts use the term weak topology with precisely the opposite meaning. On the other hand the terms ``fine topology" or ``large topology" or ``Whitehead topology" are certainly acceptable.} of the sequence
+	\[
+	\grass{n}{n} \subset \grass{n}{n+1} \subset \grass{n}{n+2} \subset \dots\ .
+	\]
+	In other words, a subset of $\mathsf{G}_{n}$ is open (or closed) if and only if its intersection with $\grass{n}{n+k}$ is open (or closed) as a subset of $\grass{n}{n+k}$ for each $k$. This makes sense since $\grass{n}{\infty}$ is equal to the union of the subsets $\grass{n}{n+k}$.
+	
+	As a special case, the infinite projective space $\rp{\infty}=\grass{1}{\infty}$ is equal to the direct limit of the sequence $\rp{1} \subset \rp{2} \subset \rp{3} \subset \dots\ $.
+	
+	Similarly $\R^{\infty}$ itself can be topologized as the direct limit of the sequence $\R^{1} \subset \R^{2} \subset \dots\ $.
+\end{definition}
+
+\subsection*{The Universal Bundle $\protect\boldsymbol{\gamma}^{n}$}
+
+A canonical bundle $\gamma^{n}$ over $\grass{n}{}$ is constructed, just as in the finite dimensional case, as follows. Let
+\[
+E(\gamma^{n}) \subset \grass{n}{} \times \R^{\infty}
+\]
+be the set of all pairs
+\[
+ (n\text{-plane in } \R^{\infty}, \text { vector in that } n\text{-plane)},
+\]
+topologized as a subset of the Cartesian product. Define $\map{\pi}{E(\gamma^{n})}{\grass{n}{}}$ by $\pi(X, x)=X$, and define the vector space structures in the fibers as before.
+
+\begin{lemma}\label{lem-5-4}
+	This vector bundle $\gamma^{n}$ satisfies the local triviality condition.
+\end{lemma}
+
+The proof will be essentially the same as that of \cref{lem-5-2}. However the following technical lemma will be needed. (Compare \cite[\S~18.5]{82}.)
+
+\begin{lemma}\label{lem-5-5}
+	Let $A_{1} \subset A_{2} \subset \dots$ and ${B}_{1} \subset {B}_{2} \subset \dots$ be sequences of locally compact spaces with direct limits A and B respectively. Then the Cartesian product topology on $A \times {B}$ coincides with the direct limit topology which is associated with the sequence $A_{1} \times {B}_{1} \subset A_{2} \times {B}_{2} \subset \dots\ .$
+\end{lemma}
+\begin{proof}
+	Let $W$ be open in the direct limit topology, and let $(a, b)$ be any point of $W $. Suppose that $(a, b) \in A_{i} \times B_{i} $. Choose a compact neighborhood $k_{i}$ of a in $A_{i}$ and a compact neighborhood ${L}_{i}$ of ${B}$ in ${B}_{i}$ so that $K_{i} \times {L}_{i} \subset W$. It is now possible (with some effort) to choose compact neighborhoods $K_{i+1}$ of $K_{i}$ in $A_{i+1}$ and $L_{i+1}$ of $L_{i}$ in $B_{i+1}$ so that $K_{i+1} \times {L}_{i+1} \subset W$. Continue by induction, constructing neighborhoods $K_{i} \subset K_{i+1} \subset K_{i+2} \subset \dots$ with union $U$ and ${L}_{i} \subset {L}_{i+1} \subset \dots$ with union $V$. Then $U$ and $V$ are open sets, and
+	\[
+	(a, b) \in U \times V \subset W.
+	\]
+	Thus $W$ is open in the product topology, which completes the proof of \cref{lem-5-5}.
+\end{proof}
+
+\begin{proof}[Proof of \cref{lem-5-4}.]
+	Let $X_{0} \subset \R^{\infty}$ be a fixed $n$-plane, and let $U \subset \grass{n}{}$ be the set of all $n$-planes $Y$ which project onto $X_{0}$ under the orthogonal projection $\map{p}{\R^{\infty}}{ X_{0}}$. This set $U$ is open since, for each finite $k$, the intersection
+	\[
+	U_{k}=U \cap \grass{n}{n+k}
+	\]
+	is known to be an open set. Defining 
+	\[ \map{h}{U \times X_{0}}{\pi^{-1} U}\]
+	as in \cref{lem-5-2}, it follows from \cref{lem-5-2} that $h \mid _{U_{k} \times X_{0}}$ is continuous for each $k$. Now \cref{lem-5-5} implies that $h$ itself is continuous.
+	
+	As before, the identity $h^{-1}(Y, y)=(Y, py)$ implies that $h^{-1}$ is continuous. Thus $h$ is a homeomorphism. This completes the proof that $\gamma^{n}$ is locally trivial.
+\end{proof}
+
+The following two theorems assert that this bundle $\gamma^{n}$ over $\grass{n}{}$ is a ``universal'' $\R^{n}$-bundle.
+\begin{theorem}\label{thm-5-6}
+	 Any $\R^{n}$-bundle $\xi$ over a paracompact base space admits a bundle map $\xi \rightarrow \gamma^{n}$.
+\end{theorem}
+\begin{definition}\label{def:5-3}
+Two bundle maps, $\map{f, g}{\xi}{\gamma^{n}}$ are called \textit{bundle-homotopic} if there exists a one-parameter family of bundle maps
+\[
+\map{h_{t}}{\xi}{\gamma^{n}}\quad 0 \leq t \leq 1,
+\]
+with $h_{0}=f$, $h_{1}=g$, such that $h$ is continuous as a function of both variables. In other words the associated function
+\[\map{h}{E(\xi) \times[0,1]}{E(\gamma^{n})}
+\]
+must be continuous.	
+\end{definition}
+
+
+\begin{theorem}\label{thm-5-7}
+	Any two bundle maps from an $\R^{n}$-bundle to $\gamma^{n}$ are bundle-homotopic.
+\end{theorem}
+
+\subsection*{Paracompact Spaces}
+
+Before beginning the proof of \cref{thm-5-6} and \cref{thm-5-7}, let us review the definition and the basic theorems concerning paracompactness. For further information the reader is referred to \cite{41} or \cite{73}.
+
+\begin{definition}\label{def:5-4}
+	A topological space $\B $ is \textit{paracompact} if $\B $ is a Hausdorff space and if, for every open covering $\left\{U_{\alpha}\right\}$ of $\B $, there exists an open covering $\left\{V_{\beta}\right\}$ which
+	\begin{enumerate}[label=\arabic*),leftmargin=2\parindent ]
+		\item is a \textit{refinement} of $\left\{U_{\alpha}\right\}$: that is each $V_{\beta}$ is contained in some $U_{\alpha}$, and
+		\item is \textit{locally finite}: that is each point of $\B $ has a neighborhood which intersects only finitely many of the $V_{\beta}$.
+	\end{enumerate}
+\end{definition}
+
+Nearly all familiar topological spaces are paracompact. For example (see the above references):
+\begin{theorem}[A. H. Stone]\label{thm-5-8}
+Every metric space is paracompact.	
+\end{theorem}
+\begin{theorem}[Morita]\label{thm-5-9}
+	If a regular topological space is the countable union of compact subsets, then it is paracompact.
+\end{theorem}
+\begin{corollary}\label{cor-5-9}
+	The direct limit of a sequence $K_{1} \subset K_{2} \subset K_{3} \subset \dots$ of compact spaces is paracompact. In particular the infinite Grassmann space $\grass{n}{}$ is paracompact.
+\end{corollary}
+
+For it follows from \cite[\S~18.4]{82} that such a direct limit is regular. (The reader should have no difficulty in supplying a proof.)
+\begin{theorem}[Dieudonné]\label{thm-5-11}
+	Every paracompact space is normal.
+\end{theorem}
+The proof of \cref{thm-5-6} will be based on the following:
+\begin{lemma}\label{lem-5-9}
+	For any fiber bundle $\xi$ over a paracompact space $\B $, there exists a locally finite covering of $\B $ by countably many open sets $U_{1}, U_{2}, U_{3}, \dots$, so that $\xi \mid_{ U_{i}}$ is trivial for each $ i $.
+\end{lemma} 
+\begin{proof}
+	Choose a locally finite open covering $\left\{V_{\alpha}\right\}$ so that each $\xi \mid _{V_{a}}$ is trivial; and choose an open covering $\left\{W_{a}\right\}$ with $\overline{W}_{\alpha} \subset V_{a}$ for each $\alpha$. (Compare \cite[p.~171]{41}.) Let $\map{\lambda_{\alpha}}{\B }{\R} $ be a continuous function which takes the value $1$ on $\overline{W}_{\alpha}$ and the value $0$ outside of $V_{\alpha} $. For each non-vacuous finite subset $S$ of the index set $\{\alpha\}$, let $U(S) \subset \B $ denote the set of all $b \in B$ for which
+	\[
+	\min_{\alpha \in S} \lambda_{\alpha}(b)>\max_{\alpha \notin S} \lambda_{\alpha}(b).
+	\]
+	Let $U_{k}$ be the union of those sets $U(S)$ for which $S$ has precisely $k$ elements.
+	
+	Clearly each $U_{k}$ is an open set, and
+	\[
+	\B =U_{1}\cup U_{2} \cup U_{3} \cup \dots\ .
+	\]
+	For, given $b \in \B $, if precisely $k$ of the numbers $\lambda_{a}(b)$  are positive, then $b \in U_{k} $. If $a$ is any element of the set $S$, note that
+	\[
+	U(S) \subset V_{\alpha}.
+	\]
+	Since the covering $\left\{V_{\alpha}\right\}$ is locally finite, it follows that $\left\{U_{k}\right\}$ is locally finite. Furthermore, since each $\xi\mid _{V_{\alpha}}$ is trivial, it follows that each. $\xi \mid _{U(S)}$ is trivial. But the set $U_{k}$ is equal to the dis.joint union of its open subsets $U(S) $. Therefore $\xi \mid _{U_{k}}$ is also trivial.
+\end{proof}
+
+The bundle map $\map{f}{\xi}{\gamma^{n}}$ can now be constructed just as in the proof of \cref{lem-5-3}. Details will be left to the reader. This proves \cref{thm-5-6}.
+
+\begin{proof}[Proof of \cref{thm-5-6}]
+	Any bundle map $\map{f}{\xi}{\gamma^{n}} $ determines a map
+\[
+	\map{\hat{f}}{E(\xi)}{\R^{\infty}}\]
+	whose restriction to each fiber of $\xi$ is linear and injective. Conversely $\hat{f}$ determines $f$ by the identity
+	\[
+	f(e)=(\hat{f} \text { (fiber through } e), \hat{f}(e))
+	\]
+	Let $\map{f, g}{\xi}{\gamma^{n}}$ be any two bundle maps.
+	
+	Case 1. Suppose that the vector $\hat{f}(e) \in \R^{\infty}$ is never equal to a negative multiple of $\hat{g}(e)$ for $e \neq 0$, $e \in E(\xi)$. Then the formula
+	\[
+	\hat{h}_{t}(e)=(1-t) \hat{f}(e)+\hat{\mathrm{tg}}(e), \quad 0 \leq t \leq 1
+	\]
+defines a homotopy between $\hat{f}$ and $\hat{g}$. To prove that $\hat{h}$ is continuous as a function of both variables, it is only necessary to prove that the vector space operations in $\R^{\infty}$ (i.e., addition, and multiplication by scalars) are continuous. But this follows easily from \cref{lem-5-5}. Evidently
+$\hat{h}_t(e)\neq0$ if $e$ is a non-zero vector of $E(\xi)$. Hence we can define
+$\map{h}{E(\xi)\times[0,1]}{E(\eta)}$ by
+\[h_t(e)=(\hat{h}_t(\text{fiber through } e),\hat{h}_t(e)).\]
+To prove that $h$ is continuous, it is sufficient to prove that the 
+corresponding function
+\[\map{\overline{h}}{\B (\xi)\times[0,1]}{\grass{n}{}}\]
+on the base space is continuous. Let $U$ be an open subset of $\B (\xi)$ with $\xi|_{U}$ trivial, and let $s_1,\dots,s_n$ be nowhere dependent cross-sections of
+$\xi|_{U}$. Then $\overline{h}|_{ U \times [0,1]}$ can be considered as the composition of
+\begin{enumerate}[label=\arabic*),leftmargin=2\parindent ]
+	\item a continuous function $b$, $t\mapsto (\hat{h}_ts_1(b)),\dots, \hat{h}_ts_n(b)))$ from $U \times [0,1]$
+	to the ``infinite Stiefel manifold'' $\stiefel{n}{}{\infty} \subset \R^\infty \times \dots \times \R^\infty$, and
+	\item the canonical projection $\map{q}{\stiefel{n}{}{\infty}}{\grass{n}{}}$.
+\end{enumerate}
+ Using \cref{lem-5-5} it is seen that $q$ is continuous. Therefore $\overline{h}$ is continuous;
+hence the bundle-homotopy $h$ between $f$ and $g$ is continuous.
+
+General Case. Let $\map{f, g}{\xi}{\gamma^n}$ be arbitrary bundle maps. A bundle
+map
+\[\map{d_1}{\gamma^n}{\gamma^n}\]
+is induced by the linear transformation $\R^\infty\to \R^\infty$ which carries the $i$-th
+basis vector of $\R^\infty$ to the $(2i-1)$-th. Similarly $\map{d_2}{\gamma^n}{\gamma^n}$ is induced
+by the linear transformation which carries the $i$-th basis vector to the
+$2i$-th. Now note that three bundle-homotopies
+\[f\sim d_1\circ f\sim d_2\circ g\sim g\]
+are given by three applications of Case $1$. Hence $f\sim
+g$. 
+\end{proof} 
+
+
+\subsection*{Characteristic Classes of Real $n$-Plane Bundles}
+Using \cref{thm-5-6,thm-5-7}, it is possible to give a precise definition of the
+concept of characteristic class. First observe the following.
+\begin{corollary}\label{cor-5-10}
+	Any $\R^n$-bundle $\xi$ over a paracompact space
+	$\B $ determines a unique homotopy class of maps
+	\[\map{\bar{f}_\xi}{\B }{\grass{n}{}}.\]
+\end{corollary}
+\begin{proof}
+	Let $\map{f_\xi}{\xi}{\gamma^n}$ be any bundle map, and let $\bar{f}_\xi$ be the induced
+	map of base spaces.
+\end{proof}
+Now let $\Lambda$ be a coefficient group or ring and let
+\[c\in\homology^i(\grass{n}{};\Lambda)\]
+be any cohomology class. Then $\xi$ and $c$ together determine a cohomology
+class
+\[{\bar{f}_\xi}^{*} c\in\homology^i(\B ;\Lambda)\]
+This class will be denoted briefly by $c(\xi)$.
+
+
+
+
+
+
+
+\begin{definition}\label{def:5-6}
+	$c(\xi)$ is called the \textit{characteristic cohomology class} of
+	$\xi$ determined by $c$.
+	
+\end{definition}Note that the correspondence $\xi \mapsto(\xi)$ is natural with respect to
+bundle maps. (Compare Axiom 2 in \S~4). Conversely, given any 
+correspondence
+\[\xi\longmapsto c(\xi)\in \homology^i\left(\B (\xi);\Lambda\right)\]
+which is natural with respect to bundle maps, we have
+\[c(\xi)={\bar{f}_\xi}^{*}c(\gamma^n).\]
+
+Thus the above construction is the most general one. Briefly speaking:
+The ring consisting of all characteristic cohomology classes for $\R^n$-bundles over paracompact base spaces with coefficient ring $\Lambda$ is canonically isomorphic to the cohomology ring $\homology^* (\grass{n}{}; \Lambda)$.
+
+These constructions emphasize the importance of computing the
+cohomology of the space $\grass{n}{}$. The next two sections will give one 
+procedure for computing this cohomology, at least modulo $2$.
+
+
+\begin{remark*}
+Using the ``covering homotopy theorem'' (compare 
+\cite{84,83}.), \cref{cor-5-10} can be sharpened as follows: Two $\R^n$-bundles $\xi$ and $\eta$ over the paracompact space $\B $ are isomorphic if and
+only if the mapping $\overline{f}_\xi$ of \cref{cor-5-10} is homotopic to $\overline{f}_\eta$.	
+\end{remark*}
+
+\section*{Problems}
+Here are five problems for the reader.
+\begin{problem}\label{prob-5-A}
+	Show that the Grassmann manifold $\grass{n}{n+k}$ can be
+	made into a smooth manifold as follows: a function $\map{f}{\grass{n}{n+k}}{\R}$
+	belongs to the collection $F$ of smooth real valued functions if and only if
+	$\map{f\circ q}{\stiefel{n}{}{n+k}}{\R}$ is smooth.
+\end{problem}
+\begin{problem}\label{prob-5-B}
+	Show that the tangent bundle of $\grass{n}{n+k}$ is 
+	isomorphic to $\Hom(\gamma^n(\R^{n+k} ),\gamma^\perp)$; where $ \gamma^\perp $ denotes the orthogonal 
+	complement of $\gamma^n(\R^{n+k} )$ in $\mathcal{E}^{n+k}$. Now consider a smooth manifold $M\subset \R^{n+k}$.
+	If $\map{\bar{g}}{M}{\grass{n}{n+k}}$ denotes the generalized Gauss map, show that
+	\[\map{\mathsf{D}\bar{g}}{\mathsf{D} M}{\mathsf{D}\grass{n}{n+k}}\]
+	gives rise to a cross-section of the bundle
+	\[\Hom(\tau_M,\Hom(\tau_M,\nu))\cong \Hom(\tau_M\otimes\tau_M,\nu).\]
+	(This cross-section is called the ``\textit{second fundamental form}'' of $M$.)
+\end{problem}
+
+\begin{problem}\label{prob-5-C}
+	Show that $\grass{n}{m}$ is diffeomorphic to the smooth 
+	manifold consisting of all $m \times m$ symmetric, idempotent matrices of trace $n$.
+	Alternatively show that the map
+	\[(x_1,\dots,x_n)\longmapsto x_1\wedge\dots\wedge x_n\]
+	from $\stiefel{n}{}{m}$ to the exterior power $\Lambda^n(\R^m)$ gives rise to a smooth 
+	embedding of $\grass{n}{m}$ in the projective space $\mathsf{Gr}_1(\Lambda^n(\R^m))\cong\rp{\binom{m}{n}-1}$. 
+	(Compare \cite[\S~7]{81}.)
+\end{problem}
+\begin{problem}\label{prob-5-D}
+	Show that $\grass{n}{n+k}$ has the following symmetry 
+	property. Given any two $n$-planes $X, Y \subset \R^n$ there exists an orthogonal
+	automorphism of $\R^{n+k}$ which interchanges $X$ and $Y$. Whitehead \cite{82}
+	defines the angle $\alpha(X, Y)$ between $n$-planes as the maximum over all unit
+	vectors $x\in X$ of the angle between $x$ and $Y$. Show that $\alpha$ is a metric
+	for the topological space $\grass{n}{n+k}$ and show that
+	\[\alpha(X, Y)=\alpha(X^\perp, Y^\perp).\]
+\end{problem}
+\begin{problem}\label{prob-5-E}
+	Let $\xi$ be an $\R^n$-bundle over $\B $.
+	\begin{enumerate}[label=\arabic*),leftmargin=2\parindent ]
+		\item Show that there exists a vector bundle $\eta$ over $\B $ with $\xi\oplus\eta$
+		trivial if and only if there exists a bundle map
+		\[\xi\longrightarrow\gamma^n(\R^{n+k})\]
+		for large $k$. If such a map exists, $\xi$ will be called a \textit{bundle of
+		finite type}.
+		\item Now assume that $\B $ is normal. Show that $\xi$ has finite type if
+		and only if $\B $ is covered by finitely many open sets $U_1,\dots,
+		U_r$
+		with $\xi|_{U_i}$ trivial.
+		\item If $\B $ is paracompact and has finite covering dimension, show
+		(using the argument of \cref{lem-5-9}) that every $\xi$ over $\B $ has finite type.
+		\item Using Stiefel-Whitney classes, show that the vector bundle $\gamma^1$
+		over $\rp{\infty}$ does not have finite type.
+	\end{enumerate}
+\end{problem}

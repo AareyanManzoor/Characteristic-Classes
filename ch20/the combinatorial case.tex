@@ -1,0 +1,121 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{The Combinatorial Case}
+The following will be a convenient class of objects to work with. Let $K$ be a locally finite simplicial complex.\index{simplicial complex}
+
+\begin{definition}
+$K$ is an $n$-dimensional \defemph{rational homology manifold}\index{homology manifold} if for each point $x$ of $K$ the local homology group \[\homology_i(K,K-x;\mathbb{Q})\] is zero for $i \neq n$ and isomorphic to $\mathbb{Q}$ for $i = n$.
+\end{definition}
+This is equivalent to the requirement that the star boundary of every simplex of $K$ has the rational homology of an $(n-1)$-sphere. If $K$ is a compact rational homology $n$-manifold, then it is easy to check that each component of $K$ is a  ``simple $n$-circuit.'' (See \cite[p. 106]{eilenbergsteenrod1952}.) In particular, each $(n-1)$-simplex of $K$ is incident to precisely two $n$-simplexes. Such a complex $K$ is said to be \defemph{oriented}\index{oriented manifold} if it is possible to assign an orientation to each $n$-simplex so that the sum of all $n$-simplexes forms an $n$-dimensional cycle. By definition, this cycle represents the fundamental homology class $\mu \in \homology_n(K;\mathbb{Z})$.\index{fundamental class!\indexline homology}
+
+Such oriented rational homology manifolds satisfy the Ponicaré duality theorem\index{Poincar\'e duality} with rational coefficients. See for example \cite{borel1960}.
+
+Similarly one can define the concept of an $n$-dimensional homology manifold-with-boundary. In this case the boundary $\partial K$ is a homology $(n-1)$-manifold, and the orientation determines and is determined by a relative homology class $\mu \in \homology_n(K,\partial K; \mathbb{Z})$. 
+
+We recall some standard definitions. Let $K$ be a simplicial complex. By a (rectilinear) \defemphi{subdivision} of $K$ is meant a simplicial complex $K'$ together with a homeomorphism $s:K' \varrightarrow{} K$ which is \defemph{simplexwise linear}, i.e., maps each simplex of $K'$ linearly into a simplex of $K$. A map $f:K \varrightarrow{} L$ between simplicial complexes is called \defemphi{piecewise linear} if there exists a subdivision $s:K'\varrightarrow{} K$ so that the composition $f \circ s$ is simplexwise linear.
+
+A map $K\varrightarrow{} L$ is said to be \defemph{simplicial}\index{simplicial map} if it is simplexwise linear and maps each vertex of $K$ to a vertex of $L$. If $K$ is compact, then given any piecewise linear map $f:K \varrightarrow{} L$ is said to be \defemph{simplicial} if it is simplexwise linear and maps exch vertex of $K$ to a vertex of $L$. If $K$ is compact, then given any piecewise linear map $f:K \varrightarrow{} L$ it can be shown that there exist subdivisions $s:K' \varrightarrow{} K$ and $t:L' \varrightarrow{} L$ so that the composition $t^{-1} \circ f \circ s:K' \varrightarrow{} L'$ is simplicial. See for example \cite[p. 17]{rourke2012introduction}.
+
+Let $\Sigma^r$ denote the boundary of the standard $(r+1)$-simplex. Our key lemma will be the following.
+
+\begin{lemma}
+\label{lem:20.03}
+Let $K^n$ be a compact rational homology $n$-manifold, and let $f:K^n \varrightarrow{} \Sigma^r$ be a piecewise linear map, with $n-r=4i$. Then for almost all $y \in \Sigma^r$ the inverse image $f^{-1}(y)$ is a compact rational homology $4i$-manifold. Given orientations for $K^n$ and $\Sigma^r$, there is an induced orientation for $f^{-1}(y)$. Furthermore the signature $\sigma(f^{-1}(y))$ of this oriented homology manifold is independent of $y$ for almost all $y$.\index{signature $\sigma$}
+\end{lemma}
+Here ``almost all $y$'' can be taken to mean ``except for $y$ belonging to some lower dimensional subcomplex.''
+
+It will be convenient to introduce the abbreviated notation of $\sigma(f)$ for this common value $\sigma(f^{-1}(y))$. [There is perhaps an analogy between this definition of $\sigma(f)$ and such classical homotopy invariants as the ``degree'' and the ``Hopf invariant'' of a mapping.]
+
+\begin{lemma}
+\label{lem:20.04}
+The integer $\sigma(f)$ depends only on the homotopy class of $f$. Furthermore, if $4i < (n-1)/2$ so that the cohomotopy group $\pi^r(K^n)$ is defined, then the correspondence $(f) \mapsto \sigma(f)$ defines a homomorphism $\pi^r(K^n)$ to $\mathbb{Z}$.\index{cohomotopy groups}
+\end{lemma}
+The proof of \ref{lem:20.03} and \ref{lem:20.04} will be based on the following.
+
+\begin{lemma}
+\label{lem:20.05}
+If $f:K \varrightarrow{} L$ is a simplicial mapping, and if $y$ belongs to the interior $U$ of a simplex $\Delta$ of $L$, then $f^{-1}(U)$ is homeomorphic to $U \times f^{-1}(y)$.
+\end{lemma}
+The corresponding assertion for the entire closed simplex would of course be false.
+\begin{proof}
+Let $A_0,\cdots,A_r$ be the vertices of $\Delta$, and set $y = t_0 A_0 + \cdots + t_rA_r$, where the $t_i$ are positive real numbers with sum $1$. Evidently any point $x \in f^{-1}(U)$ can be expressed uniquely as a sum \[x = s_0 A_0' + \cdots + s_rA_r'\] where each $A_i'$ is a boundary point of the smallest simplex of $K$ containing $x$ and where $f(A_i') = A_i$. Note that $f(x) = s_0A_0 + \cdots + s_rA_r$. The required homeomorphism $f^{-1}(U) \varrightarrow{} U \times f^{-1}(y)$ is now defined by the formula \newline $x \mapsto (f(x),t_0A_0' + \cdots + t_rA_r')$.
+\end{proof}
+
+It follows incidentally that $f^{-1}(y)$ is homeomorphic to $f^{-1}(y')$ for all $y$ and $y'$ in $U$.
+
+\begin{proof}[Proof of \ref{lem:20.03}]
+Subdivide $K^n$ and $\Sigma^r$ so that $f$ is simplicial. This is possible since $K^n$ is compact. Assume that $y$ belongs to the interior $U$ of a top dimensional simplex $\Delta^r$ of the subdivided $\Sigma^r$. Then by \ref{lem:20.05}, $U \times f^{-1}(y)$ has the local rational homology groups of an $n$-manifold. Since $U$ has the local homology groups $\homology_\ast(U,U\setminus X)$ of an $r$-manifold, it follows easily that $f^{-1}(y)$ has the local rational homology groups of a manifold of dimension $n-r = 4i$.
+
+This set $f^{-1}(y)$ can be given the structure of a simplicial complex\index{simplicial complex}. In fact, taking further subdivisions\index{subdivision}, so that $y$ is a vertex of the subdivided $\Sigma^r$, it follows that $f^{-1}(y)$ is a subcomplex of the correspondingly subdvided $K^n$.
+
+Given orientations for $U$ and $U \times f^{-1}(y)$, it is not difficult to construct an induced orientation for $f^{-1}(y)$, using for example the homology cross product operation\index{cross product}. Hence the signature $\sigma(f^{-1}(y))$ is defined. We noted above that $f^{-1}(y')$ is homeomorphic to $f^{-1}(y)$ for all $y' \in U$. Hence the integer valued function $\sigma(f^{-1}(y))$ is certainly independent of $y$ for $y \in U$.
+
+Suppose that $f$ and $g$ are homotopic piecewise linear maps\index{piecewise linear} from $K^n$ to $\Sigma^r$. Choosing a piecewise linear homotopy \[h:K^n \times [0,1] \varrightarrow{} \Sigma^r,\] then subdividing so that $h$ is simplicial and choosing $y \in U$ as above, a similar argument shows that $h^{-1}(y)$ is a rational homology manifold-with-boundary, bounded by the disjoint union $g^{-1}(y) + (-f^{-1}(y))$. Since the signature of a boundary is zero, this proves that \[\sigma(f^{-1}(y)) = \sigma(g^{-1}(y)) \] for almost all $y$.
+
+Now suppose that we are given two different points $y_1$ and $y_2$ of $\Sigma^r$, each of which satisfies the condition that the function $y \mapsto \sigma(f^{-1}(y))$ is constant throughout a neighborhood of $y_i$. Choosing a piecewise linear homeomorphism $u:\Sigma^r \varrightarrow{} \Sigma^r$, homotopic to the identity, with $u(y_1) = y_2$, it follows that $u \circ f$ is homotopic to $f$, and hence that \[\sigma(f^{-1} u^{-1}(z)) = \sigma(f^{-1}(z))\] for almost all $z$. Choosing $z$ close to $y_2$, so that $u^{-1}(z)$ is close to $y_1$, this implies that \[\sigma(f^{-1}(y_1)) = \sigma(f^{-1}(y_2)),\] as required.
+\end{proof}
+
+\begin{proof}[Proof of \ref{lem:20.04}]
+It follows immediately from the argument above that $\sigma(f)$ depends only on the homotopy class of $f$. To show that this correspondence $(f) \mapsto \sigma(f)$ is additive, first recall the construction of the group operation in $\pi^r(K^n)$\index{cohomotopy groups}. Given two maps $f,g:K^n \varrightarrow{} \Sigma^r$ we can form the map $(f,g):x \mapsto (f(x),g(x))$ from $K^n$ to $\Sigma^r \times \Sigma^r$. If $n<2r$, this can be deformed into the subcomplex \[\Sigma^r \wedge \Sigma^r = (\Sigma^r \times \{\text{point}\}) \cup (\{\text{point}\}\times \Sigma^r) \subset \Sigma^r \times \Sigma^r,\] and if $n < 2r-1$, the resulting map $K^n \varrightarrow{} \Sigma^r \wedge \Sigma^r$ is unique up to homotopy. (The hypothesis that $(f,g)$ maps $K^n$ into $\Sigma^r \wedge \Sigma^r$ is equivalent to the hypotheasis that for every $x \in K^n$, either $f(x)$ or $g(x)$ is the base point.) Now mapping $\Sigma^r \wedge \Sigma^r$ to $\Sigma^r$ by the ``folding map,'' which is the identity on each copy of $\Sigma^r$, we obtain a composite map $h:K^n \varrightarrow{} \Sigma^r$, representing the required sum $(f) + (g)$.
+
+If $f$ and $g$ are chosen within their homotopy classes so that for all $x$ either $f(x)$ or $g(x)$ is the basepoint, note that $h(x)$ is defined simply by \begin{align*} h(x) = f(x) \text{ if }f(x) \neq \text{ base point ,} \\ h(x) = g(x) \text{ if } f(x) = \text{ base point .} \end{align*} Hence $h^{-1}(y)$ is the disjoint union of $f^{-1}(y)$ and $g^{-1}(y)$, for $y \neq$ base point, and it follows immediately that $\sigma(h) = \sigma(f) +\sigma(g)$.
+\end{proof}
+
+We can now prove one of the main results of this section. We continue to assume that the finite simplicial complex $K^n$ is an oriented rational homology manifold.
+
+\begin{theorem}\index{$\ell_i$}
+\label{thm:20.06}
+For $4i < (n-1)/2$, there is one and only one cohomology class \[\ell_i \in \homology^{4i}(K^n;\mathbb{Q}) \] which satisfies the identity \[ \langle \ell_i \smile f^\ast(u), \mu_n \rangle = \sigma(f) \] for every map $f:K^n \varrightarrow{} \Sigma^{n-4i}$.
+\end{theorem}
+
+Clearly this class $\ell_i  = \ell_i(K^n)$ is invariant under piecewise linear homomorphism.
+
+\begin{proof}
+As already noted, the homomorphism \[\pi^{n-4i}(K^n) \varrightarrow{} \homology^{n-4i}(K^n;\mathbb{Z})\] defined by $(f) \mapsto f^\ast(u)$ is a $\abfin$-isomorphism. (Compare proof of Lemma \ref{lem:20.2}) It follows easily that there is one and only one homomorphism \[\sigma':\homology^{n-4i}(K^n;\mathbb{Z}) \varrightarrow{} \mathbb{Q}\] which makes the following diagram commutative. 
+
+\begin{center}
+\begin{tikzcd}
+\pi^{n - 4i}(K^n) \arrow[dd, "\sigma"] \arrow[rr] &  & \homology^{n - 4i}(K^n,\mathbb{Z}) \arrow[dd, "\sigma '"] \\
+                                                                                    &  &                                         \\
+\mathbb{Z} & \subset & \mathbb{Q}      
+\end{tikzcd}
+\end{center}
+
+Now, by Poincaré duality\index{Poincar\'e duality}, we have \[\sigma'(x) = \langle \ell_i \smile x, \mu_n \rangle\] for some uniquely defined rational homology class $\ell_i$.
+\end{proof}
+
+Let us compare the combinatorial and differentiable definitions. We will need some basic results of J. H. C. Whitehead. Let $M = M^n$ be a smooth manifold. By a \defemph{smooth triangulation} of $M$ is meant a homeomorphism $t:K \varrightarrow{} M$ where $K$ is a simplicial complex, such that the restriction of $t$ to each closed simplex of $K$ is smooth and of maximal rank everywhere.
+
+\begin{theorem*}[Theorem of Whitehead]\index{paracompact}\index{triangulation}\index{Whitehead theorems}
+Every smooth paracompact manifold possesses a smooth triangulation. In fact, if $M$ is a smooth paracompact manifold-with-boundary, then every smooth triangulation $K_0 \varrightarrow{} \partial M$ can be extended to a smooth triangulation $K \varrightarrow{} M$, where $K$ is a simplicial complex containing $K_0$ as a subcomplex. Finally, if $t_1:K_1 \varrightarrow{} M$ and $t_2:K_2 \varrightarrow{} M$ are two different smooth triangulations of $M$, then the homeomorphism $t_2^{-1} \circ t_1: K_1 \varrightarrow{} K_2$ is homotopic to a piecewise linear homeomoprhism from $K_1$ to $K_2$.
+\end{theorem*}
+
+Thus the smooth manifold $M$ determines a simplicial complex $K$ which is unique up to piecewise linear homeomorphism. For the proofs we refer to \cite{whitehead1961}, \cite{munkres2000topology}.
+
+Now consider the characteristic cohomology class $\ell_i(K)$. Using the isomorphism $t^\ast:\homology^{4i}(M) \varrightarrow{} \homology^{4i}(K)$ we obtain a corresponding class \[t^{\ast -1}\ell_i(K) \in \homology^{4i}(M),\] still assuming that $4i < (n-1)/2$. This class does not depend on the choice of smooth triangulation. For if $t_1:K_1 \varrightarrow{} M$ is another smooth triangulation, then $t_1^{-1} \circ t$ is homotopic to a piecewise linear homeomorphism, hence \[t^{\ast -1}\ell_i(K) = t_1^{\ast -1}\ell_i(K_1).\] This well defined rational cohomology class will be denoted briefly by $\ell_i(M)$.
+
+\begin{theorem}
+\label{thm:20.07}
+The class $\ell_i(M^n)$, defined for a smooth manifold by a combinatorial procedure, is equal to the Hirzebruch class\index{Hirzebruch, F.} $L_i(p_1,\cdots,p_i)$ of the tangent bundle of $M^n$.
+\end{theorem}
+\begin{proof}
+Let $f:M^n \varrightarrow{} S^r$ be a smooth map. We will construct a diagram
+\begin{center}
+\begin{tikzcd}
+K^n \arrow[d, "g"] \arrow[r, "t"] & M^n \arrow[d, "f"] \\
+L^r \arrow[r,"s"] & S^r  
+\end{tikzcd}
+\end{center}
+commutative up to homotopy, where $g$ is piecewise linear and $t,s$ are smooth triangulations, so that \[\sigma(f^{-1}(y)) = \sigma(g^{-1}(z))\] for $y$ belonging to a non-vacuous open set in $S^r$ and for $z$ belonging to a non-vacuous open set in $L^r$. Together with \ref{lem:20.2} and \ref{thm:20.06}, this will complete the proof.
+
+Let $y_0 \in S^r$ be a regular value\index{regular value} of $f$. If $B$ is a sufficiently small ball around $y_0$, then it is not difficult to show that the inverse image $f^{-1}(B)$ is diffeomorphic to $f^{-1}(y_0) \times B$ under a diffeomorphism which preserves the projection map to $B$. Choose smooth triangulations \[t_1:K_1 \varrightarrow{} f^{-1}(y_0)\] and \[t_2:K_2 \varrightarrow{} B.\] Then the smooth triangulation \[t_1 \times t_2:K_1 \times K_1 \varrightarrow{} f^{-1}(y_0) \times B \subset M^n\] restricts to a smooth triangulation \[K_1 \times \partial K_2 \varrightarrow{} f^{-1}(y_0) \times \partial B \] of the boundary which, by Whitehead's theorem, extends to a smooth triangulation \[K_3 \varrightarrow{} M^n - \text{interior}(f^{-1}(y_0)\times B)\] of the complementary domain. Setting $K^n = K_1 \times K_2 \cup K_3$ (and subdividing if necessary), we thus obtain a smooth triangulation $t:K^n \varrightarrow{} M^n$. Similarly $t_2$ can be extended to a smooth triangulation $s:L^r \varrightarrow{} S^r$.
+
+Now the projection map $K_1 \times K_2 \varrightarrow{} K_2 \subset L^r$ can be extended to a piecewise linear map $g:K^n \varrightarrow{} L^r$, in such a manner that the complement of $K_1 \times K_2$ maps to the complement of $K_2$. It is then easy to check that the composition $s \circ g$ is homotopic to $f \circ t$. Furthermore \[f^{-1}(y) \cong g^{-1}(z)\] for every $y \in B$ and every $z \in K_2$, so that the signature $\sigma(f^{-1}(y))$ is certainly equal to $\sigma(g^{-1}(z))$.
+\end{proof}
+So far, the condition $4i < (n-1)/2$ has been imposed. However, given $K^n$, one can always form the product space $K^n \times \Sigma^m$ with $m$ large. The class $\ell_i(K^n)$ can then be defined as the class induced from $\ell_i(K^n \times \Sigma^m)$ by the natural inclusion map. It is not hard to show that this new class is well defined, and has the expected properties. In particular the Kronecker index $\langle \ell_i(K^{4i}),\mu_{4i}\rangle$ is always equal to the signature $\sigma(K^{4i})$.
+
+Another extension which can easily be made is to homology manifolds-with-boundary. It is only necessary to substitute the relative cohomotopy groups $\pi^{n-4i}(K^n,\partial K^n)$ and the Lefschetz duality theorem in the above discussion.
+
+
+
+\end{document}

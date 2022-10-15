@@ -1,0 +1,39 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Editor's notes: Relative (co)homology}
+
+\begin{definition}[Relative Homology]
+Let $(X,A)$ be a pair of topological spaces. This means there is an inclusion $A\varrightarrow{\iota} X$. Then there is an \defemph{induced map by post composition} $\iota_\ast:C_n(A;\Lambda) \varrightarrow{} C_n(X;\Lambda)$. Identifying $C_n(A;\Lambda)$ as a submodule of $C_n(X,\Lambda)$, we define 
+\[C_n(X,A;\Lambda) = C_n(X,\Lambda)/C_n(A;\Lambda) \]
+as the relative \defemph{relative chain group of $(X,A)$}. We have an induced map
+\[\xoverline{\partial}:C_{n+1}(X,A;\Lambda)\varrightarrow{}C_n(X,A;\Lambda). \]
+We define the \defemph{relative homology}
+\[\homology_n(X, A;\Lambda)=Z_n(X,A;\Lambda)/B_n(X,A;\Lambda)\]
+where $Z_n(X,A;\Lambda)=\ker(\xoverline{\partial}:C_{n}(X,A;\Lambda)\varrightarrow{}C_{n-1}(X,A;\Lambda))$ are the \defemph{relative cycles} and $B_n(X,A;\Lambda)=\xoverline{\partial}(C_{n+1}(X,A;\Lambda))$ are the \defemph{relative boundaries}.
+\end{definition}
+
+We can define relative cohomology similarly, see \cite[p. 199]{hatcher2002algebraic} for details. 
+
+\begin{theorem*}[Long exact homology of (co)homology] For a triple of CW-complexes $(X,A,B)$, i.e. $B\subset A\subset X$, there exists a long exact sequence
+\[\cdots \varrightarrow{}\homology_n(A,B;\Lambda)\varrightarrow{}\homology_n(X,B;\Lambda)\varrightarrow{}\homology_n(X,A;\Lambda)\varrightarrow{\partial}\homology_{n-1}(A,B;\Lambda)\varrightarrow{}\cdots\]
+and one of cohomology 
+\[\cdots \varrightarrow{}\homology^n(X,A;\Lambda)\varrightarrow{}\homology^n(X,B;\Lambda)\varrightarrow{}\homology^n(A,B;\Lambda)\varrightarrow{\delta} \homology^{n+1}(X,A;\Lambda)\varrightarrow{}\cdots.\]
+\end{theorem*}
+Specializing to $B=\varnothing$, we get what is known as the \defemph{long exact sequence of a pair $(X,A)$.} 
+
+Explicitly, let $[\alpha]\in \homology_n(X,A;\Lambda)$ be the class of a relative cycle. Then \[\partial [\alpha] = [\partial \alpha]\in \homology_{n-1}(A,B).\] Similarly for $[\alpha] \in \homology^n(A,B;\Lambda)$, \[\delta[\alpha] = [\delta\alpha] \in \homology^{n+1}(X,A;\Lambda).\]
+For proof and more details, see \cite[p. 113,199]{hatcher2002algebraic}.
+
+\begin{theorem*}[Excision]
+For a pair of CW-complexes $(X,A)$, we have a natural isomorphism
+\[
+\homology_n(X,A;\Lambda)\cong \homology_n(X/A, A/A;\Lambda)
+\]
+This is called the \defemph{excision isomorphism}. The same statement with cohomology also holds.
+\end{theorem*}
+For proof, see \cite[p. 119]{hatcher2002algebraic}.
+
+This is equivalent to saying this: if $A,B\subset X$ are CW-complexes and \newline $A\cup B=X$, then
+\[\homology_n(X,A) \cong \homology_n(B,A\cap B).\]
+This is also called the \defemph{excision isomorphism}.
+\end{document}

@@ -1,0 +1,46 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{The Differentiable Case}
+In order to motivate the combinatorial definition, we will first give a new interpretation for the classes $L_i(p_1, \ldots, p_i)$ of a smooth $n$--manifold. The restriction $4i < (n - 1)/2$ will be needed at first.
+
+Let $M^n$ be a smooth, compact $n$--dimensional manifold, and let \newline $f : M^n \longrightarrow \sphere^{n - 4i}$ be a smooth (i.e., infinitely differentiable) map. 
+
+\begin{lemma}
+There exists a dense open subset of $\sphere^{n - 4i}$ consisting of points $y$ such that the inverse image $f^{-1}(y)$ is a smooth $4i$--dimensional manifold with trivial normal bundle in $M^n$. \index{normal bundle}
+\end{lemma}
+
+\begin{proof}
+By the theorem of Brown and Sard\index{Sard's theorem} (Section \ref{ch:18}), the set of regular values of $f$ is everywhere dense in $\sphere^{n - 4i}$. This set is open since it is the complement of the continuous image of a compact subset of $M^n$. For every regular value $y$\index{regular value}, the inverse image $f^{-1}(y)$ is smooth, compact, and has normal bundle which is trivial, since it is induced from the normal bundle of $y$ in $\sphere^{n - 4i}$.  
+\end{proof}
+
+Now suppose that $M^n$ is an oriented manifold. Then the orientations of $M^n$ and $\sphere^{n - 4i}$ determines an orientation for $f^{-1}(y)$, using the Whitney sum decomposition $\tau^{4i}(f^{-1}(y)) \oplus \nu^{n - 4i} = \tau^n \restr_{f^{-1}(y)}$.
+
+Let $u$ and $\mu_n$ denote the standard generators of $\homology^k(\sphere^k; \mathbb Z)$ and $\homology_n(M_n; \mathbb Z)$ respectively, and let $\tau^n$ denote the tangent bundle of $M^n$. The class \newline $L_i(p_1(\tau^n), \ldots, p_i(\tau^n)) \in \homology^{4i}(M^n; \mathbb Q)$ will be briefly written as $L_i(\tau^n)$. 
+
+\begin{lemma}
+\label{lem:20.2}
+For every smooth map $f : M^n \longrightarrow \sphere^{n - 4i}$ and every regular value $y$, the Kronecker index\index{Kronecker index} \[\ip {L_i(\tau^n) \smile f^\ast(u)} {\mu_n}\] is equal to the signature $\sigma$ of the manifold $M^{4i} = f^{-1}(y)$. In the case \newline $4i < (n - 1)/2$, the class $L_i(\tau^n)$ is completely characterized by these identities. 
+\end{lemma}
+
+\begin{proof}
+Let $\tau^{4i}$ be the tangent bundle of $M^{4i}$, and $j : M^{4i} \longrightarrow M^n$ the inclusion map. Then $j$ is covered by a bundle map $\tau^{4i} \oplus \nu^{n - 4i} \longrightarrow \tau^n$. Since the normal bundle $\nu^{n - 4i}$ is trivial, this means that $L_i(\tau^{4i})$ is equal to $j^\ast L_i(\tau^n)$. Hence the signature\index{signature $\sigma$} \[\sigma(M^{4i}) = \ip {L_i(\tau^{4i})} {\mu_{4i}} = \ip {j^\ast L_i(\tau^n)} {\mu_{4i}}\] is equal to $\ip {L_i(\tau^n)} {j_\ast(\mu_{4i})}$. 
+
+Now consider the cohomology class $f^\ast(u) \in \homology^{n - 4i}(M^n; \mathbb Z)$. Using the commutative diagram 
+\begin{center}
+\begin{tikzcd}
+{\homology^{n - 4i}(\sphere^{n - 4i}, \sphere^{n - 4i} - y)} \arrow[dd] \arrow[rr, "\cong"] &  & \homology^{n - 4i}(\sphere^{n - 4i}) \arrow[dd] \\
+                                                                                    &  &                                         \\
+{\homology^{n - 4i}(M^n, M^n - M^{4i})} \arrow[rr]                                          &  & \homology^{n - 4i}(M^n)                        
+\end{tikzcd}
+\end{center}
+we see easily that $f^\ast(u)$ can be identified with the ``dual cohomology class'' (p. \pageref{cor:11.04}) to the submanifold $M^{4i} \subset M^n$. 
+
+We will make use of the Poincar\'e duality isomorphism $a \mapsto a \cap \mu_n$ from $\homology^{n - 4i}(M^n)$ to $\homology_{4i}(M^n)$, defined by means of the cap product operation. (See Appendix \ref{sec:A.9}.) According to Problem~\ref{prob:11.C}, this isomorphism maps the dual cohomology class $f^\ast(u)$ to the homology class $j_\ast(\mu_{4i})$. Hence the signature $\ip {L_i(\tau^n)} {j_\ast(\mu_{4i})}$ is equal to\index{cap product} \[\ip {L_i(\tau^n)} {f^\ast(u) \cap \mu_n} = \ip {L_i(\tau^n) \smile f^\ast(u)} {\mu_n}.\] This proves the first half of Lemma \ref{lem:20.2}.
+
+To prove the second half, we will make use of a theorem of \cite[p. 289]{serre}\index{Serre, J.P.} concerning the Borsuk--Spanier cohomology groups. If $n < 2 k - 1$, then the set of all homotopy classes of maps $f : M^n \longrightarrow \sphere^k$ forms an abelian group, denoted by $\pi^k(M^n)$ and called the \defemph{$k$--th cohomotopy group of $M^n$\index{cohomotopy}}. Serre shows that the correspondence $f \mapsto f^\ast(u)$ induces a $\abfin$--isomorphism\index{Ab-isomorphism@$\abfin$--isomorphism} \[\pi^k(M^n) \longrightarrow \homology^k(M^n; \mathbb Z).\] (Compare \S\ref{sec:18.2}. This result is the Spanier--Whitehead dual of Theorem \ref{thm:18.3}.) In particular, the images $f^\ast(u)$ generate a subgroup of finite index in $\homology^k(M^n; \mathbb Z)$. Now substitute $k = n - 4i$, so that the dimensional restriction $n < 2 k - 1$ takes the form $4 i < (n - 1)/2$. If this restriction is satisfied, then by Poincar\'e duality (Theorem \ref{thm:11.10}), the rational cohomology group $L_i(\tau^n)$ is completely determined by the set of all Kronecker indices $\ip {L_i(\tau^n) \smile f^\ast(u)} {\mu_n}$.
+\end{proof}
+
+\begin{remark*}
+As a method for computing $L_i(\tau^n)$, Theorem~\ref{lem:20.2} is probably hopeless. However the statement that $\ip {L_i(\tau^n) \smile f^\ast(u)} {\mu_n}$ is an integer for every\newline $(f) \in \pi^{n - 4i}(M^n)$ could conceivably prove useful in computing cohomotopy groups. As an example, for the complex projective space ${\mathbb P}^m(\mathbb C)$, the class $L(\tau^{2m})$ is equal to \[\biggl(\dfrac{a}{\tanh(a)}\biggr)^{m + 1} = 1 + \frac {m + 1} 3 a^2 + \frac {5m^2 + 3m - 2} {90} a^4 + \ldots.\] Thus if $m \not \equiv 2 \pmod 3$ it follows that the image of the homomorphism \[\pi^{2m - 4}({\mathbb P}^m(\mathbb C)) \longrightarrow \homology^{2m - 4}({\mathbb P}^m(\mathbb C))\] is divisible by $3$, while if $m \equiv 0 \pmod 3$ the image of \[\pi^{2m - 8}({\mathbb P}^m(\mathbb C)) \longrightarrow \homology^{2m - 8}({\mathbb P}^m(\mathbb C))\] is divisible by $9$, and so on. \index{projective space!\indexline complex $\projective^n(\bC)$}
+\end{remark*} 
+\end{document}

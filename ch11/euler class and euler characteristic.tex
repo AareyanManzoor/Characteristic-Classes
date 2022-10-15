@@ -1,0 +1,13 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Euler Class and Euler Characteristic}\label{sec:11.5}
+The \defemphi{Euler characteristic} of a finite complex $K$ is defined as the alternating sum \[\chi(K) = \sum (-1)^k \rank \homology^k(K),\] using field coefficients. A familiar theorem asserts that this equal to the alternating sum \[\sum (-1)^k (\text{number of } k\text{--cells}),\] and hence is independent of the particular coefficient field that is used. (Compare \cite[pp. 105,106]{dold1972}.)
+
+\begin{corollary}\label{cor:11.12}
+If $M$ is a smooth compact oriented manifold, then the Kronecker index $\ip {\eulerclass(\tangentbundle M)} \mu$, using rational or integer coefficients, is equal to the Euler characteristic $\chi(M)$. Similarly, for a non--oriented manifold, the Stiefel--Whitney number $\ip {w_n(\tangentbundle M)} \mu = w_n[M]$ is congruent to $\chi(M)$ modulo $2$. 
+\end{corollary}
+
+\begin{proof}
+By \ref{thm:11.3} and \ref{cor:11.15} the Euler class of the tangent bundle is given by \[\eulerclass(\tangentbundle M) = \Delta^\ast (u'').\] Using rational coefficients, we can substitute the formula \[u'' = \sum (-1)^{\dim b_i} b_i \times b_i^\#,\] thus obtaining \[\eulerclass(\tangentbundle M) = \sum (-1)^{\dim b_i} b_i \cup b_i^\#.\] Now applying the homomorphism $\ip {} {\mu}$ to both sides, we obtain the required formula \[\ip {\eulerclass(\tangentbundle M)} \mu = \sum (-1)^{\dim b_i} = \chi(M).\] The mod $2$ argument is completely analogous.
+\end{proof}
+\end{document}

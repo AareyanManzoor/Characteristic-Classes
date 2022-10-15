@@ -1,0 +1,91 @@
+%IDK whether R refers to itself or set of set of real number. I assumed that it is set of real number so the correction will be easy to be done.
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Cohomology of Product Spaces}\label{sec:A.5}
+Let $\mathbb{R}_0^n$\index{R,Rn,RA,Rinfty,R0n@$\mathbb{R}, \mathbb{R}^n, \mathbb{R}^A, \mathbb{R}^\infty, \mathbb{R}_0^n$} denote the complement of the origin in $\mathbb{R}^n$. For any space $X$, we will prove that \[\homology^m X \cong \homology^{m+n}(X\times \mathbb{R}^n, X \times \mathbb{R}_0 ^n).\] This isomorphism can best be described by introducing the \defemph{cohomology cross product operation}. Suppose that one is given cohomology classes \[a \in \homology^m (X, A), b\in \homology^n (Y, B)\] where $A$ is an open subset of $X$ and $B$ is an open subset of $Y$. (If $B$ is vacuous then $A$ need not be open, and conversely.) Using the projection maps \[p_1:(X\times Y, A\times Y) \varrightarrow{} (X, A)\] \[p_2: (X \times Y, X\times B) \varrightarrow{} (Y, B)\] the \defemph{cross product} (or \defemph{external product}) $a\times b$ is defined to be cohomology class \[(p_1^* a)(p_2^* b) \in \homology^{m+n} (X\times Y, (A \times Y)\cup (X\times B)).\]
+
+It will sometimes be convenient to use the abbreviation $(X, A)\times (Y, B)$ for the pair $(X\times Y, (A\times Y)\cup (X\times B))$. As an example of this notation, note that the pair $(\mathbb{R}^n , \mathbb{R}_0^n)$ can be described as the $n$-fold product $(\mathbb{R}, \mathbb{R}_0)\times \cdots (\mathbb{R}, \mathbb{R}_0)$.
+
+We will choose a specific generator $e^n$ for the free module $\homology^n (\mathbb{R}^n, \mathbb{R}_0^n)$, as follows. Note that $\mathbb{R}_0 = \mathbb{R}-0$ can be expressed as a disjoint union $\mathbb{R}_- \sqcup \mathbb{R}_+$. Let $e \in \homology^1 (\mathbb{R}, \mathbb{R}_0)$ correspond to the identity $1\in \homology^0 \mathbb{R}_+$ under the excision and coboundary isomorphisms \[\homology^0 \mathbb{R}_+ \xleftarrow{\cong} \homology^0 (\mathbb{R}_0, \mathbb{R}_-)\xrightarrow{\delta}\homology^1(\mathbb{R}, \mathbb{R}_0)\text{,}\] where $\delta$ arises from the exact sequence of the triple $(\mathbb{R}, \mathbb{R}_0, \mathbb{R}_-)$. Finally let $e^n \in \homology^n (\mathbb{R}^n, \mathbb{R}_0^n)$ denote the $n$-fold cross product $e\times \cdots \times e$.
+\begin{theorem}\label{thm:A.5}
+For any pair $(X, A)$ with $A$ open in $X$, the correspondence $a \mapsto a \times e^n$ defines an isomorphism \[\homology^m (X, A) \varrightarrow{} \homology^{m+n} ((X, A)\times (\mathbb{R}^n, \mathbb{R}_0^n))\]
+\end{theorem}
+\begin{proof}
+First note that it is sufficient to consider the case $n=1$. The general case will then follow by induction, using the associative law \[a\times e^n = (a\times e^{n-1}) \times e.\]
+\defemph{Case $1$}. Suppose that $n=1$ and that $A$ is vacuous. For fixed $a\in \homology^m X$, one has the diagram
+
+\begin{center}
+\begin{tikzcd}
+\homology^0\mathbb{R}_+ \arrow[d,"a\times"] & \homology^0(\mathbb{R}_0,\mathbb{R}_{-}) \arrow[d,"a\times"] \arrow[l] \arrow[r,"\delta"] & \homology^1(\mathbb{R},\mathbb{R}_0) \arrow[d,"a\times"] \\
+\homology^m X \cong \homology^m(X \times \mathbb{R}_+) & \homology^m (X\times\mathbb{R}_0,X \times \mathbb{R}_{-}) \arrow[l,swap,"i^*"] \arrow[r,"\delta'"] & \homology^{m+1} (X \times \mathbb{R}, X \times \mathbb{R}_0)
+\end{tikzcd}
+\end{center}
+
+
+which commutes up to sign. The homomorphism $i^*$ is an excision isomorphism, while $\delta'$ is taken from the cohomology exact sequence of the triple\newline $(X\times \mathbb{R}, X\times \mathbb{R}_0, X\times \mathbb{R}_-)$. It is an isomorphism since both $X\times \mathbb{R}$ and $X\times \mathbb{R}_-$ contain the set $X\times \text{(constant)}$ as deformation retract.
+
+Following the diagram around, we see that $a\times e\in \homology^{m+1} (X\times \mathbb{R}, X\times \mathbb{R}_0)$ is the image of $a\in \homology^m X$ under a sequence of isomorphisms. This proves Case 1.
+
+\defemph{Case $2$}. Suppose that $n=1$ but that $A$ is non-vacuous. Let $z\in Z^1 (\mathbb{R}, \mathbb{R}_0)$ be a cocycle which represents the cohomology class $e$. Consider the following commutative diagram
+
+\begin{center}
+\adjustbox{scale = .8}{
+\begin{tikzcd}
+0 \arrow[r] & C^m(X,A) \arrow[d,"\times z"] \arrow[r] &  C^m X \arrow[d,"\times z"] \arrow[r] & C^m A \arrow[d,"\times z"] \arrow[r] & 0 \\
+0 \arrow[r] & \xhat{C}^{m+1} (X \times \mathbb{R}; X \times \mathbb{R}_0, A \times \mathbb{R}) \arrow[r] & C^{m+1}(X \times \mathbb{R}, X \times \mathbb{R}_0) \arrow[r] & C^{m+1}(A \times \mathbb{R}, A \times \mathbb{R}_0) \arrow[r] & 0.
+\end{tikzcd}
+}
+\end{center}
+
+A straightforward argument shows that the horizontal sequences are exact. Furthermore all of these homomorphisms commute with the coboundary operation: \[\delta(a\times z) = (\delta a)\times z.\] Hence there is a corresponding commutative diagram of cohomology groups
+
+\begin{center}
+\adjustbox{scale = .8}{
+\begin{tikzcd}
+\ldots \arrow[r,"\delta"] & \homology^m(X,A) \arrow[d,"\times e"] \arrow[r] &  \homology^m X \arrow[d,"\times e"] \arrow[r] & \homology^m A \arrow[d,"\times e"] \arrow[r,"\delta"] & \ldots \\
+\ldots \arrow[r,"\delta"] & \homology^{m+1} ((X, A) \times (\mathbb{R}, \mathbb{R}_0)) \arrow[r] & \homology^{m+1}(X \times \mathbb{R}, X \times \mathbb{R}_0) \arrow[r] & \homology^{m+1}(A \times \mathbb{R}, A \times \mathbb{R}_0) \arrow[r,"\delta"] & \ldots.
+\end{tikzcd}
+}
+\end{center}
+
+(See for example \cite[p. 182]{spanier1981}.) By Case 1, the two right hand vertical arrows are isomorphisms. Hence, by the Five Lemma, the left hand vertical arrow is an isomorphism also.
+
+Thus we have proved Theorem~\ref{thm:A.5} for the special case $n=1$. As remarked at the beginning of the proof, this implies that the Theorem holds for all $n$.
+\end{proof}
+
+Now consider two spaces $X$ and $Y$. The cross product operation gives rise to a homomorphism \[\times: \displaystyle\bigoplus_{i+j=n} \homology^i X \otimes \homology^j Y \varrightarrow{} \homology^n (X\times Y).\] 
+
+We would like to prove that $\times$ is an isomorphism, but this is not true in complete generality. It is false for example if $X$ and $Y$ are real projective planes (using integer coefficients), or if $X$ and $Y$ are infinite discrete speaces (using arbitrary coefficients).
+\begin{theorem}\label{thm:A.6}
+Let $X$ and $Y$ be CW-complexes\index{CW-complex} such that each $\homology^i X$ is a torsion free $\Lambda$-module \footnote{Of course this hypothesis is automatically satisfied if $\Lambda$ is a field. The assumption that $X$ is a CW-complex is not actually necessary, but will serve to simplify the proof.} and such that $Y$ has only finitely many cells in each dimension. Then the direct sum $\displaystyle\bigoplus_{i+j=n} \homology^i X \otimes \homology^j Y$ maps isomorphically onto $\homology^n (X\times Y)$.
+\end{theorem}
+A similar result can be proved for pairs $(X, A)$ and $(Y, B)$. Results of this type are known as ``Künneth Theorems''\index{Künneth theorem}, since the prototype was proved by H. Künneth in 1923. For a sharper version, see \cite[p. 247]{spanier1981}.
+\begin{proof}
+First suppose that $Y$ is finite CW-complex. Then \ref{thm:A.6} will be proved by induction on the number of cells of $Y$. Certainly it is true if $Y$ consists of a single point.
+
+Let $E$ be an open cell of highest dimension and let $Y_1 = Y-E$. Assume inductively that \[\times' = \bigoplus_{i+j=n} \homology^i X \otimes \homology^j Y_1 \varrightarrow{} \homology^n (X \times Y_1)\] is an isomorphism. Consider the following diagram, which commutes up to sign
+
+%diagram PDF P. 265, book P. 269
+\begin{center}
+\adjustbox{scale = .9}{
+\begin{tikzcd}
+\ldots \arrow[r] & \bigoplus\homology^i X \otimes \homology^j Y \arrow[d,"\times"] \arrow[r] & \bigoplus \homology^i X \otimes \homology^j Y_1 \arrow[d,"\times^{'}"] \arrow[r] & \homology^i X \otimes \homology^{j+1}(Y,Y_1) \arrow[r] \arrow[d,"\times^{''}"] & \ldots \\
+\ldots \arrow[r] & \homology^n (X, Y) \arrow[r] & \homology^n(X \times Y_1) \arrow[r] & \homology^{n+1}(X \times Y, X \times Y_1) \arrow[r] & \ldots.
+\end{tikzcd}
+}
+\end{center}
+
+Here the top line is obtained from the exact sequence of the pair $(Y, Y-1)$ by tensoring with $\homology^i X$, and then forming the direct sum over all $i, j$ with $i+j=n$. The remains an exact sequence since $\homology^i X$ is torsion free. (Compare \cite[p. 152]{maclane_1975}, \cite[p. 133]{cartan1956homological}.)
+
+We have assumed that $\times'$ is an isomorphism. Using Theorem~\ref{thm:A.5} together with the isomorphisms \[\homology^j (Y, Y_1 ) \longleftarrow  \homology^j(Y, Y-\text{point}) \longleftarrow  \homology^j (E, E-\text{point})\] and \[\homology^n(X\times Y, X\times Y_1) \longleftarrow  \homology^n (X\times Y, X\times (Y-\text{point})) \varrightarrow{} \homology^n (X\times E, X\times (E-\text{point}))\] we see that $\times''$ is also an isomorphism. Therefore, by the Five Lemma, $\times$ is an isomorphism. This completes the proof, providing that $Y$ is finite. (We have not yet used the hypothesis that $X$ is a CW-complex.)
+
+If $Y$ is infinite but each skeleton $Y^r$ is finite, then the above argument applies to $X\times Y^r$. But it follows easily from Corollary \ref{cor:A.3} that the inclusions \[Y^r \varrightarrow{} Y,\,\, X\times Y^r \varrightarrow{} X \times Y\] induce isomorphism of cohomology in dimension of less than $r$. Thus \ref{thm:A.6} is true for $n<r$. Since $r$ can be arbitrarily large this completes the proof.
+\end{proof}
+
+
+
+
+
+
+
+\end{document}

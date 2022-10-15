@@ -1,0 +1,16 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+\section{Infinite Grassmann Manifolds}\label{sec:5.1}
+A similar argument applies if the base space $B$ is paracompact\index{paracompact} and finite dimensional. (Compare Problem~\ref{prob-5-E}.) However in order to take care of bundles over more exotic base spaces it is necessary to allow the dimension of ${\mathbb R}^{n + k}$ to tend to infinity, thus yielding an infinite Grassmann ``manifold'' $\grassmannian_n({\mathbb R}^\infty)$. 
+
+Let ${\mathbb R}^\infty$\index{R,Rn,RA,Rinfty,R0n@$\mathbb{R}, \mathbb{R}^n, \mathbb{R}^A, \mathbb{R}^\infty, \mathbb{R}_0^n$} denote the vector space consisting of those infinite sequences \[x = (x_1, x_2, x_3, \ldots)\] of real numbers for which all but a finite number of the $x_i$ are zero. (Thus ${\mathbb R}^\infty$ is much smaller than the infinite coordinate spaces utilized in \S\ref{ch:1}.) For fixed $k$, the subspace consisting of all \[x = (x_1, x_2, \ldots, x_k, 0, 0, \ldots)\] will be identified with the coordinate space ${\mathbb R}^k$. Thus ${\mathbb R}^1 \subset {\mathbb R}^2 \subset {\mathbb R}^3 \subset \ldots$ with union ${\mathbb R}^\infty$. 
+
+\begin{definition}
+The \defemph{infinite Grassmann manifold} \[\grassmannian_n = \grassmannian_n({\mathbb R}^\infty)\] is the set of all $n$--dimensional linear sub--spaces of ${\mathbb R}^\infty$, topologized as the direct limit\index{direct limit}\footnote{It is customary in algebraic topology to call this the ``weak topology,'' a weak topology being one with many open sets. This usage is unfortunate since analysts use the term weak topology with precisely the opposite meaning. On the other hand the terms ``fine topology'' or ``large topology'' or ``Whitehead topology'' are certainly acceptable.} of the sequence \[\grassmannian_n({\mathbb R}^n) \subset \grassmannian_n({\mathbb R}^{n + 1}) \subset \grassmannian_n({\mathbb R}^{n + 2}) \subset \ldots.\] In other words, a subset of $\grassmannian_n$ is open [or closed] if and only if its intersection with $\grassmannian_n({\mathbb R}^{n + k})$ is open [or closed] as a subset of $\grassmannian_n({\mathbb R}^{n + k})$ for each $k$. This makes sense since $\grassmannian_n({\mathbb R}^\infty)$ is equal to the union of the subsets $\grassmannian_n({\mathbb R}^{n + k})$. 
+\end{definition}
+
+As a special case, the \defemph{infinite projective space} ${\mathbb P}^\infty = \grassmannian_1({\mathbb R}^\infty)$ is equal to the direct limit of the sequence ${\mathbb P}^1 \subset {\mathbb P}^2 \subset {\mathbb P}^3 \subset \ldots$.
+
+Similarly ${\mathbb R}^\infty$ itself can be topologized as the direct limit of the sequence ${\mathbb R}^1 \subset {\mathbb R}^2 \subset \ldots$. 
+\end{document} 

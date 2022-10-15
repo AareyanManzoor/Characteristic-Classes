@@ -1,0 +1,59 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+\section{Characteristic Classes of Real \texorpdfstring{$n$}{n}-Plane Bundles}\label{5.4}
+Using \ref{thm:05.06} and \ref{thm:05.07}, it is possible to give a precise definition of the concept of characteristic class. First observe the following.
+
+\begin{corollary}
+\label{cor:5.10}
+Any ${\mathbb R}^n$--bundle $\xi$ over a paracompact space $\base$ determines a unique homotopy class of maps \[{\xoverline f}_\xi : \base \longrightarrow \grassmannian_n.\] 
+\end{corollary}
+
+\begin{proof}
+Let $f_\xi : \xi \longrightarrow \gamma^n$ be any bundle map, and let ${\xoverline f}_\xi$ be the induced map of base spaces.
+\end{proof}
+
+Now let $\Lambda$ be a coefficient group or ring and let \[c \in \homology^i(\grassmannian_n; \Lambda)\] be any cohomology class. Then $\xi$ and $c$ together determine a cohomology class \[{\xoverline f}_\xi^\ast c \in \homology^i(\base; \Lambda).\] This class will be denoted briefly by $c(\xi)$. 
+
+\begin{definition}
+$c(\xi)$ is called the \defemphi{characteristic cohomology class} of $\xi$ determined by $c$.
+\end{definition}
+
+Note that the correspondence $\xi \mapsto c(\xi)$ is natural with respect to bundle maps. (Compare Axiom~\ref{axi:04.02} in \S\ref{ch:4}). Conversely, given any correspondence \[\xi \mapsto c(\xi) \in \homology^i(\base(\xi); \Lambda)\] which is natural with respect to bundle maps, we have \[c(\xi) = {\xoverline f}_\xi^\ast c(\gamma^n).\] Thus the above construction is the most general one. Briefly speaking: \defemph{The ring consisting of all characteristic cohomology classes for ${\mathbb R}^n$--bundles over paracompact base spaces with coefficient ring $\Lambda$ is canonically isomorphic to the cohomology ring $\homology^\ast(\grassmannian_n; \Lambda)$.} \index{cohomology!\indexline of $\grassmannian_n$}
+
+These constructions emphasize the importance of computing the cohomology of the space $\grassmannian_n$. The next two sections will give one procedure for computing this cohomology, at least modulo $2$.
+
+\begin{remark}
+Using the ``covering homotopy theorem''\index{covering homotopy} (compare \cite{dold1972}, \cite{husemoller}), Corollary~\ref{cor:5.10} can be sharpened as follows: \defemph{Two ${\mathbb R}^n$--bundles $\xi$ and $\eta$ over the paracompact space $\base$ are isomorphic if and only if the mapping ${\xoverline f}_\xi$ of \ref{cor:5.10} is homotopic to ${\xoverline f}_\eta$.}\index{homotopy class}
+\end{remark}
+
+Here are five problems for the reader. 
+
+\begin{problem}\label{prob-5-A}
+Show that the Grassmann manifold $\grassmannian_n({\mathbb R}^{n + k})$ can be made into a smooth manifold\index{smooth manifold} as follows: a function $f : \grassmannian_n({\mathbb R}^{n + k}) \longrightarrow \mathbb R$ belongs to the collection $F$ of smooth real valued functions\index{smooth function} if and only if $f \circ q : V_n({\mathbb R}^{n + k}) \longrightarrow \mathbb R$ is smooth.
+\end{problem}
+
+\begin{problem}\label{prob-5-B}
+Show that the tangent bundle of $\grassmannian_n({\mathbb R}^{n + k})$ is isomorphic to $\Hom(\gamma^n({\mathbb R}^{n + k}), \gamma^\bot)$; where $\gamma^\bot$ denotes the orthogonal complement\index{orthogonal complement $\xi^\perp$} of $\gamma^n({\mathbb R}^{n + k})$ in $\varepsilon^{n + k}$. Now consider a smooth manifold $M \subset {\mathbb R}^{n + k}$. If $\xoverline g : M \longrightarrow \grassmannian_n({\mathbb R}^{n + k})$ denotes the generalized Gauss map\index{Gauss map}, show that \[\tangentbundlemap {\xoverline g} : \tangentTS M \longrightarrow \mathbf{T}\bigl( {\grassmannian_n({\mathbb R}^{n + k})}\bigr)\] gives rise to a cross--section of the bundle\index{Hom} 
+\[\Hom(\tangentbundle M, \Hom(\tangentbundle M, \nu)) \cong \Hom(\tangentbundle M \otimes \tangentbundle M, \nu).\]\index{tangent bundle $\tangentbundle{M}$} (The cross--section is called the \defemphi{second fundamental form} of $M$.) 
+\end{problem}
+
+\begin{problem}\label{prob-5-C}
+Show that $\grassmannian_n({\mathbb R}^m)$ is diffeomorphic to the smooth manifold consisting of all $m \times m$ symmetric, idempotent matrices of trace $n$. Alternatively show that the map \[(x_1, \ldots, x_n) \mapsto x_1 \wedge \ldots \wedge x_n\] from $\StiefelManifold_n({\mathbb R}^m)$ to the exterior power\index{exterior power} $\Lambda^n({\mathbb R}^m)$ gives rise to a smooth embedding\index{embedding} of $\grassmannian_n({\mathbb R}^m)$ in the projective space $\grassmannian_1(\Lambda^n({\mathbb R}^m)) \cong {\mathbb P}^{\binom m n - 1}$. (Compare \cite[\S7]{pedoe_1939})\index{projective space!\indexline real $\projective^n$}
+\end{problem}
+
+\begin{problem}\label{prob-5-D}
+Show that $\grassmannian_n({\mathbb R}^{n + k})$ has the following symmetry property. Given any two $n$--planes $X, Y \subset {\mathbb R}^{n + k}$ there exists an orthogonal automorphism of ${\mathbb R}^{n + k}$ which interchanges $X$ and $Y$. \cite{whitehead1961} defines the angle $\alpha(X, Y)$ between $n$--planes as the maximum over all unit vectors $x \in X$ of the angle between $x$ and $Y$. Show that $\alpha$ is a metric for the topological space $\grassmannian_n({\mathbb R}^{n + k})$ and show that \[\alpha(X, Y) = \alpha(Y^\bot, X^\bot).\]
+\end{problem}
+
+\begin{problem}\label{prob-5-E}
+Let $\xi$ be an ${\mathbb R}^n$--bundle over $\base$. 
+
+\begin{enumerate}[label=\arabic*)]
+    \item Show that there exists a vector bundle $\eta$ over $\base$ with $\xi \oplus \eta$ trivial if and only if there exists a bundle map \[\xi \longrightarrow \gamma^n({\mathbb R}^{n + k})\] for large $k$. If such a map exists, $\xi$ will be called a \defemphi{bundle of finite type}.
+    \item Now assume that $\base$ is normal. Show that $\xi$ has finite type if and only if $\base$ is covered by finitely many open sets $U_1, \ldots, U_r$ with $\xi |_{U_i}$ trivial.
+    \item If $\base$ is paracompact\index{paracompact} and has finite covering dimension, show (using the argument of \ref{thm:05.09}) that every $\xi$ over $\base$ has finite type.
+    \item Using Stiefel--Whitney classes, show that the vector bundle $\gamma^1$ over ${\mathbb P}^\infty$ does not have finite type. \index{cannonical bundle!\indexline line $\tautological^1$}
+\end{enumerate} 
+\end{problem}
+\end{document} 

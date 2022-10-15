@@ -1,0 +1,36 @@
+\documentclass[../main]{subfiles}
+\chapter{Obstructions}
+\begin{document}
+\section{The Euler Class as an Obstruction}
+We have now assembled the preliminary constructions which we will need in order to study the top obstruction class \[{\mathfrak o}_n(\xi) \in \homology^n(B; \{\pi_{n - 1} \StiefelManifold_1(F)\})\] for an oriented $n$--plane bundle $\xi$. Using the orientations of the fibers $F$, it is clear that each coefficient group\index{Stiefel manifold} \[\pi_{n - 1} \StiefelManifold_1(F) \cong \pi_{n - 1}(F - 0) \cong \homology_{n - 1}(F - 0; \mathbb Z) \cong \homology_n(F, F - 0; \mathbb Z)\] is canonically isomorphic to $\mathbb Z$. Hence the following statement makes sense.
+
+\begin{theorem}
+If $\xi$ is an oriented $n$--plane bundle over a CW--complex, then ${\mathfrak o}_n(\xi)$ is equal to the Euler class $\eulerclass(\xi)$. 
+\end{theorem}
+
+\begin{proof}
+Using the projection map $\pi_0 : E_0 \longrightarrow B$, let us form the induced bundle $\pi_0^\ast \xi$ over $E_0$. Clearly this induced bundle has a nowhere zero cross--section, hence \[\pi_0^\ast {\mathfrak o}_n(\xi) = {\mathfrak o}_n(\pi_0^\ast \xi) = 0.\] Using the Gysin exact sequence \[\homology^0(B) \varrightarrow{\smile \eulerclass} \homology^n(B) \varrightarrow{\pi_0^\ast} \homology^n(E_0)\] with integer coefficients, it follows that \[{\mathfrak o}_n(\xi) = \lambda \smile \eulerclass(\xi)\] for some $\lambda \in \homology^0(B)$. In particular this argument applies to the universal bundle ${\xtilde \gamma}^n$ over ${\xtilde \grassmannian}_n$. Using the Gysin sequence \[\homology^0({\xtilde \grassmannian}_n) \varrightarrow{\smile \eulerclass} \homology^n({\xtilde \grassmannian}_n) \varrightarrow{\pi_0^\ast} \homology^n(E_0({\xtilde \gamma}^n)),\] it follows that \[{\mathfrak o}_n({\xtilde \gamma}^n) = \lambda_n \eulerclass({\xtilde \gamma}^n)\] for some integer $\lambda_n$. Therefore, by naturality, \[{\mathfrak o}_n(\xi) = \lambda_n \eulerclass(\xi)\] for every oriented $n$--plane bundle $\xi$ over a CW--complex.
+
+Now reduce both sides of this equation modulo $2$, obtaining \[\sw_n({\xtilde \gamma}^n) = \lambda_n \sw_n({\xtilde \gamma}^n)\] by \ref{thm:12.01} and \ref{pro:09.05}. Since $\sw_n({\xtilde \gamma}^n) \ne 0$ by \ref{thm:12.4}, this proves that the integer $\lambda_n$ is odd. 
+
+If the dimension $n$ is odd, then the Euler class itself has order $2$ by Property \ref{pro:09.04}, so we have proved that ${\mathfrak o}_n(\xi) = \eulerclass(\xi)$.
+
+If the dimension $n$ is even, we must prove that $\lambda_n = +1$. Let $\tau$ be the tangent bundle of the $n$--sphere with $n$ even. Then the Kronecker index $\ip {\eulerclass(\tau)} \mu$\index{Kronecker index} is equal to the Euler characteristic\index{Euler characteristic} $\chi(\sphere^n) = +2$ by \ref{cor:11.12}. The analogous formula \[\ip {{\mathfrak o}_n(\xi)} \mu = +2\] is true by \cite[\S39.6]{steenrod1951} or can be verified directly by inspecting the vector field\index{vector field} on $\sphere^n$ which is portrayed on Figure \ref{fig:figure10}. Thus the coefficient $\lambda_n$ must be equal to $+1$. 
+\end{proof}
+
+\begin{problem}\label{prob:12.A}
+Prove that a vector bundle $\xi$ over a CW--complex is orientable if and only if $\sw_1(\xi) = 0$.
+\end{problem}
+
+\begin{problem}\label{prob:12.B}
+Using the Wu formula \ref{thm:11.14}\index{Wu's formula} and the fact that\newline $\pi_2 \StiefelManifold_2({\mathbb R}^3) \cong \pi_2 \SO(3) = 0$ \cite[p. 116]{steenrod1951}, prove Stiefel's theorem that every compact orientable $3$--manifold is parallelizable.\index{parallelizable}
+\end{problem}
+
+\begin{problem}\label{prob:12.C}
+Use Corollary \ref{cor:12.3} to give another proof that $\homology^\ast({\mathbb P}^n; {\mathbb Z}/2)$ is as described in Lemma \ref{lem:04.03}.
+\end{problem}
+
+\begin{problem}\label{prob:12.D}
+Show that ${\xtilde \grassmannian}_n({\mathbb R}^{n + k})$ is a smooth, compact, orientable manifold of dimension $nk$. Show that the correspondence which maps the plane with oriented basis $b_1, \ldots, b_n$ to $b_1 \wedge \ldots \wedge b_n/|b_1 \wedge \ldots \wedge b_n|$ embeds ${\xtilde \grassmannian}_n({\mathbb R}^{n + k})$ smoothly in the exterior power\index{exterior power} $\Lambda^n {\mathbb R}^{n + k}$. \index{embedding}
+\end{problem}
+\end{document}

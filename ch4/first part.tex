@@ -1,0 +1,54 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+This section will begin the study of characteristic classes\index{characteristic class} by introducing four axioms which characterize the Stiefel-Whitney cohomology classes of a vector bundle. The existence and uniqueness of cohomology classes satisfying these axioms will only be established in later sections.
+
+The expression $\homology^i(\base,G)$ denotes the $i$-th singular cohomology group of $\base$ with coefficients in $G$. For an outline of basic definitions and theorems concerning singular cohomology theory, the reader is referred to appendix \ref{app:A}. In this section the coefficient group will always be $\mathbb{Z} / 2$, the group of integers modulo 2 .
+
+\begin{axiom}\index{Stiefel-Whitney class $\sw_i$!\indexline axioms}
+\label{axi:04.01}
+To each vector bundle $\xi$ there corresponds a sequence of cohomology classes\index{singular homology and cohomology}
+\[
+\sw_i(\xi) \in \homology^i(\base(\xi), \mathbb{Z} / 2), \quad i=0,1,2, \ldots,
+\]
+called the \defemph{Stiefel-Whitney classes of $\xi$}\index{Stiefel-Whitney class $\sw_i$}. The class $\sw_0(\xi)$ is equal to the unit element
+\[
+1 \in \homology^0(\base(\xi), \mathbb{Z} / 2),
+\]
+and $\sw_i(\xi)$ equals zero for $i > n$ if $\xi$ is an $n$-plane bundle\index{n-plane bundle@$n$-plane bundle}.
+\end{axiom}
+
+\begin{axiom}[Naturality]\index{naturality}
+\label{axi:04.02}
+If $f:\base(\xi) \rightarrow \base(\eta)$ is covered by a bundle map\index{bundle map} from $\xi$ to $\eta$, then
+\[
+\sw_i(\xi) = f^*\sw_i(\eta).
+\]
+\end{axiom}
+
+\begin{axiom}[The Whitney Product Theorem]\index{product formulas}\index{Whitney product theorem}
+\label{axi:04.03}
+If $\xi$ and $\eta$ are vector bundles over the same base space, then
+\[
+\sw_k(\xi \oplus \eta)=\sum_{i=0}^{k} \sw_i(\xi) \smile \sw_{k-i}(\eta).
+\]
+\end{axiom}
+For example $\sw_1(\xi \oplus \eta)=\sw_1(\xi)+\sw_1(\eta)$, 
+\[
+\sw_2(\xi \oplus \eta)=\sw_2(\xi)+\sw_1(\xi) \sw_1(\eta)+\sw_2(\eta), \quad \text{etc}
+\]
+(We will omit the symbol $\smile$ for cup product\index{cup product} whenever it seems convenient.)
+
+\begin{axiom}
+\label{axi:04.04}
+For the line bundle $\tautological_{1}^{1}$ over the circle $\projective^{1}$, the Stiefel-Whitney class $\sw_{1}(\tautological_{1}^{1})$ is non-zero.
+\end{axiom}
+
+\begin{remark}
+Characteristic homology classes for the tangent bundle of a smooth manifold were defined by \cite{stiefel1936}\index{Stiefel, E.} in 1935. In the same year \cite{whitney1936} defined the classes $\sw_i$ for any sphere bundle over a simplicial complex. (A ``sphere bundle'' is the object obtained from a Euclidean vector bundle by considering only vectors of unit length in the total space.) The Whitney\index{Whitney, H.} product theorem is due to \cite{whitneysphere1940, whitneydiffman1941} and \cite{wu1948}. This axiomatic definition of Stiefel-Whitney classes was suggested by Hirzebruch\index{Hirzebruch, F.} \cite[p. 58]{hirzebruchalggeo1966}, where an analogous definition of Chern classes\index{Chern class $\chernclass_i$} is given.
+\end{remark}
+
+
+It is not at all obvious that classes $\sw_i(\xi)$ satisfying the four axioms can be defined. Nevertheless this will be assumed for the rest of this section. A number of applications of this assumption will be given.
+
+
+\end{document}

@@ -1,0 +1,247 @@
+
+\newpage
+\section{The $\protect \hcob$-Cobordism Theorem and Some Applications}\label{sec9}
+
+Here is the theorem we have been striving to prove.
+\begin{theorem}[The $h$-Cobordism Theorem]\label{thm9.1}
+	Suppose the triad $(W; V, V')$ has the properties
+	\begin{enumerate}[label={\upshape{(\arabic*)}},leftmargin=1.5cm]
+		\item\label{thm9.1-1}  $W$, $V$ and $V'$ are simply connected.
+		\item\label{thm9.1-2}  $\homology_*(W, V) = 0$;
+		\item\label{thm9.1-3}  $\dim W = n \geq 6$.
+	\end{enumerate}
+	Then $W$ is diffeomorphic to $V\times [0, 1]$.
+\end{theorem}
+
+\begin{remark*}
+	The condition \ref{thm9.1-2} is equivalent to $\homology_*(W, V') =0$.
+	For $\homology_*(W, V) = 0$ implies $\homology^*(W, V') = 0$ by Poincar\'{e} duality.
+	But $\homology^*(W, V') = 0$ implies $\homology_*(W, V') = 0$. Similarly $\homology_*(W, V') =0$
+	implies \ref{thm9.1-2}.
+\end{remark*}
+\begin{proof}[Proof of \cref{thm9.1}]
+	Choose a self-indexing Morse function $f$ for $(W; V, V')$.
+	\cref{thm8.1} provides for the elimination of critical points of
+	index $0$ and $1$. If we replace the Morse function $f$ by $-f$
+	the triad is \emph{turned about}\index{turned about} and critical points of index $\lambda$
+	become critical points of index $n - \lambda$. Thus critical points
+	of (original) index $n$ and $n - 1$ may also be eliminated. Now
+	\cref{thm7.8} gives the desired conclusion.
+\end{proof}
+
+
+\begin{definition}\label{def9.2}
+	A triad $(W; V, V ) = 0$ is an \emph{$h$-cobordism}\index{$h$-cobordism} and
+	$V$ is said to be \emph{$h$-cobordant}\index{$h$-cobordant} to $V'$ if both $V$ and $V'$ are deformation retracts of $W$.
+\end{definition}
+
+\begin{remark*}
+	It is an interesting fact (which we will not use) that an equivalent version of \cref{thm9.1} is obtained if we substitute
+	for \ref{thm9.1-2} the apparently stronger condition that $(W; V, V')$ be an $h$-cobordism. Actually \ref{thm9.1-1} and \ref{thm9.1-2} together imply that $(W; V, V')$ is an $h$-cobordism. In fact
+	\begin{enumerate}[label={\upshape{(\roman*)}},leftmargin=1.5cm]
+		\item\label{rem9.1-i} $\pi_1(V)=0$, $\pi_1(W,V)=0$, $\homology_*(W,V)=0$ together imply 
+		
+		\item\label{rem9.1-ii} $\pi_i(W,V)=0$, $i=0,1,2,\dots$.
+	\end{enumerate}
+by the (relative) Hurewicz isomorphism theorem \index{Hurewicz isomorphism theorem} (Hu, \cite[p.~l66]{20}; Hilton \cite[p.~103]{21}). In view of the fact that $(W, V)$ is a
+triangulable pair (Munkres \cite[p.~101]{5}) \ref{rem9.1-ii} implies that a
+strong deformation retraction $W\to V$ can be constructed,
+(See Hilton \cite[p.~98, Theorem~1.7]{21}.) Since \ref{thm9.1-2} implies $\homology_*(W, V') =0$,
+$V'$ is, by the same argument, a (strong) deformation retract\index{strong deformation retract} of 
+$W$.
+\end{remark*}
+
+An important corollary of \cref{thm9.1} is
+
+\begin{theorem}\label{thm9.2}
+	Two simply connected closed smooth manifolds of dimension
+	$\geq 5$ that are $h$-cobordant are diffeomorphic.
+\end{theorem}
+
+\subsection*{A Few Applications (see also \cite{22, 6})}
+
+\begin{proposition}[Characterizations of the smooth $n$-disc $\disk^n$, $n\geq6$]\label{prop9.A}
+	Suppose $W^n$ is a compact simply connected smooth $n$-manifold,
+	$n\geq6$, with a simply connected boundary. Then the following
+	four assertions are equivalent.
+	\begin{enumerate}[label={\upshape{(A.\arabic*)}},leftmargin=1.5cm]
+		\item\label{propA.1} $W^n$ is diffeomorphic to $\disk^n$.
+		
+		\item\label{propA.2} $W^n$ is homeomorphic to $\disk^n$.
+		\item\label{propA.3} $W^n$ is contractible.
+		\item\label{propA.4} $W^n$ has the (integral) homology of a point.
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+	Clearly \ref{propA.1} $\Rightarrow$ \ref{propA.2} $\Rightarrow$ \ref{propA.3} $\Rightarrow$ \ref{propA.4}.
+    So we prove \ref{propA.4} $\Rightarrow$ \ref{propA.1}. If $\disk_0$ is a smooth $n$-disc embedded in $\mathrm{Int\,}W$, then $(W\smallsetminus
+    \mathrm{Int\,}\disk_0 ; \partial\disk_0, V)$ satisfies the conditions of the \hyperref[thm9.1]{$h$-Cobordism Theorem}.
+    In particular, (by excision) $\homology_*(W\smallsetminus
+    \mathrm{Int\,}\disk_0 ; \partial\disk_0)\cong\homology_*(W,\disk_0)= 0$.
+    
+    Consequently the cobordism $(W^n; \varnothing, V)$ is a composition of
+    $(\disk_0;\varnothing, \partial \disk_0)$ with a product cobordism $(W\smallsetminus
+    \mathrm{Int\,}\disk_0; \partial\disk_0, V)$.
+    It follows from \cref{thm1.4} that $W$ is diffeomorphic to $\disk_0$.
+\end{proof}
+
+\begin{proposition}[The Generalized Poincar\'{e} Conjecture in Dimensions
+	$\geq 5$. (See \cite{21}.)]\label{prop9.B}
+ 	If $M^n$, $n \geq 5$, is a closed simply connected smooth 
+ 	manifold with the (integral) homology of the $n$-sphere $\Sphere{n}$, then
+ 	$M^n$ is homeomorphic to $\Sphere{n}$. If $n =
+ 	5$ or $6$, $M^n$ is diffeomorphic to $\Sphere{n}$.
+\end{proposition}
+
+\begin{corollary}
+	If a closed smooth manifold $M^n$, $n \geq 5$,  is a homotopy $n$-sphere (i.e. is of the homotopy type of $\Sphere{n}$) then $M^n$ is
+	homeomorphic to $\Sphere{n}$.
+\end{corollary}
+
+\begin{remark*}
+	There exist smooth $7$-manifolds $M7$ that are 
+	homeomorphic to  $\Sphere{7}$ but are not diffeomorphic to  $\Sphere{7}$. (See \cite{24}.)
+\end{remark*}
+
+\begin{proof}[Proof of \cref{prop9.B}]
+	Suppose first that $n \geq 6$. If $\disk_0\subset M$ is a smooth
+	$n$-disc, $M\smallsetminus
+	\mathrm{Int\,}\disk_0$ satisfies the conditions of \cref{prop9.A}. In particular
+	\begin{align*}
+	\homology_i(M\smallsetminus
+	\mathrm{Int\,}\disk_0) &\cong \homology^{n-i}(M\smallsetminus
+	\mathrm{Int\,}\disk_0, \partial \disk_0)\tag{\text{Poincar\'{e} duality (\hyperref[thm7.5]{Thm.~}\ref{thm7.5})}}\\
+	&\cong \homology^{n-i}(M,\disk_0) \tag{\text{excision}}\\
+	&\cong\begin{cases}\tag{\text{exact sequence}}
+	0&\text{if}\quad i>0\\
+	\Z&\text{if}\quad i=0
+	\end{cases}
+	\end{align*}
+	Consequently $M = (M\smallsetminus
+	\mathrm{Int\,}\disk_0)\cup \disk_0$ is diffeomorphic to a union
+	of two copies $\disk_1^n$, $\disk_2^n$ of the $n$-disc with the boundaries 
+	identified under a diffeomorphism $h\mathpunct{ :}\partial \disk_1^n \to \partial \disk_2^n$.
+\end{proof}
+
+\begin{remark*}
+	Such a manifold is called a \emph{twisted sphere}.\index{twisted sphere} Clearly every
+	twisted sphere is a closed manifold with Morse number $2$, and conversely.
+\end{remark*}
+\label{p110}
+The proof is completed by showing that any twisted sphere
+$M =\disk_1^n \cup_h \disk_2^n$ is homeomorphic to $\Sphere{n}$. Let $g\mathpunct{ :} \disk_1^n\to \Sphere{n}$ be
+an embedding onto the southern hemisphere of $ \Sphere{n}\subset\R^{n+1}$ i.e.
+the set $\Set{\vec{x} \mid \lvert\vec{x}\rvert =1, x_{n+1}\leq 0}$. Each point of $\disk_2^n$ may be written $tv$, $0 \leq t \leq 1$, $v\in\partial \disk_2^n$. Define $g\mathpunct{ :} M\to \Sphere{n}$ by
+\[g(u)=\begin{cases}
+g_1(u)&\text{if}\quad u\in\disk_1^n\\
+\sin(\frac{\pi t}{2})g_1(h\inv(v))+\cos(\frac{\pi t}{2}) \mathrm{e}_{n+1} &\text{if}\quad u=tv\in\disk_2^n
+\end{cases}\]
+where $\mathrm{e}_{n+1}=(0,\dots, 0,1)\in \R^{n+1}$. Then $g$ is a well defined 1-1 continuous map onto $\Sphere{n}$, and
+hence is a homeomorphism. This completes the proof for $n \geq 6$. If $n =5$ we use:
+
+\begin{theorem}[Kervaire and Milnor \cite{25}, Wall \cite{26}]\label{thm9.1.1}
+	Suppose $W$ is a closed, simply connected, smooth manifold with
+	the homology of the $n$-sphere $\Sphere{n}$. Then if $n =4$, $5$, or $6$, $M^n$
+	bounds a smooth, compact, contractible manifold.
+	Then \cref{prop9.A} implies that for $n =5$ or $6$ if is actually diffeomorphic to $\Sphere{n}$.
+\end{theorem}
+
+\begin{proposition}[Characterization of the $5$-Disc]\label{prop9.C}
+	Suppose $W^5$ is a compact simply connected smooth manifold that has
+	the (integral) homology of a point. Let $V = \partial W$.
+	\begin{enumerate}[label={\upshape{(C.\arabic*)}},leftmargin=1.5cm]
+		\item\label{prop9.C.1} If $V$ is diffeomorphic to $\Sphere{4}$ then $W$ is diffeomorphic to $\disk^5$.
+		
+		\item\label{prop9.C.2} If $V$ is homeomorphic to $\Sphere{4}$ then $W$ is homeomorphic to $\disk^5$.
+	\end{enumerate}
+\end{proposition}
+\begin{proof}[Proof of \ref{prop9.C.1}]
+	Form a smooth $5$-manifold $M = W\cup_h \disk^5$ where $h$ is a diffeomorphism $V\to \partial\disk^5 = \Sphere{4}$. Then $M$ is a simply connected manifold with the homology of a sphere. In \cref{prop9.B} we proved
+	that $M$ is actually diffeomorphic to $\Sphere{5}$. Now we use
+	\begin{theorem}[Palais \cite{27}, Cerf \cite{28}, Milnor {\protect\cite[p. 11]{12}} ]\label{thm9.6}
+		Any two smooth orientation-preserving embeddings of an $n$-disc
+		into a connected oriented $n$-manifold are ambient isotopic. \index{ambient isotopic}
+	\end{theorem}
+
+Thus there is a diffeomorphism $g\mathpunct{:} M\to M$ that maps
+$\disk^5\subset M$ onto a disc $\disk_1^5$ such that $\disk_2^5 = M\smallsetminus \mathrm{Int\,} \disk_1^5$ is also a disc. Then $g$ maps $W\subset M$ diffeomorphically onto $\disk_2^5$.
+
+\noindent\textit{Proof of \ref{prop9.C.2}.}
+	Consider the double $D(W)$ of $W$ (i.e. two copies of $W$ with the boundaries identified ---see Munkres \cite[p.~54]{5}).
+	The submanifold $V\subset D(W)$ has a bicollar neighborhood in $D(W)$,
+	and $D(W)$ is homeomorphic to $\Sphere{5}$ by \cref{prop9.B}. Brown \cite{23} has
+	proved:
+	
+	\begin{theorem}\label{thm9.7}
+		If an $(n - 1)$-sphere $\varSigma$, topologically embedded
+		in $\Sphere{n}$, has a bicollar neighborhood, then there exists a homeomorphism $h\mathpunct{:}\Sphere{n}\to \Sphere{n}$ that maps $\varSigma$ onto $\Sphere{n-1}\subset \Sphere{n}$. Thus
+		$\Sphere{n}\smallsetminus \varSigma$ has two components and the closure of each is an $n$-disc
+		with boundary $\varSigma$.
+	\end{theorem}
+It follows that $W$ is homeomorphic to $\disk^5$. This completes the
+proof of \ref{prop9.C.2} and \cref{prop9.C}.
+\end{proof}
+
+\begin{proposition}[The Differentiate Schoenfliess Theorem in Dimensions $\geq 5$]\label{prop9.D}\index{Differentiate Schoenfliess Theorem}
+Suppose $\varSigma$ is a smoothly embedded $(n-1)$-sphere in $\Sphere{n}$. If
+$n \geq 5$, there is a smooth ambient isotopy that carries $\varSigma$ onto the equator $\Sphere{n-1}\subset\Sphere{n}$.
+\end{proposition}
+\begin{proof}
+	$\Sphere{n}\smallsetminus\varSigma$ has two components (by Alexander duality) and
+	hence \cref{cor3.6} shows that $\varSigma$ is bicollared in $\Sphere{n}$. The closure in
+	$\Sphere{n}$ of a component of $\Sphere{n}\smallsetminus\varSigma$ is a smooth simply connected
+	manifold $D_0$ with boundary $\varSigma$ and with the (integral) 
+	homology of a point. For $n\geq 5$, $D_0$ is actually diffeomorphic
+	to $\disk^n$ by \cref{prop9.A} and \cref{prop9.C}. Then the theorem of Palais and Cerf
+	(\cref{thm9.6}) provides an ambient isotopy that carries $D_0$ to the
+	lower hemisphere and hence $\partial D_0 =\varSigma$ to the equator.
+\end{proof}
+
+\begin{remark*}
+	This shows that if $f\mathpunct{:}\Sphere{n-1}\to \Sphere{n}$ is a smooth
+	embedding, then $f$ is smoothly isotopic to a map onto $\Sphere{n-1}\subset\Sphere{n}$; but it is not in general true that $f$ is smoothly
+	isotopic to the inclusion $\iota\mathpunct{:}\Sphere{n-1}\to \Sphere{n}$. It is false if
+	$f = \iota\circ g$, where $g\mathpunct{:}\Sphere{n-1}\to \Sphere{n-1}$ is a diffeomorphism
+	which does not extend to a diffeomorphism $\disk^n\to\disk^n$. (The
+	reader can easily show that $g$ extends to $\disk^n$ if and only if
+	the twisted sphere $\disk_1^n\cup_g \disk_2^n$ is diffeomorphic to $\Sphere{n}$.) In
+	fact if $f$ is smoothly isotopic to $\iota$, by the \hyperref[thm5.8]{Isotopy 
+	Extension Theorem} (\cref{thm5.8}), there exists a diffeomorphism $d\mathpunct{:}\Sphere{n}\to \Sphere{n}$
+	such that $d\circ \iota=f=\iota\circ g$. This gives two extensions of $g$
+	to a diffeomorphism $\disk^n\to\disk^n$.
+\end{remark*}
+
+\subsection*{Concluding Remarks}
+
+It is an open question whether the \hyperref[thm9.1]{$h$-Cobordism Theorem} is true for dimensions $n < 6$. Let $(W^n; V, V')$ be an $h$-cobordism where is simply connected and $n < 6$.
+\begin{itemize}%[label={ }]
+	\item $n=0$, $1$, $2$: The theorem is trivial (or vacuous).
+	
+	\item $n=3$: $V$ and $V'$ must be $2$-spheres. Then the theorem is
+	easily deduced from the classical Poincar\'{e} Conjecture\index{Poincar\'{e} Conjecture} {\protect\footnotemark[1]}: \emph{Every
+	compact smooth $3$-manifold which is homotopy equivalent to $\Sphere{3}$
+	is diffeomorphic to $\Sphere{3}$}. Since every twisted $3$-sphere (see \cpageref{p110}) is diffeomorphic to $\Sphere{3}$ (see Smale \cite{30}, Munkres \cite{31})
+	the theorem is actually equivalent to this conjecture.
+	
+	\item $n=4$: If the classical Poincar\'{e} Conjecture is true $V$ and $V'$
+	must be $3$-spheres. Then the theorem is readily seen to be
+	equivalent to the \textbf{$4$-Disk Conjecture}:\index{$4$-Disk Conjecture} \emph{Every compact contractible smooth $4$-manifold with boundary $\Sphere{3}$ is diffeomorphic to
+	$\disk^4$.} Now a difficult theorem of Cerf \cite{29} says that every twisted $4$-sphere is diffeomorphic to $\Sphere{4}$. It follows that this 
+	conjecture is equivalent to: \emph{Every compact smooth $4$-manifold which
+	is homotopy equivalent to $\Sphere{4}$ is diffeomorphic to $\Sphere{4}$.}
+	\item $n=5$:  \cref{prop9.C} implies that the theorem does hold when $V$ and $V'$ are diffeomorphic to $\Sphere{4}$. However there exist many
+	types of closed simply connected $4$-manifolds. Barden\footnotemark[2]
+	showed that if there exists a diffeomorphism $f\mathpunct{:}V'\to V$
+	homotopic to $r\vert_{V'}$, where $r\mathpunct{:}W\to V$ is a deformation
+	retraction, then $W$ is diffeomorphic to $V \times [0, 1]$. (See
+	Wall \cite{37,38}.)
+\end{itemize}\footnotetext[1]{Which has been resolved by G. Perelman in 2003 by Ricci Flow.}
+\footnotetext[2]{unpublished in first edition of this book}
+
+
+
+
+
+
+
+\nocite{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39}

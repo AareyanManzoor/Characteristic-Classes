@@ -1,0 +1,121 @@
+\documentclass[../main]{subfiles}
+%claimed by twiceshy
+\begin{document}
+\section{Euclidean Vector Bundles}\label{sec:2.1}
+For many purposes it is important to study vector bundles in which each fiber has the structure of a Euclidean vector space.
+
+Recall that a real valued function $\mu$ on a finite dimensional vector
+space $V$ is \defemph{quadratic}\index{quadratic function} if $\mu$ can be expressed in the form
+\[
+\mu(v)=\sum_{i} \ell_{i}(v) \ell_{i}' (v),
+\]
+where each $\ell_{i}$ and each $\ell_{i}'$ is linear. Each quadratic function determines a symmetric and bilinear\index{bilinear} pairing\index{pairing} $v, w \mapsto v \cdot w$ from $V\times V$ to $\bR$, where
+\[
+v \cdot w =\frac{1}{2}(\mu(v+w)-\mu(v)-\mu(w)).
+\]
+Note that $v \cdot v = \mu(v)$. The quadratic function $\mu$ is called \defemph{positive definite} if $\mu(v) > 0$ for $v \neq 0$.
+
+
+\begin{definition}\label{def:02.05}
+A \defemphi{Euclidean vector space} is a real vector space $V$ together with a positive definite quadratic function	
+\[
+\mu : V \varrightarrow{} \bR.
+\]
+The real number $v \cdot w$ will be called the \defemphi{inner product} of the vectors $v$ and $w$. The number $v \cdot v =\mu(v)$ may also be denoted by $|v|^2$.
+\end{definition}
+
+
+\begin{definition}\label{def:02.06}
+A \defemphi{Euclidean vector bundle}\index{vector bundle!\indexline Euclidean} is a real vector bundle $\mu$ together with a continuous function
+\[
+\mu : \total(\xi) \varrightarrow{} \bR,
+\]
+such that the restriction of $\mu$ to each fiber of $\xi$ is positive definite and quadratic. The function $\mu$ itself will be called a \defemph{Euclidean metric} on the vector bundle $\xi$.
+	
+In the case of the tangent bundle $\tangentbundle{M}$ of a smooth manifold, a Euclidean metric
+\[
+\mu : \tangentTS{M} \longrightarrow \bR,
+\]
+is called a \defemphi{Riemannian metric}, and $M$ together with $\mu$ is called a \defemphi{Riemannian manifold}. (In practice one usually requires that $\mu$ be a smooth function. The notation $\mu= \dd s^2$ is often used for a Riemannian metric.)
+\end{definition}
+
+
+\begin{note}
+In Steenrod's terminology, a Euclidean metric on $\xi$ gives rise to a reduction of the structural group\index{structural group} of $\xi$ from the full linear group to the orthogonal group\index{orthogonal group}. Compare \cite[\S 12.9]{steenrod1951}.
+\end{note}
+
+
+\begin{example} 
+The trivial bundle $\trivialbundle^n_{\B}$ can be given the Euclidean metric
+\[
+\mu(b, x)=x_{1}^{2}+\dots+x_{n}^{2}.
+\]
+Since the tangent bundle of $\bR^n$ is trivial it follows that the smooth manifold $\bR^n$ possesses a standard Riemannian metric. For any smooth manifold $M \subset \bR^n$ the composition
+\[
+\tangentTS{M} \subset \tangentTS{\bR^n}\varrightarrow{\mu} \bR, 
+\]
+now makes $M$ into a Riemannian manifold.
+\end{example}
+
+
+A priori there appear to be two different concepts of triviality for Euclidean vector bundles; however the next lemma shows that these coincide.
+
+
+\begin{lemma}\label{lem:02.04}
+Let $\xi$ be a trivial vector bundle\index{trivial bundle $\trivialbundle^n$} of dimension $n$ over ${\B}$, and let $\mu$ be any Euclidean metric on $\xi$. Then there exist $n$ cross-sections\index{cross-section} $s_1, \dots, s_n$ of $\xi$ which are normal and orthogonal in the sense that 
+\[
+s_i(b)\cdot s_j(b)= \delta_{ij} \qquad \text{(= Kronecker delta)} 
+\] %idk how to do the spacing like it is in the original book, feel free to fix if you know
+for each $b\in {\B}.$
+\end{lemma}
+
+
+Thus $\xi$ is trivial also as a Euclidean vector bundle. (Compare \ref{prob-2-E} below.)
+
+
+\begin{proof}
+Let $s_1 ', \dots, s_n '$ be any $n$ cross-sections which are nowhere linearly dependent. Applying the Gram-Schmidt\index{Gram-Schmidt process}\footnote{See any text book on linear algebra.} process to $s_1 '(b), \dots, s_n '(b)$ we obtain a normal orthogonal basis\index{basis} $s_1 (b), \dots, s_n '(b)$ for $F_b(\xi)$. Since the resulting functions $s_1,\dots,s_n$ are clearly continuous, this completes the proof.
+\end{proof}
+
+
+Here are six problems for the reader.
+
+
+\begin{problem}\label{prob-2-A}
+Show that the unit sphere $\Sphere^{n}$ admits a vector field which is nowhere zero, provided that $n$ is odd. Show that the normal bundle of $\Sphere^{n}\subset\bR^{n+1}$ is trivial for all $n$.\index{normal bundle}
+\end{problem}
+
+
+\begin{problem}\label{prob-2-B}
+If $\Sphere^{n}$ admits a vector field which is nowhere zero, show that the identity map of $\Sphere^{n}$ is homotopic to the antipodal map. For $n$ even show that the antipodal map of $\Sphere^{n}$ is homotopic to the reflection 
+\[
+r(x_1, \dots, x_{n+1}) = (-x_1, x_2 ,\dots, x_{n+1});
+\]
+and therefore has degree $-1$. (Compare \cite[p.304]{eilenbergsteenrod1952}.) Combining these facts, show that $\Sphere^{n}$ is not parallelizable\index{parallelizable} for $n$ even, $n \geq 2$.
+\end{problem}
+
+
+\begin{problem}[Existence theorem for Euclidean metrics.]\label{prob-2-C}
+Using a partition of unity\index{partition of unity}, show that any vector bundle over a paracompact\index{paracompact} base space can be given a Euclidean metric. (See \ref{thm:5.8}; or see \cite[pp. 156 and 171]{kelley1955}.)
+\end{problem}
+
+
+\begin{problem}\label{prob-2-D}
+The Alexandroff line $L$\index{Alexandroff line}\index{long line} (sometimes called the ``long line'') is a smooth, connected, $1$-dimensional manifold which is not paracompact. (Reference: \cite{kneser1958}.) Show that $L$ cannot be given a Riemannian metric.
+\end{problem}
+
+
+\begin{problem}[Isometry theorem.]\label{prob-2-E}
+Let $\mu$ and $\mu'$ be two different Euclidean metrics on the same vector bundle $\xi$. Prove that there exists a homeomorphism $f : \total(\xi)\to \total(\xi)$ which carries each fiber isomorphically onto itself, so that the composition  $\mu \circ f : \total(\xi)\varrightarrow{} \bR$ is equal to $\mu'$\index{isometry}. [Hint: Use the fact that every positive definite matrix $A$ can be expressed uniquely as the square of a positive definite matrix $\sqrt{A}$. The power
+series expansion 
+\[
+\sqrt{tI+X} = \sqrt{t}\bigg(I + \frac{1}{2t}X - \frac{1}{8t^2}X^2 + - \dots \bigg),
+\]
+is valid providing that the characteristic roots of $tI+X = A$ lie between $0$ and $2t$. This shows that the function $A \mapsto \sqrt{A}$ is smooth.]
+\end{problem}
+
+
+\begin{problem}\label{prob-2-F}
+As in \ref{prob:1-C}, let $F$ denote the algebra of smooth real valued functions on $M$. For each $x\in M$ let $I^{r+1}_X$ be the ideal consisting of all functions in $F$ whose derivatives of order $\leq r$ vanish at $x$. An element of the quotient algebra $F/I^{r+1}_X$ is called an \defemph{$r$-jet}\index{jet} of a real valued function at $x$. (Compare \cite{ehresmann1953}.) Construct a locally trivial ``bundle of algebras'' $\mathcal{A}_M^{(r)}$ over $M$ with typical fiber $F/I^{r+1}_X$.
+\end{problem}
+\end{document}

@@ -1,0 +1,71 @@
+%\documentclass[7x10,contribtitle,thmnumcontwithchapter,WebLink,AddlevelTwoTOC,NumRef,BookEndNote,printer]{pupbook}
+
+\documentclass[7x10,11pt,printer]{pupbook}%
+
+\input{commands}
+
+
+\begin{document}
+	
+	\input{title}
+	
+	\input{copyright}
+	
+	\input{dedication}
+	
+	\tableofcontents
+	
+	\clearpage
+	
+	\addtocontents{toc}{\vspace*{-6pt}}
+	
+%	\listoffigures
+%	
+%	\clearpage
+%	
+%	\addtocontents{toc}{\vspace*{-6pt}}
+	
+	
+	\input{preface}
+	
+	
+	\mainmatter
+	
+	
+	%\addtocontents{toc}{\vspace*{-6pt}}
+	%\chapter*{Introduction}
+	%\addcontentsline{toc}{chapter}{Introduction}%
+	
+	\include{sec1}
+	\include{sec2}
+	\include{sec3}
+	\include{sec4}
+	\include{sec5}
+	\include{sec6}
+	\include{sec7}
+	\include{sec8}
+	\include{sec9}
+	\include{sec11}
+	\include{sec12}
+	\include{sec13}
+	\include{sec14}
+	\include{sec15}
+	\appendix
+	\include{app-A}
+	\pagestyle{headings}
+%	\printbibliography
+	\bibliographystyle{myalpha}
+	\bibliography{references.bib}%
+	
+	\cleardoublepage%
+	
+	\printindex%
+	
+	%	\newpage
+	%	
+	%	\thispagestyle{empty}
+	%	\begin{picture}(0,0)
+	%	\put(-94,-646){\includegraphics[width=\paperwidth,height=\paperheight]{backcover.pdf}}
+	%	\end{picture}
+	
+\end{document}

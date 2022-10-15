@@ -1,0 +1,82 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{The Diagonal Cohomology Class in \texorpdfstring{$\homology^n(M \times M)$}{H n(MxM)}}
+We continue to assume either that $M$ is oriented or that the coefficient ring $\Lambda$ is $\mathbb{Z} / 2$, so that the fundamental class
+\[u' \in \homology^n(M\times M, M\times M - \diagonal(M))\]
+is defined. Note that the restriction homomorphism
+\[\homology^n(M\times M, M\times M - \Delta(M))\varrightarrow{} \homology^n(M\times M)\]
+maps $u^{\prime}$ to a cohomology class $u^{\prime} |_{ M \times M}$ which, by definition, is ``dual'' to the diagonal submanifold of $M \times M$. 
+
+\begin{definition} This cohomology class $u^{\prime} |_{ M \times M}$ will be denoted briefly by $u^{\prime \prime}$, and called the \defemphi{diagonal cohomology class} in $\homology^{n}(M \times M)$.
+\end{definition}
+
+We would like to characterize this diagonal cohomology class more explicitly. First, a preliminary lemma which expresses algebraically the fact that $u^{\prime \prime}$ is ``concentrated'' along the diagonal in $M \times M$.
+
+\begin{lemma}\label{lem:11.08}
+For any cohomology class $a \in \homology^{*}(M)$, the product $(a \times 1) \smile u^{\prime \prime}$ is equal to $(1 \times a) \smile u^{\prime \prime}$.
+\end{lemma} 
+\begin{proof} Let $N_{\varepsilon}$ be a tubular neighborhood\index{tubular neighborhood} of the diagonal submanifold $\Delta(M)$ in $M \times M$. Evidently $\Delta(M)$ is a deformation retract of $N_{\varepsilon}$. Define the two projection maps
+\[
+p_{1}, p_{2}: M \times M \varrightarrow{} M
+\]
+by $p_{1}(x, y)=x,\, p_{2}(x, y)=y$. Since $p_{1}$ and $p_{2}$ coincide on $\Delta(M)$, it follows that the restriction $p_{1} |_{ N_{\varepsilon}}$ is homotopic to $p_{2} |_{ N_{\varepsilon}}$. Therefore the two cohomology classes $p_{1}^{*}(a)=a \times 1$ and $p_{2}^{*}(a)=1 \times a$ have the same image under the restriction homomorphism $\homology^{i}(M \times M) \varrightarrow{} \homology^{i}(N_{\varepsilon})$. Now, using the commutative diagram
+\[\begin{tikzcd}
+\homology^i(M\times M) \arrow[r] \arrow[d,"\smile u'"] & \homology^i(N_\varepsilon) \arrow[d,"\smile u'|_{(N_\varepsilon,N_\varepsilon - \Delta(M))}"]\\ \homology^{i+n}(M\times M, M\times M-\Delta(M)) \arrow[r,"\cong"] & H^{i+n} (N_\varepsilon,N_\varepsilon-\Delta(M))
+\end{tikzcd}\]
+it follows that $(a \times 1) \smile u^{\prime}=(1 \times a) \smile u^{\prime}$. Restricting to $\homology^{i+n}(M \times M)$, the conclusion follows.
+
+\end{proof}
+
+We will make use of the slant product operation\index{slant product}
+\[
+\homology^{p+q}(X \times Y) \otimes \homology_{q}(Y) \varrightarrow{} \homology^{p}(X)
+\]
+with coefficients in $\Lambda$. In the special case where $X$ and $Y$ are finite complexes and $\Lambda$ is a field, so that
+\[\homology^{*}(X \times Y) \cong \homology^{*}(X) \otimes \homology^{*}(Y)\]
+this slant product can be defined quite easily as follows. Define a homomorphism
+\[
+\homology^{*}(X) \otimes \homology^{*}(Y) \otimes \homology_{*}(Y) \varrightarrow{} \homology^{*}(X)
+\]
+by the formula $a \otimes b \otimes \beta \mapsto a\langle b, \beta\rangle$. Now, substituting \newline $\homology^{*}(X \times Y)$ for $\homology^{*}(X) \otimes \homology^{*}(Y)$, we have the required operation
+\[
+\homology^{*}(X \times Y) \otimes \homology_{*}(Y) \varrightarrow{} \homology^{*}(X)
+\]
+which is denoted by $p \otimes \beta \mapsto p / \beta$. This operation satisfies and is characterized by the identity
+\[
+(a \times b) / \beta=a\langle b, \beta\rangle .
+\]
+For each fixed $\beta \in \homology_{*}(Y)$, note that the homomorphism $p \mapsto p / \beta$ is left $\homology^{*}(X)$-linear in the sense that $((a \times 1) \smile p) / \beta=a \smile(p / \beta)$ for every a $\in \homology^{*}(X)$ and every $p \in \homology^{*}(X \times Y)$.
+
+For the definition of slant product in general, the reader is referred to \cite{spanier1981} or \cite{dold1972}.
+
+\begin{lemma}\label{lem:11.09}
+Suppose that $M$ is compact, so that the fundamental homology class $\mu \in \homology_{n}(M)$ is defined. Then the diagonal cohomology class $u^{\prime \prime} \in \homology^{n}(M \times M)$ and the fundamental homology class $\mu$ are related by the identity \newline $u^{\prime \prime} / \mu=1 \in \homology^{0}(M)$.\index{fundamental class!\indexline homology}
+\end{lemma} 
+
+We are assuming field coefficients, although the proof would actually go through with any coefficient ring, in the oriented case.
+
+\begin{proof} For any $x \in M$ we will compute the image of $u^{\prime \prime} / \mu$ under the restriction homomorphism $\homology^{0}(M) \varrightarrow{} \homology^{0}(x) \cong \Lambda$. We will make use of the commutative diagram
+\[\begin{tikzcd}
+\homology^n(M\times M) \arrow[r,"/\mu"] \arrow[d] & \homology^0(M)\arrow[d]\\ \homology^n(x\times M) \arrow[r, "/\mu"]& \homology^0(x)
+\end{tikzcd}\]
+Note that the left hand vertical arrow maps the cohomology class $u^{\prime \prime}$ to $1 \times i_{x}^{*}(u^{\prime \prime})$, where
+\[
+i_{X}: M \varrightarrow{} M \times M
+\]
+denotes the embedding $y \mapsto(x, y)$. Using the identity $(a \times b) / \mu=a\langle b, \mu\rangle$, it follows that $(u^{\prime \prime} / \mu) |_x$ is equal to the Kronecker index $\langle i_{x}(u^{\prime \prime}), \mu\rangle$ multiplied by $1 \in \homology^{0}(x)$.
+
+As constructed in Appendix \ref{app:A}, the fundamental homology class $\mu$ is uniquely characterized by the property that for each $x \in M$ the natural homomorphism
+\[
+\homology_{n}(M) \varrightarrow{} \homology_{n}(M, M-x)
+\]
+maps $\mu$ to the preferred generator $\mu_{x}$. Making use of the mappings
+\[\begin{tikzcd}
+M \arrow[r,phantom , "\subset"]\arrow[d,"i_x"] &(M,M-x)\arrow[d,"j_x"]\\ M\times M \arrow[r,phantom, "\subset"] &(M\times M, M\times M -\Delta(M))
+\end{tikzcd}\]
+where $j_{x}$ also sends $y$ to $(x, y)$, it follows from this defining property of $\mu$ that the Kronecker index $\langle i_{x}^{*}(u^{\prime \prime}), \mu\rangle=\langle j_{x}^{*}(u^{\prime})|_M, \mu\rangle$ is equal to $\langle j_{x}^{*}(u^{\prime}), \mu_{x}\rangle$. Since this equals $1$ by lemma \ref{lem:11.7}, we have proved that
+\[
+(u^{\prime \prime} / \mu)|_x=1 \in \homology^{0}(x)
+\]
+This is true for every $x$, so it clearly follows that $u^{\prime \prime} / \mu$ is equal to the identity element of $\homology^{0}(M)$.
+\end{proof}
+\end{document}

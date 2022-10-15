@@ -1,0 +1,63 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Poincaré Duality and the Diagonal Class}
+
+
+Let $M$ be a compact smooth manifold. We will study the cohomology of $M$ with coefficients in a field $\Lambda$, continuing to assume either that $M$ is oriented or that $\Lambda=\mathbb{Z} / 2$. 
+
+\begin{theorem}[Duality Theorem]\index{basis}
+\label{thm:11.10}
+To each basis $b_1, \dots, b_r$ for $\homology^\ast(M)$ there corresponds a dual basis $b_1^\#, \dots, b_r^\#$ for $\homology^\ast(M)$, satisfying the identity
+\[
+\ip{b_i\smile b_j^\#}{\mu} =\begin{cases} 1 & i=j,\\0 &i\neq j\end{cases}
+\]
+\end{theorem}
+
+It follows as a corollary that the rank of the vector space $\homology^k(M)$ is equal to the rank of $\homology^{n-k}(M)$. For if a basis element $b_i$ has dimension $k$ then the dual basis element $b_i^\#$ must have dimension $n-k$. In fact, it follows that the vector space $\homology^k(M)$ is isomorphic to the dual vector space $\Hom_\Lambda(\homology^k(M),\,\Lambda)$, using the correspondence $a\mapsto h_a$ where $h_a(b) = \ip{a\smile b}{\mu}$. (For other formulations of Poincaré duality\index{Poincar\'e duality}, see \ref{prob:11.B} and Appendix \ref{app:A}, as well as \cite{spanier1981}, \cite{dold1972}.)
+
+While proving \ref{thm:11.10}, we will simultaneuously give a precise description of the cohomology class $u^{\prime\prime}\in\homology^n(M\times M)$. 
+
+\begin{theorem}
+\label{thm:11.11}
+With $\{b_i\}$ and $\{b_i^\#\}$ as above, the diagonal cohomology class $u^{\prime\prime}$ is equal to
+\[
+\sum^r_{i=1} (-1)^{\dim{b_i}} \, b_i\times b_i^\#.
+\]
+\end{theorem}
+
+\begin{proof}[Proof of \ref{thm:11.10} and \ref{thm:11.11}]
+Using the K\"{u}nneth formula,\index{Künneth theorem}
+\[
+\homology^\ast(M\times M) \cong \homology^\ast(M) \otimes \homology^\ast(M), 
+\]
+it follows easily that the diagonal class can be represented by a $r$-fold sum
+\[
+u^{\prime\prime} = b_1 \times c_1 + \dots + b_r \times c_r,
+\]
+where $c_1,\dots, c_r$ are certain well-defined cohomology classes in $\homology^\ast(M)$ with
+\[
+\dim{b_i} + \dim{c_i} = n.
+\]
+Let us apply the homomorphism $/\mu$ to both sides of the identity
+\[
+(a\times 1) \smile u'' = (1\times a)\smile u''.
+\]
+On the left side, using the left linearity of the slant product, we obtain
+\[
+((a\times 1)\smile u'') / \mu
+=
+a \smile (u''/\mu)=a.
+\]
+On the right side, substituting $\sum b_j\times c_j$ for $u''$, we obtain
+\[
+\sum (-1)^{\dim a \, \dim b_j} (b_j \times (a\smile c_j))/\mu
+=
+\sum (-1)^{\dim a \, \dim b_j} b_j \langle a\smile c_j, \mu \rangle.
+\]
+Hence this last expression must be equal to $a$. Substituting $b_i$ for $a$, it follows that the coefficient
+\[
+(-1)^{\dim a \, \dim b_j} \langle b_i\smile c_j, \mu \rangle
+\]
+of $b_j$ must be $+1$ for $i=j$, and $0$ for $i\neq j$. Setting $b_i^\# = (-1)^{\dim b_i} c_i$, the conclusions follow easily.
+\end{proof}
+\end{document}

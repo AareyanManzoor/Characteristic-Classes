@@ -1,0 +1,72 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+We now proceed to prove the existence of Stiefel-Whitney classes\index{Stiefel-Whitney class $\sw_i$!\indexline existence} by giving a construction in terms of known operations. For any $n$-plane bundle $\xi$ with total space $\total$, base space $\B $ and projection map $\pi$, we denote by $\total_{0}$\index{E0@$E_0$} the set of all non-zero elements of $\total$, and by $F_{0}$ the set of all non-zero elements of a typical fiber $F=\pi^{-1}(b)$. Clearly $F_{0}= F \cap \total_{0}$.
+
+Using singular theory and one of several techniques (e.g. spectral sequences or that of \S\ref{ch:10}) we have that \index{cohomology}
+\[\homology^{i}(F, F_{0} ;\, \mathbb{Z} / 2)=\begin{cases}
+	0 &\text { for } i \neq  n  \\
+	\mathbb{Z} / 2 &\text { for } i= n 
+	\end{cases}
+\]
+and that
+\[\homology^{i}(\total, \total_{0} ; \, \mathbb{Z} / 2)\cong\begin{cases}
+	0& \text { for } i<n  \\
+	\homology^{i-n}(\B  ; \, \mathbb{Z} / 2)& \text { for } i \geq  n  
+\end{cases}
+\]
+(This can be seen intuitively, though not rigorously, as follows: The unit $n$-cell is a deformation retract of $\bR^{n}$ and the unit $(n-1)$-sphere is a deformation retract of $(\bR^{ n }\setminus\{0\})=\bR_{0}^{ n } $. For $\B $ paracompact, we know that we can put a Euclidean metric\index{Euclidean metric} on $\total$. Then the subset $\total^{\prime}$ consisting of all vectors $x \in \total$ with $x \cdot x \leq 1$ is evidently a deformation retract of $\total$. Similarly the set $\total^{\prime \prime}$ consisting of vectors $x \in \total$ with $x \cdot x=1$ is a deformation retract of $\total_{0} $. Hence $\homology^{\ast}(\total^{\prime}, \total^{\prime \prime}) \cong \homology^{\ast}(\total, \total_{0})$. Now suppose that $\B $ is a cell complex, with a fine enough cell subdivision so that the restriction of $\xi$ to each cell $c^{k}$ is a trivial bundle. Then the inverse image of the $k$-cell $ c^{k}$ in $\total^{\prime}$ is a product cell of dimension $ n +k$. Thus $\total^{\prime}$ can be obtained from the subset $\total^{\prime \prime}$ by adjoining cells of dimension $\geq  n $, one $( n +k)-$cell corresponding to each $k$-cell of $\B $. It follows that $\homology^{i}(\total^{\prime}, \total^{\prime \prime})=0$ for $i< n $. With a little faith, it follows also that $\homology^{ n +k}(\total^{\prime}, \total^{\prime \prime}) \cong \homology^{k}(\B )$.)
+
+Rigorously and more explicitly, the following statement will be proved in \S \ref{ch:10}. The coefficient group $\mathbb{Z} / 2$ is to be understood.
+
+\begin{theorem}\label{thm:08.01}\index{fundamental class!\indexline cohomology}
+	The group $\homology^{i}(\total, \total_{0})$ is zero for $i< n $, and $\homology^{ n }(\total, \total_{0})$ contains a unique class $u$ such that for each fiber $F=\pi^{-1}(b)$ the restriction
+	\[
+	u|_{(F, F_{0})} \in \homology^{ n }(F, F_{0})
+	\]
+	is the unique non-zero class in $\homology^{ n }(F, F_{0})$. Furthermore the correspondence \newline $x \mapsto x \smile u$ defines an isomorphism $\homology^{k}(\total) \varrightarrow{} \homology^{k+ n }(\total, \total_{0})$ for every $k$. (We call $u$ the fundamental cohomology class.)
+\end{theorem}
+
+On the other hand the projection $\pi:\total\varrightarrow{} \B$ certainly induces an isomorphism $\homology^{k}(\B ) \varrightarrow{} \homology^{k}(\total)$, since the zero cross-section embeds $\B $ as a deformation retract of $\total$ with retraction mapping $\pi$.
+
+\begin{definition}\index{Thom, R.}
+\label{def:08.02}
+The Thom isomorphism\index{Thom isomorphism} $\phi:{\homology^{k}(\B )}\varrightarrow{}{\homology^{k+ n }(\total, \total_{0})}$ is defined to be the composition of the two isomorphisms
+\[\homology^{k}(\B) \varrightarrow{\pi^\ast} \homology^{k}(\total) \varrightarrow{\smile u} \homology^{k+n}(\total, \total_{0}).\]
+\end{definition}
+Next we will make use of the Steenrod squaring\index{Steenrod squares} operations in $\homology^{\ast}(\total, \total_{0})$. These operations can be characterized by four basic properties, as follows. (Compare \cite{steenrod1962cohomology}.) Again $\mathrm{mod}\; 2$ coefficients are to be understood.
+\begin{enumerate}[label=(\arabic*)]
+    \item\label{8.2.1} For each pair $X \supset Y$ of spaces and each pair $n,i$ of non-negative integers there is defined an additive homomorphism
+	\[
+	\steenrod^{i}:\homology^{ n }(X, Y)\varrightarrow{}\homology^{n+i}(X, Y).
+	\]
+	(This homomorphism is called ``square upper $i$.'')
+	\item\label{8.2.2} \defemph{Naturality.} If $f:(X,Y)\varrightarrow{}(X',Y')$ then $\steenrod^{i} \circ f^{\ast}=f^{\ast} \circ \steenrod^{i}$.
+	\item\label{8.2.3} If $a \in \homology^{n}(X, Y)$, then $\steenrod^{0}(a)=a$, $\steenrod^{ n }(a)=a \smile a$, and $\steenrod^{i}(a)=0$ for $i>n$. (Thus the most interesting squaring operations are those for which $0<i<n$.)
+	\item\label{8.2.4} \defemph{The Cartan formula.}\index{Cartan formula} The identity
+	\[\steenrod^{k}(a \smile b)=\sum_{i+j=k} \steenrod^{i}(a) \smile \steenrod^{j}(b)\]
+	is valid whenever $a \smile b$ is defined. 
+\end{enumerate}
+Using these squaring operations together with the Thom isomorphism $\phi$, the \defemph{Stiefel-Whitney class} $\sw_{i}(\xi) \in \homology^{i}(\B )$ can now be defined by Thom's identity \label{ch08:thoms identity} %need this for ch11 --deri
+\[
+\sw_{i}(\xi)=\phi^{-1} \steenrod^{i} \phi(1).
+\]
+In other words $\sw_{i}(\xi)$ is the unique cohomology class in $\homology^{i}(\B )$ such that \newline $\phi(\sw_{i}(\xi))=\pi^{*} \sw_{i}(\xi) \smile u$ is equal to $\steenrod^{i} \phi(1)=\steenrod^{i}(u)$.
+
+For many purposes it is convenient to introduce the \defemph{total squaring operation}
+\[
+\steenrod(a)=a+\steenrod^{1}(a)+\steenrod^{2}(a)+\dots+\steenrod^{ n }(a)
+\]
+for $a \in \homology^{ n }(X, Y)$. Note that the Cartan formula can now be expressed by the equation
+\[
+\steenrod(a \smile b)=\steenrod( a) \smile\steenrod( b).
+\]
+Similarly the corresponding equation for the Steenrod squares of a cross product becomes simply
+\[
+\steenrod(a \times b)=(\steenrod (a)) \times(\steenrod (b)).
+\]
+In terms of this total squaring operation, the total Stiefel-Whitney class of a vector bundle is clearly determined by the formula
+\[
+w(\xi)=\phi^{-1} \steenrod \phi(1)=\phi^{-1} \steenrod(u)
+\]\newpage
+\end{document}

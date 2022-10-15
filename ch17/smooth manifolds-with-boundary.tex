@@ -1,0 +1,23 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Smooth Manifolds-with-Boundary}
+Let us first give a precise definition of this concept, which has already been used briefly in \S\ref{ch:4} and \S\ref{ch:16}. As a universal model for manifolds--with--boundary, we take the closed half--space\index{half-space} ${\mathbb H}^n$, consisting of all points $(x_1, \ldots, x_n)$ in the Euclidean space ${\mathbb R}^n$ with $x_1 \ge 0$. A subset $X \subset {\mathbb R}^A$ is called a \defemph{smooth $n$--dimensional manifold--with--boundary}\index{smooth manifold!\indexline with boundary} if, for each point $x \in X$, there exists a smooth mapping \[h : U \longrightarrow {\mathbb R}^A\] which maps some relatively open set $U \subset {\mathbb H}^n$ homeomorphically onto a neighborhood of $x$ in $X$, and for which the matrix of first derivatives $[\partial h_\alpha/\partial u_j]$ has rank $n$ everywhere. (Compare page \pageref{lem:1.1}.)
+
+A point $x$ of $X$ is called an \defemph{interior point} if there exists a local parameterization\index{local parametization} $h : U \longrightarrow {\mathbb R}^A$ of $X$ about $x$ such that $U$ is an open subset of ${\mathbb R}^n$ (rather than ${\mathbb H}^n$). Evidently the set of interior points forms a smooth $n$--dimensional manifold which is open as a subset of $X$. The non--interior points form a smooth $(n - 1)$--dimensional manifold, called the \defemphi{boundary} $\partial X$, which is closed as a subset of $X$. 
+
+The tangent bundle $\tau^n$\index{tangent bundle $\tangentbundle{M}$} of a smooth manifold--with--boundary $X$ is a smooth $n$--plane bundle over $X$. The definition is completely analogous to that of \S \ref{ch:1}. This $n$--plane bundle has some additional structure that can be described as follows. If $x$ is a boundary point of $X$, then the fibre $\tangentspace X x$\index{tangent space $\tangentspace{M}{x}$} contains an $(n - 1)$--dimensional subspace $\tangentspace {(\partial X)} x$ consisting of vectors which are tangent to the boundary. This hyperplane $\tangentspace {(\partial X)} x$ separates the tangent space $\tangentspace X x$ into two open subsets, consisting respectively of vectors which point ``into'' or ``out of'' $X$. By definition a vector $v \in \tangentspace X x$ with $v \not \in \tangentspace {(\partial X)} x$, points \defemph{into} $X$ if $v$ is the velocity vector $(\dd p/\dd t)_{t = 0}$ of a smooth path \[p : [0, \epsilon) \longrightarrow X\] with $p(0) = x$. Similarly $v$ points \defemph{out of} $X$ if $v$ is the velocity vector at $t = 0$ of a path $p : (-\epsilon, 0] \longrightarrow X$ with $p(0) = x$.  
+
+Now suppose that the tangent bundle $\tau^n$ of $X$ is an oriented $n$--plane bundle. Then the tangent bundle $\tau^{n - 1}$ of $\partial X$\index{oriented manifold} has an induced orientation as follows. Choose an oriented basis $v_1, \ldots, v_n$ for $\tangentspace X x$ at any boundary point $x$ so that $v_1$ points out of $X$ and $v_2, \ldots, v_n$ are tangent to $\partial X$. Then the ordered basis $v_2, \ldots, v_n$ determines the required orientation for $\tangentspace {(\partial X)} x$.
+
+[In the special case of a $1$--dimensional manifold--with--boundary, this construction must be modified as follows. An ``orientation'' of a point $x$ of the $0$--dimensional manifold $\partial X$ is just a choice of sign $+1$ or $-1$. In fact we assign $x$ the orientation $+1$ or $-1$ according as the positive direction in $\tangentspace X x$ points out of or into $X$.]
+
+We will need the following statement.
+%TODO: label this "collar neighborhood theorem"
+\begin{theorem}[Collar Neighborhood Theorem]\label{thm:17.1}\index{collar neighborhood}
+If $X$ is a smooth paracompact manifold--with--boundary, then there exists an open neighborhood of $\partial X$ in $X$ which is diffeomorphic to the product $\partial X \times [0, 1)$.
+\end{theorem}
+
+\begin{proof}
+The proof is similar to that of Theorem~\ref{thm:11.01}. (Just as for \ref{thm:11.01}, we will actually need this assertion only in the special case where $\partial X$ is compact.) Details will be left to the reader.
+\end{proof}
+\end{document}

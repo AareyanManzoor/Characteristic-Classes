@@ -1,0 +1,141 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+The material in this chapter is due to \cite{hirzebruchalggeo1966}.\index{Hirzebruch, F.}
+
+Let $\Lambda$ be a fixed commutative ring with unit (usually the ring of rational numbers). The symbol \[A^\ast = (A^0, A^1, A^2, \cdots)\] will stand for a graded $\Lambda$-algebra with unit which is commutative in the classical sense ($xy = yx$ regardless of the degrees of $x$ and $y$). In the main application, $A^n$ will be the cohomology group $\homology^{4n}(B;\Lambda)$.
+
+To each such $A^\ast$ we associate the commutative ring $A^\Pi$ consisting of all formal sums $a_0 + a_1 + a_2 + \cdots$ with $a_i \in A^i$. (Compare p. \pageref{prop:04.04}) We will be particularly interested in the group consisting of all elements of the form \[a = 1+a_1 + a_2 + \cdots \] in $A^\Pi$. The product of two such units is evidently given by the formula \[(1+a_1 + a_2 + \cdots)(1+b_1 + b_2 + \cdots) = 1 + (a_1 + b_1) + (a_2 + a_1b_1 + b_2) + \cdots \]
+
+Now consider a sequence of polynomials \[K_1(x_1), K_2(x_1,x_2), K_3(x_1,x_2,x_3),\cdots \] with coefficients in $\Lambda$ such that, if the variable $x_i$ is the assigned degree $i$, then 
+\begin{equation}\label{eqn:19.1}
+    \text{each }K_n(x_1,\cdots,x_n) \text{ is homogeneous of degree }n.
+\end{equation}
+Given $A^\Pi$ as above, and an element $a \in A^\Pi$ with leading term $1$, define a new element $K(a) \in A^\Pi$, also with leading term $1$, by the formula \[K(a) = 1+K_1(a_1) + K_2(a_1,a_2) + \cdots \]
+
+\begin{definition}
+The $K_n$ form a \defemphi{multiplicative sequence} of polynomials if the identity
+\begin{equation}\label{eqn:19.2}
+    K(ab) = K(a)K(b)
+\end{equation}
+is satisfied for all such $\Lambda$-algebras $A^\ast$ and for all $a, b\in A^\Pi$ with leading term $1$.
+\end{definition}
+\setcounter{example}{0}
+\begin{example}
+Given any constant $\lambda \in \Lambda$ the polynomials \[K_n(x_1,\cdots,x_n) = \lambda^n x_n \] form a multiplicative sequence, with \[K(1+a_1+a_2+\cdots) = 1 + \lambda a_1 + \lambda^2 a_2 + \cdots .\] The cases $\lambda = 1$ (so that $K(a) = a$) and $\lambda = -1$ (compare Lemma \ref{lem:14.9})\index{Whitney duality theorem} are of particular interest.
+\end{example}
+
+\begin{example}
+The identity $K(a) = a^{-1}$ defines a multiplicative sequence with 
+\[\begin{aligned}
+    &K_1(x_1) &=& \,\,\,-x_1 \\
+    &K_2(x_1,x_2) &=& \,\,\,\phantom{+\,\,\,}x_1^2 - x_2 \\
+    &K_3(x_1,x_2,x_3) &=&\,\,\, -x_1^3 +2x_1x_2 -x_3 \\
+    &K_4(x_1,x_2,x_3,x_4) &=& \,\,\,\phantom{+\,\,\,}x_1^4 -3x_1^2x_2 + 2x_1x_3 -x_2^2 -x_4 
+\end{aligned}\]
+and in general \[K_n = \sum_{i_1 + 2i_2 + \cdots + ni_n =n} \frac{(i_1 + \cdots + i_n)!}{i_1! \cdots i_n!}(-x_1)^{i_1}\cdots(-x_n)^{i_n} \]
+These polynomials can be used to describe the relations between the Pontrjagin classes\index{Pontrjagin class $\pontrjaginclass_i$} (or the Chern classes\index{Chern class $\chernclass_i$}, or the Stiefel-Whitney classes) of two vector bundles with trivial Whitney sum. Compare \ref{sec:4.1}.
+\end{example}
+
+\begin{example}
+The polynomials $K_{2n+1} =0$ and \[K_{2n}(x_1,\cdots,x_{2n}) = x_n^2 - 2x_{n-1}x_{n+1} + \cdots \mp 2x_1x_{2n-1} \pm 2x_n\] form a multiplicative sequence which can be used to describe the relationship between the Chern classes of a complex vector bundle $\omega$ and the Pontrjagin classes of the underlying real bundle $\omega_\bR$\index{underlying real bundle $\omega_\bR$}. Compare Corollary \ref{cor:15.05}.
+\end{example}
+
+The following theorem gives a simple classification of all possible multiplicative sequences. Let $A^\ast$ be the graded polynomial ring $\Lambda[t]$ where $t$ is an indeterminate of degree $1$. Then an element of $A^\Pi$ with leading term $1$ can be thought of as a formal power series\index{formal power series}\index{power series} \[f(t) = 1+\lambda_1 t  + \lambda_2 t^2 + \lambda_3 t^3 + \cdots \] with coefficients in $\Lambda$. In particular $1+t$ is such an element. 
+\begin{lemma}[Hirzebruch]
+\label{lem:19.01}
+Given a formal power series $f(t) = 1 + \lambda_1 t + \lambda_2 t^2 + \cdots$ with coefficients in $\Lambda$, there is one and only one multiplicative sequence $\{K_n\}$ with coefficients in $\Lambda$ satisfying the condition \[K(1+t) = f(t),\] or equivalently satisfying the condition that the coefficient of $x_1^n$ in each polynomial $K_n(x_1,\cdots,x_n)$ is equal to $\lambda_n$.
+\end{lemma}
+\begin{definition}
+$\{K_n\}$ is called the multiplicative sequence \defemph{belonging to} the power series $f(t)$.
+\end{definition}
+\begin{examples}
+The three multiplicative sequneces mentioned above belong to the power series $1+ \lambda t$, $ 1-t + t^2 - t^3 + \cdots$, and $1+t^2$ respectively.
+\end{examples}
+\begin{remark*}
+If the multiplicative sequence $\{K_n\}$ belongs to the power series $f(t)$, then for any $A^\ast$ and any $a_1 \in A^1$ the identity \[K(1+a_1) = f(a_1)\] is satisfied. Of course this identity would no longer be true if something of degree $\neq 1$ were substituted in place of $a_1$.
+\end{remark*}
+\begin{proof}[Proof of uniqueness]
+Choosing any positive integer $n$, let $A^\ast$ be the polynomial ring $\Lambda[t_1,\cdots,t_n]$ where the $t_i$ are algebraically independent of degree $1$, and let \[ \sigma = (1+t_1)\cdots(1+t_n) \in A^\Pi\] Then \[K(\sigma) = K(1+t_1)\cdots K(1+t_n) = f(t_1)\cdots f(t_n).\] Taking the homogeneous part of degree $n$, it follows that $K_n(\sigma_1,\cdots,\sigma_n)$ is completely determined by the power series $f(t)$. Since the elementary symmetric functions\index{symmetric function} $\sigma_1,\cdots,\sigma_n$ are algebraically independent, this proves the uniqueness of each $K_n$.
+\end{proof}
+\begin{proof}[Proof of existence]
+For any partition\index{partition} $I = i_1,\cdots,i_r$ of $n$, it will be convenient to use the abbreviation $\lambda_I$ for the product $\lambda_{i_1} \cdots \lambda_{i_r}$. With this convention, let us define the polynomial $K_n$ by the formula \[K_n(\sigma_1,\sigma_2,\cdots,\sigma_n) \sum \lambda_I s_I(\sigma_1,\cdots,\sigma_n),\] to be summed over all partitions $I$ of $n$. Here $s_I$ stands for the polynomial of Lemma \ref{lem:16.1}, with $s_I(\sigma_1,\cdots,\sigma_n) = \sum t_1^{i_1}\cdots t_r^{i_r}$.
+
+Just as in Lemma \ref{lem:16.2}, we have the identity \[s_I(ab) = \sum_{HJ = I} s_H(a) s_J(b),\] to be summed over all partitions $H$ and $J$ with juxtaposition $HJ$ equal to $I$. Therefore \[K(ab) = \sum_I \lambda_I s_I(ab)\] is equal to \[\sum_I \lambda_I \sum_{HJ = I} s_H(a)s_J(b) = \sum_{H,J} \lambda_H s_H(a)\lambda_j s_J(b)\] Evidently this equals $K(a)K(b)$ as required.
+\end{proof}
+Now consider some multiplicative sequence of polynomials $\{K_n(x_1,\cdots,x_n)\}$ with rational coefficients. Let $M^m$ be a smooth, compact, oriented $m$-dimensional manifold.
+
+\begin{definition}
+The \defemph{$K$-genus}\index{K-genus@$K$-genus} $K[M^m]$ is zero if the dimension $m$ is not divisible by $4$, and is equal to the rational number \[K_n[M^{4n}] = \langle K_n(\pontrjaginclass_1,\cdots,\pontrjaginclass_n),\mu_{4n} \rangle \] if $m=4^n$, where $\pontrjaginclass_i$ denotes the $i$-th Pontrjagin class\index{Pontrjagin class $\pontrjaginclass_i$} of the tangent bundle. Thus $K[M^m]$ is a certain rational linear combination of the Pontrjagin numbers\index{Pontrjagin number} of $M^m$.
+\end{definition}
+\begin{lemma}
+\label{lem:19.02}
+For any multiplicative sequence $\{K_n\}$, with rational coefficients, the correspondence $M \mapsto K[M]$ defines a ring homomorphism from the cobordism ring $\Omega_\ast$ to the rational numbers $\mathbb{Q}$.\index{cobordism}
+\end{lemma}
+Equivalently, this correspoondence gives rise to an algebra homomorphism from $\Omega_\ast \otimes \mathbb{Q}$ to $\mathbb{Q}$.
+\begin{proof}
+It is clear that the correspondence is additive, and that the $K$-genus of a boundary is zero. For a product manifold $M \times M'$, with total Pontrjagin class congruent to $\pontrjaginclass \times \pontrjaginclass'$ modulo elements of order $2$, we have \newline $K(\pontrjaginclass \times \pontrjaginclass') = K(\pontrjaginclass) \times K(\pontrjaginclass')$, hence 
+\[\langle K(\pontrjaginclass \times \pontrjaginclass'), \mu \times \mu' \rangle = (-1)^{mm'} \langle K(\pontrjaginclass),\mu \rangle \langle K(\pontrjaginclass'),\mu' \rangle .\] Since the sign in this formula is certainly $+1$ when the dimensions $m,m'$ are divisible by $4$, this proves that \[K[M \times M'] = K[M]K[M']\] as required.
+\end{proof}
+
+We will use this construction to compute an important homotopy type invariant of $M$.\index{homotopy type}
+\begin{definition}
+The \defemphi{signature $\sigma$} of a compact, oriented manifold $M^m$ is defined to be zero if the dimension is not a multiple of $4$, and as follows for $m=4k$. Choose a basis $a_1,\cdots,a_r$ for $\homology^{2k}(M^{4k};\mathbb{Q})$ so that the symmetric matrix \[[\langle a_i \smile a_j, \mu \rangle ]\] is diagonal. Then $\sigma(M^{4k})$ is the number of positive diagonal entries minus the number of negative ones. (In other words $\sigma$ is the signature of the rational quadratic form $a \mapsto \langle a \smile a, \mu \rangle$.)
+\end{definition}
+Alternatively, this number $\sigma$ is often called the ``index''\index{index} of $M$, particularly in older literature.
+
+\begin{lemma}[Thom]\index{Thom, R.}
+\label{lem:19.03}
+The signature function has the following three properties:
+\begin{enumerate}
+    \item $\sigma(M +M') = \sigma(M) + \sigma(M')$,
+    \item $\sigma(M \times M') = \sigma(M)\sigma(M')$,
+    \item if $M$ is an oriented boundary\index{boundary}, then $\sigma(M) = 0$.
+\end{enumerate}
+\end{lemma}
+In fact, Assertion $(1)$ is trivial, $(2)$ can be proved using the Künneth isomorphism\index{Künneth isomorphism} $\homology^\ast(M \times M';\mathbb{Q}) \cong \homology^\ast(M;\mathbb{Q}) \otimes \homology^\ast(M';\mathbb{Q})$, and $(3)$ can be proved using the Poincaré duality\index{Poincaré duality} theorem for manifolds with boundary. Details may be found in \cite[\S 8]{hirzebruchalggeo1966}, or in \cite[pp. 220-222]{stongcobordism1968}. \ensuremath{\blacksquare}
+
+It follows immediately from properties $(1)$ and $(3)$ that the signature of a manifold can be expressed as a linear function of its Pontrjagin numbers. More precisely, according to Hirzebruch, one has the following.
+
+\begin{theorem}[Signature Theorem]\index{signature theorem}\index{Hirzebruch, F.}
+\label{thm:19.04}
+Let $\{L_k(\pontrjaginclass_1,\cdots,\pontrjaginclass_k)\}$ be the multiplicative sequence\index{multiplicative sequence} of polynomials belonging to the power series\index{power series}\index{formal power series} \[\dfrac{\sqrt{t}}{\tanh \sqrt{t}} = 1 + \frac{1}{3} t - \frac{1}{45}t^2 + \cdots + \dfrac{(-1)^{k-1} 2^{2k}B_k t^k}{(2k)!} \cdots\] Then the signature $\sigma(M^{4k})$ of any smooth compact oriented manifold $M^{4k}$ is equal to the $L$-genus $L[M^{4k}]$.\index{L-genus@$L$-genus}
+\end{theorem}
+Here $B_k$ denotes the $k$-th Bernoulli number\index{Bernoulli numbers $B_n$} (compare Appendix \ref{app:B}), with \[B_1 = \dfrac{1}{6},\quad B_2 = \dfrac{1}{30},\quad B_3 = \dfrac{1}{42},\quad \cdots .\]
+
+The first four $L$-polynomials are
+\[\begin{split}
+L_1 &= \frac{1}{3}\pontrjaginclass_1 \\
+L_2 &= \frac{1}{45}(7\pontrjaginclass_2 - \pontrjaginclass_1^2) \\
+L_3 &= \frac{1}{945}(62\pontrjaginclass_3 - 13\pontrjaginclass_2\pontrjaginclass_1 + 2\pontrjaginclass_1^3) \\
+L_4 &= \frac{1}{14175}(381\pontrjaginclass_4 - 71\pontrjaginclass_3\pontrjaginclass_1 -19\pontrjaginclass_2^2 + 22\pontrjaginclass_2\pontrjaginclass_1^2 - 3\pontrjaginclass_1^4).
+\end{split}\]
+\begin{proof}[Proof of the Signature Theorem]
+Since the correspondences $M \mapsto \sigma(M)$ and \newline $M \mapsto L[M]$ both give rise to algebra homomorphisms from $\Omega_\ast \otimes \mathbb{Q}$ to $\mathbb{Q}$, it suffices to check this theorem on a set of generators for the algebra $\Omega_\ast \otimes \mathbb{Q}$. According to Corollary \ref{cor:18.9}, the complex projective space $\projective^{2k}(\bC)$ provide such a set of generators.\index{projective space!\indexline complex $\projective^n(\bC)$}
+
+To compute the signature of $\projective^{2k}(\bC)$, we need only note that $\homology^{2k}(\projective^{2k}(\bC);\mathbb{Q})$ is generated by a single element $a^k$ with \[\langle a^k \smile a^k, \mu \rangle = 1 .\] (Compare Theorem \ref{thm:14.04} and \ref{thm:14.10}.) Hence the signature $\sigma(\projective^{2k}(\bC))$ is $+1$.
+
+To compute $L_k[\projective^{2k}(\bC)]$, we recall from example \ref{ex:15.06} that the tangential Pontrjagin class $\pontrjaginclass$ of $\projective^{2k}(\bC)$ is equal to $(1+a^2)^{2k+1}$. Since the multiplicative sequence $\{L_k\}$ belongs to the power series $f(t) = \sqrt{t}/\tanh \sqrt{t}$, it follows that \[L(1+a^2+0 + \cdots) = \dfrac{\sqrt{a^2}}{\tanh \sqrt{a^2}},\] and hence that \[L(\pontrjaginclass) = \biggl(\dfrac{a}{\tanh a}\biggr)^{2k+1}.\] Thus the $L$-genus $\langle L(\pontrjaginclass),\mu \rangle$ is equal to the coefficient of $a^{2k}$ in this power series.
+
+Replacing $a$ by the complex variable $z$, the coefficient of $z^{2k}$ in the Taylor expansion of $(z/\tanh z)^{2k+1}$ can be computed by dividing by $2\pi i z^{2k+1}$ and then integrating around the origin. In fact the substitution $u = \tanh z$, with \[\dd z = \frac{\dd u}{1-u^2} = (1+u^2 + u^4 + \cdots)\dd u,\] shows that \[\frac{1}{2\pi i} \oint \frac{\dd z}{(\tanh z)^{2k+1}} = \frac{1}{2\pi i} \oint \frac{(1+u^2 +u^4 + \cdots)}{u^{2k+1}}\dd u\] is equal to $+1$. Hence $L[\projective^{2k}(\bC)]$ is equal to $+1 = \sigma(\projective^{2k}(\bC))$, and it follows that $L[M] = \sigma(M)$ for all $M$.
+\end{proof}
+A more direct proof of the signature theorem has been given by \cite[\S6]{atiyah1968}, as an application of the ``Atiyah-Singer Index Theorem''\index{index theorem} for elliptic differential operators.
+
+\begin{corollary}
+\label{cor:19.05}
+The $L$-genus of any manifold is an integer.
+\end{corollary}
+For the signature $\sigma$ is always an integer. \ensuremath{\blacksquare}
+
+It follows, for example, that the Pontrjagin number $\pontrjaginclass_1 [M^4] $ is divisble by $3$, and the number $7\pontrjaginclass_2 [M^8] - \pontrjaginclass_1^2 [M^8]$ is divisible by $45$.\index{Pontrjagin number}
+
+\begin{corollary}
+\label{cor:19.06}
+The $L$-genus $L[M]$ depends only on the oriented homotopy type of $M$.\index{homotopy type}
+\end{corollary}
+For $\sigma(M)$ is clearly invariant under any orientation preserving homotopy equivalence. \ensuremath{\blacksquare}
+
+According to \cite{kahn}, the $L$-genus and its rational multiples are the only rational linear combinations of Pontrjagin numbers which are oriented homotopy type invariants.
+
+
+
+\end{document}

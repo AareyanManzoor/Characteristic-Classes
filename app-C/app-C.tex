@@ -1,0 +1,444 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\chapter{Connections, Curvature and Characteristic Classes}\label{app:C}
+This appendix will outline the Chern-Weil description of Characteristic classes with real or complex coefficients in terms of curvature forms. (Compare \cite{chern1948} or \cite[Section 2]{bott-chern}.) We will assume that the reader is familiar with the rudiements of exterior differential calculus and de Rham cohomology\index{de Rham cohomology}, as developed for example in \cite{warner2013foundations}. However our sign conventions, as described in Appendix \ref{app:A}, are different from those of Warner and other authors. We will return to this point later.
+
+We begin with the case of a complex vector bundle\index{vector bundle!\indexline complex}. Let $\zeta$ be a smooth complex $n$-plane bundle with smooth base space $M$, and let 
+\[
+\tau^{*}_{\mathbb{C}} = \Hom_{\mathbb{R}}(\tau,\mathbb{C})
+\]
+be the complexified dual tangent bundle\index{tangent bundle $\tangentbundle{M}$!\indexline complex} of $M$. Then the (complex) tensor product\index{tensor product $\otimes$} $\tau_{\mathbb{C}}^{*} \otimes \zeta$ is also a complex vector bundle over $M$. The vector space of smooth sections\index{cross-section} of this bundle will be denoted by $C^{\infty}(\tau_{\mathbb{C}}^{*} \otimes \zeta)$.
+
+\begin{definition}
+A \defemph{connection}\index{connection!\indexline $\nabla$} on $\zeta$ is a $\mathbb{C}$-linear mapping
+\[ \nabla : C^\infty (\zeta) \rightarrow C^\infty (\tau_{\mathbb{C}}^* \otimes \zeta) \]
+which satisifies the \defemphi{Leibniz formula}
+\[\nabla(fs) = \dd f \otimes s + f\nabla(s) \]
+for every $s \in C^\infty (\zeta)$ and every $f \in C^\infty (M,\mathbb{C})$.  The image $\nabla(s)$ is called the \defemphi{covariant derivative}\index{derivative!\indexline covariant} of $s$.
+\end{definition}
+
+The basic properties of connections can be outlined as follows. First note that \defemph{the correspondence $s \mapsto \nabla(s)$ decreases supports}. That is, if the section $s$ vanishes throughout an open subset $U \subset M$ then $\nabla(s)$ vanishes throughout $U$ also. For given $x \in U$ we can choose a smooth function $f$ which vanishes outside $U$ and is identically 1 near $x$. The identity\index{differential form}
+\[\dd f \otimes s + f\nabla(s)=\nabla(fs)=0,\]
+evaluated at $x$, shows that $\nabla(s)$ vanishes at $x$.
+
+%TODO bib, labels
+\begin{remark*}
+A linear mapping $L: C^\infty (\zeta) \rightarrow C^\infty (\eta)$ which decreases supports is also called a \defemphi{local operator}, since the value of $L(s)$ at $x$ depends only on the values of $s$ at points in an arbitrarily small neighborhood of $x$. (A theorem of \cite{peetre} asserts that every local operator is a \defemphi{differential operator}, that is it can be expressed locally as a finite linear combination of partial derivatives, with coefficients in $C^\infty (\eta)$.)
+\end{remark*}
+
+Since a connection $\nabla$ is a local operator, it makes sense to talk about the restriction of $\nabla$ to an open subset of $M$. If a collection of open sets $U_{a}$ covers $M$, then a global connection is uniquely determined by its restrictions to the various $U_{\alpha}$.
+
+If the open set $U$ is small enough so that $\zeta |_U$ is trivial, then the collection of all possible connections on $\zeta |_U$ can be described as follows. Choose a basis $s_{1}, \ldots, s_{n}$ for the sections of $\zeta |_U$, so that every section can be written uniquely as a sum $f_{1} s_{1}+\ldots+f_{n} s_{n}$, where the $f_{i}$ are smooth complex valued functions.
+
+\begin{lemma}
+A connection $\nabla$ on the trivial bundle $\zeta |_U$ is uniquely determined by $\nabla(s_{1}), \ldots, \nabla(s_{n})$, which can be completely arbitrary smooth sections of the bundle $\tau_{\mathbb{C}}^{*} \otimes \zeta |_U$. Each of the sections $\nabla(s_{i})$ can be written uniquely as a sum $\sum \omega_{i j} \otimes s_{j}$ where $[\omega_{i j}]$ can be an arbitrary $n \times n$ matrix of $C^\infty $ complex 1-forms on $U$.
+\end{lemma}
+
+\begin{proof}
+We adopt the convention that $\sum$ always stands for the summation over all indices which appear twice.
+
+In fact, given $\nabla(s_{1}), \ldots, \nabla(s_{n})$ we can define $\nabla$ for an arbitrary section by the formula
+\[ \nabla(f_{1} s_{1}+\ldots+f_{n} s_{n})=\sum \dd f_{i} \otimes s_{i}+f_{i} \nabla(s_{i})).\]  Details will be left to the reader.
+\end{proof}
+
+As an example, there is one and only one connection such that the covariant derivatives $\nabla(s_{1}), \ldots, \nabla(s_{n})$ are all zero; or in other words so that the connection matrix $[\omega_{i j}]$ is zero. It is given by $\nabla(\sum f_{i} s_{i})=$ $\sum \dd f_{i} \otimes s_{i}$. This particular ``flat'' connection\index{connection!\indexline flat} depends of course on the choice of basis $\{s_{i}\}$.
+
+The collection of all connections on $\zeta$ does not have any natural vector space structure. Note however that if $\nabla_{1}$ and $\nabla_{2}$ are two connections on $\zeta$, and $g$ is a smooth complex valued function on $M$, then the linear combination \newline $g \nabla_{1}+(1-g) \nabla_{2}$ is again a well defined connection on $\zeta$.
+
+\begin{lemma}
+Every smooth complex vector bundle with paracompact\index{paracompact} base space possesses a connection.
+\end{lemma}
+
+\begin{proof}
+Choose open sets $U_{a}$ covering the base space with $\zeta {|_U}_a$ trivial, and choose a smooth partition of unity $\{\lambda_{\alpha}\}$ with $\operatorname{supp}(\lambda_{\alpha}) \subset U_{\alpha}$. Each restriction $\zeta {|_U}_{a}$ possesses a connection $\nabla_{a}$ by Lemma 1. The linear combination $\sum \lambda_{a} \nabla_{a}$ is now a well defined global connection.
+\end{proof}
+
+Next let us consider the case of an induced vector bundle. Given a smooth map $g:M' \rightarrow M$ we can form the induced vector bundle $\zeta'=g^{*} \zeta$. Note that there is a canonical $C^\infty (M, \mathbb{C})$-linear mapping
+\[
+g^{*}: C^\infty (\zeta) \rightarrow C^\infty (\zeta^{'}) .
+\]
+Also, any 1-form on $M$ pulls back to a 1-form on $M'$, so there is a canonical $C^\infty (M, \mathbb{C})$-linear mapping
+\[
+g^{*}: C^\infty (\tau_{\mathbb{C}}^{*}(M) \otimes \zeta) \rightarrow C^\infty (\tau^{*}_\mathbb{C}(M')) \otimes \zeta')
+\]
+
+\begin{lemma}
+To each connection $\nabla$ on $\zeta$ there corresponds one and only one connection $\nabla '= g^{*} \nabla$ on the induced bundle $\zeta '$ so that the following diagram is commutative
+
+\begin{center}
+\begin{tikzcd}
+C^\infty (\zeta) \arrow[r,"\nabla"] \arrow[d] & C^\infty (\tau^{*}_{\mathbb{C}}(M) \otimes \zeta) \arrow[d] \\
+C^\infty (\zeta') \arrow[r,"\nabla '"] & C^\infty (\tau^{*}_{\mathbb{C}}(M') \otimes \zeta'). \\
+\end{tikzcd}
+\end{center}
+\end{lemma}
+
+\begin{proof}
+For example, given sections $s_{1}, \ldots, s_{n}$ over an open subset $U$ of $M$ with $\nabla(s_{i})=\sum \omega_{i j} \otimes s_{j}$ we can form the lifted 1-forms $\omega_{i j} '$ and the lifted sections $s_{i} '$ over $g^{-1}(U)$. If such a connection $\nabla '$ exists, then evidently
+\[
+\nabla' (s_{i}')=\sum \omega_{i j}' \otimes s_{j} '
+\]
+Further details will be left to the reader.
+
+\end{proof}
+
+Given a connection $\nabla$ on $\zeta$, let us try to construct something like a connection on the bundle $\tau_{\mathbb{C}}^{*} \otimes \zeta$. We will make use of $\nabla$ together with the exterior differentiation\index{exterior derivative}\index{derivative!\indexline exterior} operator $d: C^\infty (\tau_{\mathbb{C}}^{*}) \rightarrow C^\infty (\Lambda^{2} \tau_{\mathbb{C}}^{*})$.
+
+\begin{lemma}
+Given $\nabla$ there is one and only one $\mathbb{C}$-linear mapping
+\[\xhat{\nabla}: C^\infty (\tau_{\mathbb{C}}^{*} \otimes \zeta) \rightarrow C^\infty (\Lambda^{2} \tau_{\mathbb{C}}^{*} \otimes \zeta)
+\]
+which satisfies the Leibniz formula\index{Leibniz formula}
+\[
+\xhat{\nabla}(\theta \otimes s)= \dd\theta \otimes s-\theta \wedge \nabla(s)
+\]
+for every 1-form $\theta$ and every section $s \in C^\infty (\zeta)$. Furthermore $\xhat{\nabla}$ satisfies the identity \[\xhat{\nabla}(f(\theta \otimes s))=\dd f \wedge(\theta \otimes s)+f \xhat{\nabla}(\theta \otimes s).\]
+\end{lemma}
+
+\begin{proof}
+In terms of a local basis $s_{1}, \ldots, s_{n}$ for the sections, we must have
+\[
+\xhat{\nabla}(\theta_{1} \otimes s_{1}+\ldots+\theta_{n} \otimes s_{n})=\sum(\dd \theta_{i} \otimes s_{i}-\theta_{i} \wedge \nabla(s_{i})).
+\]
+Taking this formula as definition of $\xhat{\nabla}$, the required identities are easily verified.
+\end{proof}
+
+Now let us consider the composition $K=\widehat{\nabla} \circ \nabla$ of the two $\mathbb{C}$-linear mappings
+\[
+C^\infty (\zeta) \stackrel{\nabla}{\longrightarrow} C^\infty (\tau_{\mathbb{C}}^{*} \otimes \zeta) \stackrel{\widehat{\nabla}}{\longrightarrow} C^\infty (\Lambda^{2} \tau_{\mathbb{C}}^{*} \otimes \zeta)
+\]
+
+\begin{lemma}
+The value of the section $K(s)=\xhat{\nabla}(\nabla(s))$ at $x$ depends only on $s(x)$, not on the values of $s$ at other points of $M$. Hence the correspondence
+\[
+s(x) \mapsto K(s)(x)
+\]
+defines a smooth section of the complex vector bundle $\Hom(\zeta, \Lambda^{2} \tau_{\mathbb{C}}^{*} \otimes \zeta)$
+\end{lemma}
+
+\begin{definition}
+This section $K=K_{\nabla}$ of the vector bundle \newline $\Hom(\zeta, \Lambda^{2} \tau_{\mathbb{C}}^{*} \otimes \zeta) \cong \Lambda^{2} \tau_{\mathbb{C}}^{*} \otimes \Hom(\zeta, \zeta)$ is called the \defemph{curvature tensor}\index{curvature!\indexline tensor} of the connection $\nabla$.
+\end{definition}
+
+\begin{proof}
+Clearly $K$ is a local operator. The computation\index{differential form}
+\[
+\xhat{\nabla}(\nabla(fs))=\xhat{\nabla}(\dd f \otimes s+f \nabla(s))=0-\dd f \wedge \nabla(s)+\dd f \wedge \nabla(s)+f \xhat{\nabla}(\nabla(s))
+\]
+ shows that the composition $\xhat{\nabla} \circ \nabla=K$ is actually $C^\infty (M, \mathbb{C})$-linear:
+\[
+K(fs)=fK(s).
+\]
+Now if $s(x)=s'(x)$ then, in terms of a local basis $s_{1}, \ldots, s_{n}$ for sections we have
+\[
+s^{\prime}-s=f_{1} s_{1}+\ldots+f_{n} s_{n}
+\]
+near $x$, where $f_{1}(x)=\ldots=f_{n}(x)=0$. Hence
+\[
+K(s')-K(s)=\sum f_{i} K(s_{i})
+\]
+vanishes at $x$. This completes the proof.
+\end{proof}
+
+In terms of a basis $s_{1}, \ldots, s_{n}$ for the sections of $\zeta |_U$, with $\nabla(s_{i})= \sum \omega_{i j} \otimes s_{j}$, note the explicit formula
+\[
+\begin{aligned}
+K(s_{i}) &=\xhat{\nabla}\Big( \sum \omega_{ij} \otimes s_{j}\Big) \\
+&=\sum \Omega_{ij} \otimes s_{j}
+\end{aligned}
+\]
+where we have set
+\[
+\Omega_{ij}=\dd \omega_{ij}-\sum \omega_{i\alpha} \wedge \omega_{\alpha j}.
+\]
+
+Thus $K$ can be described locally by the $n \times n$ matrix $\Omega=[\Omega_{ij}]$ of 2-forms in much the same way that $\nabla$ is described locally by the matrix $\omega=[\omega_{i j}]$ of 1-forms. In matrix notation, we have
+\[
+\Omega=\dd \omega-\omega \wedge \omega .
+\]
+
+A fundamental theorem, which we will not prove, asserts that the curvature tensor $K$ is zero if and only if, in the neighborhood of each point of $M$ there exists a basis $s_{1}, \ldots, s_{n}$ for the sections of $\zeta$ so that $\nabla(s_{1})=\ldots=\nabla(s_{n})=0$. (Compare \cite{bishop2011} or \cite{kobayashi1963foundations}.) In fact if $M$ is simply connected and $K=0$, then there exist global sections $s_{1}, \ldots, s_{n}$ with $\nabla(s_{1})=\ldots=\nabla(s_{n})=0$. It follows in that case of course that $\zeta$ is a trivial bundle. If the tensor $K=K_{\nabla}$ is zero, then the connection $\nabla$ is called \defemph{flat}.\index{connection!\indexline flat}
+
+\begin{remark*}
+Using Steenrod's terminology, a bundle with flat connection can be described as a bundle with \defemph{discrete structural group}\index{structural group}\footnote{Editor's note: See Section~\ref{sec:2.2} for explanation of the structural group.}. To see this consider two different local bases, say $s_1,\dots,s_n \in C^{\infty}(\zeta|_U)$ and $s_1',\dots,s_n' \in C^{\infty}(\zeta|_V)$, both of which have covariant derivatives zero. Over the intersection $U\cap V$ we can set $s_i'=\sum a_{ij}s_j$. The equation $\nabla(s_i')=\sum \dd a_{ij}\otimes s_j=0$ shows that the transition functions $a_{ij}$ are locally constant. Hence the associated mapping
+\[
+[a_{ij}]:U \cap V \to \text{GL}(n,\mathbb C)
+\]
+is continuous, even if the linear group $\text{GL}(n,\mathbb C)$ is provided with the discrete topology.
+\end{remark*}
+
+Starting with the curvature tensor $K$, we can construct characteristic classes as follows. Let $M_n(\mathbb C)$ be the algebra consisting of all $n\times n$ complex matrices.
+
+\begin{definition}
+An \defemphi{invariant polynomial} on $M_n(\mathbb C)$ is a function
+
+\[
+P:M_n(\mathbb C) \to \mathbb C
+\]
+which can be expressed as a complex polynomial in the entries of the matrix, and satisfies
+\[
+P(XY) = P(YX),
+\]
+or equivalently 
+\[ 
+P(TXT^{-1})=P(X)
+\]
+for every non-singular matrix $T$.
+\end{definition}
+
+(The first identity evidently follows from the second when $Y$ is non-singular, and the general case follows by continuity, since every singular matrix can be approximated by non-singular matrices.)
+
+\defemph{Examples}. The trace\index{trace} function $[X_{ij}] \to \sum X_{ii}$, and the determinant\index{determinant} function are well known examples of invariant polynomials on $M_n(\mathbb C)$
+
+If $P$ is an invariant polynomial, then an \defemph{exterior form $P(K)$ on the base space $M$}\index{exterior form} is defined as follows. Choosing a local basis $s_1,\dots,s_n$ for the sections near $x$, we have $K(s_i)=\sum \Omega_{ij}\otimes s_j$. The matrix $\Omega=[\Omega_{ij}]$ has entries in the commutative algebra over $\mathbb C$ consisting of the exterior forms of even degree. It makes perfect sense therefore to evaluate the complex polynomial $P$ at $\Omega$, thus obtaining an algebra element. The resulting algebra element $P(\Omega)$ does not depend on the choice of basis $s_1,\dots,s_n$, since a change of basis will replace the matrix $\Omega$ by one of the form $T\Omega T^{-1}$ where $T$ is a non-singular matrix of functions. Since $P(T\Omega T^{-1})=P(\Omega)$, these various local differential forms $P(\Omega)$ are uniquely defined. They piece together to yield a global differential form which we denote by $P(K)$
+
+\setcounter{remark}{0}
+
+\begin{remark} If $P$ is a homogeneous polynomial of degree $r$, then of course $P(K)$ is an exterior form of degree $2r$. In general, $P$ will be a sum of homogeneous polynomials of various degrees, and correspondingly $P(K)$ will be a sum of exterior forms of various even degrees. We will use the notation $P(K) \in C^{\infty}(\Lambda^{\oplus}\tau_\mathbb C^*)=\bigoplus C^{\infty}(\Lambda^r\tau_\mathbb C^*)$.
+\end{remark}
+\begin{remark} 2. More generally, in place of an invariant polynomial, one can equally well use an invariant formal power series of the form
+\[
+P = P_0 + P_1 + P_2 + \dots
+\]
+where each $P_r$ is an invariant homogeneous polynomial of degree $r$. Then $P(K)$ is still well defined, since $P_r(K)=0$ for $2r > \dim(M)$. (A notable example of an invariant formal power series is the Chern character\index{Chern character} $\chernchar(A)=\trace(\eulerclass^{A/2\pi i})$.
+\end{remark}
+
+%[SECOND PART]
+%TODO: label "fundamental lemma"
+\begin{lemma*}[Fundamental Lemma]
+For any invariant polynomial (or invariant formal power series) $P$, the exterior form $P(K)$ is closed, that is $\dd P(K) = 0$.
+\end{lemma*}
+
+\begin{proof}
+Given any invariant polynomial or formal power series\index{power series} $P(A) = P([A_{ij}])$, where $A_{ij}$ stand for indeterminates, we can form the matrix \[\bigg[\dfrac{\partial P}{\partial A_{ij}}\bigg]\] of formal first derivatives. It will be convenient to denote the \defemph{transpose} of this matrix by the symbol $P'(A)$. 
+
+Now let $\Omega = [\Omega_{ij}]$ be the curvature matrix with respect to some basis for $\zeta \restr_U$. Evidently the exterior derivative $\dd P(\Omega)$ is equal to the expression \[\sum \dfrac{\partial P}{\partial \Omega_{ij}} \dd \Omega_{ij}.\] In matrix notation, we can write this
+\begin{equation}
+\label{eqn:C.1}
+\dd P(\Omega) = \trace(P'(\Omega) \dd \Omega).
+\end{equation}
+The matrix $\dd \Omega$ of $3$--forms can be computed by taking the exterior derivative of the matrix equation \[\dd \Omega = \dd  \omega - \omega \wedge \omega,\] and then substituting this equation back into the result. This yields the \defemphi{Bianchi identity} 
+\begin{equation}
+\label{eqn:C.2}
+\dd \Omega = \omega \wedge \Omega - \Omega \wedge \omega.
+\end{equation}
+
+We will need the following remark. \defemph{For any invariant polynomial or power series $P$, the transposed matrix of first derivatives $P'(A)$ commutes with $A$.} To prove this statement, let $E_{ji}$ denote the matrix with entry $1$ in the $(j, i)$--th place and zeros elsewhere. Differentiating the equation \[P((I + t E_{ji})A) = P(A(I + t E_{ji}))\] with respect to $t$ and then setting $t = 0$, we obtain \[\sum A_{i \alpha} \dfrac{\partial P}{\partial A_{j \alpha}} = \sum \dfrac{\partial P}{\partial A_{\alpha i}} A_{\alpha j}.\] Thus the matrix $A$ commutes with the transpose of $[\partial P/\partial A_{ij}]$, as asserted. 
+
+Substituting $\Omega$ for the matrix of indeterminates $A$, it follows that
+\begin{equation}
+\label{eqn:C.3}
+\Omega \wedge P'(\Omega) = P'(\Omega) \wedge \Omega.
+\end{equation}
+It will be convenient to use the notation $X$ for the product matrix $P'(\Omega) \wedge \omega$. Now substituting the Bianchi identity \eqref{eqn:C.2} into \eqref{eqn:C.1} and using \eqref{eqn:C.3} we obtain 
+\begin{align*}
+\dd P(\Omega) & = \trace (X \wedge \Omega - \Omega \wedge X) \\ & = \sum (X_{ij} \wedge \Omega_{ji} - \Omega_{ji} \wedge X_{ij}).
+\end{align*}
+Since each $X_{ij}$ commutes with the $2$--form $\Omega_{ji}$, this sum is zero, which proves the Fundamental Lemma. 
+\end{proof}
+
+Thus the exterior form $P(K)$ is closed, or in other words is a de Rham cocycle, representing an element which we denote by $(P(K))$ in the total de Rham cohomology\index{de Rham cohomology} ring $\homology^\oplus(M; \mathbb C) = \bigoplus \homology^i(M; \mathbb C)$.
+
+\begin{corollary}
+The cohomology class $(P(K)) = (P(K_\nabla))$ is independent of the connection $\nabla$.\index{connection!\indexline $\nabla$}
+\end{corollary}
+
+\begin{proof}
+Let $\nabla_0$ and $\nabla_1$ be two different connections on $\zeta$. Mapping $M \times \mathbb R$ to $M$ by the projection $(x, t) \mapsto x$, we can form the induced bundle $\zeta'$ over $M \times \mathbb R$, the induced connections $\nabla_0'$ and $\nabla_1'$, and the linear combination \[\nabla = t \nabla_1' + (1 - t) \nabla_2'.\] Thus $P(K_\nabla)$ is a de Rham cocycle on $M \times \mathbb R$. 
+
+Now consider the map $i_\varepsilon : x \mapsto (x, \varepsilon)$ from $M$ to $M \times \mathbb R$, where $\varepsilon$ equals $0$ or $1$. Evidently the induced connection $(i_\varepsilon)^\ast \nabla$ on $(i_\varepsilon)^\ast \zeta'$ can be identified with the connection $\nabla_\varepsilon$ on $\zeta$. Therefore \[(i_\varepsilon)^\ast (P(K_\nabla)) = (P(K_{\nabla_\varepsilon})).\] But the mapping $i_0$ is homotopic to $i_1$ hence the cohomology class $(P(K_{\nabla_0}))$ is equal to $(P(K_{\nabla_1}))$.
+\end{proof}
+
+Thus $P$ determines a \defemph{characteristic cohomology class}\index{characteristic class} in $\homology^\ast(M; \mathbb C)$ depending only on the isomorphism class of the vector bundle $\zeta$. If a map $g : M' \longrightarrow M$ induces a bundle $\zeta' = g^\ast \zeta$, with induced connection $\nabla'$, then clearly \[P(K_{\nabla'}) = g^\ast P(K_\nabla).\] \defemph{Thus these characteristic classes are well behaved with respect to induced bundles.} 
+
+But we already know from Section~\ref{ch:14} that any characteristic class for complex vector bundles can be expressed as a polynomial in the Chern classes\index{Chern class $\chernclass_i$}. Thus we are left with the following two questions: What invariant polynomials exist; and how can their associated characteristic classes be expressed explicitly in terms of Chern classes?
+
+The first answer can easily be answered as follows. For any square matrix $A$, let $\sigma_k(A)$ denote the $k$--th elementary symmetric function\index{symmetric function} of the eigenvalues of $A$, so that\index{determinant} \[\det(I + t A) = 1 + t \sigma_1(A) + \ldots + t^n \sigma_n(A).\] 
+
+\begin{lemma}
+Any invariant polynomial on $M_n(\mathbb C)$ can be expressed as a polynomial function of $\sigma_1, \ldots, \sigma_n$. 
+\end{lemma}
+
+\begin{proof}
+Given $A \in M_n(\mathbb C)$ we can choose $B$ so that $BAB^{-1}$ is an upper triangular matrix; in fact, we could actually put $A$ in Jordan canonical form. Replacing $B$ by $\diag(\epsilon, \epsilon^2, \ldots, \epsilon^n)B$, we can then make the off diagonal entries arbitrarily close to zero. By continuity it follows that $P(A)$ depends only on the diagonal entries of $BAB^{-1}$, or in other words on the eigenvalues of $A$. Since $P(A)$ must certainly be a symmetric function of these eigenvalues, the classical theory of symmetric functions completes the proof. 
+\end{proof}
+
+We will see later that the characteristic class $(\sigma_r(K))$ is equal to a complex multiple of the Chern class $\chernclass_r(\zeta)$. 
+
+Leaving this for a moment, let us look at the corresponding theory for real vector bundles. The concepts of a connection \[\nabla : C^\infty(\xi) \longrightarrow C^\infty(\tau^\ast \otimes \xi)\] on a real vector bundle $\xi$, and of its curvature tensor \[K \in C^\infty(\Hom(\xi, \Lambda^2 \tau^\ast \otimes \xi)) \cong C^\infty(\Lambda^2 \tau \otimes \Hom(\xi, \xi)),\] are defined just as above, simply substituting the real numbers for the complex numbers throughout. Any invariant polynomial $P$ on the matrix algebra $M_n(\mathbb R)$ gives rise to a characteristic cohomology class $(P(K)) \in \homology^\ast(M; \mathbb R)$. 
+
+The most classical and familiar example of a connection is provided by the Levi-Civita connection\index{connection!\indexline Riemannian / Levi-Civita} on the tangent or dual tangent bundle of a Riemannian manifold\index{Riemannian manifold}. We will next give an outline of this theory.
+
+First consider a real vector bundle $\xi$ over $M$ which is provided with a Euclidean metric\index{Euclidean metric}. Thus if $s$ and $s'$ are smooth sections of $\xi$, then the inner product $\ip s {s'}$ is a smooth real valued function over $M$. 
+
+\begin{definition}
+A connection $\nabla$ on $\xi$ is \defemph{compatible} with the metric\index{Riemannian metric} if the identity \[\dd \ip s {s'} = \ip {\nabla s} {s'} + \ip s {\nabla s'}\] is valid for all sections $s$ and $s'$. 
+\end{definition}
+
+Here it is understood that the inner products on the right are defined by the requirement that \[\ip {\theta \otimes s} {s'} = \ip s {\theta \otimes s'} = \ip s {s'} \theta\] for all $\theta \in C^\infty(\tau^\ast)$ for all $s, s' \in C^\infty(\xi)$. Unfortunately this notation can be confusing in some situations. It is safer in general to make use of the following. 
+
+\begin{lemma}
+Let $s_1, \ldots, s_n$ be an orthonormal basis for the sections of $\xi \restr_U$, so that $\ip {s_i} {s_j} = \delta_{ij}$. Then a connection $\nabla$ on $\xi \restr_U$ is compatible with the metric if and only if the associated connection matrix $[\omega_{ij}]$ (defined by $\displaystyle \nabla(s_i) = \sum \omega_{ij} \otimes s_j$) is skew--symmetric. 
+\end{lemma}
+
+\begin{proof}
+For if $\nabla$ is compatible, then 
+\begin{align*}
+0 = \dd \ip {s_i} {s_j} & = \ip {\nabla s_i} {s_j} + \ip {s_i} {\nabla s_j} \\ & = \ip {\sum \omega_{ik} \otimes s_k} {s_j} + \ip {s_i} {\sum \omega_{jk} \otimes s_k} = \omega_{ij} + \omega_{ji}.
+\end{align*}
+The converse will be left to the reader.
+\end{proof}
+
+\begin{remark*}
+The appearance of skew--symmetric matrices at this point is of course bound up with the fact that the Lie algebra of the orthogonal group $\Orthogonal(n)$ is equal to the Lie subalgebra of $M_n(\mathbb R)$ consisting of all skew--symmetric matrices. 
+\end{remark*} 
+
+\begin{definition}
+A connection $\nabla$ on $\tau^\ast$ is \defemph{symmetric}\index{connection!\indexline symmetric} (or torsion free) if the composition \[C^\infty(\tau^\ast) \varrightarrow{\nabla} C^\infty(\tau^\ast \otimes \tau^\ast) \varrightarrow{\wedge} C^\infty(\Lambda^2 \tau^\ast)\] is equal to the exterior derivative $\dd$. 
+\end{definition}
+
+In terms of local coordinates $x_1, \ldots x^n$, setting \[\nabla (\dd x^k) = \sum \Gamma_{ij}^k \dd x^i \otimes \dd x^j\] this requires that the image $\displaystyle \sum \Gamma_{ij}^k \dd x^i \wedge \dd x^j$ must be equal to the exterior derivative $\dd(\dd x^k) = 0$. Hence the \defemphi{Christoffel symbols} $\Gamma_{ij}^k$ must be symmetric in $i, j$. More generally, the following is easily verified. 
+
+\begin{assertion*}
+A connection $\nabla$ on $\tau^\ast$ is symmetric if and only if the second covariant derivative\index{covariant derivative}\index{derivative!\indexline covariant} \[\nabla (\dd f) \in C^\infty(\tau^\ast \otimes \tau^\ast)\] of an arbitrary smooth function $f$ is a symmetric tensor. That is, in terms of a local basis $\theta_1, \ldots, \theta_n$ for the sections of $\tau^\ast$, one must have $\displaystyle \nabla(\dd f) = \sum a_{ij} \theta_i \otimes \theta_j$ with $a_{ij} = a_{ji}$. 
+\end{assertion*}
+
+\begin{lemma}
+\label{lem:C.8}
+The dual tangent bundle $\tau^\ast$ of a Riemannian manifold possesses one and only one symmetric connection which is compatible with its metric. 
+\end{lemma}
+
+This prefered connection $\nabla$ is called the \defemph{Riemannian connection} or the \defemph{Levi--Civita connection}\index{connection!\indexline Riemannian / Levi-Civita}. 
+
+\begin{proof}
+Let $\theta_1, \ldots, \theta_n$ be an orthonormal basis for the sections of $\tau^\ast \restr_U$. We will show that there is one and only one skew--symmetric matrix $[\omega_{kj}]$ of $1$--forms such that \[\dd  \theta_k = \sum \omega_{kj} \wedge \theta_j.\] Defining a connection $\nabla$ on $U$ by the requirement that \[\nabla(\theta_k) = \sum \omega_{kj} \otimes \theta_j\] it evidently follows that $\nabla$ is the unique symmetric connection for $\tau^\ast \restr_U$ which is compatible with the metric. Since these local connections are unique, they agree on intersections $U \cap U'$ and so piece together to yield the required global connection. 
+
+We will need the following combinatorial remark. Any $n \times n \times n$ array of real valued functions $A_{ijk}$ \defemph{can be written uniquely as the sum of an array $B_{ijk}$ which is symmetric in $i, j$ and an array $C_{ijk}$ which is skew--symmetric in $j, k$.} In fact, existence can be proved by inspecting the explicit formulas
+\begin{align*}
+B_{ijk} & = \frac 1 2 (A_{ijk} + A_{jik} - A_{kij} - A_{kji} + A_{jki} + A_{ikj}) \\ C_{ijk} & = \frac 1 2 (A_{ijk} - A_{jik} + A_{kij} + A_{kji} - A_{jki} - A_{ikj})
+\end{align*}
+and uniqueness is clear since if an array $D_{ijk}$ were both symmetric in $i, j$ and skew in $j, k$ then the equalities \[D_{123} = D_{213} = -D_{231} = -D_{321} = D_{312} = D_{132} = -D_{123}\] would show that the typical entry $D_{123}$ is zero. 
+
+Now choosing functions $A_{ijk}$ so that\index{differential form} $\displaystyle \dd  \theta_k = \sum A_{ijk} \theta_i \wedge \theta_j$ and setting \newline $A_{ijk} = B_{ijk} + C_{ijk}$ as above, it follows that $\displaystyle \dd  \theta_k = \sum C_{ijk} \theta_i \wedge \theta_j$. In fact, the $1$--forms \[\omega_{kj} = \sum C_{ijk} \theta_i\] evidently constitute the unique skew--symmetric matrix with $\displaystyle \dd \theta_k = \sum \omega_{kj} \wedge \theta_j$. This proves Lemma~\ref{lem:C.8}. 
+\end{proof}
+
+Let us specialize to the case of a $2$--dimensional oriented Riemannian manifold. With respect to an oriented local orthonormal basis $\theta_1, \theta_2$ for $1$--forms, the connection and curvature matrices take the form \[\begin{bmatrix}0 & \omega_{12} \\ -\omega_{12} & 0\end{bmatrix} \text { and } \begin{bmatrix}0 & \Omega_{12} \\ -\Omega_{12} & 0\end{bmatrix},\] with $\dd \omega_{12} = \Omega_{12}$. \defemph{The identity} \[\begin{bmatrix}\cos t & \sin t \\ -\sin t & \cos t\end{bmatrix} \begin{bmatrix}0 & \Omega_{12} \\ -\Omega_{12} & 0\end{bmatrix} \begin{bmatrix}\cos t & -\sin t \\ \sin t & \cos t\end{bmatrix} = \begin{bmatrix}0 & \Omega_{12} \\ -\Omega_{12} & 0\end{bmatrix}\] \defemph{shows that the exterior $2$--form $\Omega_{12}$ is independent of the choice of oriented local basis}. Hence it gives rise to a well defined global $2$--form.
+
+\begin{definition}
+This form $\Omega_{12}$ is called the \defemph{Gauss--Bonnet 2--form}\index{Gauss-Bonnet $2$-form $\Omega_{12}$} on the oriented surface. Denoting the oriented area $2$--form $-\theta_1 \wedge \theta_2$ briefly by the symbol $\dd A$, we can set $\Omega_{12} = {\mathcal K} \dd A$, where $\mathcal K$ is a scalar function called the \defemph{Gaussian curvature}\index{curvature!\indexline Gaussian}. 
+\end{definition}
+
+Since both $\Omega_{12}$ and $\dd A$ change sign if we reverse the orientation of $M$, it follows that $\mathcal K$ is independent of orientation.
+
+\defemph{Note on signs}\index{sign conventions}. The above choice of sign for $\dd A$ may look strange to the reader. It can be justified as follows. In conformity with \cite{maclane_1975}, and as described in Appendix~\ref{app:A}, we introduce the sign of $(-1)^{mn}$ whenever an object of dimension $m$ is permuted with an adjacent object of dimension $n$. Thus if $I^n$ denotes the unit cube with ordered coordinates $t_1, \ldots, t_n$ and canonical orientation class $\mu \in \homology_n(I^n, \partial I^n)$, we set 
+\begin{align*}
+\ip {\dd t_1 \wedge \ldots \wedge \dd t_n} \mu & = \bigg\langle\dd t_1 \wedge \ldots \wedge \dd t_n,\int_{t_1 = 0}^1 \cdots \int_{t_n = 0}^1\bigg\rangle \\ & = (-1)^{n + (n - 1) + \ldots + 1} \int_{t_1 = 0}^1 \dd t_1 \ldots \int_{t_n = 0}^1 \dd t_n = (-1)^{n(n + 1)/2}.
+\end{align*}
+In other words the ``oriented volume $n$--form'' on $I^n$ is, by definition, set equal to $(-1)^{n(n + 1)/2} \dd t_1 \wedge \ldots \wedge \dd t_n$. This choice of signs leads to a version of Stokes' theorem\index{Stokes' theorem}, \[\ip {\dd \phi} \mu + (-1)^{\dim \phi} \ip \phi {\partial \mu} = 0,\] which is compatible with Appendix~\ref{app:A}. Readers who prefer to use the classical sign conventions in \cite{spanier1981}, \cite{warner2013foundations} and \cite{bott-chern} can forget about these signs, but should replace $\mathcal K$ by $-\mathcal K$ wherever it occurs in our characteristic formulas. 
+
+ To give some reality to this rather abstract definition, let us carry out a more explicit computation. In some neighborhood $U$ of an arbitrary point on a Riemannian $2$--manifold, one can introduce \defemphi{geodesic coordinates} $x, y$ so that the metric quadratic differential in $C^\infty(\tau^\ast \otimes \tau^\ast|_U)$ takes the form 
+ \[\dd x \otimes \dd x + g(x, y)^2 \dd y \otimes \dd y.\] Then setting \[\theta_1 = \dd x, \quad \theta_2 = g \dd y\] we obtain an orthonormal basis for the $1$--forms over $U$. The equations
+\begin{align*}
+\dd  \theta_1 & = \omega_{12} \wedge \theta_2 \\ \dd  \theta_2 & = -\omega_{12} \wedge \theta_1
+\end{align*}
+have unique solution $\omega_{12} = g_x \dd y$, where subscript $x$ stands for the partial derivative. It follows that \[\Omega_{12} = g_{xx} \dd x \wedge \dd y = (-g_{xx}/g) \dd A.\] Thus the Gaussian curvature\index{curvature!\indexline Gaussian} is given by \[\mathcal K = -g_{xx}/g.\] As an example, taking latitude and longitude as coordinates on the unit sphere, we have $g(x, y) = \cos(x)$, and therefore $\mathcal K = 1$. 
+%[THIRD PART] 
+%TODO: label "Gauss--Bonnet Theorem"
+\begin{theorem*}[Gauss-Bonnet]\index{Gauss-Bonnet theorem!\indexline classical}
+For any closed oriented Riemannian $2$--manifold, the integral $\iint \Omega_{12} = \iint \mathcal K \dd A$ is equal to $2 \pi \eulerclass[M]$.
+\end{theorem*}
+
+\begin{proof}
+More generally, consider any oriented $2$--plane bundle $\xi$ with Euclidean metric. Then $\xi$ has a canonical complex structure $\complexstructure$ which rotates each vector through an angle of $\pi/2$ in the ``counter--clockwise'' direction. In terms of an oriented local orthonormal basis $s_1, s_2$ for sections, we have $\complexstructure s_1(x) = s_2(x)$. Choosing any compatible connection on $\xi$, we have
+\begin{align*}
+\nabla s_1 & = \omega_{12} \otimes s_2 \\ \nabla s_2 & = -\omega_{12} \otimes s_1.
+\end{align*}
+Evidently $\nabla$ gives rise to a connection\index{connection!\indexline $\nabla$} on the resulting complex line bundle $\zeta$, where \[\nabla s_1 = \omega_{12} \otimes i s_1 = i \omega_{12} \otimes s_1\] and consequently $\nabla(i s_1) = i \nabla s_1 = -\omega_{12} \otimes s_1$. Thus the connection matrix of this complex connection is the $1 \times 1$ matrix $[i \omega_{12}]$ and the curvature matrix\index{curvature!\indexline matrix} is $[i \Omega_{12}]$. Applying the invariant polynomial $\sigma_1 = \trace$\index{trace}, we obtain a closed $2$--form \[\trace [i \Omega_{12}] = i\Omega_{12}\] which represents some characteristic cohomology class in $\homology^2(M; \mathbb C)$. But the only characteristic class in $\homology^2(-; \mathbb C)$ for complex line bundles $\zeta$ is the Chern class\index{Chern class $\chernclass_i$} $\chernclass_1(\zeta) = \eulerclass(\zeta_{\mathbb R})$ (and its multiples). Therefore \[(i \Omega_{12}) = \alpha \chernclass_1(\zeta) = \alpha \eulerclass(\zeta)\] for some complex constant $\alpha$. 
+
+To evaluate this constant $\alpha$, it is only necessary to calculate both sides explicitly for one particular case. Suppose for example that $\xi$ is the dual tangent bundle $\tau^\ast$ of a closed oriented $2$--dimensional Riemannian manifold $M$. Since $(i \Omega_{12}) = \alpha \eulerclass(\tau^\ast)$, it follows that \[\iint i \Omega_{12} = \alpha \eulerclass[M]\] or in other words \[i \iint \mathcal K \dd A = \alpha \eulerclass[M].\] Evaluating both sides for the unit $2$--sphere, we see that $\alpha = 2 \pi i$. This completes the proof. 
+\end{proof}
+
+\begin{theorem*}
+Let $\zeta$ be a complex vector bundle with connection $\nabla$. Then the cohomology class $(\sigma_r(K_\nabla))$ is equal to $(2 \pi i)^r \chernclass_r(\zeta)$. 
+\end{theorem*}
+
+\begin{proof}
+In the case of a complex line bundle, the argument above shows that \[(\sigma_1(K)) = \alpha \chernclass_1(\zeta) = 2 \pi i \chernclass_1(\zeta).\] Define the invariant polynomial $\underline \chernclass$ by 
+\begin{align*}
+{\underline \chernclass}(A) & = \det(I + A/2\pi i) \\ & = \sum \dfrac{\sigma_k(A)}{(2 \pi i)^k}
+\end{align*}
+Thus, for a complex line bundle the coycle \[{\underline \chernclass}(K) = 1 + \sigma_1(K)/2 \pi i\] represents the cohomology class $\chernclass(\zeta) = 1 + \chernclass_1(\zeta)$. Now consider any bundle $\zeta$ which splits as a Whitney sum\index{Whitney sum} $\zeta_1 \oplus \ldots \oplus \zeta_n$ of line bundles. Choosing connections $\nabla_1, \ldots, \nabla_n$ on the $\zeta_j$, there is evidently a ``Whitney sum'' connection on $\zeta$. Choosing a local section $s_j$ for $\zeta_j$ near $x$, we can consider $s_1, \ldots, s_n$ as sections of $\zeta$. The corresponding local curvature matrix is diagonal: \[\Omega = \diag(\Omega_1, \ldots, \Omega_n),\] and hence \[{\underline \chernclass}(\Omega) = {\underline \chernclass}(\Omega_1) \ldots {\underline \chernclass}(\Omega_n).\] It follows that the corresponding global exterior forms have the same property \[{\underline \chernclass}(K) = {\underline \chernclass}(K_1) \ldots {\underline \chernclass}(K_n).\] But the right side of this equation represents the total Chern classes \[\chernclass(\zeta_1) \ldots \chernclass(\zeta_n) = \chernclass(\zeta).\] Thus the equality $\chernclass (\zeta) = ({\underline \chernclass}(K))$ is true for any bundle $\zeta$ which is a Whitney sum of line bundles.
+
+The general case now follows by a standard argument. (Compare \cite[Section 4.2]{hirzebruch53} or the uniqueness proof for Stiefel--Whitney classes in Section~\ref{ch:7}.) If $\gamma^1$ denotes the universal line bundle over ${\mathbb P}_m(\mathbb C)$ with $m$ large, then the $n$--fold cross product of copies of $\gamma^1$ satisfies \[\chernclass(\gamma^1 \times \ldots \times \gamma^1) = ({\underline \chernclass}(K(\gamma^1 \times \ldots \times \gamma^1))).\] Since the cohomology of the base space $\grassmannian_n({\mathbb C}^\infty)$ of the universal bundle $\gamma^n$ maps monomorphically into the cohomology of ${\mathbb P}_m(\mathbb C) \times \ldots \times {\mathbb P}_m(\mathbb C)$ in dimensions $\le 2m$, it follows that \[\chernclass(\gamma^n) = ({\underline \chernclass}(K(\gamma^n))).\] Therefore $\chernclass(\zeta) = ({\underline \chernclass}(K(\zeta)))$ for an arbitrary bundle $\zeta$. 
+\end{proof}
+
+\begin{corollary}
+For any real vector bundle $\xi$ the de Rham cocycle $\sigma_{2k}(K)$ represents the cohomology class $(2 \pi)^{2k} \pontrjaginclass_k(\xi)$ in $\homology^{4k}(M; \mathbb R)$ while $\sigma_{2k + 1}(K)$ is a coboundary.
+\end{corollary}
+
+\begin{proof}
+In other words the total Pontrjagin class $1 + \pontrjaginclass_1(\xi) + \pontrjaginclass_2(\xi) + \ldots$ in $\homology^\oplus(M; \mathbb R)$ corresponds to the invariant polynomial ${\underline \pontrjaginclass}(A) = \det(I + A/2\pi)$. This follows immediately from the Theorem together with thedefinition of Pontrjagin classes.
+\end{proof}
+
+\begin{remark*}
+Here is a direct proof that $\sigma_{2k + 1}(K)$ is a coboundary. Choose a Euclidean metric on $\xi$, and choose a compatible connection $\nabla$\index{connection!\indexline $\nabla$}. Then the connection matrix with respect to a local orthonormal basis for sections is skew symmetric, and it follows easily that the associated curvature matrix $\Omega$ is skew also, $\Omega^t = -\Omega$. Therefore \[\sigma_m(\Omega) = \sigma_m(\Omega^t) = (-1)^m \sigma_m(\Omega).\] Thus $\sigma_m(K_\nabla)$ is zero as a cocycle for $m$ odd. For an arbitrary (non--metric) connection $\nabla'$; it follows that $\sigma_m(K_{\nabla'})$ is a coboundary.
+\end{remark*} 
+
+\begin{corollary}
+If a real [or complex] vector bundle possesses a flat connection\index{connection!\indexline flat} then all of its Pontrjagin\index{Pontrjagin class $\pontrjaginclass_i$} [or Chern] classes with rational coefficients are zero. 
+\end{corollary}
+
+\begin{proof}
+The proof is clear. 
+\end{proof}
+
+\begin{remark*}
+If the homology $\homology_\ast(M; \mathbb Z)$ with integer coefficients is finitely generated, then it also follows that the Pontrjagin [or Chern] classes with integer coefficients are torsion elements. These torsion elements are not zero in general. \cite{bott-heitsch} have recently constructed a real [or complex] vector bundle with discrete structural group whose Pontrjagin [or Chern] classes in $\homology^\ast(B; \mathbb Z)$ are non--torsion elements which satisfy no polynomial relations. Of course the homology $\homology_\ast(B; \mathbb Z)$ cannot be finitely generated. 
+\end{remark*} 
+
+One piece of information is conspicuously absent in the above discussion. We do not have any expression for the Euler class of an oriented $2n$--plane bundle in terms of curvature (except for a very special construction in the case $n=1$). This is not just an accident. We will see later by an example that there cannot be any formula for the Euler class\index{Euler class $\eulerclass$} in terms of the curvature of an arbitrary connection. The situation changes, however, if the connection is required to be compatible with a Euclidean metric\index{Euclidean metric} on $\xi$.
+
+The following classical construction will be needed. 
+
+\begin{lemma}
+\label{lem:C.9}
+There exists one and up to sign only one polynomial with integer coefficients which assigns, to each $2n \times 2n$ skew--symmetric matrix $A$ over a commutative ring, a ring element $P f(A)$ whose square is the determinant\index{determinant} of $A$. Furthermore \[Pf(BAB^t) = Pf(A) \det(B)\] for any $2n \times 2n$ matrix $B$. 
+\end{lemma}
+
+We will specify the sign by requiring that $Pf(\diag(S, \ldots, S)) = +1$, where $S$ denotes the $2 \times 2$ matrix $\begin{bmatrix}0 & 1 \\ -1 & 0\end{bmatrix}$. The resulting polynomial $P f$ is called the \defemph{Pfaffian}\index{Pfafian}. As examples, \[Pf \begin{bmatrix}0 & a \\ -a & 0\end{bmatrix} = a,\] and the Pfaffin of a $4 \times 4$ skew matrix $[a_{ij}]$ equals $a_{12} a_{34} - a_{13} a_{24} + a_{14} a_{23}$.
+
+\begin{proof}
+To prove\footnote{For details, see \cite[chapter 9, p. 82]{bourbaki1998algebra}} Lemma~\ref{lem:C.9}, we will work in the ring\newline $\Lambda = \mathbb Z[A_{12}, \ldots, A_{(2n - 12),n}, B_{11}, \ldots, B_{2n, 2n}]$ in which all of the above diagonal entries of the skew matrix $A = [A_{ij}]$ and all of the entries of $B = [B_{ij}]$ are distinct indeterminates. Over the quotient field of $\Lambda$, it is not difficult to find a matrix $X$ so that $X A X^t = \diag(S, \ldots, S)$. Hence the polynomial $\det(A) \in \Lambda$ is equal to a square $\det(A)^{-2}$ in the quotient field of $\Lambda$. Since $\Lambda$ is a unique factorization domain, this implies that $\det(A)$ is a square already within $\Lambda$. 
+
+Similarly, the identity $\det(BAB^t) = \det(A) \det(B)^2$ implies that \[Pf(BAB^t) = \pm Pf(A) \det(B),\] and specialising to $B = I$ we see that the sign must be $+1$. 
+\end{proof}
+
+Now let $\xi$ be an oriented $2n$--plane bundle with Euclidean metric. Choosing an oriented orthonormal basis for the sections of $\xi$ throughout a coordinate neighborhood $U$, the curvature matrix\index{curvature!\indexline matrix} $\Omega = [\Omega_{ij}]$ is skew--symmetric, so \[Pf(\Omega) \in C^\infty(\Lambda^{2n} \tau^\ast|_U)\] is defined. Choosing a different oriented basis for the sections over $U$, this exterior form will be replaced by $Pf(X \Omega X^{-1})$ where the matrix $X$ is orthogonal\newline ($X^{-1} = X^t$) and orientation preserving ($\det X = 1$). Hence the Pfaffian is unchanged. Thus we can piece these local forms together to obtain a global $2n$--form \[Pf(K) \in C^\infty(\Lambda^{2n} \tau^\ast).\] (As an example, for $n = 2$ we recover the statement that the Gauss--Bonnet\index{Gauss-Bonnet $2$-form $\Omega_{12}$} $2$--form $\Omega_{12} = Pf(K)$ is globally well defined.) Just as in the previous case, one can verify that the matrix of formal partial derivatives $[\partial Pf(A)/\partial A_{ij}]$ commutes with $A$, and hence that \[\dd Pf(K) = 0.\] Thus $Pf(K)$ represents a characteristic cohomology class in $\homology^{2n}(M; \mathbb R)$. Passing to a bundle ${\xtilde \gamma}$ which is universal in dimensions $\le 4n$, since the square of $Pf(K({\xtilde \gamma}))$ represents the cohomology class \[\det(K({\xtilde \gamma})) = (2\pi)^{2n} \pontrjaginclass_n({\xtilde \gamma}),\] we see that \[(Pf(K({\xtilde \gamma}))) = \pm (2 \pi)^n \eulerclass({\xtilde \gamma})\] and hence that $(Pf(K(\xi))) = \pm (2 \pi)^n \eulerclass(\xi)$ for any oriented $2n$--plane bundle $\xi$. In fact, the sign is $+1$, as can be verified by evaluating both sides for a Whitney sum of $2$--plane bundles. Thus we have proved the following.
+%label just "Generalized Gauss--Bonnet Theorem"
+\begin{theorem*}[Generalized Gauss--Bonnet Theorem]\index{Gauss-Bonnet theorem!\indexline generalized}
+For any oriented $2n$--plane bundle $\xi$ with Euclidean metric and any compatible connection, the exterior $2n$--form $Pf(K/2\pi)$ represents the Euler class $\eulerclass(\xi)$\index{Euler class $\eulerclass$}. 
+\end{theorem*} 
+
+\begin{remark*}
+This theorem helps to illustrate the general Chern--Weil\index{Chern-Weil theorem} result that for \defemph{any} compact Lie group $G$ with Lie algebra $\mathfrak g$, the cohomology $\homology^\oplus(B_G; \mathbb R)$ of the classifying space is isomorphic to the algebra consisting of all polynomial functions $\mathfrak g \longrightarrow \mathbb R$ which are invariant under the adjoint action of $G$. This general assertion fails for non--compact groups such as $\SL(2n, \mathbb R)$. 
+\end{remark*} 
+
+As an example, suppose that $\tau^\ast$ is the dual tangent bundle of the unit sphere $\sphere^{2n}$, with the Levi--Civita connection. Choosing an oriented, orthonormal basis $\theta_1, \ldots, \theta_n$ for the sections of $\tau^\ast \restr_U$, computation shows that \[-\Omega_{ij} = \theta_i \wedge \theta_j.\] (This equation expresses the fact that the ``sectional curvature'' of the unit sphere is identically equal to $+1$.) Furthermore \[(-1)^n Pf(\Omega) = Pf[\theta_i \wedge \theta_j] = (1 \cdot 3 \cdot 5 \cdot 7 \cdot \ldots \cdot (2n - 1)) \theta_1 \wedge \ldots \wedge \theta_{2n}.\] Integrating over $\sphere^{2n}$, this yields \[\int Pf(K) = (1 \cdot 3 \cdot 5 \cdot \ldots \cdot (2n - 1)) \volume(\sphere^{2n}).\] Setting this expression equal to $(2 \pi)^n \eulerclass[\sphere^{2n}] = 2(2 \pi)^n$, we obtain a novel proof for the identity: \[\volume(\sphere^{2n}) = \dfrac{2(2 \pi)^n}{1 \cdot 3 \cdot 5 \cdot \ldots \cdot (2n - 1)}.\] 
+
+To conclude this appendix, we will show that the Euler class cannot be determined by the curvature tensor of an arbitrary (non--metric) connection. \defemph{In fact we will describe an example of an oriented vector bundle with flat connection\index{connection!\indexline flat} such that the Euler class with real coefficients is non--zero}. (Compare \cite{Milnor1958} and \cite{wood}) Suppose that we are given a homomorphism from the fundamental group $\Pi = \pi_1(M)$ to the special linear group $\SL(n, \mathbb R)$. Then $\Pi$ acts on the universal group covering\index{covering space} ${\xtilde M}$ and hence acts diagonally on the product ${\xtilde M} \times {\mathbb R}^n$. It is not hard to see that the natural mapping \[({\xtilde M} \times {\mathbb R}^n)/\Pi \longrightarrow {\xtilde M}/\Pi \cong M\] is the projection map of an $n$--plane bundle $\xi$ with flat connection (or equivalently, with discrete structural group\index{structural group}). We will divise such an example with $\eulerclass(\xi) \ne 0$. 
+
+Let $M$ be a compact Riemann surface\index{Riemann surface} of genus $g > 1$. Then the universal covering ${\xtilde M}$ is conformally diffeomorphic to the complex upper half plane $H$. (See for example \cite{springer2001introduction}.) Every element in the group $\Pi$ of covering transformations corresponds to a fractional linear transformation of $H$ of the form \[z \mapsto \dfrac{az + b}{cz + d},\] where the matrix \[\begin{bmatrix}a & b \\ \chernclass & d\end{bmatrix} \in \SL(2, \mathbb R)\] is well defined up to sign. Thus we have constructed a homomorphism $h$ from $\Pi$ to the quotient group \[\PSL(2, \mathbb R) = \SL(2, \mathbb R)/\{\pm I\}.\] We will show that $h$ lifts to a homomorphism $\Pi \longrightarrow \SL(2, \mathbb R)$ which induces the required $2$--plane bundle over $M$. 
+%unsure what notation needed with D \sigma_z
+The group $\PSL(2, \mathbb R)$ operates naturally on the real projective line ${\mathbb P}^1(\mathbb R)$ which can be identified with the boundary ${\mathbb R} \cup \infty$ of $H$. Hence $h$ induces a bundle $\eta$ over $M$ with fiber ${\mathbb P}^1(\mathbb R)$ and projection map \[({\xtilde M} \times {\mathbb P}^1(\mathbb R))/\Pi \longrightarrow {\xtilde M}/\Pi \cong M.\] We will think of $\eta$ as a bundle whose structural group is the group $\PSL(2, \mathbb R)$ with the discrete topology. \defemph{This induces bundle $\eta$ can be identified with the tangent circle bundle of $M$.} In fact, every non--zero tangent vector $v$ at a point $z$ of $H$ is tangent to a unique oriented circle segment (or vertical line segment) which leads from $z$ to a point $f(z, v)$ on the boundary ${\mathbb R} \cup \infty$, and which crosses this boundary orthogonally. (See Figure \ref{fig:figure12}.) The mapping $f$ is invariant under the action of $\Pi$ (that is, $f(\sigma z, D \sigma_z(v)) = \sigma f(z, v)$ for $\sigma \in \Pi$), and therefore induces the required isomorphism from the bundle of tangent directions on $M$ to the $({\mathbb R} \cup \infty)$--bundle $\eta$. (Notation as on p. \pageref{lem:1.4}.) \defemph{It follows that the Euler number,Euler characteristic or Euler number $\eulerclass(\eta)[M]$ is equal to $2 - 2 g \ne 0$.}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{fig12}
+    \caption{}
+    \label{fig:figure12}
+\end{figure}
+
+Let $E_0$ be the total space of $\eta$, and $E$ be the total space of the associated topological $2$--disk bundle. Since $\eulerclass(\eta)$ is divisible by $2$, it follows that $\sw_2(\eta) = 0$. Hence, from the exact sequence of the pair $(E, E_0)$ it follows that the fundamental class $u \in \homology^2(E, E_0; {\mathbb Z}/2)$ lifts back to a cohomology class $a \in \homology^1(E_0; {\mathbb Z}/2)$ whose restriction to each fiber is non--zero. Let $E \longrightarrow E_0$ be the $2$--fold covering space\index{covering space} associated with this cohomology class $a$. Then the composition ${\widehat E}_0 \longrightarrow E_0 \longrightarrow M$ constitutes a new circle bundle ${\widehat \eta}$ over $M$. Using for example the obstruction definition, we see that $\eulerclass({\widehat \eta}) = \tfrac 1 2 \eulerclass(\eta)$. Thus the Euler number of ${\widehat \eta}$ is $1 - g \ne 0$. 
+
+The structural group of this new bundle ${\widehat \eta}$ is evidently the $2$--fold covering group $\SL(2, \mathbb R)$ of $\PSL(2, \mathbb R)$, acting on the $2$--fold covering of ${\mathbb P}_1(\mathbb R)$. (This is clear since $\PSL(2, \mathbb R)$ actually has the same homotopy type as the space ${\mathbb P}_1(\mathbb R)$ upon which it acts.) But $\eta$ has discrete structural group, so ${\widehat \eta}$ does also. Hence ${\widehat \eta}$ is induced by a suitable homomorphism $\Pi \longrightarrow \SL(2, \mathbb R)$. The associated $2$--plane bundle evidently has a flat connection, and has Euler number $1 - g \ne 0$.
+\end{document}

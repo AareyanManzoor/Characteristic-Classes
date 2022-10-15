@@ -1,0 +1,136 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+\chapter{The Thom Isomorphism Theorem}\label{ch:10}
+This section will first give a complete proof of the Thom isomorphism theorem\index{Thom isomorphism} in the unoriented case (compare Theorem \ref{thm:08.01}), and then describe the changes needed for the oriented case (Theorem \ref{thm:09.01}). For the first half of this section, the coefficient field $\mathbb Z/2$ is to be understood.
+
+We begin by outlining some constructions which are described in more detail in Appendix~\ref{app:A}. (See in particular \ref{sec:A.5}.) Let ${\mathbb R}^n_0$ denote the set of non--zero vectors in ${\mathbb R}^n$. For $n = 1$ the cohomology group $\homology^1(\mathbb R, \mathbb R_0)$ with mod $2$ coefficients is cyclic of order $2$. Let $e^1$ denote the non--zero element. Then for any topological space $B$ a cohomology isomorphism \[\homology^j(B) \longrightarrow \homology^{j + 1}(B \times \mathbb R, B \times \mathbb R_0)\] is defined by the correspondence \index{cross product}\[y \mapsto y \times e^1,\] using the cohomology cross product operation. This is proved by studying the cohomology exact sequence of the triple $(B \times \mathbb R, B \times \mathbb R_0, B \times \mathbb R_-)$, where $\mathbb R_-$ denotes the set of negative real numbers.
+
+Now let $B'$ be an open subset of $B$. Then for each cohomology class \newline $y \in \homology^j(B, B')$ the cross product $y \times e^1$ is defined with
+\[y \times e^1 \in \homology^{j + 1}(B \times \mathbb R, B' \times \mathbb R \cup B \times \mathbb R_0).\] 
+Using the Five Lemma\footnote{See for example \cite[pp. 185]{spanier1981}} it follows that the correspondence $y \mapsto y \times e^1$ defines an isomorphism 
+\[\homology^j(B, B') \longrightarrow \homology^{j + 1}(B \times \mathbb R, B' \times \mathbb R \cup B \times \mathbb R_0).\] 
+Therefore it follows inductively that the $n$-fold composition
+\[y \mapsto y \times e^1 \mapsto y \times e^1 \times e^1 \mapsto \ldots \mapsto y \times e^1 \times \ldots \times e^1\] 
+is also an isomorphism. (See Appendix~\ref{app:A} for further details.) Setting 
+\[e^n = e^1 \times \ldots \times e^1 \in \homology^n({\mathbb R}^n, {\mathbb R}^n_0),\] this proves the following. 
+
+\begin{lemma}
+\label{lem:10.1}
+For any topological space $B$ and any $n \ge 1$, a cohomology isomorphism \[\homology^j(B) \longrightarrow \homology^{j + n}(B \times {\mathbb R}^n, B \times {\mathbb R}^n_0)\] is defined by the correspondence $y \mapsto y \times e^n$.
+\end{lemma}
+
+Now recall the statement of Thom's theorem. Let $\xi$ be an $n$-plane bundle with projection $\pi : E \longrightarrow B$. 
+%TODO: label this "Isomorphism Theorem 10.2
+\begin{theorem}[Thom isomorphism]
+\label{thm:10.2}
+There is one and only one cohomology class $u \in \homology^n(E, E_0)$ with mod $2$ coefficients whose restriction to $\homology^n(F, F_0)$ is non--zero for every fiber $F$. Furthermore, the correspondence $y \mapsto y \smile u$\index{fundamental class!\indexline cohomology} maps the cohomology group $\homology^j(E)$ isomorphically onto $\homology^{j + n}(E, E_0)$ for every integer $j$. 
+\end{theorem}
+
+In particular, taking $j < 0$, it follows that the cohomology of the pair $(E, E_0)$ is trivial in dimensions less than $n$. 
+
+\begin{proof}
+The proof will be divided into four cases.
+
+\defemph{Case 1}. Suppose that $\xi$ is a trivial vector bundle. Then we will identify $E$ with the product $B \times {\mathbb R}^n$. Thus the cohomology $\homology^n(E, E_0) = \homology^n(B \times {\mathbb R}^n, B \times {\mathbb R}^n_0)$ is canonically isomorphic to $\homology^0(B)$ by \ref{lem:10.1}. To prove the existence and uniqueness of $u$, it suffices to show that there is one and only one cohomology class $s \in \homology^0(B)$ whose restriction to each point of $B$ is non--zero. Evidently the identity element $1 \in \homology^0(B)$ is the only class satisfying this condition. Therefore $u$ exists and is equal to $1 \times e^n$. 
+
+Finally, since every cohomology class in $\homology^j(B \times {\mathbb R}^n)$ can be written uniquely as a product $y \times 1$ with $y \in \homology^j(B)$, it follows from \ref{lem:10.1} that the correspondence \[y \times 1 \mapsto (y \times 1) \smile u = (y \times 1) \smile (1 \times e^n) = y \times e^n\] is an isomorphism. This completes the proof in Case 1.
+
+\defemph{Case 2}. Suppose that $B$ is the union of two open sets $B'$ and $B''$, where the assertion \ref{thm:10.2} is known to be true for the restrictions $\xi \restr_{B'}$ and $\xi \restr_{B''}$ and also for $\xi \restr_{B' \cap B''}$. We introduce the abbreviation $B^\cap$ for $B' \cap B''$, and the abbreviations $E'$, $E''$ and $E^\cap$ for the inverse images of $B'$, $B''$ and $B' \cap B''$ for the total space. The following Mayer--Vietoris sequence will be used: \[\ldots \longrightarrow \homology^{i - 1}(E^\cap, E_0^\cap) \longrightarrow \homology^i(E, E_0) \longrightarrow \homology^i(E', E'_0) \oplus \homology^i(E'', E''_0) \longrightarrow \homology^i(E^\cap, E_0^\cap) \longrightarrow \ldots\, .\] For the construction of this sequence, the reader is referred, for example, to \cite[pp. 190,239]{spanier1981}. 
+
+By hypothesis, there exist unique cohomology classes $u' \in \homology^n(E', E_0')$ and $u'' \in \homology^n(E'', E_0'')$ whose restrictions to each fiber are non--zero. Applying the uniqueness statement for $\xi \restr_{B' \cap B''}$, we see that the classes $u'$ and $u''$ have the same image in $\homology^n(E^\cap, E_0^\cap)$. Therefore they come from a common cohomology class $u$ in $\homology^n(E, E_0)$. This class $u$ is uniquely defined, since $\homology^{n - 1}(E^\cap, E_0^\cap) = 0$. 
+
+Now consider the Mayer--Vietoris sequence \[\ldots \longrightarrow \homology^{j - 1}(E^\cap) \longrightarrow \homology^j(E) \longrightarrow \homology^j(E') \oplus \homology^j(E'') \longrightarrow \homology^j(E^\cap) \longrightarrow \ldots\] where $j + n = i$. Mapping this sequence to the previous Mayer--Vietoris sequence by the correspondence $y \mapsto y \smile u$ and applying the Five Lemma, it follows that \[\homology^j(E) \varrightarrow{\cong} \homology^{j + n}(E, E_0).\] This completes the proof in Case 2. 
+
+\defemph{Case 3}. Suppose that $B$ is covered by finitely many open sets $B_1, \ldots, B_k$ such that the bundle $\xi \restr_{B_i}$ is trivial for each $B_i$. We will prove by induction on $k$ that the assertion of \ref{thm:10.2} is true for the bundle $\xi$. 
+
+To start the induction, the assertion is certainly true when $k = 1$. If $k > 1$, then we can assume by induction that the assertion is true for $\xi \restr_{B_1 \cup \ldots \cup B_{k - 1}}$ and for $\xi \restr_{(B_1 \cup \ldots \cup B_{k - 1}) \cap B_k}$. Hence, by Case 2, it is true for $\xi$. 
+
+\defemph{General Case}.\index{direct limit} Let $C$ be an arbitrary compact subset of the base space $B$. Then evidently the bundle $\xi \restr_C$ satisfies the hypothesis of Case 3. Since the union of any two compact sets is compact\footnote{Here we are implicitly assuming that the base space $B$ is Hausdorff. This is not actually necessary. The proof goes through perfectly well for non--Hausdorff spaces provided that one substitutes ``quasi--compact'' (i.e., every open covering contains a finite covering) for ``compact'' throughout.} we can form the direct limit \[\varinjlim \homology_j(C)\] of homology groups as $C$ varies over all compact subsets of $B$, and the corresponding inverse limit $\varprojlim \homology^j(C)$ of cohomology groups. We recall the following.
+
+\begin{lemma}
+\label{lem:10.3}\index{inverse limit}
+The natural homomorphism \[\homology^j(B) \longrightarrow \varprojlim \homology^j(C)\] is an isomorphism, and similarly $\homology^j(E, E_0)$ maps isomorphically to\newline $\varprojlim \homology^j(\pi^{-1}(C), \pi^{-1}(C)_0)$.
+\end{lemma}
+
+\defemph{Caution}. These statements are only true since we are working with field coefficients. The corresponding statements with integer coefficients would definitely be false.
+
+\begin{proof}[Proof of \ref{lem:10.3}]
+The corresponding homology statement, that $\varinjlim \homology_j(C)$ maps isomorphically to $\homology_j(B)$, is clearly true for arbitrary coefficients, since every singular chain on $B$ is contained in some compact subset of $B$. Similarly, the group $\varinjlim \homology_j(\pi^{-1}(C), \pi^{-1}(C)_0)$ maps isomorphically to $\homology_j(E, E_0)$. But according to \ref{sec:A.1} in the Appendix, the cohomology $\homology^j(B)$ with coefficients in the field $\mathbb Z/2$ is canonically isomorphic to $\Hom(\homology_j(B), \mathbb Z/2)$. Together with the easily verified isomorphism \[\Hom(\varinjlim \homology_j(C), \mathbb Z/2) \varrightarrow{\cong} \varprojlim \Hom(\homology_j(C), \mathbb Z/2),\] this proves \ref{lem:10.3}. 
+\end{proof}
+
+In particular, the cohomology group $\homology^n(E, E_0)$ maps isomorphically to the inverse limit of the groups $\homology^n(\pi^{-1}(C), \pi^{-1}(C)_0)$. But each of the latter groups contains one and only one class $u_C$ whose restriction to each fiber is non--zero. It follows immediately that $\homology^n(E, E_0)$ contains one and only one class $u$ whose restriction to each fiber is non--zero. 
+
+Now consider the homomorphism $\smile u : \homology^j(E) \longrightarrow \homology^{j + n}(E, E_0)$. Evidently, for each compact subset $C$ of $B$ there is a commutative diagram
+\begin{center}
+\begin{tikzcd}
+\homology^j(E) \arrow[rr, "\smile u"] \arrow[dd] &  & {\homology^{j + n}(E, E_0)} \arrow[dd]          \\
+                                       &  &                                         \\
+\homology^j(\pi^{-1}(C)) \arrow[rr]            &  & {\homology^{j + n}(\pi^{-1}(C), \pi^{-1}(C)_0)}
+\end{tikzcd}
+\end{center}
+Passing to the inverse limit, as $C$ varies over all compact subsets, it follows that $\smile u$ is itself an isomorphism. This completes the proof of \ref{thm:10.2}. Hence we have finally completed the proof of existence (and uniqueness) for Stiefel--Whitney classes.
+\end{proof}
+
+Now let us try to carry out analogous arguments with coefficients in an arbitrary ring $\Lambda$. (It is of course assumed that $\Lambda$ is associative with $1$.) Just as in the argument above, the cohomology $\homology^n({\mathbb R}^n, {\mathbb R}^n_0; \Lambda)$ is a free $\Lambda$-module, with a single generator $e^n = e^1 \times \ldots \times e^1$. (See \ref{sec:A.5} in the Appendix.)
+
+\index{oriented bundle}Let $\xi$ be an oriented $n$-plane bundle. Then for each filter $F$ of $\xi$ we are given a preferred generator \[u_F \in \homology^n(F, F_0; \mathbb Z). \] (Compare \S\ref{ch:9}.) Using the unique ring homomorphism $\mathbb Z \longrightarrow \Lambda$, this gives rise to a corresponding generator for $\homology^n(F, F_0; \Lambda)$ which will also be denoted by the symbol $u_F$. 
+%TODO: label this "isomorphism theorem 10.4"
+\begin{theorem}[Thom Isomorphism]
+\label{thm:10.4}
+There is one and only one cohomology class $u \in \homology^n(E, E_0; \Lambda)$ whose restriction to $(F, F_0)$ is equal to $u_F$ for every fiber $F$. Furthermore the correspondence $y \mapsto y \smile u$ maps $\homology^j(E; \Lambda)$ isomorphically onto $\homology^{j + n}(E, E_0; \Lambda)$ for every integer $j$. 
+\end{theorem}
+If the coefficient ring $\Lambda$ is a field, then the proof is completely analogous to the proof of \ref{thm:10.2}. Details will be left to the reader. Similarly, if the base space $B$ is compact, then the proof is completely analogous to the proof of \ref{thm:10.2}. (A similar argument works for any bundle $\xi$ of finite type. Compare Problem \ref{prob-5-E}.) 
+
+The difficulty in extending to the general case is that Lemma~\ref{lem:10.3} is not available for cohomology with non--field coefficients. In fact the inverse limits of \ref{lem:10.3} can be very badly behaved in general. However, the construction of the fundamental class $u$ does go through without too much difficulty. We will need the following.
+
+\begin{lemma}
+\label{lem:10.5}
+The homology group $\homology_{n - 1}(E, E_0; \mathbb Z)$ is zero.
+\end{lemma}
+
+Assuming this for the present, it follows from \ref{sec:A.1} in the Appendix that the cohomology group $\homology^n(E, E_0; \mathbb Z)$ is canonically isomorphic to $\Hom(\homology_n(E, E_0; \mathbb Z), \mathbb Z)$. Therefore, just as in the proof of \ref{lem:10.3}, we see that $\homology^n(E, E_0; \mathbb Z)$ is canonically isomorphic to the inverse limit of the groups \[\homology^n(\pi^{-1}(C), \pi^{-1}(C)_0; \mathbb Z)\] as $C$ varies over all compact subsets of the base space $B$. Since \ref{thm:10.4} has already been proved for any vector bundle over a compact base space $C$, it follows that there is a unique fundamental cohomology class $u \in \homology^n(E, E_0; \mathbb Z)$. 
+
+\begin{remark*}
+It is important to note that the fundamental class in $\homology^n(E, E_0; \mathbb Z)$ corresponds to a fundamental class in $\homology^n(E, E_0; \Lambda)$ for any ring $\Lambda$, under the unique ring homomorphism $\mathbb Z \longrightarrow \Lambda$.
+\end{remark*}
+
+To prove that the cup product with $u$ induces cohomology isomorphisms, we will make use of the following constructions. 
+
+\begin{definition}
+A \defemph{free chain complex over $\mathbb Z$} is a sequence of free $\mathbb Z$-modules $K_n$ and homomorphisms \[\ldots \varrightarrow{} K_n \varrightarrow{\partial} K_{n - 1} \varrightarrow{\partial} K_{n - 2} \varrightarrow{} \ldots\] with $\partial \circ \partial = 0$. A \defemph{chain mapping}\index{chain complex, mapping} $f : K \longrightarrow K'$ of degree $d$ is a sequence of homomorphisms $K_i \longrightarrow K'_{i + d}$ satisfying $\partial' \circ f = (-1)^d (f \circ \partial)$. 
+\end{definition}
+
+\begin{lemma}
+\label{lem:10.6}
+Let $f : K \longrightarrow K'$ be a chain mapping, where $K$ and $K'$ are free chain complexes over $\mathbb Z$. If $f$ induces a cohomology isomorphism \[f^\ast : \homology^\ast(K'; \Lambda) \longrightarrow \homology^\ast(K; \Lambda)\] for every coefficient field $\Lambda$, then $f$ induces isomorphisms of homology and cohomology with arbitrary coefficients. 
+\end{lemma}
+
+\begin{proof}
+The \defemphi{mapping cone} $K^f$ is a free chain complex constructed as follows. Let $K^f_i = K_{i - d - 1} \oplus K_i'$ with boundary homomorphism\index{boundary homomorphism} $\partial^f : K_i^f \longrightarrow K_{i - 1}^f$ defined by \[\partial^f(\kappa, \kappa') = ((-1)^{d + 1} \partial \kappa, f(\kappa) + \partial' \kappa')\] (Compare \cite[pp. 166]{spanier1981}.) Evidently $K^f$ fits into a short exact sequence \[0 \longrightarrow K' \longrightarrow K^f \longrightarrow K \longrightarrow 0\] of chain mappings. Furthermore the boundary homomorphism \[\partial^f : \homology_{i - d - 1}(K) \longrightarrow \homology_{i - 1}(K')\] in the associated homology exact sequence is precisely equal to $f_\ast$. Thus the homology $\homology_\ast(K^f)$ is zero if and only if $f$ induces an isomorphism \newline $\homology_\ast(K) \longrightarrow \homology_\ast(K')$ of integral homology. 
+
+In our case, $f$ is known to induce a cohomology isomorphism \newline $\homology^\ast(K'; \Lambda) \longrightarrow \homology^\ast(K; \Lambda)$ for every coefficient field $\Lambda$. Using the cohomology exact sequence, it follows that $\homology^\ast(K^f; \Lambda) = 0$. But the cohomology $\homology^n(K^f; \Lambda)$ is canonically isomorphic to $\Hom_\Lambda(\homology_n(K^f \otimes \Lambda), \Lambda)$ by \ref{sec:A.1} in the Appendix. Therefore, the homology vector space $\homology_n(K^f \otimes \Lambda)$ is zero. For otherwise there would exist a non-trivial $\Lambda$-linear mapping from this space to the coefficient field $\Lambda$.
+
+In particular the rational homology $\homology_n(K^f \otimes \mathbb Q)$ is zero. Therefore, for every cycle $\zeta \in Z_n(K^f)$ it follows that some integral multiple of $\zeta$ is a boundary. Hence the integral homology $\homology_n(K^f)$ is a torsion group. 
+
+To prove that this torsion group $\homology_n(K^f)$ is zero, it suffices to prove that every element of prime order is zero. Let $\zeta \in Z_n(K^f)$ be a cycle representing a homology class of prime order $p$. Then \[p \zeta = \partial \kappa\] for some $\kappa \in K_{n + 1}^f$. Thus $\kappa$ is a cycle modulo $p$. Since the homology \newline $\homology_{n + 1}(K^f \otimes \mathbb Z/p)$ is known to be zero, it follows that $\kappa$ is a boundary mod $p$, say \[\kappa = \partial \kappa' + p \kappa''.\] Therefore $p \zeta = \partial \kappa$ is equal to $p \partial \kappa''$, and hence $\zeta = \partial \kappa''$. Thus $\zeta$ represents the trivial homology class, and we have proved that $\homology_\ast(K^f) = 0$. 
+
+It now follows easily that $K^f$ has trivial homology and cohomology with arbitrary coefficients. (Compare \cite[pp. 167]{spanier1981}.) For example since $Z_{n - 1}(K^f)$ is free, the exact sequence \[0 \longrightarrow Z_n(K^f) \longrightarrow K_n^f \longrightarrow Z_{n - 1}(K^f) \longrightarrow 0\] is split exact, and therefore remains exact when we tensor it with an arbitrary additive group $\Lambda$. It follows easily that the sequence \[\ldots \longrightarrow K_{n + 1}^f \otimes \Lambda \longrightarrow K_n^f \otimes \Lambda \longrightarrow K_{n - 1}^f \otimes \Lambda \longrightarrow \ldots\] is also exact, which proves that $\homology_\ast(K^f \otimes \Lambda) = 0$. This completes the proof of \ref{lem:10.6}. 
+\end{proof}
+
+The proof of \ref{thm:10.4} now proceeds as follows. We will make use of the cap product operation. (For the definition and basic properties, see \ref{sec:A.9}.) While proving \ref{thm:10.4}, we will simultaneously prove the following. The coefficient ring $\mathbb Z$ is to be understood. 
+
+\begin{corollary}\index{cap product}
+\label{cor:10.7}
+The correspondence $\eta \mapsto u \cap \eta$ defines an isomorphism from the integral homology group $\homology_{n + i}(E, E_0)$ to $\homology_i(E)$. 
+\end{corollary}
+
+\begin{proof}
+Choose a singular cocycle $z \in Z^n(E, E_0)$ representing the fundamental cohomology class $u$. Then the correspondence $\gamma \mapsto z \cap \gamma$ from $C_{n+i}(E, E_0)$ to $C_i(E)$ satisfies the identity \[\partial(z \cap \gamma) = (-1)^n z \cap (\partial \gamma).\] Therefore \[z \cap : C_\ast(E, E_0) \longrightarrow C_\ast(E)\] is a chain mapping of degree $-n$. Using the identity \[\ip c {z \cap \gamma} = \ip {c \smile z} \gamma\] we see that the induced cochain mapping \[(z \cap)^\# : C^\ast(E; \Lambda) \longrightarrow C^\ast(E, E_0; \Lambda)\] is given by $c \mapsto c \smile z$. Here $\Lambda$ can be any ring. If the coefficient ring $\Lambda$ is a field, then this cochain mapping induces a cohomology isomorphism by the portion of \ref{thm:10.4} that has already been proved. Thus we can apply \ref{lem:10.6}, and concludes that the homomorphisms \[u \cap : \homology_{i + n}(E, E_0; \Lambda) \longrightarrow \homology_i(E; \Lambda)\] and \[\smile u : \homology^i(E; \Lambda) \longrightarrow \homology^{i + n}(E, E_0; \Lambda)\] are actually isomorphisms for arbitrary $\Lambda$. In particular, using the isomorphism $\smile u : \homology^0(E; \Lambda) \longrightarrow \homology^n(E, E_0; \Lambda)$, the uniqueness of the fundamental cohomology class $u$ with coefficients in $\Lambda$ can now be verified. 
+
+This completes the proof of \ref{thm:10.4} and \ref{cor:10.7} except for one step that has been skipped over. Namely, we must still prove that $\homology_{n - 1}(E, E_0; \mathbb Z) = 0$ (Lemma~\ref{lem:10.5}).
+
+First suppose that the base space $B$ is compact. Then we have already observed that Theorem~\ref{thm:10.4} is true independently of \ref{lem:10.5}. Similarly the proof of \ref{cor:10.7}, in this special case, goes through without making use of \ref{lem:10.5}. Thus we are free to make use of \ref{cor:10.7} to conclude that \[\homology_{n - 1}(E, E_0; \mathbb Z) \varrightarrow{\cong} \homology_{-1}(E; \mathbb Z) = 0.\] The proof of \ref{lem:10.5} in the general case now follows immediately, using the homology isomorphism \[\varinjlim \homology_i(\pi^{-1}(C), \pi^{-1}(C)_0; \mathbb Z) \varrightarrow{\cong} \homology_i(E, E_0; \mathbb Z),\]\index{direct limit}where $C$ varies over all compact subsets of $B$. (Compare \ref{lem:10.3}.) This completes the proof.
+\end{proof}
+\end{document}
+

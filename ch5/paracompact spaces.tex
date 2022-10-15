@@ -1,0 +1,65 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+%5.8 here
+\section{ Paracompact Spaces} \label{sec:5.3}
+Before beginning the proof of \ref{thm:05.06} and \ref{thm:05.07}, let us review the definition and the basic theorems concerning paracompactness. For further information the reader is referred  \cite{kelley1955} and \cite{dugundji1966}. 
+
+\begin{definition}
+A topological space $\base$ is \defemphi{paracompact} if $\base$ is a Hausdorff space and if, for every open covering $\{U_\alpha\}$ of $\base$, there exists an open covering $\{\StiefelManifold_\beta\}$ which
+
+\begin{enumerate}[label=\arabic*)]
+    \item is a \emph{refinement} of $\{U_\alpha\}$: that is each $\StiefelManifold_\beta$ is contained in some $U_\alpha$, and
+    \item is \emph{locally finite}: that is each point of $\base$ has a neighborhood which intersects only finitely many of the $\StiefelManifold_\beta$. 
+\end{enumerate}
+\end{definition}
+
+Nearly all familiar topological spaces are paracompact. For example (see the above references):
+%label "Theorem of A. H. Stone"
+\begin{theorem*}[A. H. Stone]\label{thm:5.8}
+Every metric space is paracompact.
+\end{theorem*}
+%label "Theorem of Morita"
+\begin{theorem*}[Morita]\label{thm:05.09}
+If a regular topological space is the countable union of compact subsets, then it is paracompact.
+\end{theorem*}
+
+\begin{corollary*}
+The direct limit of a sequence $K_1 \subset K_2 \subset K_3 \subset \ldots$ of compact spaces is paracompact. In particular the infinite Grassmann space $\grassmannian_n$ is paracompact. 
+\end{corollary*}
+
+For it follows from \cite[\S 18.3]{whitehead1961} that such a direct limit is regular. (The reader should have no difficulty in supplying a proof.)
+%label "Theorem of Dieudonné"
+\begin{theorem*}[Dieudonné]
+Every paracompact space is normal.
+\end{theorem*}
+
+The proof of \ref{thm:05.06} will be based on the following.
+\setcounter{theorem}{8}
+\begin{lemma}
+For any fiber bundle $\xi$ over a paracompact space $\base$, there exists a locally finite covering of $\base$ by countably many open sets $U_1, U_2, U_3, \ldots$, so that $\xi |_{U_i}$ is trivial for each $i$. 
+\end{lemma}
+
+\begin{proof}
+Choose a locally finite open covering $\{\StiefelManifold_\alpha\}$ so that each $\xi |_{\StiefelManifold_\alpha}$ is trivial; and choose an open covering $\{W_\alpha\}$ with ${\xoverline W}_\alpha \subset \StiefelManifold_\alpha$ for each $\alpha$. (Compare \cite[p. 171]{kelley1955}.) Let $\lambda_\alpha : \base \longrightarrow \mathbb R$ be a continuous function which takes the value $1$ on ${\xoverline W}_\alpha$ and the value $0$ outside of $\StiefelManifold_\alpha$. For each non--vacuous finite subset $S$ of the index set $\{\alpha\}$, let $U(S) \subset \base$ denote the set of all $b \in \base$ for which \[\Min_{\alpha \in S} \lambda_\alpha(\base) > \Max_{\alpha \not \in S} \lambda_\alpha(\base).\] Let $U_k$ be the union of those sets $U(S)$ for which $S$ has precisely $k$ elements.
+
+Clearly each $U_k$ is an open set, and \[\base = U_1 \cup U_2 \cup U_3 \cup \ldots.\] For each given $b \in \base$, if precisely $k$ of the numbers $\lambda_\alpha(\base)$ are positive, then $b \in U_k$. If $\alpha$ is any element of the set $S$, note that \[U(S) \subset \StiefelManifold_\alpha.\] Since the covering $\{\StiefelManifold_\alpha\}$ is locally finite, it follows that $\{U_k\}$ is locally finite. Furthermore, since each $\xi |_{\StiefelManifold_\alpha}$ is trivial, it follows that each $\xi |_{U(S)}$ is trivial. But the set $U_k$ is equal to the disjoint union of its open subsets $U(S)$. Therefore $\xi |_{U_k}$ is also trivial. 
+\end{proof}
+
+The bundle map $f : \xi \longrightarrow \gamma^n$ can now be constructed just as in the proof of \ref{lem:05.03}. Details will be left to the reader. This proves \ref{thm:05.06}. 
+
+\begin{proof}[Proof of Theorem~\ref{thm:05.07}]
+Any bundle map $f : \xi \longrightarrow \gamma^n$ determines a map \[\hat f : \total(\xi) \longrightarrow {\mathbb R}^\infty\] whose restriction to each fiber of $\xi$ is linear and injective. Conversely, $\hat f$ determines $f$ by the identity \[f(e) = ({\hat f}(\text{fiber through } e), {\hat f}(e)).\] Let $f, g : \xi \longrightarrow \gamma^n$ be any two bundle maps. 
+
+\emph{Case $1$}. Suppose that the vector ${\hat f}(e) \in {\mathbb R}^\infty$ is never equal to a negative multiple of ${\hat g}(e)$ for $e \ne 0$, $e \in \total(\xi)$. Then the formula \[{\hat h}_t(e) = (1 - t) {\hat f}(e) + t {\hat g}(e), \quad 0 \le t \le 1,\] defines a homotopy between ${\hat f}$ and ${\hat g}$. To prove that $\hat h$ is continuous as a function of both variables, it is only necessary to prove that the vector space operations in ${\mathbb R}^\infty$ (i.e., addition and multiplication by scalars) are continuous. But this follows easily from Lemma~\ref{lem:05.05}. Evidently ${\hat f}_t(e) \ne 0$ if $e$ is a non--zero vector of $\total(\xi)$. Hence we can define $h : \total(\xi) \times [0, 1] \longrightarrow \total(\eta)$ by \[h_t(e) = ({\hat h}_t(\text{fiber through } e), {\hat h}_t(e)).\] 
+
+To prove that $h$ is continuous, it is sufficient to prove that the corresponding function \[\xoverline h : \base(\xi) \times [0, 1] \longrightarrow \grassmannian_n\] on the base space is continuous. Let $U$ be an open subset of $\base(\xi)$ with $\xi |_U$ trivial, and let $s_1, \ldots, s_n$ be nowhere dependent cross--sections of $\xi |_U$. Then $\xoverline h |_{U \times [0,1]}$ can be considered as the composition of
+\begin{enumerate}[label=\arabic*)]
+    \item a continuous function $\base, t \mapsto ({\hat h}_t s_1(\base), \ldots, {\hat h}_t s_n(\base))$ from $U \times [0, 1]$ to the ``infinite Stiefel manifold''\index{Stiefel manifold} $\StiefelManifold_n({\mathbb R}^\infty) \subset {\mathbb R}^\infty \times \ldots \times {\mathbb R}^\infty$, and
+    \item the canonical projection $q : \StiefelManifold_n({\mathbb R}^\infty) \longrightarrow \grassmannian_n$.
+\end{enumerate} 
+Using \ref{lem:05.05} it is seen that $q$ is continuous. Therefore $\xoverline h$ is continuous; hence the bundle--homotopy $h$ between $f$ and $g$ is continuous. 
+\end{proof}
+
+\emph{General Case}. Let $f, g : \xi \longrightarrow \gamma^n$ be arbitrary bundle maps. A bundle map \[d_1 : \gamma^n \longrightarrow \gamma^n\] is induced by the linear transformation ${\mathbb R}^\infty \longrightarrow {\mathbb R}^\infty$ which carries the $i$--th basis vector of ${\mathbb R}^\infty$ tot he $(2 i - 1)$--th. Similarly $d_2 : \gamma^n \longrightarrow \gamma^n$ is induced by the linear transformation which carries the $i$--th basis vector to the $2i$--th. Now note that three bundle--homotopies \[f \sim d_1 \circ f \sim d_2 \circ g \sim g\] are given by three applications of Case 1. Hence $f \sim g$. 
+\end{document} 

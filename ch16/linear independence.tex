@@ -1,0 +1,97 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section[Linear Independence of Chern Numbers and of\texorpdfstring{\\}{} Pontrjagin Numbers]{Linear Independence of Chern Numbers and of Pontrjagin Numbers}
+The following basic result shows that there are no linear relations between Chern numbers.
+
+\begin{theorem}[Thom]\label{thm:16.07} Let $K^{1}, \ldots, K^{n}$ be complex manifolds with \newline $s_{k}(\chernclass)[K^{k}] \neq 0$. Then the $p(n) \times p(n)$ matrix
+\[
+\Big[\chernclass_{i_{1}} \ldots \chernclass_{i_{r}}[K^{j_{1}} \times \ldots \times K^{j_{s}}]\Big] \text {, }
+\]
+of Chern numbers, where $i_{1}, \ldots, i_{r}$ and $j_{1}, \ldots, j_{s}$ range over all partitions of $n$, is non-singular.
+\end{theorem}
+For example, by \ref{ex:16.6}, we can take $K^{r}=\projective^{r}(\mathbb{C})$. Similarly:
+
+\begin{theorem}[Thom]\label{thm:16.08} If $M^{4}, \ldots, M^{4 n}$ are oriented manifolds with $s_{k}(\pontrjaginclass)[M^{4 k}] \neq 0$, then the $\pontrjaginclass(n) \times \pontrjaginclass(n)$ matrix
+\[
+[\pontrjaginclass_{i_{1}} \cdots \pontrjaginclass_{i_{r}}[M^{4 j_{1}} \times \ldots \times M^{4 j_{s}}]]
+\]
+of Pontrjagin numbers is non-singular.\end{theorem}
+
+Again we can take the complex projective space $\projective^{2 k}{(\mathbb{C})}$, with $\pontrjaginclass(\tangentbundle{\projective^{2 k}{(\mathbb{C})}})= (1+a^{2})^{2 k+1}$ and hence
+\[
+s_{k}(\pontrjaginclass)[\projective^{2 k}{(\mathbb{C})}]=2 k+1
+\]
+as a suitable manifold $M^{4 k}$.
+
+Here is an example. For complex dimension 2 taking $K^{n}=\projective^{n}(\mathbb{C})$ we obtain the matrix
+\[
+\begin{bmatrix}
+\hfill\chernclass_{1} \chernclass_{1}[K^{1} \times K^{1}]=8 && \hfill\chernclass_{1} \chernclass_{1}[K^{2}]=9 \\
+\hfill\chernclass_{2}[K^{1} \times K^{1}]=4 && \hfill\chernclass_{2}[K^{2}]=3
+\end{bmatrix}
+\]
+of Chern numbers, with determinant $-12$. Evidently the direct approach of simply computing the matrix will not help much in the general case.
+
+\begin{proof}[proof of \ref{thm:16.07}]
+In place of the Chern numbers themselves, we may use the linear combinations $s_{I}(\chernclass)$. As an immediate generalization of \ref{cor:16.4} we have
+\[
+s_{I}[K^{j_{1}} \times \ldots \times K^{j_{q}}]=\sum_{I_{1} \ldots I_{q}=I} s_{I_{1}}[K^{j_{1}}] \ldots s_{I_{q}}[K^{j_{q}}],.
+\]
+to be summed over all partitions $I_{1}$ of $j_{1}, I_{2}$ of $j_{2}, \ldots$, and $I_{q}$ of $j_{q}$ with juxtaposition $I_{1} \ldots I_{q}$ equal to $I$. \defemph{Thus the characteristic number $s_{I}[K^{j_{1}} \times \ldots \times K^{j_{q}}]$ is zero unless the partition $I=i_{1}, \ldots, i_{r}$ is a refinement\index{refinement} of $j_{1}, \ldots, j_{q}$}, In particular it is zero unless $r \geq q$. Thus if the partitions $i_{1}, \ldots, i_{r}$ and $j_{1}, \ldots, j_{q}$ are arranged in a suitably chosen order, then the matrix
+\[
+\Big[s_{i_{1}, \ldots, i_{r}}[K^{j_{1}} \times \ldots \times K^{j_{q}}]\Big]
+\]
+will be triangular, with zeros everywhere above the diagonal. Each diagonal entry $s_{i_{1}, \ldots, i_{r}}[K^{i_{1}} \times \ldots \times K^{i}]$ is clearly equal to the product
+\[
+s_{i_{1}}[K^{i_{1}}] \ldots s_{i_{r}}[K^{i}{ }^{i}] \neq 0
+\]
+Hence the matrix is non-singular. The proof of \ref{thm:16.08} is completely analogous.\end{proof}
+
+Here are some problems for the reader.
+
+\begin{problem}\label{prob:16.A}
+Substituting $-t_{i}$ for $x$ in the identity \[(x+t_{1}) \ldots(x+t_{n})=x^{n}+\sigma_{1} x^{n-1}+\ldots+\sigma_{n}\] and then summing over $i$, prove Newton's formula\index{Newton's formula}
+\[
+s_{n}-\sigma_{1} s_{n-1}+\sigma_{2} s_{n-2}-\cdots \mp \sigma_{n-1} s_{1} \pm n \sigma_{n}=0 .
+\]
+This formula can be used inductively to compute the polynomial $s_{n}(\sigma_{1}, \ldots, \sigma_{n})$. Alternatively, taking the logarithm of both sides of the identity \[(1+t_{1}) \ldots(1+t_{n})=1+(\sigma_{1}+\ldots+\sigma_{n}),\] prove Girard's formula\index{Girard's formula}
+\[
+(-1)^{k} \dfrac{s_k}{k}=\sum_{i_{1}+2 i_{2}+\ldots+ki_{k}=k}(-1)^{i_{1}+\ldots+i_{i}} \frac{(i_{1}+\ldots+i_{k}-1) !}{i_{1} ! \ldots i_{k} !} \sigma_{1}^{i_{1}} \ldots \sigma_{k}^{i_{k}} .
+\]
+\end{problem}
+
+\begin{problem}\label{prob:16.B}
+The \defemphi{Chern character} $\chernchar(\omega)$ of a complex $n$-plane bundle $\omega$ is defined to be the formal sum
+\[
+n+\sum_{k=1}^{\infty} \dfrac{s_{k}(\chernclass(\omega)) }{k!} \in \homology^{\Pi}(\base ; \mathbb{Q}) .
+\]
+Show that this Chern character is characterized by additivity
+\[
+\chernchar(\omega \oplus \omega^{\prime})=\chernchar(\omega)+\chernchar(\omega^{\prime}),
+\]
+together with the property that $\chernchar(\eta^{1})$ is equal to the formal power series $\exp (\chernclass_{1}(\eta^{1}))$ for any line bundle $\eta^{1}$. Show that the Chern character is also multiplicative:
+\[
+\chernchar(\omega \otimes \omega^{\prime})=\chernchar(\omega) \chernchar(\omega^{\prime}) .
+\]
+(As in Problem \ref{prob:07.03}, it suffices to consider first the case of two line bundles.)
+\end{problem}
+
+\begin{problem}\label{prob:16.C}
+ If $2 i_{1}, \ldots, 2 i_{r}$ is a partition of $2 k$ into even integers, show that the 4k-dimensional characteristic class $s_{2i_{1}, \ldots, 2 i_{r}}(\chernclass(\omega))$ of a complex vector bundle is equal to the characteristic class $s_{i_{1}, \ldots, i_{r}}(\pontrjaginclass(\omega_{\mathbb{R}}))$ of its underlying real vector bundle. As examples, show that the $4 k$-dimensional class $s_{2, \ldots, 2}(\chernclass(\omega))$ is equal to $\pontrjaginclass_{k}(\omega_{\mathbb{R}})$\index{Pontrjagin class $\pontrjaginclass_i$}, and show that the characteristic number $s_{2 n}(\chernclass)[K^{2 n}]$ of a complex $2 n$-manifold is equal to $s_{n}(\pontrjaginclass)[K^{2 n}]$
+\end{problem}
+
+\begin{problem}\label{prob:16.D}
+If the complex manifold $K^{n}$ is complex analytically embedded\index{embedding} in $K^{n+1}$ with dual cohomology class\index{dual cohomology class} $u \in \homology^{2}(K^{n+1}, \mathbb{Z})$, show that the total tangential Chern class $\chernclass(K^{n})$ is equal to the restriction to $K^{n}$ of $\chernclass(K^{n+1}) /(1+u)$. For any cohomology class $x \in \homology^{2n}(K^{n+1} ; \mathbb{Z})$ show that the Kronecker index $\langle x \mid K^{n}, \mu_{2 n}\rangle$ is equal to $\langle xu, \mu_{2 n+2}\rangle$. (Compare page \pageref{cor:11.04} as well as Problem \ref{prob:11.C}.) Using these constructions, compute $\chernclass(K^{n})$ for a non-singular algebraic hypersurface $K^{n}$ of degree $d$ in $\projective^{n+1}(\mathbb{C})$, and prove that the characteristic number $s_{n}[K^{n}]$ is equal to $d(n+2-d^{n})$. (An algebraic hypersurface\defemph{algebraic hypersurface} of degree $d$ is the set of zeroes of a homogeneous polynomial of degree $d$.)
+
+\end{problem}
+
+\begin{problem}\label{prob:16.E}
+Similarly, if $H_{m, n}$ is a non-singular hypersurface of degree $(1,1)$ in the product $\projective^{m}(\mathbb{C}) \times \projective^{n}(\mathbb{C})$ of complex projective spaces, with $m, n \geq 2$, prove that the characteristic number $s_{m+n-1}[H_{m, n}]$ is equal to $-(m+n) ! / m ! n !$. Using disjoint unions of hypersurfaces, prove that for each dimension $n$ there exists a complex manifold $K^{n}$ with $s_{n}[K^{n}]=p$ if $n+1$ is a power of the prime $p$, or with $s_{n}[K^{n}]=1$ if $n+1$ is not a prime power. (A theorem of Milnor and Novikov asserts that these manifolds $K^{1}, K^{2}, K^{3}, \ldots$ freely generate the ring consisting of all ``cobordism classes''\index{cobordism} of manifolds with a complex structure on the stable tangent bundle $\tangentbundle{} \oplus \varepsilon^{k}$. Compare \cite{stongcobordism1968}.)
+
+\end{problem}
+
+\begin{problem}\label{prob:16.F}
+ Develop a corresponding calculus of mod $2$ characteristic numbers $s_{I}(\sw_{1}, \ldots, \sw_{n})[M^{n}]$\index{Stiefel-Whitney number}, where $I$ ranges over partitions of $n$. Using real algebraic hypersurfaces of degree $(1,1)$ in a product of real projective spaces, prove that there exists a manifold $Y^{n}$ with $s_{n}(\sw)[Y^{n}]\neq 0$ whenever $n+1$ is not a power of 2 . For $n$ odd show that $Y^{n}$ is orientable. As in Problem \ref{prob:04.05}, let $\unorientedCobordism_n$ be the $\mathbb{Z} / 2$ vector space consisting of cobordism classes of unoriented $n$-manifolds. Show that the products $Y^{i_{1}} \times \ldots \times Y^{i_{r}}$, where $i_{1}, \ldots, i_{r}$ ranges over all partitions of $n$ into integers not of the form $2^{k}-1$, are linearly independent in $\unorientedCobordism_{n}$. ( $A$ theorem of Thom asserts that these products actually form a basis for $\pi_{n}$, so that the cobordism algebra\index{cobordism} $\unorientedCobordism_{*}$ is a polynomial algebra freely generated by the manifolds $Y^{2}, Y^{4}, Y^{5}, Y^{6}, Y^{8}, \ldots$.
+\end{problem}
+
+\end{document}

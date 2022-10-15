@@ -1,0 +1,18 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Hermitian Metrics}
+Just as Euclidean metrics play an important role in the study of real vector bundles, the analogous Hermitian metrics plays an important role for complex vector bundles. By definition, a \defemphi{Hermitian metric} on a complex vector bundle $\omega$ is a Euclidean metric \[v \mapsto |v|^2 \ge 0\] on the underlying real vector bundle (see \S\ref{sec:2.1}), which satisfies the identity \[|i v| = |v|.\] Given such a Hermitian metric it is not difficult to show that there is one and only one complex valued inner product
+\begin{align*}
+\ip v w & = \frac 1 2 \left(|v + w|^2 - |v|^2 - |w|^2\right) \\ & + \frac 1 2 i \left(|v + i w|^2 - |v|^2 - |i w|^2\right),
+\end{align*}
+defined for $v$ and $w$ in the same fiber of $\omega$, which
+\begin{enumerate}[label=(\arabic*)]
+    \item is complex linear as a function of $v$ for fixed $w$,
+    \item is conjugate linear as a function of $w$ for fixed $v$ (that is $\ip v {\lambda w} = \overline \lambda \ip v w$), and
+    \item satisfies $\ip v v = |v|^2$.
+\end{enumerate}
+
+The two vectors $v$ and $w$ are said to be \defemph{orthogonal} if this complex inner product $\ip v w$ is zero. The Hermitian identity \[\ip w v = \overline {\ip v w}\] is easily verified, hence $v$ is orthogonal to $w$ if and only if $w$ is orthogonal to $v$. 
+
+If this space $B$ is paracompact, then every complex vector bundle over $B$ admits a Hermitian metric. (Compare Problem \ref{prob-2-C}.)
+\end{document}

@@ -1,0 +1,148 @@
+\documentclass[../main]{subfiles}
+%claimed by twiceshy
+\begin{document}
+\section{The Normal Bundle}\label{sec:11.1}
+Let $M=M^{n}$ be a smooth manifold which is smoothly (and topologically) embedded in a Riemannian manifold\index{Riemannian manifold} $A=A^{n+k}$. In order to study characteristic classes of the normal bundle of $M$ in $A$ we will need the following geometrical result.
+
+\begin{theorem}[Tubular neighborhood theorem] \label{thm:11.01}
+There exists an open neighborhood of $M$ in $A$ which is diffeomorphic to the total space of the normal bundle\index{normal bundle} under a diffeomorphism\index{diffeomorphism} which maps each point $x$ of $M$ to the zero normal vector at $x$.
+\end{theorem}
+
+Such a neighborhood is called an open \defemphi{tubular neighborhood} of $M$ in $A$.
+
+To simplify the presentation, we will carry out full details of the proof only in the special case where $M$ is compact. This special case will suffice for nearly all of our applications. The proof in the general case is given, for example, in \cite{langmanifold}.
+
+Let $E$ denote the total space\index{total space $E(\xi)$} of the normal bundle $\normalbundle{}^k$. To any real number $\varepsilon>0$, we associate the open subset $\total(\varepsilon) \subset \total$ consisting of all pairs $(x, v) \in \total$ with $|v|<\varepsilon$. Here $x$ denotes a point of $M$, and $v$ a normal vector to $M$ at $x$.
+
+[Or more generally, to any smooth real valued function $x \mapsto \varepsilon(x)>0$, we can associate the open set $\total(\varepsilon)$ consisting of all $(x, v) \in E$ with $|v|<\varepsilon(x)$. This more general construction is essential in dealing with non-compact manifolds.]
+
+We will make use of the \defemphi{exponential map}
+\[
+\Exp: \total(\varepsilon) \varrightarrow{} A
+\]
+of Riemannian geometry, which assigns to each $(x, v) \in E$ with $|v|$ sufficiently small the endpoint $\gamma(1)$ of the parametrized geodesic arc
+\[
+\gamma: [0,1] \varrightarrow{} A
+\]
+of length $|v|$ having initial point $\tautological(0)$ equal to $x$ and initial velocity vector $\dd \gamma /\dd t |_{t=0}$ equal to $v$. As an example, if the ambient Riemmannian manifold $A$ is Euclidean space, then $\gamma$ is just a straight line segment, and the exponential map is given by the formula $\Exp(x,v)=x+v$.
+
+The usual existence, uniqueness, and smoothness theorems for differential equations imply that $\Exp(x, v)$ is defined, and smooth as a function of $(x, v)$, throughout some neighborhood of the zero cross-section $M \times 0 \subset$ E. (See for example \cite{bishop2011}.) It follows easily that $\Exp$ is defined and smooth on $\total(\varepsilon)$ for $\varepsilon$ sufficiently small.
+
+Furthermore, applying the Inverse Function Theorem\index{inverse function theorem} at any point $(x, 0)$ on the zero cross-section $M \times 0 \subset \total$, we see that some open neighborhood of $(x, 0)$ in $\total(\varepsilon)$ is mapped diffeomorphically onto an open subset of $A$.
+
+
+\begin{assertion*} If $\varepsilon$ is sufficiently small, then the entire open set $E(\varepsilon)$ is mapped diffeomorphically onto an open set $N_{\varepsilon} \subset A$ by the exponential map.
+\end{assertion*}
+
+
+\begin{proof}[Proof, assuming that $M$ is compact.] Certainly the exponential map restricted to $\total(\varepsilon)$ is a local diffeomorphism, for small $\varepsilon$, so it suffices to prove that it is one-to-one. If this were false, then for each integer $i > 0$, taking $\varepsilon= 1 / i$, there would exist two distinct points
+\[
+(x_{i}, v_{i}) \ne (x_{i}', v_{i}')
+\]
+in the neighborhood $\total(1 / i)$ for which
+\[
+\Exp(x_{i}, v_{i})=\Exp(x_{i}', v_{i}') .
+\]
+Therefore, since $M$ is compact, there would exist a convergent subsequence $\{x_{i_{j}}\}$ so that say
+\[
+\lim \,(x_{i_{j}}, v_{i_{j}})=(x, 0),
+\]
+and simultaneously
+\[
+\lim \,(x_{i_{j}}', v_{i_{j}}')=(x', 0) .
+\]
+Evidently the limit point $x=\Exp(x, 0)=\lim \Exp(x_{i_{j}}, v_{i_{j}})$ would be equal to the limit point $x'$. But then the equation $\Exp(x_{i_{j}}, v_{i_{j}})=\Exp(x_{i_{j}})', v_{i_{j}}'$ for large $j$ would contradict the statement that Exp is one-to-one throughout a neighborhood of $(x, 0)$.
+
+Thus $\total(\varepsilon)$ is diffeomorphic to its image $N_{\varepsilon}$ for small $\varepsilon$. To complete the proof of \ref{thm:11.01}, we need only note that $E(\varepsilon)$ is also diffeomorphic to $E$, under the correspondence
+
+\[
+(x,v) \mapsto \bigg(x, \frac{v}{\sqrt{1 - |v|^2 / \varepsilon(x)^2}}\bigg)
+\]
+
+\end{proof}
+
+
+Now let us make the additional hypothesis that the submanifold $M \subset A$ is closed as a subset of the topological space $A$. Of course this hypothesis is automatically satisfied if $M$ is compact.
+
+\begin{corollary} \label{cor:11.02}
+If $M$ is closed in $A$, then the cohomology ring $\homology^{*}(E, E_{0} ; \Lambda)$ associated with the normal bundle of $M$ in $A$ is canonically isomorphic to the cohomology ring $\homology^{*}(A, A-M ; \Lambda)$.
+\end{corollary}
+
+Here $\Lambda$ can be any coefficient ring.
+
+\begin{proof} Since the tubular neighborhood $N_{\varepsilon}$ and the complement $A-M$ are open subsets with union $A$ and intersection $N_{\varepsilon}-M$, there is an excision isomorphism
+\[
+\homology^{*}(A, A-M) \varrightarrow{} \homology^{*}(N_{\varepsilon}, N_{\varepsilon}-M).
+\]
+(See for example \cite{spanier1981}.) Therefore the embedding
+\[
+\Exp:(\total(\varepsilon), \total(\varepsilon)_{0}) \varrightarrow{} (N_{\varepsilon}, N_{\varepsilon}-M) \subset(A, A-M)
+\]
+induces an isomorphism
+\[
+\Exp^{*}: \homology^{*}(A, A-M) \varrightarrow{} \homology^{*}(\total(\varepsilon), \total(\varepsilon)_{0}) .
+\]
+Composing with the excision isomorphism
+\[
+\homology^{*}(\total(\varepsilon), \total(\varepsilon)_{0}) \cong \homology^{*}(\total, \total_{0})
+\]
+we obtain an isomorphism which clearly does not depend on the particular choice of $\varepsilon$.
+\end{proof}
+
+\begin{remark*} This isomorphism $\homology^{*}(A, A-M) \varrightarrow{} \homology^{*}(E, E_{0})$ does not even depend on the particular choice of Riemannian metric for $A$. To make sense of this statement, one must first choose a definition of ``normal bundle'' based on the exact sequence
+\[
+0 \varrightarrow{} \tangentbundle{M} \varrightarrow{} \tangentbundle{A}|_M \varrightarrow{} \normalbundle{}^k \varrightarrow{} 0,
+\]
+which is independent of the particular Riemannian metric on $A$. (Compare \ref{prob-3-B}.) Since any two Riemannian metrics $\mu_{0}$ and $\mu_{1}$ can be joined by a smooth one-parameter family of Riemannian metrics $(1-t) \mu_{0}+t \mu_{1}$, it then follows easily that the corresponding exponential maps are homotopic.
+\end{remark*}
+As an application of Corollary \ref{cor:11.02}, the fundamental cohomology class\index{fundamental class!\indexline cohomology} \newline $u \in \homology^{k}(E, E_{0} ; \mathbb{Z} / 2)$ corresponds to a canonical cohomology class which we denote by the symbol
+\[
+u' \in \homology^{k}(A, A-M ; \mathbb{Z}/ 2) .
+\]
+Similarly if the normal bundle $\normalbundle{}^{k}$ is orientable, then any specific orientation for $\normalbundle{}^{k}$ determines a corresponding class $u' \in \homology^{k}(A, A-M ; \mathbb{Z})$ with integer coefficients.
+
+\begin{theorem}\label{thm:11.3}
+If $M$ is embedded as a closed subset of $A$, then the composition of the two restriction homomorphisms
+\[
+\homology^{k}(A, A-M) \varrightarrow{} \homology^{k}(A) \varrightarrow{} \homology^{k}(M)
+\]
+with mod 2 coefficients, maps the fundamental class $u'$ to the top Stiefel-Whitney class $\sw_{k}(\normalbundle{}^{k})$ of the normal bundle. Similarly, if $\normalbundle{}^k$ is oriented, then the corresponding composition with integer coefficients maps the integral fundamental class $u'$ to the Euler class $\eulerclass(\normalbundle{}^k)$
+\end{theorem}
+
+\begin{proof} 
+Let $s: M \varrightarrow{} E$ denote the zero cross-section of $\normalbundle{}^{k}$, inducing a canonical isomorphism $\homology^{*}(E) \varrightarrow{} \homology^{*}(M)$. First note that the composition
+\[
+\homology^{k}(E, E_{0}) \varrightarrow{} \homology^{k}(E) \varrightarrow{s^*} \homology^{k}(M)
+\]
+with mod 2 coefficients maps the fundamental class $u$ to the Stiefel-Whitney class $\sw_{k}(\normalbundle{}^{k})$. (Compare Property \ref{pro:09.05}.) In fact the image of $s^*(u|_E)$ under the Thom isomorphism\index{Thom isomorphism}
+\[
+\phi: \homology^{k}(M) \varrightarrow{} \homology^{2k}(E, E_{0})
+\]
+is equal to \[\pi^{*} s^{*}(u|_E) \smile u=(u|_E) \smile u=u \smile u=\steenrod^{k}(u).\] Therefore $s *(u|_E)$ is equal to $\phi^{-1} \steenrod^{k}(u)=\sw_{k}(\normalbundle{}^{k})$.
+
+Now, replacing $(E,E_{0})$ by the diffeomorphic pair $(N_{\varepsilon}, N_{\varepsilon}-M)$, it follows that the composition of the two restriction homomorphisms
+\[
+\homology^{k}(N_{\varepsilon}, N_{\varepsilon}-M) \varrightarrow{} \homology^{k}(N_{\varepsilon}) \varrightarrow{} \homology^{k}(M)
+\]
+maps the class corresponding to $u$ to $\sw_{k}(\normalbundle{}^{k})$. Making use of the commutative diagram
+\[\begin{tikzcd}
+\homology^k (A, A-M) \arrow[d, "\cong"] \arrow[r] & \homology^k (A) \arrow[d] \\
+\homology^k(N_\epsilon, N_\epsilon - M) \arrow[r] & \homology^k(m) \\
+\end{tikzcd}\]
+the conclusion follows. The proof in the oriented case is completely analogous.
+\end{proof}
+
+\begin{definition}The image of $u^{\prime}$ in $\homology^{k}(A)$ is called the dual cohomology class\index{dual cohomology class} to the submanifold $M$ of codimension $k$. (Compare Problem \ref{prob:11.C}.) If this dual class $u^{\prime}|_A$ is zero, it follows of course that the top Stiefel-Whitney class [or the Euler class] of $\normalbundle{}^{k}$ must also be zero. One special case is particularly noteworthy:
+\begin{corollary}\label{cor:11.04}\index{embedding}
+ If $M=M^{n}$ is smoothly embedded as a closed subset of the Euclidean space $\mathbb{R}^{n+k}$, then $\sw_{k}(\normalbundle{}^{k})=0$.\index{Stiefel-Whitney class $\sw_i$} In the oriented case $e(\normalbundle{}^{k})=0$.\index{Euler class $\eulerclass$}
+\end{corollary}
+For the dual class $u^{\prime}|_{\mathbb{R}^{n+k}}$ belongs to a cohomology group $\homology^{k}(\mathbb{R}^{n+k})$ which is zero.\end{definition} 
+
+By the Whitney duality theorem\index{Whiteney duality theorem} \ref{lem:04.02}, the class $\sw_{k}(\normalbundle{}^{k})$ can be expressed as a characteristic class $\xoverline{\sw}_{k}(\tau_{M})$ of the tangent bundle of $M$. Thus we can restate \ref{cor:11.04} as follows: If $\xoverline{\sw}_{k}(\tau_{M}) \neq 0$, then $M$ cannot be smoothly embedded as a closed subset of $\mathbb{R}^{n+k}$.
+
+As an example, if $n$ is a power of 2 , then the real projective space $\projective^{n}$ cannot be smoothly embedded in $\mathbb{R}^{2 n-1}$\index{projective space!\indexline real $\projective^n$}. (Compare \ref{thm:04.08}. According to \cite{whitney1944}, every smooth $n$-manifold whose topology has a countable basis can be smoothly embedded in $\mathbb{R}^{2 n}$. Presumably it can be embedded as a closed subset of $\mathbb{R}^{2 n}$, although Whitney does not prove this).
+
+\begin{remark}It is essential in \ref{cor:11.04} that $M$ be a manifold without boundary, embedded as a closed subset of Euclidean space. For example the open M\"obius band\index{M\"obius band} of Figure \ref{fig:figure2} can certainly be embedded in $\mathbb{R}^{3}$. But it cannot be embedded as a closed subset, since the associated Stiefel Whitney class $\xoverline{\sw}_{1}(\tau)$ is non-zero. Similarly it is essential that $M$ be embedded (i.e., without self-intersections) rather than simply immersed in $\mathbb{R}^{n+k}$. For example a theorem of \cite{Boy1903} asserts that the real projective plane $\projective^{2}$ can be immersed in $\mathbb{R}^{3}$. (See \cite{hilbert1999geometry}.) But again the dual Steifel-Whitney class $\xoverline{\sw}_{1}(\tau)$ is non-zero.
+\end{remark} 
+
+\end{document}

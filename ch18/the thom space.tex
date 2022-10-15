@@ -1,0 +1,33 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{The Thom Space of a Euclidean Vector Bundle}
+Let $\xi$ be a $k$--plane bundle with a Euclidean metric, and let $A \subset E(\xi)$ be the subset of the total space consisting of all vectors $v$ with $|v| \ge 1$. Then the identification space $E(\xi)/A$ in which $A$ is pinched to a point will be called the \defemphi{Thom space} $\thom(\xi)$. Thus $\thom(\xi)$ has a preferred base point, denoted by $t_0$, and the complement $\thom(\xi) - t_0$ consists of all vectors $v \in E(\xi)$ with $|v| < 1$.
+
+\begin{remark*}
+If the base space of $\xi$ is compact, then $\thom(\xi)$ can be identified with the single point (Alexandroff) compactification of $E(\xi)$. In fact the correspondence $v \mapsto v/\sqrt{1 - |v|^2}$ maps $E(\xi) - A$ diffeomorphically onto $E(\xi)$, inducing the required homeomorphism $\thom(\xi) \longrightarrow E(\xi) \cup \{\infty\}$.
+\end{remark*}
+
+The following two lemmas describe the topology of $\thom(\xi)$. 
+
+\begin{lemma}\label{lem:18.1}
+If the base space $B$ is a CW--complex, then the Thom space $\thom(\xi)$ is a $(k - 1)$--connected CW--complex, having (in addition to the base point $t_0$) one $(n + k)$--cell corresponding to each $n$--cell of $B$. 
+\end{lemma}
+
+In particular, if $B$ is a finite complex, then $\thom(\xi)$ is a finite complex. 
+
+\begin{proof}
+For each open $n$--cell $e_\alpha$ of $B$, the inverse image $\pi^{-1}(e_\alpha) \cap (E - A)$ is an open cell of dimension $n + k$; these open cells are mutually disjoint and cover the set $E - A \cong \thom - t_0$. Note that there are no cells in dimension $1$ through $k - 1$. 
+
+Let $\mathbb{D}^n$ be the closed unit ball in ${\mathbb R}^n$ and let $f : \mathbb{D}^n \longrightarrow B$ be a characteristic map (Definition \ref{def:06.01}) for the cell $e_\alpha$. Then the induced Euclidean vector bundle $f^\ast(\xi)$ is trivial by the covering homotopy theorem\index{covering homotopy} \cite[\S 11.6]{steenrod1951}, so the vectors of length $\le 1$ in $E(f^\ast(\xi))$ form a topological product $\mathbb{D}^n \times \mathbb{D}^k$. The composition \[\mathbb{D}^n \times \mathbb{D}^k \subset E(f^\ast(\xi)) \longrightarrow E(\xi) \longrightarrow \thom(\xi)\] now forms the required characteristic map for the image of $\pi^{-1}(e_\alpha)$ in the Thom space $\thom(\xi)$. Further details will be left to the reader.
+\end{proof}
+
+We will need to compute (or at least to estimate) the homotopy groups of such a Thom space $\thom(\xi)$. As a first step, here is a description of the homology.
+
+\begin{lemma}\label{lem:18.2}
+If $\xi$ is an oriented $k$--plane bundle over $B$, then each integral homology group $\homology_{k + i}(\thom(\xi), t_0)$ is canonically isomorphic to $\homology_i(B)$. 
+\end{lemma}
+
+\begin{proof}
+Evidently the base space $B$ is embedded as the zero cross--section of the space $E - A \cong \thom - t_0$. Let $\thom_0 = E_0/A$ be the complement of the zero section in the Thom space $\thom$. Then evidently $\thom_0$ is contractible, so by the exact sequence of the triple $(\thom, \thom_0, t_0)$ it follows that \[\homology_n(\thom, t_0) \cong \homology_n(\thom, \thom_0).\] But an easy excision argument shows that \[\homology_n(\thom, t_0) \cong \homology_n(E, E_0).\] Together with the Thom isomorphism \[\homology_n(E, E_0) \cong \homology_{n - k}(B)\] of Corollary \ref{cor:10.7}, this completes the proof.
+\end{proof}
+\end{document}

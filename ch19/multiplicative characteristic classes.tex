@@ -1,0 +1,39 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Multiplicative Characteristic Classes}
+For the remainder of this section we will very briefly describe another application of multiplicative sequences\index{multiplicative sequence}. Let $\Lambda$ be an integral domain containing $1/2$, and let $\{K_n\}$ be a multiplicative sequence with coefficients in $\Lambda$. Setting \[k_n(\xi) = K_n(\pontrjaginclass_1(\xi), \ldots, \pontrjaginclass_n(\xi))\] for any real vector bundle $\xi$, we clearly obtain a sequence of ``characteristic classes'' \[k_n(\xi) \in \homology^{4n}(B; \Lambda)\] which are natural with respect to bundle maps, and satisfy the product formula \[k_n(\xi \oplus \eta) = \sum_{i + j = n} k_i(\xi) k_j(\eta).\]\index{product formulas} Here it is understood that $k_0(\xi) = 1$. [Setting $\displaystyle k(\xi) = \sum k_i(\xi)$, we can of course write this product formula briefly as $k(\xi \oplus \eta) = k(\xi) k(\eta)$.]
+
+Conversely, given a sequence of characteristic classes $k_n(\xi)$ satisfying these properties, it is not difficult to show that $k_n(\xi) = K_n(\pontrjaginclass_1(\xi), \ldots, \pontrjaginclass_n(\xi))$ for some uniquely defined multiplicative sequence $\{K_n\}$. (Compare Theorem \ref{thm:15.9} and Problem~\ref{prob:15-B}.) It does not matter whether or not the bundles $\xi$ are required to be oriented or orientable. 
+
+The precise multiplicative sequence corresponding to a sequence $\{k_n(\xi)\}$\index{multiplicative characteristic class} of characteristic classes can be identified as follows. Let $\gamma^1$ be the canonical complex line bundle over ${\mathbb P}^\infty(\mathbb C)$,\index{cannonical bundle!\indexline complex $\tautological^n$} and recall that \[\pontrjaginclass_1(\gamma_{\mathbb R}^1) = a^2 \in \homology^4({\mathbb P}^\infty(\mathbb C); \mathbb Z).\] (
+Compare Theorem \ref{thm:14.04}, Theorem \ref{thm:14.10} and Corollary \ref{cor:15.05}.) Defining a formal power series $f(t)$ by setting $f(a^2)$ equal to $\displaystyle k(\gamma_{\mathbb R}^1) = \sum k_n(\gamma_{\mathbb R}^1)$, it clearly follows that $\{K_n\}$ is the multiplicative sequence belonging to this power series $f(t)$. 
+
+To illustrate these ideas, let us consider the case $\Lambda = {\mathbb Z}/l$ where $l$ is a fixed odd prime. Let \[{\reducedSteenrod}^k : \homology^i(X; {\mathbb Z}/l) \longrightarrow \homology^{i + 4rk} (X; {\mathbb Z}/l)\] denote the Steenrod reduced $l$--th power operation\index{Steenrod reduced powers}, where $r = \frac 1 2 (l - 1)$. (Compare \cite{steenrod1962cohomology}.) Following \cite{wu1948}, and in analogy with Thom's definition of Stiefel--Whitney classes (\S\ref{ch:8}), we define a new characteristic class \[\steenrodReducedclass_n(\xi) \in \homology^{4rn}(B; {\mathbb Z}/l)\] by the identity $\steenrodReducedclass_n(\xi) = \phi^{-1} {\reducedSteenrod}^n \phi(1)$ for any oriented vector bundle $\xi$. Just as in \S\ref{ch:8}, it is easy to check that the $\steenrodReducedclass_n$ are natural, and satisfy a product formula. Hence \[\steenrodReducedclass_n(\xi) = K_{rn}(\pontrjaginclass_1(\xi), \ldots, \pontrjaginclass_{rn}(\xi))\] for some uniquely determined multiplicative sequence $\{K_n\}$ with mod $l$ coefficients. 
+
+To identify this multiplicative sequence, we need only consider the particular vector bundle $\xi = \gamma_{\mathbb R}^1$ over the infinite complex projective space ${\mathbb P}^\infty(\mathbb C)$. The space $E_0$ of non--zero vectors in $E = E(\gamma_{\mathbb R}^1)$ has the homology of a point. Hence there are natural ring isomorphisms \[\homology^\ast(E, E_0) \cong \homology^\ast(E, \text{point}) \cong \homology^\ast({\mathbb P}^\infty(\mathbb C), \text{point}).\] The fundamental cohomology class $u \in \homology^2(E, E_0)$ corresponds to the class \[\eulerclass(\gamma_{\mathbb R}^1) = \chernclass_1(\gamma^1) = -a \in \homology^2({\mathbb P}^2(\mathbb C)).\] 
+(See Theorem \ref{thm:14.10}.) Therefore the element ${\reducedSteenrod}^1(u) = u^l$ (see \cite[p. 76]{steenrod1962cohomology}) corresponds to $(-a)^l$, and it follows that \[\steenrodReducedclass_1(\gamma_{\mathbb R}^1) = (-a)^{l - 1} = a^{2r}.\] Since the higher ${\reducedSteenrod}^k(u)$ are zero for dimensional reasons, this shows that the formal power series $\displaystyle f(a^2) = \sum \steenrodReducedclass_k(\gamma_{\mathbb R}^1)$ is equal to $1 + a^{2r}$, which proves the following.
+
+\begin{theorem}[Wu]\index{Wu class}
+If $l = 2r + 1$ is an odd prime, then the mod $l$ characteristic class \[\steenrodReducedclass_n(\xi) = \phi^{-1} {\reducedSteenrod}^n \phi(1)\] is equal to $K_{rn}(\pontrjaginclass_1(\xi), \ldots, \pontrjaginclass_{rn}(\xi))$ where $\{K_i\}$ is the multiplicative sequence belonging to the power series $f(t) = 1 + t^r$. 
+\end{theorem}
+
+As examples, for $l = 3$ it follows that $\steenrodReducedclass_n(\xi)$ is equal to the Pontrjagin class $\pontrjaginclass_n(\xi)$ reduced modulo $3$, and for $l = 5$ it follows that $\steenrodReducedclass_n(\xi)$ is equal to $\pontrjaginclass_n^2 - 2\pontrjaginclass_{n - 1} \pontrjaginclass_{n + 1} + - \ldots \pm 2\pontrjaginclass_{2n}$ reduced modulo $5$. 
+
+Just as in the mod $2$ case, it can be shown that $\steenrodReducedclass_i(\tau^n)$, for the tangent bundle $\tau^n$ of a compact oriented manifold, is a homotopy type invariant\index{homotopy type}. (Compare Theorem \ref{thm:11.14}.) In fact \[\steenrodReducedclass_i = v_i + {\reducedSteenrod}^1 v_{i - 1} + {\reducedSteenrod}^2 v_{i - 2} + \ldots\] where the Wu class $v_i$ is characterized by the identity \[\ip {{\reducedSteenrod}^i x} \mu = \ip {x \smile v_i} \mu\] for all $x \in \homology^{n - 4ri}(M^n; {\mathbb Z}/l)$. In particular, it follows that Pontrjagin classes modulo $3$ are homotopy type invariants. Proofs will be left to the reader.
+
+These characteristic classes $\steenrodReducedclass_i(\xi)$ generalize to play an important rule in the theory of fibrations\index{fibration} with a homotopy sphere as fiber. Compare \cite{milnor1968}, \cite{stasheff1968}, \cite{may2006geometry}. 
+
+We conclude with three problems for the reader, all taken from \cite{hirzebruch53}. 
+
+\begin{problem}\label{prob:19.A}
+Let $\{T_n\}$ be the multiplicative sequence of polynomials belonging to the power series $f(t) = t/(1 - \eulerclass^{-t})$. Then the \defemphi{Todd genus} $T[M]$ of a complex $n$--dimensional manifold is defined to be the characteristic number $\ip {T_n(\chernclass_1, \ldots, \chernclass_n)} {\mu_{2n}}$. Prove that $T[{\mathbb P}^n(\mathbb C)] = +1$, and prove that $\{T_n\}$ is the only multiplicative sequence with this property. 
+\end{problem}
+
+\begin{problem}\label{prob:19.B}
+If $\{K_n\}$ is the multiplicative sequence belonging to\newline  $f(t) = 1 + \lambda_1 t + \lambda_2 t^2 + \ldots$, let us indicate the dependence on the coefficients $\lambda_i$ by setting $K_n(x_1, \ldots, x_n) = k_n(\lambda_1, \ldots, \lambda_n, x_1, \ldots, x_n)$ where $k_n$ is a polynomial with integer coefficients. By considering the case where $\lambda_1, \ldots, \lambda_n$ are the elementary symmetric functions\index{symmetric functions} in $n$ indeterminates, prove the symmetry property $k_n(x_1, \ldots, x_n, \lambda_1, \ldots, \lambda_n) = k_n(\lambda_1, \ldots, \lambda_n, x_1, \ldots, x_n)$. In particular, prove that the coefficient of $x_{i_1} \ldots x_{i_r}$ in the polynomial $K_n(x_1, \ldots, x_n)$ is equal to $s_{i_1, \ldots, i_r}(\lambda_1, \ldots, \lambda_n)$. 
+\end{problem}
+
+\begin{problem}\label{prob:19.C}
+Using Cauchy's identity \[f(t) \frac {\dd(t/f(t))} {\dd t} = 1 - t \frac {\dd \log f(t)} {\dd t} = 1 + \sum (-1)^j s_j(\lambda_1, \ldots, \lambda_j) t^j,\] prove that the coefficient of $\pontrjaginclass_n$ in the $L$--polynomial $L_n(\pontrjaginclass_1, \ldots, \pontrjaginclass_n)$ is equal to $2^{2k}(2^{2k - 1} - 1)B_k/(2k)! \ne 0$. (Compare Appendix \ref{app:B}.\index{Bernoulli numbers $B_n$})
+\end{problem}
+\end{document}

@@ -1,0 +1,17 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+\section{Pontrjagin Numbers}\index{Pontrjagin, L.}
+Now consider a smooth, compact, oriented manifold\index{oriented manifold} $M^{4n}$. For each partition $I = i_1, \ldots, i_r$ of $n$, the $I$--th \defemphi{Pontrjagin number} $\pontrjaginclass_I[M^{4n}] = \pontrjaginclass_{i_1} \cdots \pontrjaginclass_{i_r} [M^{4n}]$ is defined to be the integer \[\ip {\pontrjaginclass_{i_1} (\tau^{4n}) \cdots \pontrjaginclass_{i_r}(\tau^{4n})} {\mu_{4n}}.\] Here $\tau^{4n}$ denotes the tangent bundle and $\mu_{4n}$ the fundamental homology class. 
+
+As an example, the complex projective space ${\mathbb P}^{2n}(\mathbb C)$, with its complex structure forgotten, is a compact oriented manifold of real dimension $4 n$. The Pontrjagin numbers of this manifold are given by the formula \[\pontrjaginclass_{i_1} \cdots \pontrjaginclass_{i_r} [{\mathbb P}^{2n}(\mathbb C)] = \binom {2n + 1} {i_1} \cdots \binom {2n + 1} {i_r},\] as one easily verifies using \ref{ex:15.06}. 
+
+If we reverse the orientation of a manifold $M^{4n}$, note that its Pontrjagin classes remain unchanged, but its fundamental homology class $\mu_{4n}$ changes sign. Hence each Pontrjagin number \[\pontrjaginclass_{i_1} \cdots \pontrjaginclass_{i_r} [M^{4n}] = \ip {p_1 \cdots \pontrjaginclass_{i_r}} {\mu_{4n}}\] also changes sign. \defemph{Thus if some Pontrjagin number $\pontrjaginclass_{i_1} \cdots \pontrjaginclass_{i_r}[M^{4n}]$ is non--zero, then it follows that $M^{4n}$ cannot possess any orientation reversing diffeomorphism.} 
+
+As an example, the complex projective space ${\mathbb P}^{2n}(\mathbb C)$ does not possess any orientation reversing diffeomorphism. (On the other hand, ${\mathbb P}^{2n + 1}(\mathbb C)$ does have an orientation reversing diffeomorphism, arising from complex conjugation.) 
+
+This behavior of Pontrjagin numbers is in contrast to the behaviour of the Euler number\index{Euler characteristic} $\eulerclass[M^{2n}]$ which is invariant under change of orientation. In fact the manifold $\sphere^{2n}$, with $\eulerclass[\sphere^{2n}] \ne 0$, certainly does admit an orientation reserving diffeomorphism. 
+
+Furthermore, if some Pontrjagin number $\pontrjaginclass_{i_1} \cdots \pontrjaginclass_{i_r}[M^{4n}]$ is non--zero then, proceeding as in Lemma \ref{lem:14.9}, we see that $M^{4n}$ cannot be the boundary of any smooth, compact, oriented $(4n + 1)$--dimensional manifold with boundary\index{boundary}\index{smooth manifold!\indexline with boundary}. (Compare \S\ref{ch:17}.) For example, the projective space ${\mathbb P}^{2n}(\mathbb C)$ cannot be an oriented boundary. In fact the disjoint union ${\mathbb P}^{2n}(\mathbb C) + \cdots + {\mathbb P}^{2n}(\mathbb C)$ of any number of copies of ${\mathbb P}^{2n}(\mathbb C)$ cannot be an oriented boundary, since the $I$--th Pontrjagin number of such a $k$--fold union is clearly just $k$ times the $I$--th Pontrjagin number of ${\mathbb P}^{2n}(\mathbb C)$ itself. Again this argument does not work for ${\mathbb P}^{2n}(\mathbb C)$. (In fact ${\mathbb P}^{2n + 1}(\mathbb C)$ is the total space of a circle--bundle over a quaternion projective space\index{projective space!\indexline quaternion $\projective^n(\mathbb{H})$}, and hence is the boundary of an associated disk--bundle.)
+
+Again the corresponding statement for Euler numbers is also false. Thus $\eulerclass[\sphere^{2n}] \ne 0$ even though $\sphere^{2n}$ clearly bounds an oriented manifold. All of these remarks are due to Pontrjagin. 
+\end{document}

@@ -1,0 +1,297 @@
+
+%\usepackage[hypcap]{caption}
+%\usepackage{titlesec}
+%\renewcommand{\sectionbreak}{\clearpage}
+\usepackage[hypcap=true]{subcaption}
+
+\captionsetup[subfigure]{singlelinecheck=on}
+\usepackage{amsthm}
+\usepackage{amsmath,amsfonts}
+\usepackage{amssymb}
+%\usepackage[scr=pxtx]{mathalfa}
+%\usepackage{diffcoeff}
+%\usepackage{bbold}
+%\usepackage[sans]{dsfont}
+%\usepackage{fourier}
+
+\usepackage[Symbol]{upgreek}
+\usepackage{graphicx}
+\usepackage[colorlinks,linkcolor=blue,citecolor=green]
+{hyperref}
+\usepackage[nameinlink]{cleveref}
+%\usepackage[figure]{hypcap}%[all]
+
+\newtheoremstyle{sans}{3pt}{3pt}{}{}{\bfseries\sffamily}{.}{.5em}{}
+\newtheoremstyle{sansit}{3pt}{3pt}{\itshape}{}{\bfseries\sffamily}{.}{.5em}{}
+
+ \AtBeginDocument{%
+ 	\crefname{equation}{equation}{equations}%
+ 	\crefname{figure}{Figure}{Figures}%
+ 	\crefname{assertion}{Assertion}{Assertions}%
+ 	\crefname{theorem}{Theorem}{Theorems}%
+ 	\crefname{lemma}{Lemma}{Lemmas}%
+ 	\crefname{corollary}{Corollary}{Corollaries}%
+ 	\crefname{proposition}{Proposition}{Propositions}%
+ 	\crefname{definition}{Definition}{Definitions}%
+ 	\crefname{hypo}{Preliminary Hypothesis}{preliminary hypothesis}%
+ 	\crefname{example}{Example}{Examples}%
+ 	\crefname{remark}{Remark}{Remarks}%
+ 	\crefname{problem}{Problem}{Problems}%
+ 	\crefname{property}{Property}{Properties}%
+ 	\crefname{section}{\S}{\S\S}%
+ }
+
+\theoremstyle{sansit}
+\newtheorem{theorem}{Theorem}[chapter]%
+\newtheorem{corollary}[theorem]{Corollary}%
+\newtheorem{lemma}[theorem]{Lemma}%
+\newtheorem{proposition}[theorem]{Proposition}%
+\newtheorem{assumption}[theorem]{Assumption}%
+\newtheorem{conjecture}[theorem]{\conjecturename}%
+\theoremstyle{sans}
+\newtheorem{definition}[theorem]{Definition}%
+\newtheorem*{remark*}{Remark}%
+\newtheorem*{note}{Note}%
+\newtheorem{remark}{Remark}%
+\newtheorem{example}{Example}%
+\newtheorem{exercise}[theorem]{Exercise}%
+
+\hypersetup{
+	pdftitle={CHARACTERISTIC CLASSES},
+	pdfauthor={John W. Milnor},
+	pdfsubject={Lecture Note},
+	pdfkeywords={CHARACTERISTIC CLASSES; Stiefel-Whitney Classes; Chern Classes; Stiefel-Whitney Classes}
+}
+%\usepackage{draftwatermark}%,
+%\SetWatermarkScale{.7}
+%\SetWatermarkText{Draft Version}
+%\usepackage{natbib}
+
+
+\usepackage{lmodern}
+%\usepackage{bookmark}
+\usepackage{enumitem}
+%\setlist[enumerate]{labelindent=\parindent, leftmargin=*,
+%	widest=IV, align=left}%,leftmargin=1.5cm
+\usepackage{tikz-cd,tikz}
+\usetikzlibrary{arrows,calc,decorations.markings,positioning,decorations.pathreplacing,intersections,patterns,matrix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\set}[1]{\setaux#1\relax}
+\def\setaux#1#2#3\relax{%
+	\{ {#1}#2 1,
+	\ifnum\pdfstrcmp{#3}{3}=0
+	{#1}#2 2
+	\else
+	\dots
+	\fi
+	, {#1}#2{#3} \}
+}
+
+\newcommand{\ntuple}[1]{\ntupleaux#1\relax}
+\def\ntupleaux#1#2#3\relax{%
+	( {#1}#2 1,
+	\ifnum\pdfstrcmp{#3}{3}=0
+	{#1}#2 2
+	\else
+	\dots
+	\fi
+	, {#1}#2{#3} )
+}
+
+\newcommand{\base}[1]{\baseaux#1\relax}
+\def\baseaux#1\relax{%
+	\pd{}{{#1}^1}|_{p},
+	\dots
+	, \pd{}{{#1}^n}|_{p}
+}
+\newcommand{\slbase}[1]{\baseaux#1\relax}
+\def\baseaux#1\relax{%
+	\slpd{}{{#1}^1}|_{p},
+	\dots
+	, \slpd{}{{#1}^n}|_{p}
+}
+
+\newcommand{\coord}[1]{\coordaux#1\relax}
+\def\coordaux#1#2#3#4\relax{%
+		\ifnum\pdfstrcmp{#4}{}=0
+		{#1}#2 1,
+		\dots
+		, {#1}#2#3
+		\else
+	#1#2 1 (#4),
+	\dots
+	, #1#2#3(#4)
+	\fi
+}%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\B}{\mathcal{B}}
+\let\rand\partial
+\newcommand{\R}{\boldsymbol{\mathbb{R}}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Cx}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand\Sphere[1]{\mathbb{S}^{#1}}
+\newcommand\cp[1]{\Cx\boldsymbol{\mathrm{P}}^{#1}}
+\newcommand\rp[1]{\R\boldsymbol{\mathrm{P}}^{#1}}
+
+\DeclareMathAlphabet{\mathlinlib}{T1}{LinuxLibertineT-TLF}{m}{n}
+%\SetMathAlphabet{\mathlinlib}{bold}{T1}{LinuxLibertineT-TLF}{b}{n}
+\newcommand{\Q}{\mathlinlib{Q}}
+\DeclareMathAlphabet{\oldmathcal}{OMS}{cmsy}{m}{n}
+
+\newcommand{\rank}{\mathrm{Rank}\,}
+\newcommand{\Hom}{\mathsf{Hom}}
+\newcommand{\smooth}{C^\infty}
+\newcommand{\id}{\mathbf{Id}}
+\newcommand{\supp}{\mathrm{Supp}\,}
+\newcommand{\grad}{\mathsf{grad}\,}
+\newcommand{\dif}{\mathsf{d}}
+\newcommand{\homology}{\mathcal{H}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+
+\newcommand\pd[2]{\frac{\partial #1}{\partial #2}}
+\newcommand\Pd[2]{\frac{\mathsf{D} #1}{\partial #2}}
+\newcommand\dpd[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand\slpd[2]{\partial #1/ \partial #2}
+\newcommand\spd[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand\dspd[3]{\dfrac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand\slspd[3]{\partial^2 #1/\partial #2 \partial #3}
+
+\newcommand\od[2]{\frac{\dif #1}{\dif #2}}
+\newcommand\dod[2]{\dfrac{\dif #1}{\dif #2}}
+\newcommand\slod[2]{\dif #1/ \dif #2}
+\newcommand\sod[2]{\frac{\dif^2 #1}{\dif {#2}^2}}
+\newcommand\Od[2]{\frac{\mathsf{D} #1}{\dif #2}}
+\newcommand\dOd[2]{\dfrac{\mathsf{D} #1}{\dif #2}}
+\newcommand\ip[1]{\left\langle #1\right\rangle}
+\newcommand\inv{^{-1}}
+\renewcommand\lambda{\uplambda}
+\renewcommand\chi{\upchi}
+\font\ursymbol=psyr at 11pt % You also use other font sizes.
+\def\urpartial{\mbox{\ursymbol\char"B6}}
+\renewcommand\partial{\urpartial}
+\newcommand\grass[2]{\def\temp{#2}\ifx\temp\empty
+	\mathsf{Gr}_{#1}
+	\else
+	\mathsf{Gr}_{#1}(\R^{#2})
+	\fi}
+\newcommand\stiefel[3]{\def\temp{#2}\ifx\temp\empty
+	\mathsf{V}_{#1}(\R^{#3})
+	\else
+	\mathsf{V}_{#1}^{#2}(\R^{#3})
+	\fi}
+\newcommand{\sq}{\mathsf{Sq}}
+
+\newcommand\disk[1]{\mathbb{D}^{#1}}
+\newcommand\odisk{\mathrm{OD}}
+\newcommand{\bdotp}{\operatorname{\boldsymbol{\cdot}}}
+
+\newcommand{\map}[3]{#1\mathpunct{:}#2\mathchoice{\longrightarrow}{\to}{\to}{\to}#3}
+
+
+\theoremstyle{sansit}
+\newtheorem{assertion}{Assertion}%[section]
+\newtheorem{property}[theorem]{Property}
+\newtheorem*{assertion*}{Assertion}
+
+\theoremstyle{sans}
+\newtheorem{problem}{Problem}[chapter]
+\renewcommand{\theproblem}{\thechapter-\Alph{problem}}
+
+\theoremstyle{definition}
+\newtheorem{application}{Application}[chapter]
+
+\renewcommand{\thesection}{\arabic{section}}
+
+\newcommand*\embraced[2]{\tikz[baseline=(char.base)]{
+		\node[inner sep=-1.5pt] (char) {\color{#1}\ttfamily \char`\{\textcolor{#1}{#2}\color{#1}\ttfamily \char`\}};}}
+\newcommand*\oline[1]{%
+	\kern0.1em            % Counteract the inner kern
+	\vbox{%
+		\hrule height 0.5pt % Line above with certain width
+		\kern0.4ex          % Distance between line and content
+		\hbox{%
+			\kern-0.1em       % Shorten the content on the left
+			$#1$%             % The content, typeset math mode
+			\kern-0.1em       % Shorten the content on the right
+		}% end of hbox
+	}% end of vbox
+	\kern0.1em            % Counteract the inner kern
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\truncdiv#1#2{((#1-(#2-1)/2)/#2)}
+\def\moduloop#1#2{(#1-\truncdiv{#1}{#2}*#2)}
+\def\modulo#1#2{\number\numexpr\moduloop{#1}{#2}\relax}
+% \binomialb macro from https://tex.stackexchange.com/a/161863/4686
+% expandably computes binomial coefficients with \numexpr
+
+% START OF CODE
+\catcode`_ 11
+
+\def\binomialb #1#2{\romannumeral0\expandafter
+	\binomialb_a\the\numexpr #1\expandafter.\the\numexpr #2.}
+
+\def\binomialb_a #1.#2.{\expandafter\binomialb_b\the\numexpr #1-#2.#2.}
+
+\def\binomialb_b #1.#2.{\ifnum #1<#2 \expandafter\binomialb_ca
+	\else   \expandafter\binomialb_cb
+	\fi {#1}{#2}}
+
+\def\binomialb_ca #1{\ifnum#1=0 \expandafter \binomialb_one\else 
+	\expandafter \binomialb_d\fi {#1}}
+
+\def\binomialb_cb #1#2{\ifnum #2=0 \expandafter\binomialb_one\else
+	\expandafter\binomialb_d\fi {#2}{#1}}
+
+\def\binomialb_one #1#2{ 1}
+
+\def\binomialb_d #1#2{\expandafter\binomialb_e \the\numexpr #2+1.#1!}
+
+% n-k+1.k! -> u=n-k+2.v=2.w=n-k+1.k!
+\def\binomialb_e #1.{\expandafter\binomialb_f \the\numexpr #1+1.2.#1.}
+
+% u.v.w.k!
+\def\binomialb_f #1.#2.#3.#4!%
+{\ifnum #2>#4 \binomialb_end\fi
+	\expandafter\binomialb_f
+	\the\numexpr #1+1\expandafter.%
+	\the\numexpr #2+1\expandafter.%
+	\the\numexpr #1*#3/#2.#4!}
+
+\def\binomialb_end #1*#2/#3!{\fi\space #2}
+\catcode`_ 8
+% END OR \binomialb code
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%\usepackage{mathenv,nath}
+\usepackage{braket}%,mathtools
+\usepackage{empheq}
+
+\renewcommand{\sectionmark}[1]{}%prevent rewriting \markright 
+\renewcommand{\chaptermark}[1]{}%prevent rewriting \markright 
+
+\renewcommand{\sectionmark}[1]{%
+	\markright{#1}}
+
+\copypagestyle{headingsnobook}{headings}
+\makeevenhead{headingsnobook}{\normalfont\fontsize{10}{10pt}\selectfont\embraced{red}{\textcolor{black}{\thepage}}}{\timedate}{\normalfont\fontsize{10}{10pt}\selectfont\sffamily %Lectures on the h-Cobordism Theorem}
+	\embraced{gray}{\thesection}\ \leftmark}
+%
+\makeoddhead{headingsnobook}{\normalfont\fontsize{10}{10pt}\selectfont\sffamily \embraced{gray}{\thesection}\  \leftmark}{\timedate}{\normalfont\fontsize{10}{10pt}\selectfont\embraced{red}{\textcolor{black}{\thepage}}}
+\renewcommand{\prefacename}{Introduction}
+
+
+\usepackage{refcount}
+\newcommand{\pagedifference}[2]{%
+	\number\numexpr\getpagerefnumber{#2}-\getpagerefnumber{#1}\relax}
+
+\usepackage{makeidx}
+
+\makeindex

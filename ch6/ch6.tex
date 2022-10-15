@@ -186,7 +186,7 @@ The proof is straightforward.
 
 Now let us count the number of $r$-cells in $\grassmannian_{n}(\bR^m)$ for arbitrary $n$. It is convenient to introduce the language of partitions. 
 \pagebreak
-\begin{definition}
+\begin{customdef}{6.6}
 \label{def:06.06}
 A \defemph{partition of an integer}\index{partition} $r \geq 0$ is an unordered sequence $i_{1} i_{2} \dots i_{s}$ of positive integers with sum $\bR$. The number of partitions of $r$ is customarily denoted by $p(r) $. Thus for $r \leq 10$ one has the following table.
 
@@ -201,7 +201,7 @@ A \defemph{partition of an integer}\index{partition} $r \geq 0$ is an unordered 
 \end{tabular}
 \caption{Partitions of $r$ for $r\leq 10$}
 \end{table}
-\end{definition}
+\end{customdef}
 For example the integer 4 has five partitions, namely: 1 1 1 1, 1 1 2, 2 2, 1 3, and 4. The integer 0 has just one (vacuous) partition. (According to Hardy and Ramanujan the function $p(r)$ is asymptotic to $\exp (\pi \sqrt{2 r / 3}) / 4 r \sqrt{3}$ as $r\rightarrow \infty$. For further information see \cite{ostmann1956}.)
 
 To every Schubert symbol $(\sigma_{1},\dots, \sigma_{n})$ with $d(\sigma)=r$ and $\sigma_{n} \leq m$ there corresponds a partition $i_{1}\dots i_{s}$ of $r$, where $i_{1},\dots, i_{s}$ denotes the sequence obtained from $\sigma_{1}-1,\dots, \sigma_{n}-n$ by cancelling any zeros which may appear at the beginning of this sequence. Clearly
@@ -209,6 +209,7 @@ To every Schubert symbol $(\sigma_{1},\dots, \sigma_{n})$ with $d(\sigma)=r$ and
 1 \leq i_{1} \leq i_{2} \leq\dots \leq i_{s} \leq m-n
 \]
 and $s \leq n $. Thus
+\setcounter{theorem}{6}
 \begin{corollary}
 \label{cor:06.07}
 The number of $r$-cells in $\grassmannian_{n}(\bR^m)$ is equal to the number of partitions of $r$ into at most $n$ integers each of which is $\leq m-n$.
@@ -227,7 +228,7 @@ Show that the restriction homomorphism\index{cohomology!\indexline of $\grassman
 \[
 i^\ast : \homology^{p}(\grassmannian_{n}(\bR^{\infty}))\varrightarrow{} \homology^{p}(\grassmannian_{n}(\bR^{n+k}))
 \]
-is an isomorphism for $p<k$. Any coefficient group may be used. (Compare the description of cohomology for CW-complexes in \ref{app:A}.)
+is an isomorphism for $p<k$. Any coefficient group may be used. (Compare the description of cohomology for CW-complexes in Appendix \ref{app:A}.)
 \end{problem}
 \begin{problem}
 \label{prob:06.03}

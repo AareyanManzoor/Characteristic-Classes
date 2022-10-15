@@ -8,7 +8,7 @@ Let $M$ be a closed, possibly disconnected, smooth $n$-dimensional manifold. Usi
 \[
 \mu_{M} \in \homology_{n}(M ; \, \mathbb{Z} / 2).
 \]
-(See \ref{app:A}.) Hence for any cohomology class $v \in \homology^{n}(M ; \, \mathbb{Z} / 2)$, the \defemphi{Kronecker index}
+(See Appendix~\ref{app:A}.) Hence for any cohomology class $v \in \homology^{n}(M ; \, \mathbb{Z} / 2)$, the \defemphi{Kronecker index}
 \[
 \ip{v}{\mu_{M}} \in \mathbb{Z} / 2,
 \]
@@ -35,9 +35,9 @@ In studying these numbers, we will be interested in the collection of all possib
 \[
 \sw_{1}^{r_{1}} \dots \sw_{n}^{r_{n}} [M]=\sw_{1}^{r_{1}} \dots \sw_{n} ^{r_n}{[M^{\prime}]}
 \]
-for every monomial ${\sw}_{1}^{r_{1}} \dots \sw_{n}^{r_n}$ of total dimension $n$. (Compare definition \ref{def:06.06} and \ref{prob:06.04}.)
+for every monomial ${\sw}_{1}^{r_{1}} \dots \sw_{n}^{r_n}$ of total dimension $n$. (Compare Definition~\pageref{def:06.06} of partition and \ref{prob:06.04}.)
 
-As an example, let us try to compute the Stiefel-Whitney numbers of the projective space $\projective^{n}$ (which is about the only manifold we are able to handle at this point). Let $\tau$ denote the tangent bundle of $\projective^{r}$. If $n$ is even, then the cohomology class $\sw_{n}(\tau)=(n+1) a^{n}$ is non-zero, and it follows that the Stiefel-Whitney number $\sw_{n}[\projective^{n}]$ is non-zero. Similarly, since $\sw_{1}(\tau)=(n+1) a \neq 0$, it follows that $\sw_{1}^{n}[\projective^{n}] \neq 0$. If $n$ is actually a power of $2$, then $\sw(\tau)=1+a+a^{n}$, and it follows that all other Stiefel-Whitney numbers of $\projective^{n}$ are zero. In any case, even if $n$ is not a power of $2$, the remaining Stiefel-Whitney numbers can certainly be computed effectively as products of binomial coefficients.
+As an example, let us try to compute the Stiefel-Whitney numbers of the projective space $\projective^{n}$. (which is about the only manifold we are able to handle at this point.) Let $\tau$ denote the tangent bundle of $\projective^{n}$. If $n$ is even, then the cohomology class $\sw_{n}(\tau)=(n+1) a^{n}$ is non-zero, and it follows that the Stiefel-Whitney number $\sw_{n}[\projective^{n}]$ is non-zero. Similarly, since $\sw_{1}(\tau)=(n+1) a \neq 0$, it follows that $\sw_{1}^{n}[\projective^{n}] \neq 0$. If $n$ is actually a power of $2$, then $\sw(\tau)=1+a+a^{n}$, and it follows that all other Stiefel-Whitney numbers of $\projective^{n}$ are zero. In any case, even if $n$ is not a power of $2$, the remaining Stiefel-Whitney numbers can certainly be computed effectively as products of binomial coefficients.
 
 On the other hand if $n$ is odd, say $n=2k-1$, then $\sw(\tau)=(1+a)^{2k}=(1+a^{2})^{k}$, so it follows that $\sw_{j}(\tau)=0$ whenever $j$ is odd. Since every monomial of total dimension $2k-1$ must contain a factor $\sw_{j}$ of odd dimension, it follows that all of the Stiefel-Whitney numbers of $\projective^{2k-1}$ are zero. This gives some indication of how much detail and structure this invariant overlooks.
 
@@ -56,9 +56,9 @@ the coefficient group $\mathbb{Z}/2$ being understood. Then the natural homomorp
 \[
  \partial:\homology_{n+1}(\B, M)\varrightarrow{} {\homology_{n}(M)}
 \]
-maps $\mu_{\B}$ to $ \mu_M $. (Compare \ref{app:A}.) For any class $v\in \homology_{n}(M)$, note the identity
+maps $\mu_{\B}$ to $ \mu_M $. (Compare Appendix~\ref{app:A}.) For any class $v\in \homology^{n}(M)$, note the identity
 \[
-\ip{v}{\partial\mu_{\B} }=\ip{\delta_{v}}{\mu_{\B}},
+\ip{v}{\partial\mu_{\B} }=\ip{\delta v}{\mu_{\B}},
 \]
 where $\delta$ denotes the natural homomorphism from $\homology^{n}(M)$ to $\homology^{n+1}(\B ,M)$. (There is no sign since we are working mod $2$.) Consider the tangent	bundle $\tangentbundle{\B}$ restricted to $M$, as well as the sub-bundle $\tangentbundle{M}$. Choosing a	Euclidean metric\index{Euclidean metric} on $\tangentbundle \B$, there is a unique outward normal vector field along $M$, spanning a trivial line bundle $\trivialbundle^1$, and it follows that
 \[
@@ -108,7 +108,7 @@ is the boundary of a smooth compact $(n+1)$-dimensional manifold.
 \end{figure}
 
 
-Theorem \ref{thm:04.09}, \ref{thm:04.10} have the following important consequence.
+Theorems \ref{thm:04.09}, \ref{thm:04.10} have the following important consequence.
 \begin{corollary}\label{cor:04.11}\index{smooth manifold}
 Two smooth closed $n$-manifolds belong to
 the same cobordism class if and only if all of their corresponding Stiefel-Whitney numbers are equal.	

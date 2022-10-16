@@ -16,7 +16,7 @@ is defined. We will sometimes use the abbreviated notation $v[M]$ for this Krone
 
 Let $r_{1}, \dots, r_{n}$ be non-negative integers with $r_{1}+2 r_{2}+\dots+n r_{n}=n$. Then corresponding to any vector bundle $\xi$ we can form the monomial
 \[
-\sw_{1}(\xi)^{r_{1}} \dots \sw_{n}(\xi)^{r_{n}}
+\sw_{1}(\xi)^{r_{1}} \cdots \sw_{n}(\xi)^{r_{n}}
 \]
 in $\homology^{n}(\B(\xi) ;\, \mathbb{Z} / 2) .$ In particular we can carry out this construction if $\xi$ is the tangent bundle of the manifold $M$.
 
@@ -24,18 +24,18 @@ in $\homology^{n}(\B(\xi) ;\, \mathbb{Z} / 2) .$ In particular we can carry out 
 \label{def:04.02}
 The corresponding integer mod 2
 \[
-\ip{\sw_{1}(\tangentbundle{M})^{r_1} \dots \sw_{n}(\tangentbundle{M})^{r_n}}{ \mu_{M}}
+\ip{\sw_{1}(\tangentbundle{M})^{r_1} \cdots \sw_{n}(\tangentbundle{M})^{r_n}}{ \mu_{M}}
 \text{ or briefly }
-{\sw}_{1}^{r_1} \dots \sw_{n}^{r_n}[M],
+{\sw}_{1}^{r_1} \cdots \sw_{n}^{r_n}[M],
 \]
-is called the \defemphi{Stiefel-Whitney number} of $M$ associated with the monomial $\sw_{1}^{r_{1}} \dots \sw_{n}^{r_n}$.
+is called the \defemphi{Stiefel-Whitney number} of $M$ associated with the monomial $\sw_{1}^{r_{1}} \cdots \sw_{n}^{r_n}$.
 \end{definition}
 
 In studying these numbers, we will be interested in the collection of all possible Stiefel-Whitney numbers for a given manifold. Thus two different manifolds $M$ and $M^{\prime}$ have the same Stiefel-Whitney numbers if 
 \[
-\sw_{1}^{r_{1}} \dots \sw_{n}^{r_{n}} [M]=\sw_{1}^{r_{1}} \dots \sw_{n} ^{r_n}{[M^{\prime}]}
+\sw_{1}^{r_{1}} \cdots \sw_{n}^{r_{n}} [M]=\sw_{1}^{r_{1}} \cdots \sw_{n} ^{r_n}{[M^{\prime}]}
 \]
-for every monomial ${\sw}_{1}^{r_{1}} \dots \sw_{n}^{r_n}$ of total dimension $n$. (Compare Definition~\pageref{def:06.06} of partition and \ref{prob:06.04}.)
+for every monomial ${\sw}_{1}^{r_{1}} \dots \sw_{n}^{r_n}$ of total dimension $n$. (Compare Definition~\pageref{def:06.06} of a partition and \ref{prob:06.04}.)
 
 As an example, let us try to compute the Stiefel-Whitney numbers of the projective space $\projective^{n}$. (which is about the only manifold we are able to handle at this point.) Let $\tau$ denote the tangent bundle of $\projective^{n}$. If $n$ is even, then the cohomology class $\sw_{n}(\tau)=(n+1) a^{n}$ is non-zero, and it follows that the Stiefel-Whitney number $\sw_{n}[\projective^{n}]$ is non-zero. Similarly, since $\sw_{1}(\tau)=(n+1) a \neq 0$, it follows that $\sw_{1}^{n}[\projective^{n}] \neq 0$. If $n$ is actually a power of $2$, then $\sw(\tau)=1+a+a^{n}$, and it follows that all other Stiefel-Whitney numbers of $\projective^{n}$ are zero. In any case, even if $n$ is not a power of $2$, the remaining Stiefel-Whitney numbers can certainly be computed effectively as products of binomial coefficients.
 

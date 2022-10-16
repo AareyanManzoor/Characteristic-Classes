@@ -22,7 +22,7 @@ If $\trivialbundle$ is trivial, then $\sw_i(\trivialbundle \oplus \eta)=\sw_i(\e
 \begin{proposition}\label{prop:04.04}
 If $\xi$ is an $\mathbb{R}^{n}$\index{Rn-bundle@$\bR^n$-bundle}-bundle with a Euclidean metric\index{Euclidean metric} which possesses a nowhere zero cross-section, then $\sw_{n}(\xi)=0$. If $\xi$ possesses $k$ cross-sections\index{cross-section} which are nowhere linearly dependent, then
 \[
-\sw_{n-k+1}(\xi)=\sw_{n-k+2}(\xi)=\ldots=\sw_{n}(\xi)=0 .
+\sw_{n-k+1}(\xi)=\sw_{n-k+2}(\xi)=\dots=\sw_{n}(\xi)=0 .
 \]
 \end{proposition}
 For it follows from Theorem~\ref{thm:03.03} that $\xi$ splits as a Whitney sum $\trivialbundle \oplus \trivialbundle^{\perp}$ where $\trivialbundle$ is trivial and $\trivialbundle^{\perp}$ has dimension $n-k$.
@@ -40,12 +40,12 @@ can be solved inductively, so that $\sw_{i}(\eta)$ is expressed as a polynomial 
 \begin{definition}
 $\homology^{\Pi}(\base;\mathbb{Z}/2)$\index{$\homology^\Pi$} will denote the ring consisting of all formal infinite series
 \[
-a=a_{0}+a_{1}+a_{2}+\ldots
+a=a_{0}+a_{1}+a_{2}+\cdots
 \]
 with $a_i \in \homology^{i}(\base; \mathbb{Z}/2)$. The product operation in this ring is to be given by the formula
 \begin{align*}
-(a_{0}+a_{1}+a_{2}+\ldots)(b_{0}+b_{1}+b_{2}+\ldots) \\
-=(a_{0} b_{0})+ (a_{1} b_{0}+a_{0} b_{1})+(a_{2} b_{0}+a_{1} b_{1}+a_{0} b_{2})+\ldots.
+(a_{0}+a_{1}+a_{2}+\cdots)(b_{0}+b_{1}+b_{2}+\cdots) \\
+=(a_{0} b_{0})+ (a_{1} b_{0}+a_{0} b_{1})+(a_{2} b_{0}+a_{1} b_{1}+a_{0} b_{2})+\cdots.
 \end{align*}
 
 This product is commutative (since we are working modulo 2) and associative. Additively, $\homology^\Pi(\base;\mathbb{Z} / 2)$ is to be simply the Cartesian product of the groups $\homology^i(\base; \mathbb{Z} / 2)$.
@@ -53,7 +53,7 @@ This product is commutative (since we are working modulo 2) and associative. Add
 
 The \defemph{total Stiefel-Whitney class}\index{Stiefel-Whitney class $\sw_i$!\indexline total} of an $n$-plane bundle $\xi$ over $\base$ is defined to be the element
 \[
-\sw(\xi)=1+\sw_1(\xi)+\sw_2(\xi)+\ldots+\sw_n(\xi)+0+\ldots
+\sw(\xi)=1+\sw_1(\xi)+\sw_2(\xi)+\cdots+\sw_n(\xi)+0+\cdots
 \]
 of this ring. Note that the Whitney product theorem can now be expressed by the simple formula
 \[
@@ -63,7 +63,7 @@ of this ring. Note that the Whitney product theorem can now be expressed by the 
 \label{lem:04.01}
 The collection of all infinite series
 \[
-\sw=1+\sw_{1}+\sw_{2}+\ldots \quad \in \homology^{\Pi}(\base; \mathbb{Z} / 2)
+\sw=1+\sw_{1}+\sw_{2}+\cdots \quad \in \homology^{\Pi}(\base; \mathbb{Z} / 2)
 \]
 with leading term 1 forms a commutative group under multiplication.
 \end{lemma}
@@ -73,11 +73,11 @@ with leading term 1 forms a commutative group under multiplication.
 \begin{proof}
 The inverse
 \[
-\xoverline{\sw}=1+\xoverline{\sw}_{1}+\xoverline{\sw}_{2}+\xoverline{\sw}_{3}+\ldots
+\xoverline{\sw}=1+\xoverline{\sw}_{1}+\xoverline{\sw}_{2}+\xoverline{\sw}_{3}+\cdots
 \]
 of a given element $\sw$ can be constructed inductively by the algorithm
 \[
-\xoverline{\sw}_{n}=\sw_{1} \xoverline{\sw}_{n-1}+\sw_{2} \xoverline{\sw}_{n-2}+\ldots+\sw_{n-1} \xoverline{\sw}_{1}+\sw_{n} .
+\xoverline{\sw}_{n}=\sw_{1} \xoverline{\sw}_{n-1}+\sw_{2} \xoverline{\sw}_{n-2}+\cdots+\sw_{n-1} \xoverline{\sw}_{1}+\sw_{n} .
 \]
 Thus one obtains:
 \begin{align*}
@@ -91,11 +91,11 @@ and so on. This completes the proof.
 
 Alternatively $\xoverline{\sw}$ can be computed by the power series\index{power series} expansion:
 \begin{align*}
-\xoverline{\sw} &=[1+(\sw_{1}+\sw_{2}+\sw_{3}+\ldots)]^{-1} \\
-&=1-(\sw_{1}+\sw_{2}+\sw_{3}+\ldots)+(\sw_{1}+\sw_{2}+\ldots)^{2}-(\sw_{1}+\sw_{2}+\ldots)^{3}+-\ldots \\
-&=1-\sw_{1}+(\sw_{1}^{2}-\sw_{2})+(-\sw_{1}^{3}+2\sw_{1}\sw_{2}-\sw_3)+\ldots
+\xoverline{\sw} &=[1+(\sw_{1}+\sw_{2}+\sw_{3}+\cdots)]^{-1} \\
+&=1-(\sw_{1}+\sw_{2}+\sw_{3}+\cdots)+(\sw_{1}+\sw_{2}+\cdots)^{2}-(\sw_{1}+\sw_{2}+\cdots)^{3}+\cdots \\
+&=1-\sw_{1}+(\sw_{1}^{2}-\sw_{2})+(-\sw_{1}^{3}+2\sw_{1}\sw_{2}-\sw_3)+\cdots
 \end{align*}
-(where the signs are of course irrelevant). This leads to the precise expression $(i_{1}+\ldots+i_{k}) ! / i_{1} ! \ldots i_{k} !$ for the coefficient of $\sw_{1}^{i_1}\sw_{2}^{i_{2}} \ldots \sw_{k}^{i_k}$ in $\xoverline{\sw}$.
+(where the signs are of course irrelevant). This leads to the precise expression $(i_{1}+\cdots+i_{k}) ! / i_{1} ! \cdots i_{k} !$ for the coefficient of $\sw_{1}^{i_1}\sw_{2}^{i_{2}} \cdots \sw_{k}^{i_k}$ in $\xoverline{\sw}$.
 
 Now consider two vector bundles $\xi$ and $\eta$ over the same base space. It follows from Proposition~\ref{prop:04.01} that the equation
 \[
@@ -124,13 +124,13 @@ Now let us compute the Stiefel-Whitney classes in some special cases. It will fr
 
 \begin{example}
 \label{exa:04.01}
-For the tangent bundle $\tangentBundle{}$\index{sphere bundle} of the unit sphere $S^{n}$, the class \newline $\sw(\tangentBundle{}) =\sw(S^{n})$ is equal to 1 . In other words, $\tangentBundle{}$ cannot be distinguished from the trivial bundle over $S^{n}$ by means of Stiefel-Whitney classes.
+For the tangent bundle $\tangentBundle{}$\index{sphere bundle} of the unit sphere $S^{n}$, the class \newline $\sw(\tangentBundle{}) =\sw(S^{n})$ is equal to 1. In other words, $\tangentBundle{}$ cannot be distinguished from the trivial bundle over $S^{n}$ by means of Stiefel-Whitney classes.
 \end{example}
 \begin{proof}
 For the standard imbedding $S^{n} \subset \mathbb{R}^{n+1}$, the normal bundle $\normalbundle{}$ is trivial. Since $\sw(\tangentBundle{}) \sw(\normalbundle{})=1$ and $\sw(\normalbundle{})=1$ it follows that $\sw(\tangentBundle{})=1$.
 
 
-Alternative proof (without using the Whitney product theorem). The \mbox{canonical} map
+Alternative proof (without using the Whitney product theorem): The \mbox{canonical} map
 \[
 f: S^{n} \varrightarrow{} \projective^{n}
 \]
@@ -151,7 +151,7 @@ is well known to be zero. (Compare the remark below.) Therefore $\sw_{n}(S^{n})=
 
 \end{proof}
 
-The rest of $\S $\ref{ch:4} will be concerned with bundles over the projective space $\projective^{n}$. It is first necessary to describe the $\bmod 2$ cohomology of $\projective^{n}$.
+The rest of $\S $\ref{ch:4} will be concerned with bundles over the projective space $\projective^{n}$. It is first necessary to describe the mod 2 cohomology of $\projective^{n}$.
 
 \begin{lemma}\index{cohomology!\indexline of $\projective^n$}\index{projective space!\indexline real $\projective^n$}
 \label{lem:04.03}
@@ -199,14 +199,14 @@ By its definition, the line bundle $\tautological_n^1$ over $\projective^n$ is c
 \]
 with $v$ perpendicular to $x$.) Then
 \[
-\sw(\tautological^{\perp})=1+a+a^2+\ldots+a^n .
+\sw(\tautological^{\perp})=1+a+a^2+\cdots+a^n .
 \]
 \end{example}
 
 \begin{proof}
 Since $\tautological_{n}^{1} \oplus \tautological^{\perp}$ is trivial we have
 \[
-\sw(\tautological^{\perp})=\xoverline{\sw}(\tautological_n^1)=(1+a)^{-1}=1+a+a^2+\ldots+a^n .
+\sw(\tautological^{\perp})=\xoverline{\sw}(\tautological_n^1)=(1+a)^{-1}=1+a+a^2+\cdots+a^n .
 \]
 \end{proof}
 
@@ -262,7 +262,7 @@ We cannot compute $\sw(\projective^n)$ directly from this lemma since we do not 
 
 \begin{theorem}
 \label{thm:04.05}
-The Whitney sum $\tau \oplus \trivialbundle^{1}$ is isomorphic to the $(n+1)$-fold Whitney sum $\tautological_{n}^{1} \oplus \tautological_{n}^{1} \oplus \ldots \oplus \tautological_{n}^{1}$. Hence the total Stiefel-Whitney class of $\projective^{n}$ is given by\index{binomial coefficients}
+The Whitney sum $\tau \oplus \trivialbundle^{1}$ is isomorphic to the $(n+1)$-fold Whitney sum $\tautological_{n}^{1} \oplus \tautological_{n}^{1} \oplus \cdots \oplus \tautological_{n}^{1}$. Hence the total Stiefel-Whitney class of $\projective^{n}$ is given by\index{binomial coefficients}
 \[
 \sw(\projective^{n})=(1+a)^{n+1}=1+\binom{n+1}{1}a + \binom{n+1}{2}a^2 + \dots + \binom{n+1}{n}a^{n} .
 \]
@@ -279,15 +279,15 @@ This is clearly isomorphic to
 \]
 and therefore is isomorphic to the $(n+1)$-fold sum
 \[
-\Hom(\tautological_{n}^{1}, \trivialbundle^{1} \oplus \ldots \oplus \trivialbundle^{1}) \cong \Hom(\tautological_{n}^{1}, \trivialbundle^{1}) \oplus \ldots \oplus \Hom(\tautological_{n}^{1}, \trivialbundle^{1})
+\Hom(\tautological_{n}^{1}, \trivialbundle^{1} \oplus \cdots \oplus \trivialbundle^{1}) \cong \Hom(\tautological_{n}^{1}, \trivialbundle^{1}) \oplus \cdots \oplus \Hom(\tautological_{n}^{1}, \trivialbundle^{1})
 \]
 But the bundle $\Hom(\tautological_{n}^{1}, \trivialbundle^{1})$ is isomorphic to $\tautological_{n}^{1}, \operatorname{since} \tautological_{n}^{1}$ has a Euclidean metric. (Compare Problem \ref{prob-3-D}.) This proves that
 \[
-\tau \oplus \trivialbundle^{1} \cong \tautological_{n}^{1} \oplus \ldots \oplus \tautological_{n}^{1}
+\tau \oplus \trivialbundle^{1} \cong \tautological_{n}^{1} \oplus \cdots \oplus \tautological_{n}^{1}
 \]
 Now the Whitney product theorem\index{Whitney product theorem} (Axiom~\ref{axi:04.03}) implies that $\sw(\tau)=\sw(\tau \oplus \trivialbundle^{1})$ is equal to
 \[
-\sw(\tautological_{n}^{1}) \ldots \sw(\tautological_{n}^{1})=(1+a)^{n+1}
+\sw(\tautological_{n}^{1}) \cdots \sw(\tautological_{n}^{1})=(1+a)^{n+1}
 \]
 Expanding by the binomial theorem, this completes the proof of \ref{thm:04.05}.
 
@@ -349,7 +349,7 @@ Therefore if $n+1=2^{r}$ then
 Conversely if $n+1=2^{r} m$ with $m$ odd, $m>1$, then
 
 \[
- \sw(P^{n})=(1+a)^{n+1}=(1+a^{2^{r}})^{m}  =1+m a^{2^{r}}+\frac{m(m-1)}{2} a^{2 \cdot 2^{r}}+\ldots \neq 1
+ \sw(P^{n})=(1+a)^{n+1}=(1+a^{2^{r}})^{m}  =1+m a^{2^{r}}+\frac{m(m-1)}{2} a^{2 \cdot 2^{r}}+\cdots \neq 1
 \]
 
 since $2^{r}<n+1$. This completes the proof.

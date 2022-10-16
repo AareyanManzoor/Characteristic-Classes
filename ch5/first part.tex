@@ -9,7 +9,7 @@ which carries each point of $M^1$ to its unit tangent vector. Similarly Gauss\in
 \[n : M^k \varrightarrow{} S^k\]
 which carries each point of $M$ to its unit normal vector. (Compare figure \ref{fig:figure6},\ref{fig:figure7}.) In order to specify the sign of the tangent or normal vector it is
 necessary to assume that $M^1$ or $M^k$ has a preferred orientation\index{oriented manifold}. (Compare
-\ref{ch:9}.) However without this orientation one can still define a corresponding
+\S\ref{ch:9}.) However without this orientation one can still define a corresponding
 map from the manifold to the real projective space $\projective^k$.\index{projective space!\indexline real $\projective^n$}
 
 \begin{figure}[ht]
@@ -28,7 +28,7 @@ map from the manifold to the real projective space $\projective^k$.\index{projec
 More generally let $M$ be a smooth manifold of dimension $n$ in the coordinate space $\mathbb{R}^{n+k}$. Then to each point $x$ of $M$ one can assign the tangent space \newline $\tangentspace{M}{x} \subset \mathbb{R}^{n+k}$. We will think of $\tangentspace{M}{x}$ as determining a point in a new topological space $\grassmannian_n (\mathbb{R}^{n+k})$.
 \begin{definition}\label{def:5-1}
 The \defemph{Grassmann manifold} $\grassmannian_n (\mathbb{R}^{n+k})$ is the set of all $n$-dimensional planes through the origin of the coordinate space $\mathbb{R}^{n+k}$. This is to be topologized as a quotient space, as follows.
-An $n$-frame\index{frame}\index{n-frame@$n$-frame} in $\mathbb{R}^{n+k}$ is an $n$-tuple of linearly independent vectors of $\mathbb{R}^{n+k}$. The collection of all $n$-frames in $\mathbb{R}^{n+k}$ forms an open subset of the n-fold Cartesian product $\mathbb{R}^{n+k} \times \dots \times \mathbb{R}^{n+k}$, called the \defemphi{Stiefel manifold} $\StiefelManifold_n(\mathbb{R}^{n+k}) $. (Compare \cite[$\S$7.7]{steenrod1951}) There is a canonical function
+An $n$-frame\index{frame}\index{n-frame@$n$-frame} in $\mathbb{R}^{n+k}$ is an $n$-tuple of linearly independent vectors of $\mathbb{R}^{n+k}$. The collection of all $n$-frames in $\mathbb{R}^{n+k}$ forms an open subset of the n-fold Cartesian product $\mathbb{R}^{n+k} \times \dots \times \mathbb{R}^{n+k}$, called the \defemphi{Stiefel manifold} $\StiefelManifold_n(\mathbb{R}^{n+k}) $. (Compare \cite[$\S$7.7]{steenrod1951}.) There is a canonical function
 \[q:\StiefelManifold_n(\mathbb{R}^{n+k})\varrightarrow{}\grassmannian_n (\mathbb{R}^{n+k}) \]
 which maps each $n$-frame to the $n$-plane\index{n-plane@$n$-plane} which it spans. Now give $\grassmannian_n (\mathbb{R}^{n+k})$ the quotient topology: a subset $U \subset \grassmannian_n (\mathbb{R}^{n+k})$ is open if and only if its inverse image $q^{-1}(U) \subset \StiefelManifold_n(\mathbb{R}^{n+k})$ is open.
 
@@ -43,10 +43,10 @@ Here $q_0$ denotes the restriction of $q$ to $\StiefelManifold_n^0(\mathbb{R}^{n
 \end{definition}
 \begin{lemma}\label{lem:05.01}
 	The Grassmann manifold $\grassmannian_n (\mathbb{R}^{n+k})$ is a compact topological manifold\index{topological manifold}\footnote{ A \defemph{topological manifold} of dimension $d$ is a Hausdorff space in which every
-		point has a neighborhood homeomorphic to $\mathbb{R}^d$.} of dimension $nk$. The correspondence $X \rightarrow X^{\perp}$, which assigns to each $n$-plane its orthogonal $k$-plane, defines a homeomorphism between $\grassmannian_n (\mathbb{R}^{n+k})$ and $\grassmannian_{k}(n+k)$.
+		point has a neighborhood homeomorphic to $\mathbb{R}^d$.} of dimension $nk$. The correspondence $X \rightarrow X^{\perp}$, which assigns to each $n$-plane its orthogonal $k$-plane, defines a homeomorphism between $\grassmannian_n (\mathbb{R}^{n+k})$ and $\grassmannian_{k}(\mathbb{R}^{n+k})$.
 \end{lemma}
 \begin{remark*}
-	For the special case $k=1$ note that $\grassmannian_{1}(n+1)$ is equal to the real projective space $\projective^n$. It follows that the manifold $\grassmannian_{n}(n+1)$ of $n$-planes in $(n+1)$-space is canonically homeomorphic to $\projective^n$.
+	For the special case $k=1$ note that $\grassmannian_{1}(\mathbb{R}^{n+1})$ is equal to the real projective space $\projective^n$. It follows that the manifold $\grassmannian_{n}(\mathbb{R}^{n+1})$ of $n$-planes in $(n+1)$-space is canonically homeomorphic to $\projective^n$.
 \end{remark*}
 
 \begin{proof}[Proof of \ref{lem:05.01}]
@@ -63,7 +63,7 @@ is continuous; hence that $\rho_{w}$ is continuous. Now if $X, Y$ are distinct $
 The set $\StiefelManifold_n^0(\mathbb{R}^{n+k})$ of orthonormal $n$-frames is a closed, bounded subset of $\mathbb{R}^{n+k} \times \dots \times \mathbb{R}^{n+k}$, and therefore is compact. It follows that
 \[\grassmannian_n (\mathbb{R}^{n+k})=q_{0}(\StiefelManifold_n^0(\mathbb{R}^{n+k}))\]
 is also compact.\\
-\begin{proof}[Proof that every point $X_{0}$ of $\grassmannian_n (\mathbb{R}^{n+k})$ has a neighborhood $U$ which is homeomorphic to $\mathbb{R}^{nk}$.]
+\begin{proof}\textit{that every point $X_{0}$ of $\grassmannian_n (\mathbb{R}^{n+k})$ has a neighborhood $U$ which is homeomorphic to $\mathbb{R}^{nk}$.}
  It will be convenient to regard $\mathbb{R}^{n+k}$ as the direct sum $X_{0} \oplus X_{0}{ }^\perp$. Let $U$ be the open subset of $\grassmannian_n (\mathbb{R}^{n+k})$ consisting of all $n$-planes $Y$ such that the orthogonal projection
 \[p:X_0\oplus X_{0}^{\perp}\varrightarrow{}X_0\]
 maps $Y$ onto $X_{0}$ (i,e., all $Y$ such that $Y \cap X_{0}^{\perp}=0$ ). Then each $Y \in U$ can be considered as the graph of a linear transformation
@@ -106,16 +106,16 @@ be the set of all pairs\footnote{Here, and elsewhere, the expression ``$n$-plane
 \[
  (\text {$n$-plane in } \mathbb{R}^{n+k}, \text { vector in that $n$-plane}). 
 \]
-This is to be topologized as a subset of $\grassmannian_n (\mathbb{R}^{n+k})\times \mathbb{R}^{n+k}$. The projection map $\pi:\total\varrightarrow{} \grassmannian_n (\mathbb{R}^{n+k})$ is defined by $\pi(X, x)=X$, and the vector space structure in the fiber over $X$ is defined by $t_{1}(X, x_{1})+t_{2}(X, x_{2})= (X, t_{1} X_{1}+t_{2} X_{2}) .$ (Note that $\gamma^{1}(\mathbb{R}^{n+1})$ is the same as the line bundle $\gamma_{n}^{1}$ described in \ref{ch:2}.)
+This is to be topologized as a subset of $\grassmannian_n (\mathbb{R}^{n+k})\times \mathbb{R}^{n+k}$. The projection map $\pi:\total\varrightarrow{} \grassmannian_n (\mathbb{R}^{n+k})$ is defined by $\pi(X, x)=X$, and the vector space structure in the fiber over $X$ is defined by $t_{1}(X, x_{1})+t_{2}(X, x_{2})= (X, t_{1} x_{1}+t_{2} x_{2}) .$ (Note that $\gamma^{1}(\mathbb{R}^{n+1})$ is the same as the line bundle $\gamma_{n}^{1}$ described in \S\ref{ch:2}.)
 
 \begin{lemma}\label{lem:05.02}
 	The vector bundle $\gamma^{n}(\mathbb{R}^{n+k})$ constructed in this way satisfies the local triviality condition.
 \end{lemma}
 \begin{proof}
-	Let $U$ be the neighborhood of $X_{0}$ constructed as in \ref{def:5-1}. Define the coordinate homeomorphism
-	\[h:U\times X_0\varrightarrow{}\pi\inv U
+	Let $U$ be the neighborhood of $X_{0}$ constructed as in Lemma~\ref{lem:05.01}. Define the coordinate homeomorphism
+	\[h:U\times X_0\varrightarrow{}\pi\inv (U)
 	\]
-	as follows. Let $h(Y, X)=(Y, y)$ where $y$ denotes the unique vector in $Y$ which is carried into $x$ by the orthogonal projection
+	as follows. Let $h(Y, x)=(Y, y)$ where $y$ denotes the unique vector in $Y$ which is carried into $x$ by the orthogonal projection
 	\[p:\mathbb{R}^{n+k} \varrightarrow{}X_{0}. 
 	\]
 	The identities
@@ -141,7 +141,7 @@ where $g(x, v)=(\tangentspace{M}{x}, v) $. We will use the abbreviated notation
 \]
 It is clear that both $g$ and $\xoverline{g}$ are continuous.
 
-Not only tangent bundles, but most other $\mathbb{R}^{n}$-bundles can be mapped into the bundle $\gamma^{n}(\mathbb{R}^{n+k})$ providing that $k$ is sufficiently large. For this reason $\gamma^{n}(\mathbb{R}^{n+k})$ is called a \defemphi{universal bundle}. (Compare \ref{thm:05.06} and \ref{thm:05.07}, as well as \cite[$\S$ 19]{steenrodwhitehead1951}.)
+Not only tangent bundles, but most other $\mathbb{R}^{n}$-bundles can be mapped into the bundle $\gamma^{n}(\mathbb{R}^{n+k})$ providing that $k$ is sufficiently large. For this reason $\gamma^{n}(\mathbb{R}^{n+k})$ is called a \defemphi{universal bundle}. (Compare Theorems~\ref{thm:05.06} and \ref{thm:05.07}, as well as \cite[$\S$ 19]{steenrodwhitehead1951}.)
 
 \begin{lemma}\label{lem:05.03}
 	For any $n$-plane\index{n-plane@$n$-plane} bundle $\xi$ over a compact base space $\B $ there exists a bundle map\index{bundle map} $\xi \rightarrow \gamma^{n}(\mathbb{R}^{n+k})$ provided that $k$ is sufficiently large.
@@ -157,15 +157,15 @@ f(e)=(\hat{f} (\text{fiber through } e), \hat{f}(e)).
 The continuity of $f$ is not difficult to verify, making use of the fact that $\xi$ is locally trivial.
 
 \begin{proof}[Proof of \ref{lem:05.03}]
-Choose open sets $U_{1}, \dots, U_{r}$ covering $\B $ so that each $\xi \mid _{U_{i}}$ is trivial. Since $\B $ is normal, there exist open sets $V_{1}, \dots, V_{r}$ covering $\B $ with $\xoverline{V}_{i} \subset U_{i}$. (Compare \cite[p. 171]{kelley1955}). Here $\xoverline{V}_{i}$ denotes the closure of $V_{i} .$ Similarly construct $W_{1}, \dots, W_{r}$ with $\xoverline{W}_{i} \subset V_{i} $. Let
+Choose open sets $U_{1}, \dots, U_{r}$ covering $\B $ so that each $\xi \mid _{U_{i}}$ is trivial. Since $\B $ is normal, there exist open sets $V_{1}, \dots, V_{r}$ covering $\B $ with $\xoverline{V}_{i} \subset U_{i}$. (Compare \cite[p. 171]{kelley1955}.) Here $\xoverline{V}_{i}$ denotes the closure of $V_{i} .$ Similarly construct $W_{1}, \dots, W_{r}$ with $\xoverline{W}_{i} \subset V_{i} $. By Urysohn's lemma (Compare \cite[\S33]{munkres2000topology}) we have continuous functions
 \[\map{\lambda_{i}}{\B }{\mathbb{R}}
 \]
-denote a continuous function which takes the value 1 on $\xoverline{W}_{i}$ and the value 0 outside of $V_{i}$.
+which takes the value 1 on $\xoverline{W}_{i}$ and the value 0 outside of $V_{i}$.
 
 Since $\xi|_{ U_{i}}$ is trivial there exists a map
-\[\map{h_{i}}{\pi^{-1} U_{i}}{\mathbb{R}^{n}}
+\[\map{h_{i}}{\pi^{-1} (U_{i})}{\mathbb{R}^{n}}
 \]
-which maps each fiber of $\xi| _{U_{i}}$ linearly onto $\mathbb{R}^{n}$. Define $\map{h_{i}^{\prime}}{\total(\xi)}{R^{n}}$ by
+which maps each fiber of $\xi| _{U_{i}}$ linearly onto $\mathbb{R}^{n}$. Define $\map{h_{i}^{\prime}}{\total(\xi)}{\mathbb{R}^{n}}$ by
 
 \[
 h_{i}^{\prime}(e)=\begin{cases}

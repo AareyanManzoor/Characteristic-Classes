@@ -2,15 +2,15 @@
 
 \begin{document}
 %5.8 here
-\section{ Paracompact Spaces} \label{sec:5.3}
-Before beginning the proof of \ref{thm:05.06} and \ref{thm:05.07}, let us review the definition and the basic theorems concerning paracompactness. For further information the reader is referred  \cite{kelley1955} and \cite{dugundji1966}. 
+\section{Paracompact Spaces} \label{sec:5.3}
+Before beginning the proofs of Theorems~\ref{thm:05.06} and \ref{thm:05.07}, let us review the definition and the basic theorems concerning paracompactness. For further information the reader is referred \cite{kelley1955} and \cite{dugundji1966}. 
 
 \begin{definition}
 A topological space $\base$ is \defemphi{paracompact} if $\base$ is a Hausdorff space and if, for every open covering $\{U_\alpha\}$ of $\base$, there exists an open covering $\{\StiefelManifold_\beta\}$ which
 
 \begin{enumerate}[label=\arabic*)]
-    \item is a \emph{refinement} of $\{U_\alpha\}$: that is each $\StiefelManifold_\beta$ is contained in some $U_\alpha$, and
-    \item is \emph{locally finite}: that is each point of $\base$ has a neighborhood which intersects only finitely many of the $\StiefelManifold_\beta$. 
+    \item is a \defemph{refinement} of $\{U_\alpha\}$: that is each $\StiefelManifold_\beta$ is contained in some $U_\alpha$, and
+    \item is \defemph{locally finite}: that is each point of $\base$ has a neighborhood which intersects only finitely many of the $\StiefelManifold_\beta$. 
 \end{enumerate}
 \end{definition}
 
@@ -41,12 +41,12 @@ For any fiber bundle $\xi$ over a paracompact space $\base$, there exists a loca
 \end{lemma}
 
 \begin{proof}
-Choose a locally finite open covering $\{\StiefelManifold_\alpha\}$ so that each $\xi |_{\StiefelManifold_\alpha}$ is trivial; and choose an open covering $\{W_\alpha\}$ with ${\xoverline W}_\alpha \subset \StiefelManifold_\alpha$ for each $\alpha$. (Compare \cite[p. 171]{kelley1955}.) Let $\lambda_\alpha : \base \longrightarrow \mathbb R$ be a continuous function which takes the value $1$ on ${\xoverline W}_\alpha$ and the value $0$ outside of $\StiefelManifold_\alpha$. For each non--vacuous finite subset $S$ of the index set $\{\alpha\}$, let $U(S) \subset \base$ denote the set of all $b \in \base$ for which \[\Min_{\alpha \in S} \lambda_\alpha(\base) > \Max_{\alpha \not \in S} \lambda_\alpha(\base).\] Let $U_k$ be the union of those sets $U(S)$ for which $S$ has precisely $k$ elements.
+Choose a locally finite open covering $\{\StiefelManifold_\alpha\}$ so that each $\xi |_{\StiefelManifold_\alpha}$ is trivial; and choose an open covering $\{W_\alpha\}$ with ${\xoverline W}_\alpha \subset \StiefelManifold_\alpha$ for each $\alpha$. (Compare \cite[p. 171]{kelley1955}.) By Urysohn's lemma (Compare \cite[\S33]{munkres2000topology}) we have continuous functions $\lambda_\alpha : \base \longrightarrow \mathbb R$ which takes the value $1$ on ${\xoverline W}_\alpha$ and the value $0$ outside of $\StiefelManifold_\alpha$. For each non--vacuous finite subset $S$ of the index set $\{\alpha\}$, let $U(S) \subset \base$ denote the set of all $b \in \base$ for which \[\Min_{\alpha \in S} \lambda_\alpha(b) > \Max_{\alpha \not \in S} \lambda_\alpha(b).\] Let $U_k$ be the union of those sets $U(S)$ for which $S$ has precisely $k$ elements.
 
 Clearly each $U_k$ is an open set, and \[\base = U_1 \cup U_2 \cup U_3 \cup \ldots.\] For each given $b \in \base$, if precisely $k$ of the numbers $\lambda_\alpha(\base)$ are positive, then $b \in U_k$. If $\alpha$ is any element of the set $S$, note that \[U(S) \subset \StiefelManifold_\alpha.\] Since the covering $\{\StiefelManifold_\alpha\}$ is locally finite, it follows that $\{U_k\}$ is locally finite. Furthermore, since each $\xi |_{\StiefelManifold_\alpha}$ is trivial, it follows that each $\xi |_{U(S)}$ is trivial. But the set $U_k$ is equal to the disjoint union of its open subsets $U(S)$. Therefore $\xi |_{U_k}$ is also trivial. 
 \end{proof}
 
-The bundle map $f : \xi \longrightarrow \gamma^n$ can now be constructed just as in the proof of \ref{lem:05.03}. Details will be left to the reader. This proves \ref{thm:05.06}. 
+The bundle map $f : \xi \longrightarrow \gamma^n$ can now be constructed just as in the proof of Lemma~\ref{lem:05.03}. Details will be left to the reader. This proves Theorem~\ref{thm:05.06}. 
 
 \begin{proof}[Proof of Theorem~\ref{thm:05.07}]
 Any bundle map $f : \xi \longrightarrow \gamma^n$ determines a map \[\hat f : \total(\xi) \longrightarrow {\mathbb R}^\infty\] whose restriction to each fiber of $\xi$ is linear and injective. Conversely, $\hat f$ determines $f$ by the identity \[f(e) = ({\hat f}(\text{fiber through } e), {\hat f}(e)).\] Let $f, g : \xi \longrightarrow \gamma^n$ be any two bundle maps. 
@@ -59,7 +59,7 @@ To prove that $h$ is continuous, it is sufficient to prove that the correspondin
     \item the canonical projection $q : \StiefelManifold_n({\mathbb R}^\infty) \longrightarrow \grassmannian_n$.
 \end{enumerate} 
 Using \ref{lem:05.05} it is seen that $q$ is continuous. Therefore $\xoverline h$ is continuous; hence the bundle--homotopy $h$ between $f$ and $g$ is continuous. 
-\end{proof}
 
-\emph{General Case}. Let $f, g : \xi \longrightarrow \gamma^n$ be arbitrary bundle maps. A bundle map \[d_1 : \gamma^n \longrightarrow \gamma^n\] is induced by the linear transformation ${\mathbb R}^\infty \longrightarrow {\mathbb R}^\infty$ which carries the $i$--th basis vector of ${\mathbb R}^\infty$ tot he $(2 i - 1)$--th. Similarly $d_2 : \gamma^n \longrightarrow \gamma^n$ is induced by the linear transformation which carries the $i$--th basis vector to the $2i$--th. Now note that three bundle--homotopies \[f \sim d_1 \circ f \sim d_2 \circ g \sim g\] are given by three applications of Case 1. Hence $f \sim g$. 
+\emph{General Case}. Let $f, g : \xi \longrightarrow \gamma^n$ be arbitrary bundle maps. A bundle map \[d_1 : \gamma^n \longrightarrow \gamma^n\] is induced by the linear transformation ${\mathbb R}^\infty \longrightarrow {\mathbb R}^\infty$ which carries the $i$--th basis vector of ${\mathbb R}^\infty$ tot he $(2 i - 1)$--th. Similarly $d_2 : \gamma^n \longrightarrow \gamma^n$ is induced by the linear transformation which carries the $i$--th basis vector to the $2i$--th. Now note that three bundle--homotopies \[f \sim d_1 \circ f \sim d_2 \circ g \sim g\] are given by three applications of Case 1. Hence $f \sim g$.
+\end{proof}
 \end{document} 

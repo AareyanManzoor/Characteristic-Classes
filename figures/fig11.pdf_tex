@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.2.1 (9c6d41e410, 2022-07-14), www.inkscape.org
+%% Creator: Inkscape 1.2.1 (9c6d41e410, 2022-07-14, custom), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'fig11.pdf' (pdf, eps, ps)
 %%
@@ -53,9 +53,9 @@
   \begin{picture}(1,0.89555211)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0.49821956,0.87217929){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\text{real}$\end{tabular}}}}%
-    \put(0.06037661,0.22824442){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\text{oriented}$\end{tabular}}}}%
-    \put(0.8283999,0.21802852){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\text{complex}$\end{tabular}}}}%
+    \put(0.47053662,0.71873169){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\text{real}$\end{tabular}}}}%
+    \put(0.17988597,0.30436559){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\text{oriented}$\end{tabular}}}}%
+    \put(0.68300462,0.29779181){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\text{complex}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{fig11.pdf}}%
   \end{picture}%
 \endgroup%

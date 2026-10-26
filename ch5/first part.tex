@@ -93,7 +93,7 @@ Let $(\xoverline{x}_1,\dots,\xoverline{x}_k)$ be a fixed basis for $X_{0}{ }^{\p
 as follows. For each $(y_{1}, \dots, y_{n}) \in q^{-1} U$, apply the Gram-Schmidt process\index{Gram-Schmidt process} to the vectors $(y_{1}, \dots, y_{n}, \xoverline{x}_{1}, \dots, \xoverline{x}_{k})$; thus obtaining an orthonormal $(n+k)$-frame $(y_{1}^{\prime}, \dots, y_{n+k}^{\prime})$ with $y_{n+1}^{\prime}, \dots, y_{n+k}^{\prime} \in Y^{\perp}$. Setting $f(y_{1}, \dots, y_{n})=(y_{n+1}^{\prime}, \dots, y_{n+k}^{\prime})$, it follows that the diagram
 \[\begin{tikzcd}
 	q\inv U \arrow[r, "f"] \arrow[d, "q"'] & \StiefelManifold_k(\mathbb{R}^{n+k}) \arrow[d, "q"'] \\
-	U \arrow[r, "\perp"]                   & \grassmannian_{k}(n+k)                    
+	U \arrow[r, "\perp"]                   & \grassmannian_{k}(\mathbb{R}^{n+k})                    
 \end{tikzcd}\]
 is commutative. Now $f$ is continuous, so $q \circ f$ is continuous, therefore the correspondence $Y \mapsto Y^{\perp}$ must also be continuous. This completes the proof of \ref{lem:05.01}.
 \end{proof}
@@ -141,7 +141,7 @@ where $g(x, v)=(\tangentspace{M}{x}, v) $. We will use the abbreviated notation
 \]
 It is clear that both $g$ and $\xoverline{g}$ are continuous.
 
-Not only tangent bundles, but most other $\mathbb{R}^{n}$-bundles can be mapped into the bundle $\gamma^{n}(\mathbb{R}^{n+k})$ providing that $k$ is sufficiently large. For this reason $\gamma^{n}(\mathbb{R}^{n+k})$ is called a \defemphi{universal bundle}. (Compare Theorems~\ref{thm:05.06} and \ref{thm:05.07}, as well as \cite[$\S$ 19]{steenrodwhitehead1951}.)
+Not only tangent bundles, but most other $\mathbb{R}^{n}$-bundles can be mapped into the bundle $\gamma^{n}(\mathbb{R}^{n+k})$ providing that $k$ is sufficiently large. For this reason $\gamma^{n}(\mathbb{R}^{n+k})$ is called a \defemphi{universal bundle}. (Compare Theorems~\ref{thm:05.06} and \ref{thm:05.07}, as well as \cite[$\S$ 19]{steenrod1951}.)
 
 \begin{lemma}\label{lem:05.03}
 	For any $n$-plane\index{n-plane@$n$-plane} bundle $\xi$ over a compact base space $\B $ there exists a bundle map\index{bundle map} $\xi \rightarrow \gamma^{n}(\mathbb{R}^{n+k})$ provided that $k$ is sufficiently large.

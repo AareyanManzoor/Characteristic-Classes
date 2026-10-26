@@ -21,8 +21,11 @@ and one of cohomology
 \end{theorem*}
 Specializing to $B=\varnothing$, we get what is known as the \defemph{long exact sequence of a pair $(X,A)$.} 
 
-Explicitly, let $[\alpha]\in \homology_n(X,A;\Lambda)$ be the class of a relative cycle. Then \[\partial [\alpha] = [\partial \alpha]\in \homology_{n-1}(A,B).\] Similarly for $[\alpha] \in \homology^n(A,B;\Lambda)$, \[\delta[\alpha] = [\delta\alpha] \in \homology^{n+1}(X,A;\Lambda).\]
-For proof and more details, see \cite[p. 113,199]{hatcher2002algebraic}.
+Explicitly, represent $[\alpha]\in \homology_n(X,A;\Lambda)$ by a chain $\alpha\in C_n(X;\Lambda)$ whose boundary lies in $C_{n-1}(A;\Lambda)$. Then
+\[\partial[\alpha]=[\partial\alpha]\in\homology_{n-1}(A,B;\Lambda),\]
+where the boundary is taken modulo $C_{n-1}(B;\Lambda)$. For $[\alpha]\in\homology^n(A,B;\Lambda)$, choose a cocycle representative $\alpha$ vanishing on chains in $B$, and extend it to a cochain $\widetilde\alpha\in C^n(X,B;\Lambda)$. Its coboundary vanishes on chains in $A$, and
+\[\delta[\alpha]=[\delta\widetilde\alpha]\in\homology^{n+1}(X,A;\Lambda).\]
+These classes are independent of the representatives and extension. For proof and more details, see \cite[pp. 113, 199--200]{hatcher2002algebraic}.
 
 \begin{theorem*}[Excision]
 For a pair of CW-complexes $(X,A)$, we have a natural isomorphism

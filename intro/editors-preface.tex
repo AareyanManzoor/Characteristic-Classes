@@ -20,4 +20,10 @@ A section defining fibre bundles was added as the book uses the terminology in a
 
 Figures were redrawn to better fit the new style of the book.
 
+The original published edition is Milnor and Stasheff's 1974 \emph{Characteristic Classes}. Corrections to this typesetting have been checked against the scanned Princeton edition available at \url{https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnstas.pdf}. They restore mathematical symbols, degrees, polynomial coefficients, omitted proof steps, diagram targets and arrows, and the intended internal and bibliographical references. The relative (co)homology notes now spell out the cochain extension required for the connecting homomorphism.
+
+Corrections to errors already present in the original are distinguished by editor's footnotes. These include the Euler-characteristic hypotheses and references in Chapter~\ref{ch:2}, the universal-bundle homotopy target, a missing pullback star in the diagonal-class argument, connectedness in Problem~\ref{prob:13.C}, the map's homotopy class in Chapter~\ref{ch:18}, the final polynomial index and the coefficient index in Chapter~\ref{ch:19}, and the dimension and basis indices in Appendix~\ref{app:C}. Intentional notation modernization is retained.
+
+To build the standard edition from the source directory, use a TeX installation with pdfLaTeX, a working Biber version compatible with the installed \texttt{biblatex}, and MakeIndex. Run \texttt{pdflatex main.tex}, \texttt{biber --output-safechars main}, \texttt{makeindex main.idx}, and then \texttt{pdflatex main.tex} twice (or use \texttt{latexmk -pdf main.tex}, which manages these dependencies). The repository's \texttt{.latexmkrc} configures Biber's \texttt{--output-safechars} option so that bibliographical accents, including combining marks, are emitted as pdfLaTeX-compatible commands. A single pdfLaTeX pass does not resolve the bibliography, index, or cross-references.
+
 \end{document}

@@ -3,7 +3,7 @@
 \documentclass[../main]{subfiles}
 \begin{document}
 \section{Homology of a CW-Complex}
-Let $K$ be the underlying space of a CW-complex\index{CW-complex} (compare Definition~\ref{def:06.01}), and let $K^n \subset K$ denote the \defemph{n-skeleton}\index{skeleton}, the union of all cells of dimension $<n$. \\
+Let $K$ be the underlying space of a CW-complex\index{CW-complex} (compare Definition~\ref{def:06.01}), and let $K^n \subset K$ denote the \defemph{n-skeleton}\index{skeleton}, the union of all cells of dimension $\leq n$. \\
 \begin{lemma}\label{lem:A.2}
 The relative homology group $\homology_i (K^n , K^{n-1})$ with coefficients in $\Lambda$ is zero for $i\neq n$ and is a free module for $i=n$ with one generator for each $n$-cell of $K$.
 \end{lemma}
@@ -12,7 +12,7 @@ It follows by Theorem~\ref{thm:A.1} that the cohomology group $\homology^i (K^n,
 \begin{proof}
 We assume that the reader is familiar with the basic fact that the homology group $\homology_i (\mathbb{R}^n, \mathbb{R}^n - 0)$ is zero for $i\neq n$, and is isomorphic to $\Lambda$ when $i=n$. (See for example \cite[p. 56]{dold1972} and compare Theorem \ref{thm:A.5} below.) % Which A.5?
 
-Since the unit disk $D^n$ is a deformation retract of $\mathbb{R}^n$ and the unit sphere $S^{n-1}$ is a deformation retract of $\mathbb{R}^n - 0$, the group $\homology_i (\mathbb{R}^n, \mathbb{R}^n-0)$ is isomorphic to $\homology_i (D^n, S^{n-1})$, which is computed in \cite[p. 45]{eilenbergsteenrod1952} or \cite[p. 45]{spanier1981}.
+Since the unit disk $D^n$ is a deformation retract of $\mathbb{R}^n$ and the unit sphere $S^{n-1}$ is a deformation retract of $\mathbb{R}^n - 0$, the group $\homology_i (\mathbb{R}^n, \mathbb{R}^n-0)$ is isomorphic to $\homology_i (D^n, S^{n-1})$, which is computed in \cite[p. 45]{eilenbergsteenrod1952} or \cite[p. 190]{spanier1981}.
 
 Let $S$ denote a discrete set which consists of one point $s_E$ from each open $n$-cell $E$ of $K$. Then it is not difficult to see that $K^{n-1}$ is a deformation retract of $K^n - S$. Using the exact sequence of the triple ($K^n, K^n - S, K^{n-1}$), it follows that \[\homology_i(K^n, K^{n-1})\cong \homology_i (K^n, K^n - S).\] By excision this last group is isomorphic to $\homology_i (\bigsqcup E, \bigsqcup (E-s_E))$, where $\bigsqcup E$ denotes the disjoint union of all $n$-cells of $K$. But the homology of such a disjoint union of open subsets of $K^n$ is clearly the direct sum of the homology groups\newline  $\homology_i (E, E-s_E)\cong \homology_i (\mathbb{R}^n , \mathbb{R}^n - 0)$, and this last group is free on one generator for $i=n$ and is zero otherwise.
 \end{proof}
@@ -22,7 +22,7 @@ The group $\homology_i K^n$ is zero for $i>n$ and is isomorphic to $\homology_i 
 \end{corollary}
 
 \begin{proof}[Proof for homology]
-Certainly $\homology_i K^0 = 0$ for $i>0$. Using the exact sequence \[\homology_i K^{n-1} \rightarrow \homology_i K^n \rightarrow \homology_i (K^n, K^{n-1})\] it follows by induction on $n$ that $\homology_i K^n = 0$ for $i>n$. If $i<n$, a similar sequence shows that $\homology_i K^n \cong \homology_i K^{n+1}$, and hence inductively that \[\homology_i K^n \cong \homology_i K^{n+1} \cong \homology_i K^{n+2} \cong \cdots .\] If $K$ is of finite dimension, this completes the proof. For the general case, it is necessary to appeal to the theorem that $\homology_i K$ is isomorphic to the direct limit\index{direct limit} as $r\rightarrow \infty$ of $\homology_i K^r$. This is true since every singular simplex of $K$ is contained in a compact subset, and hence is contained in some $K^r$. (Compare \newline \cite[Section 5(D)]{whitehead1961}.)
+Certainly $\homology_i K^0 = 0$ for $i>0$. Using the exact sequence \[\homology_i K^{n-1} \rightarrow \homology_i K^n \rightarrow \homology_i (K^n, K^{n-1})\] it follows by induction on $n$ that $\homology_i K^n = 0$ for $i>n$. If $i<n$, a similar sequence shows that $\homology_i K^n \cong \homology_i K^{n+1}$, and hence inductively that \[\homology_i K^n \cong \homology_i K^{n+1} \cong \homology_i K^{n+2} \cong \cdots .\] If $K$ is of finite dimension, this completes the proof. For the general case, it is necessary to appeal to the theorem that $\homology_i K$ is isomorphic to the direct limit\index{direct limit} as $r\rightarrow \infty$ of $\homology_i K^r$. This is true since every singular simplex of $K$ is contained in a compact subset, and hence is contained in some $K^r$. (Compare \newline \cite[Section 5(D)]{whitehead1949}.)
 \end{proof}
 \begin{proof}[Proof for cohomology]
 It follows similarly that the relative group $\homology_i (K, K^n)$, being isomorphic to $\homology_i (K^{n+1}, K^n)$, is zero for $i \leq n$. Therefore $\homology^i (K, K^n)= 0$ for $i \leq n$ by Theorem~\ref{thm:A.1} and using the cohomology exact sequence of this pair we see that $\homology^i (K) \xrightarrow{\cong} \homology^i (K^n)$ for $i<n$. The proof that $\homology^i (K^n)=0$ for $i>n$ is completely analogous to the corresponding proof for homology.

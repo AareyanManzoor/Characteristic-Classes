@@ -7,7 +7,7 @@ Of course if the dimension $m$ is less than $n$, then the condition can only be 
 
 \defemph{If $y$ is a regular value, note that the inverse image $f^{-1}(y)$ is a (possibly vacuous) smooth manifold of dimension $m - n$.} This statement follows easily from the Implicit Function Theorem\index{implicit function theorem}. See for example \cite[p. 138]{graves}. 
 
-The following extremely useful theorem is due to Arthur B. Brown and (in a sharper version) to Arthur Sand. %"Theorem of Brown"
+The following extremely useful theorem is due to Arthur B. Brown and (in a sharper version) to Arthur Sard.
 \begin{theorem*}[Brown]\label{brown}\index{Sard's theorem}
 Let $f : W \longrightarrow {\mathbb R}^n$ be a smooth (i.e., infinitely differentiable) mapping, where $W$ is an open subset of ${\mathbb R}^m$. Then the set of regular values of $f$ is everywhere dense in ${\mathbb R}^n$. 
 \end{theorem*}
@@ -75,11 +75,11 @@ Thus, proceeding by induction, we can construct maps $f_1, f_2, \ldots, f_r$, al
 
 For each $t \in \thom - t_0 \cong E - A$ let $0 \le |t| < 1$ denote the Euclidean norm, so that $|t| = 0$ if and only if $t \in B$. It is convenient to set $|t_0| = 1$. Since $K_1 \cup \ldots \cup K_r$ is a neighborhood of $f_0^{-1}(B)$ in the compact space $\sphere^m$, there exists a constant $c > 0$ so that \[|f_0(x)| \ge c\] for all $x \not \in K_1 \cup \ldots \cup K_r$. Suppose that each $f_i$ is chosen so close to $f_{i - 1}$ that \[|f_i(x) - f_{i - 1}(x)| < c/r\] for all $x$. Then evidently \[|g(x) - f_0(x)| < c.\] Therefore $|g(x)| \ne 0$ for $x \not \in K_1 \cup \ldots \cup K_r$, and the entire inverse image $g^{-1}(B)$ must be contained in $K_1 \cup \ldots \cup K_r$. Hence $g$ is transverse to $B$ everywhere, and the inverse image $g^{-1}(B)$ is a smooth, compact, oriented $(m - k)$--dimensional manifold. This proves the first part of \ref{thm:18.6}. 
 
-Next consider two homotopic maps $g$ and $g'$ from $\sphere^m$ to $\thom$, both being smooth on the inverse image of $\thom - t_0$ and both being transverse to $B$. Then it is not difficult to construct a homotopy \[h_0 : \sphere^m \times [0, 1] \longrightarrow \thom\] which is smooth throughout $h_0^{-1}(\thom - t_0)$, and which satisfies
+Next consider two homotopic maps $g$ and $g'$ from $\sphere^m$ to $\thom$, both being smooth on the inverse image of $\thom - t_0$ and both being transverse to $B$. Then it is not difficult to construct a homotopy \[h_0 : \sphere^m \times [0, 3] \longrightarrow \thom\] which is smooth throughout $h_0^{-1}(\thom - t_0)$, and which satisfies
 \begin{align*}
 h_0(x, t) & = g(x) \quad \text { for } t \in [0, 1], \\ h_0(x, t) & = g'(x) \quad \text { for } t \in [2, 3].
 \end{align*}
-Proceeding as above, we can then construct a new map $h : \sphere^m \times [0, 3] \longrightarrow \thom$ which coincides with $h_0$ except on a compact subset of $\sphere^m \times (0, 3)$, and which is transverse to $B$. The construction is inductive, making sure each stage that transversality throughout the set $\sphere^m \times [0, 1] \cup \sphere^m \times [2, 3]$ is not lost. The inverse image $h^{-1}(B)$ under this new homotopy will then provide the required oriented cobordism between $g^{-1}(B)$ and ${g'}^{-1}(B)$. \defemph{Thus the oriented cobordism class of $g^{-1}(B)$ depends only on the homotopy class of $B$.}
+Proceeding as above, we can then construct a new map $h : \sphere^m \times [0, 3] \longrightarrow \thom$ which coincides with $h_0$ except on a compact subset of $\sphere^m \times (0, 3)$, and which is transverse to $B$. The construction is inductive, making sure each stage that transversality throughout the set $\sphere^m \times [0, 1] \cup \sphere^m \times [2, 3]$ is not lost. The inverse image $h^{-1}(B)$ under this new homotopy will then provide the required oriented cobordism between $g^{-1}(B)$ and ${g'}^{-1}(B)$. \defemph{Thus the oriented cobordism class of $g^{-1}(B)$ depends only on the homotopy class of $g$.}\footnote{Editor's correction: the original says ``homotopy class of $B$''; the argument concerns the map $g$, not its target's zero section.}
 
 Since the composition operations in the homotopy group $\pi_m(\thom, t_0)$ clearly corresponds to the disjoint union operation for the manifolds $g^{-1}(B)$, it follows that this correspondence $g \mapsto g^{-1}(B)$ gives rise to a well defined homomorphism from $\pi_m(\thom, t_0)$ to the cobordism group $\orientedCobordism_{m - k}$. 
 \end{proof}

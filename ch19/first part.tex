@@ -30,14 +30,14 @@ The identity $K(a) = a^{-1}$ defines a multiplicative sequence with
     &K_1(x_1) &=& \,\,\,-x_1 \\
     &K_2(x_1,x_2) &=& \,\,\,\phantom{+\,\,\,}x_1^2 - x_2 \\
     &K_3(x_1,x_2,x_3) &=&\,\,\, -x_1^3 +2x_1x_2 -x_3 \\
-    &K_4(x_1,x_2,x_3,x_4) &=& \,\,\,\phantom{+\,\,\,}x_1^4 -3x_1^2x_2 + 2x_1x_3 -x_2^2 -x_4 
+    &K_4(x_1,x_2,x_3,x_4) &=& \,\,\,\phantom{+\,\,\,}x_1^4 -3x_1^2x_2 + 2x_1x_3 +x_2^2 -x_4 
 \end{aligned}\]
 and in general \[K_n = \sum_{i_1 + 2i_2 + \cdots + ni_n =n} \frac{(i_1 + \cdots + i_n)!}{i_1! \cdots i_n!}(-x_1)^{i_1}\cdots(-x_n)^{i_n} \]
 These polynomials can be used to describe the relations between the Pontrjagin classes\index{Pontrjagin class $\pontrjaginclass_i$} (or the Chern classes\index{Chern class $\chernclass_i$}, or the Stiefel-Whitney classes) of two vector bundles with trivial Whitney sum. Compare \ref{sec:4.1}.
 \end{example}
 
 \begin{example}
-The polynomials $K_{2n+1} =0$ and \[K_{2n}(x_1,\cdots,x_{2n}) = x_n^2 - 2x_{n-1}x_{n+1} + \cdots \mp 2x_1x_{2n-1} \pm 2x_n\] form a multiplicative sequence which can be used to describe the relationship between the Chern classes of a complex vector bundle $\omega$ and the Pontrjagin classes of the underlying real bundle $\omega_\bR$\index{underlying real bundle $\omega_\bR$}. Compare Corollary \ref{cor:15.05}.
+The polynomials $K_{2n+1} =0$ and \[K_{2n}(x_1,\cdots,x_{2n}) = x_n^2 + 2\sum_{j=1}^{n}(-1)^j x_{n-j}x_{n+j}, \qquad x_0=1,\] form a multiplicative sequence which can be used to describe the relationship between the Chern classes of a complex vector bundle $\omega$ and the Pontrjagin classes of the underlying real bundle $\omega_\bR$\index{underlying real bundle $\omega_\bR$}.\footnote{Editor's correction: the original's expanded formula ends in $\pm2x_n$; homogeneity of degree $2n$ and Corollary~\ref{cor:15.05} require the final term $2(-1)^n x_{2n}$. The sum makes the alternating signs explicit.} Compare Corollary \ref{cor:15.05}.
 \end{example}
 
 The following theorem gives a simple classification of all possible multiplicative sequences. Let $A^\ast$ be the graded polynomial ring $\Lambda[t]$ where $t$ is an indeterminate of degree $1$. Then an element of $A^\Pi$ with leading term $1$ can be thought of as a formal power series\index{formal power series}\index{power series} \[f(t) = 1+\lambda_1 t  + \lambda_2 t^2 + \lambda_3 t^3 + \cdots \] with coefficients in $\Lambda$. In particular $1+t$ is such an element. 
@@ -58,14 +58,14 @@ If the multiplicative sequence $\{K_n\}$ belongs to the power series $f(t)$, the
 Choosing any positive integer $n$, let $A^\ast$ be the polynomial ring $\Lambda[t_1,\cdots,t_n]$ where the $t_i$ are algebraically independent of degree $1$, and let \[ \sigma = (1+t_1)\cdots(1+t_n) \in A^\Pi\] Then \[K(\sigma) = K(1+t_1)\cdots K(1+t_n) = f(t_1)\cdots f(t_n).\] Taking the homogeneous part of degree $n$, it follows that $K_n(\sigma_1,\cdots,\sigma_n)$ is completely determined by the power series $f(t)$. Since the elementary symmetric functions\index{symmetric function} $\sigma_1,\cdots,\sigma_n$ are algebraically independent, this proves the uniqueness of each $K_n$.
 \end{proof}
 \begin{proof}[Proof of existence]
-For any partition\index{partition} $I = i_1,\cdots,i_r$ of $n$, it will be convenient to use the abbreviation $\lambda_I$ for the product $\lambda_{i_1} \cdots \lambda_{i_r}$. With this convention, let us define the polynomial $K_n$ by the formula \[K_n(\sigma_1,\sigma_2,\cdots,\sigma_n) \sum \lambda_I s_I(\sigma_1,\cdots,\sigma_n),\] to be summed over all partitions $I$ of $n$. Here $s_I$ stands for the polynomial of Lemma \ref{lem:16.1}, with $s_I(\sigma_1,\cdots,\sigma_n) = \sum t_1^{i_1}\cdots t_r^{i_r}$.
+For any partition\index{partition} $I = i_1,\cdots,i_r$ of $n$, it will be convenient to use the abbreviation $\lambda_I$ for the product $\lambda_{i_1} \cdots \lambda_{i_r}$. With this convention, let us define the polynomial $K_n$ by the formula \[K_n(\sigma_1,\sigma_2,\cdots,\sigma_n) = \sum \lambda_I s_I(\sigma_1,\cdots,\sigma_n),\] to be summed over all partitions $I$ of $n$. Here $s_I$ stands for the polynomial of Lemma \ref{lem:16.1}, with $s_I(\sigma_1,\cdots,\sigma_n) = \sum t_1^{i_1}\cdots t_r^{i_r}$.
 
-Just as in Lemma \ref{lem:16.2}, we have the identity \[s_I(ab) = \sum_{HJ = I} s_H(a) s_J(b),\] to be summed over all partitions $H$ and $J$ with juxtaposition $HJ$ equal to $I$. Therefore \[K(ab) = \sum_I \lambda_I s_I(ab)\] is equal to \[\sum_I \lambda_I \sum_{HJ = I} s_H(a)s_J(b) = \sum_{H,J} \lambda_H s_H(a)\lambda_j s_J(b)\] Evidently this equals $K(a)K(b)$ as required.
+Just as in Lemma \ref{lem:16.2}, we have the identity \[s_I(ab) = \sum_{HJ = I} s_H(a) s_J(b),\] to be summed over all partitions $H$ and $J$ with juxtaposition $HJ$ equal to $I$. Therefore \[K(ab) = \sum_I \lambda_I s_I(ab)\] is equal to \[\sum_I \lambda_I \sum_{HJ = I} s_H(a)s_J(b) = \sum_{H,J} \lambda_H s_H(a)\lambda_J s_J(b)\] Evidently this equals $K(a)K(b)$ as required.
 \end{proof}
 Now consider some multiplicative sequence of polynomials $\{K_n(x_1,\cdots,x_n)\}$ with rational coefficients. Let $M^m$ be a smooth, compact, oriented $m$-dimensional manifold.
 
 \begin{definition}
-The \defemph{$K$-genus}\index{K-genus@$K$-genus} $K[M^m]$ is zero if the dimension $m$ is not divisible by $4$, and is equal to the rational number \[K_n[M^{4n}] = \langle K_n(\pontrjaginclass_1,\cdots,\pontrjaginclass_n),\mu_{4n} \rangle \] if $m=4^n$, where $\pontrjaginclass_i$ denotes the $i$-th Pontrjagin class\index{Pontrjagin class $\pontrjaginclass_i$} of the tangent bundle. Thus $K[M^m]$ is a certain rational linear combination of the Pontrjagin numbers\index{Pontrjagin number} of $M^m$.
+The \defemph{$K$-genus}\index{K-genus@$K$-genus} $K[M^m]$ is zero if the dimension $m$ is not divisible by $4$, and is equal to the rational number \[K_n[M^{4n}] = \langle K_n(\pontrjaginclass_1,\cdots,\pontrjaginclass_n),\mu_{4n} \rangle \] if $m=4n$, where $\pontrjaginclass_i$ denotes the $i$-th Pontrjagin class\index{Pontrjagin class $\pontrjaginclass_i$} of the tangent bundle. Thus $K[M^m]$ is a certain rational linear combination of the Pontrjagin numbers\index{Pontrjagin number} of $M^m$.
 \end{definition}
 \begin{lemma}
 \label{lem:19.02}

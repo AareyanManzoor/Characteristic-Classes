@@ -63,7 +63,7 @@ where $v$ and $w$ are arbitrary smooth vector fields on $M$.
 \end{remark}
 The most classical (and often the most convenient) procedure for
 assigning a complex structure to a smooth manifold is the following. One gives a collection of diffeomorphisms $h_\alpha:U_\alpha\varrightarrow{}V_\alpha$ where the $U_\alpha$ are open subsets of $\mathbb{C}^n$ and the $V_\alpha$ are open sets covering the manifold. It is only necessary to verify that each composition
-\[h_\beta^{-1} \circ h_\alpha: h_\alpha^{-1}(V_\alpha\cap V_\beta)\varrightarrow{} h_\beta^{-1}(V_\alpha\cap B_\beta)\]
+\[h_\beta^{-1} \circ h_\alpha: h_\alpha^{-1}(V_\alpha\cap V_\beta)\varrightarrow{} h_\beta^{-1}(V_\alpha\cap V_\beta)\]
 is holomorphic.
 
 In conclusion here are some exercises for the reader.
@@ -77,7 +77,7 @@ In conclusion here are some exercises for the reader.
 \end{problem}
 
 \begin{problem}
-\label{prob:13.C} If $M$ is a compact complex manifold, show that every holomorphic map $f:M\varrightarrow{}\mathbb{C}$ is constant.
+\label{prob:13.C} If $M$ is a compact connected complex manifold, show that every holomorphic map $f:M\varrightarrow{}\mathbb{C}$ is constant.\footnote{Editor's clarification: connectedness is necessary; on a disconnected compact manifold the conclusion holds separately on each connected component.}
 \end{problem}
 
 \begin{problem}\index{projective space!\indexline complex $\projective^n(\bC)$}\index{Grassmannian manifold!\indexline complex}
@@ -85,7 +85,7 @@ In conclusion here are some exercises for the reader.
 \end{problem}
 
 \begin{problem}\index{cannonical bundle!\indexline complex $\tautological^n$}
-\label{prob:13.E} Let $\tautological^1_n$ denote the canonical complex line bundle over $\projective^n(\mathbb{C}^n)$. Thus the total space $E(\tautological^1_n)$ consists of all pairs $(L,v)$ where $L$ is a complex line throuigh the origin in $\bC$ and $v\in L$. Show that $\tautological_n^1$ does not possess any holomorphic cross-section\index{cross-section}, other than the zero cross-section. Show, however, that the dual bundle $\Hom_\bC(\tautological_n^1,\bC)$ posses atleast $n+1$ holomorphic cross-sections which are linearly independent over $\bC$.
+\label{prob:13.E} Let $\tautological^1_n$ denote the canonical complex line bundle over $\projective^n(\mathbb{C})$. Thus the total space $E(\tautological^1_n)$ consists of all pairs $(L,v)$ where $L$ is a complex line through the origin in $\bC^{n+1}$ and $v\in L$. Show that $\tautological_n^1$ does not possess any holomorphic cross-section\index{cross-section}, other than the zero cross-section. Show, however, that the dual bundle $\Hom_\bC(\tautological_n^1,\bC)$ possesses at least $n+1$ holomorphic cross-sections which are linearly independent over $\bC$.
 \end{problem}
 
 \begin{problem}\label{prob:13.F}
@@ -101,7 +101,7 @@ respectively. Thus the total differential $\dd{f}$ can be expressed uniquely as 
 \[\partial f = \sum \dfrac{\partial f}{\partial z_j}\dd z_j \quad \text{ and }\quad \xoverline{\partial}f = \sum \dfrac{ \partial f}{\partial \xoverline{z}_j}\dd{\xoverline{z}_j}.\]
 The former is a section of $\Hom_\bC(\tangentbundle{M},\bC)$ and the latter is a section of $\xoverline{\Hom}_\bC(\tangentbundle{M},\bC)$. 
 
-Setting $z_j = x_j+iy_j$, show that \[\dfrac{\partial f}{\partial z_j}=\dfrac{1}{2}\bigg(\dfrac{\partial f}{\partial x_j}+\dfrac{\partial f}{\partial y_j}\bigg).\] Show the Cauchy-Riemann equations\index{Cauchy-Riemann equations} for $f$ can be written as $\dfrac{\partial f}{\partial \xoverline{z}_j}=0$, or briefly $\xoverline{\partial}f=0$.
+Setting $z_j = x_j+iy_j$, show that \[\dfrac{\partial f}{\partial \xoverline{z}_j}=\dfrac{1}{2}\bigg(\dfrac{\partial f}{\partial x_j}+i\dfrac{\partial f}{\partial y_j}\bigg).\] Show the Cauchy-Riemann equations\index{Cauchy-Riemann equations} for $f$ can be written as $\dfrac{\partial f}{\partial \xoverline{z}_j}=0$, or briefly $\xoverline{\partial}f=0$.
 \end{problem}
 
 \begin{problem}

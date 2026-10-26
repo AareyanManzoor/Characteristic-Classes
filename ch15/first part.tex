@@ -15,12 +15,12 @@ Now consider the total Chern class\index{Chern class $\chernclass_i$} \[\cherncl
 
 \begin{definition}
 Ignoring these elements of order $2$, the $i$-th \defemph{Pontrjagin class}\index{Pontrjagin class $\pontrjaginclass_i$} \[\pontrjaginclass_i(\xi) \in \homology^{4i}(B;\mathbb{Z})\] is defined to be the integral cohomology class $(-1)^i \chernclass_{2i}(\xi \otimes \bC)$. The sign $(-1)^i$ is introduced here so as to avoid a sign in later formulas (Corollary \ref{cor:15.08}, Example \ref{ex:15.06}). Evidently $\pontrjaginclass_i(\xi)$ is zero for $i > n/2$. The \defemph{total Pontrjagin class} is defined to be the unit
-\[\pontrjaginclass(xi) = 1 + \pontrjaginclass_1(\xi) + \cdots + \pontrjaginclass_{\lfloor n/2\rfloor}(\xi)\] in the ring $\homology^\Pi(B;\mathbb{Z})$. Here $\lfloor n/2\rfloor$ denotes the largest integer less than or equal to $n/2$.
+\[\pontrjaginclass(\xi) = 1 + \pontrjaginclass_1(\xi) + \cdots + \pontrjaginclass_{\lfloor n/2\rfloor}(\xi)\] in the ring $\homology^\Pi(B;\mathbb{Z})$. Here $\lfloor n/2\rfloor$ denotes the largest integer less than or equal to $n/2$.
 \end{definition}
 
 \begin{lemma}
 \label{lem:15.02}
-Pontrjagin classes are natural with respect to bundle maps. Furthermore, if $\trivialbundle^k$ is a trivial $k$-plane bundle, then $\pontrjaginclass(\xi \oplus \trivialbundle^k) = \pontrjaginclass(\trivialbundle)$.
+Pontrjagin classes are natural with respect to bundle maps. Furthermore, if $\trivialbundle^k$ is a trivial $k$-plane bundle, then $\pontrjaginclass(\xi \oplus \trivialbundle^k) = \pontrjaginclass(\xi)$.
 \end{lemma}
 \begin{proof}
 This follows immediately from \ref{lem:14.02} and \ref{lem:14.03}.
@@ -64,7 +64,7 @@ For any complex vector bundle $\omega$, the complexification $\omega_{\bR} \otim
 \begin{proof}
 For any real vector space $V$, recall that $V \otimes \bC$ can be identified with the direct sum $V \oplus V$, made into a complex vector space by means of the complex structure $\complexstructure(x,y) = (-y,x)$. 
 
-Now suppose that $V = F_\bR$ where $F$ is the typical fiber of a complex vector bundle. Then it is easy to verify that the correspondence \[g:x \mapsto (x,-ix)\] from $F$ to $V \oplus V$ is complex lienar, that is $g(ix) = \complexstructure(g(x))$. Similarly the correspondence from $F$ to $V \oplus V$ is  conjugate linear. Since every point $(x,y)$ of $V \oplus V \cong F_\bR \otimes \bC$ can be written uniquely as the sum \[g\bigg(\frac{x+iy}{2}\bigg) + h\bigg(\frac{x-iy}{2}\bigg)\] of an elemnt in $g(F)$ and an element in $h(F)$, it follows that $F_\bR \otimes \bC$ is canonically isomorphic, \defemph{as complex vector space} to $F \oplus \xoverline{F}$. This is true for each fiber $F$ of $\omega$, so combining all of these isomorphisms it follows that $\omega_\bR \otimes \bC \cong \omega \oplus \xoverline{\omega}$ as asserted.
+Now suppose that $V = F_\bR$ where $F$ is the typical fiber of a complex vector bundle. Then it is easy to verify that the correspondence \[g:x \mapsto (x,-ix)\] from $F$ to $V \oplus V$ is complex linear, that is $g(ix) = \complexstructure(g(x))$. Similarly the correspondence \[h:x \mapsto (x,ix)\] from $F$ to $V \oplus V$ is conjugate linear. Since every point $(x,y)$ of $V \oplus V \cong F_\bR \otimes \bC$ can be written uniquely as the sum \[g\bigg(\frac{x+iy}{2}\bigg) + h\bigg(\frac{x-iy}{2}\bigg)\] of an element in $g(F)$ and an element in $h(F)$, it follows that $F_\bR \otimes \bC$ is canonically isomorphic, \defemph{as complex vector space} to $F \oplus \xoverline{F}$. This is true for each fiber $F$ of $\omega$, so combining all of these isomorphisms it follows that $\omega_\bR \otimes \bC \cong \omega \oplus \xoverline{\omega}$ as asserted.
 \end{proof}
 
 \begin{corollary}
@@ -78,7 +78,7 @@ This follows immediately, making use of \ref{eqn:14.07} and Lemma \ref{lem:14.9}
 \begin{customexample}{15.6}
 \label{ex:15.06}
 Let $\tau$ be the tangent bundle of the complex projective space $\projective^n(\bC)$. Since the total Chern class $\chernclass(\tau)$ equals $(1+a)^{n+1}$ by Theorem \ref{thm:14.10}, it follows that  the Pontrjagin classes $\pontrjaginclass_k(\tau_\bR)$ are given by \[\begin{split}(1-\pontrjaginclass_1+\cdots \pm \pontrjaginclass_n) = (1-\chernclass_1 + \cdots \pm \chernclass_n)(1+\chernclass_1+\cdots+\chernclass_n) \\ = (1-a)^{n+1}(1+a)^{n+1} = (1-a^2)^{n+1}. \end{split}\] Therefore the total Pontrjagin class $1+\pontrjaginclass_1+\cdots+\pontrjaginclass_n$ is equal to $(1+a^2)^{n+1}$. In other words \index{projective space!\indexline real $\projective^n$}
-\[\pontrjaginclass_k(\projective^n(\bC)) = \binom{n+1}{k} a^{2k}\] for $1 \leq k \leq n/2$, where the higher Pontrjagin classes are zero since $\homology^{4k}(\projective^n(\bC))$ for $k > n/2$. Here we are using the abbreviation $\pontrjaginclass_k(M)$ for the tangential Pontrjagin class $\pontrjaginclass_k(\tau(M)_\bR)$ of a complex manifold $M$. Thus 
+\[\pontrjaginclass_k(\projective^n(\bC)) = \binom{n+1}{k} a^{2k}\] for $1 \leq k \leq n/2$, where the higher Pontrjagin classes are zero since $\homology^{4k}(\projective^n(\bC))=0$ for $k > n/2$. Here we are using the abbreviation $\pontrjaginclass_k(M)$ for the tangential Pontrjagin class $\pontrjaginclass_k(\tau(M)_\bR)$ of a complex manifold $M$. Thus 
 \[\begin{split} &\pontrjaginclass(\projective^1(\bC)) = 1 \\ &\pontrjaginclass(\projective^2(\bC)) = 1 +3a^2 \\ &\pontrjaginclass(\projective^3(\bC)) = 1 + 4a^2 \\ &\pontrjaginclass(\projective^4(\bC)) = 1 + 5a^2 + 10a^4 \\ &\pontrjaginclass(\projective^5(\bC)) = 1 + 6a^2 + 15a^4 \\ &\pontrjaginclass(\projective^6(\bC))  = 1 + 7a^2 + 21a^4 + 35a^6, \end{split}\] and so on. From these examples we see that Pontrjagin classes can well be non-zero.
 \end{customexample}
 
@@ -95,7 +95,7 @@ Let $v_1,\cdots,v_n$ be an ordered basis for a typical fiber $F$ of $\xi$. Then 
 \label{cor:15.08}
 If $\xi$ is an oriented $2k$-plane bundle, then the Pontrjagin class $\pontrjaginclass_k(\xi)$ is equal to the square of the Euler class $\eulerclass(\xi)$.\index{Euler class $\eulerclass$}
 \end{corollary}
-For by definition $\pontrjaginclass_k(\xi)$ is equal to the $(-1)^k \chernclass_{2k}(\xi \otimes \bC) = (=1)^k \eulerclass((\xi \otimes \bC)_\bR)$. But, according to Lemma \ref{lem:15.07} and Property \ref{pro:09.06}, the Euler class $\eulerclass((\xi \otimes \bC)_\bR)$ is equal to $\eulerclass(\xi \oplus \xi) = \eulerclass(\xi)^2$ multiplied by the sign $(-1)^{2k(2k-1)/2} = (-1)^k$.
+For by definition $\pontrjaginclass_k(\xi)$ is equal to $(-1)^k \chernclass_{2k}(\xi \otimes \bC) = (-1)^k \eulerclass((\xi \otimes \bC)_\bR)$. But, according to Lemma \ref{lem:15.07} and Property \ref{pro:09.06}, the Euler class $\eulerclass((\xi \otimes \bC)_\bR)$ is equal to $\eulerclass(\xi \oplus \xi) = \eulerclass(\xi)^2$ multiplied by the sign $(-1)^{2k(2k-1)/2} = (-1)^k$.
 
 
 \end{document}

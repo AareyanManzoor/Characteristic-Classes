@@ -26,7 +26,7 @@ where $i_{1}, \ldots, i_{r}$ ranges over all partitions of $k$ into integers $\l
 A different and quite useful basis can be constructed as follows. Define two monomials in $t_{1}, \ldots, t_{n}$ to be \defemph{equivalent} if some permutation of $t_{1}, \ldots, t_{n}$ transforms one into the other. Define $\sum t_{1}^{a_{1}} \ldots t_{r}^{a_{r}}$ to be the summation of all monomials in $t_{1}, \ldots, t_{n}$ which are equivalent to $t_{1}^{a_{1}} \ldots t_{r}^{a_{r}}$. As an example, using this notation we can write $\sigma_{k}=\sum t_{1} t_{2} \ldots t_{k}$.
 
 \begin{lemma}\label{lem:16.1}
-An additive basis for $\delta^{k}$, the group of homogeneous symmetric polynomials of degree $k$ in $t_{1}, \ldots, t_{n}$, is given by the polynomials $\sum t_1^{a_1}\dots t_r^{a_r}$. Here $a_{1}, \ldots, a_{r}$ ranges over all partitions of $k$ with length $r \leq n$.
+An additive basis for $\mathcal{S}^{k}$, the group of homogeneous symmetric polynomials of degree $k$ in $t_{1}, \ldots, t_{n}$, is given by the polynomials $\sum t_1^{a_1}\dots t_r^{a_r}$. Here $a_{1}, \ldots, a_{r}$ ranges over all partitions of $k$ with length $r \leq n$.
 
 \end{lemma} 
 \begin{proof}
@@ -54,14 +54,14 @@ If $n \geq k$, then evidently the $p(k)$ polynomials $s_{I}(\sigma_{1}, \ldots, 
 &s_2(\sigma_1,\sigma_2) &=& \,\,\sigma_1^2 & - 2\sigma_2,\\
 &s_{1,1} (\sigma_1,\sigma_2) &=& & +\,\,\,\sigma_2,\emarkeq\\
 \\\bmarkeq
-&s_3(\sigma_1,\sigma_2,\sigma_3) &=& \,\,\sigma_1^2 & -3\sigma_1\sigma_2 & +3\sigma_3,\\
+&s_3(\sigma_1,\sigma_2,\sigma_3) &=& \,\,\sigma_1^3 & -3\sigma_1\sigma_2 & +3\sigma_3,\\
 &s_{1,2} (\sigma_1,\sigma_2,\sigma_3) &=& &\sigma_1\sigma_2&-3\sigma_3,\\
 &s_{1,1,1}(\sigma_1,\sigma_2,\sigma_3) &=& \,\, & & +\,\,\,\sigma_3,\emarkeq\\
 \\
-\bmarkeq&s_3 &=& \,\, \sigma_1^4&-4\sigma_1^2\sigma_2& +2\sigma_2^2& +4\sigma_1\sigma_3&-4\sigma_4,\\
+\bmarkeq&s_4 &=& \,\, \sigma_1^4&-4\sigma_1^2\sigma_2& +2\sigma_2^2& +4\sigma_1\sigma_3&-4\sigma_4,\\
 &s_{1,3} &=& & +\,\,\,\sigma_1^2\sigma_2 &-2\sigma_2^2&-\,\,\,\sigma_1\sigma_3&+4\sigma_4,\\
 &s_{2,2} &=& && +\,\,\,\sigma_2^2 &-2\sigma_1\sigma_3&+2\sigma_4, \\
-&s_{1,1,2} &=& &&& +\,\,\,\sigma_1\sigma_3 &+4\sigma_4,\\
+&s_{1,1,2} &=& &&& +\,\,\,\sigma_1\sigma_3 &-4\sigma_4,\\
 &s_{1,1,1,1} &=& &&&& +\,\,\, \sigma_4.\emarkeq
 \end{aligned}
 \]

@@ -19,7 +19,7 @@ Using the natural inclusion mappings $\mathbb{R} \subset \mathbb{C} \subset \mat
 \[
 \eulerclass(\tautological_{\mathbb{R}})=\chernclass_{2}(\tautological_{\mathbb{C}}) \in \homology^{4}(\projective^{m}(\mathbb{H}))
 \]\index{Chern class $\chernclass_i$}
-Denoting this cohomology generator briefly by $u \in \homology^{4}(\projective^{m}(\homology))$, it follows that the total Chern class is given by
+Denoting this cohomology generator briefly by $u \in \homology^{4}(\projective^{m}(\mathbb{H}))$, it follows that the total Chern class is given by
 \[
 \chernclass(\tautological_{\mathbb{C}})=1+u ,
 \]
@@ -51,7 +51,7 @@ by \ref{lem:20.08}. Since $\partial \total^{\prime}$ has trivial normal bundle i
 \[
 \pontrjaginclass_{1}(\partial \total^{\prime})=ku^{\prime}
 \]
-where $u^{\prime} \epsilon \homology^{4}(\partial \total^{\prime})$ is the standard generator which corresponds to $u$ under the homomorphism
+where $u^{\prime} \in \homology^{4}(\partial \total^{\prime})$ is the standard generator which corresponds to $u$ under the homomorphism
 \[
 \homology^{4}(S^{4}) \varrightarrow{} \homology^{4}(\partial \total^{\prime})
 \]
@@ -110,7 +110,7 @@ for any integers $k$ and $l$ satisfying $k \equiv 2 l\pmod 4$.
 \[
 \pontrjaginclass_{1}(\xi)=ku, \quad \eulerclass(\xi)=u .
 \]\index{Pontrjagin number}
-Using the Gysin sequence\index{Gysin sequence} of $\xi$, it follows easily that the space $\partial \total^{\prime}$ of unit vectors in $\total(\xi)$ has the homotopy type of the sphere $S^{7}$. In fact this manifold $\partial \total^{\prime}$ is actually homeomorphic to the $7$-sphere. As a smooth manifold, it can be obtained by identifying the boundaries of two copies of the unit $7$-disk by a suitable (but possibly exotic) diffeomorphism between their boundary $6$-spheres. This fact is proved directly in \cite{milnor1956}, and is also a consequence of the Generalized Poincar\'e Hypothesis\index{Poincar\'e Hypothesis} as proved by \cite{smale1959}. Now starting with a smooth triangulation of the $6$-sphere and then extending to smooth triangulations of the two $7$-disks, it follows easily that \defemph{the manifold $\partial \total^{\prime}$ is even combinatorially equivalent to the $7$-sphere}.
+Using the Gysin sequence\index{Gysin sequence} of $\xi$, it follows easily that the space $\partial \total^{\prime}$ of unit vectors in $\total(\xi)$ has the homotopy type of the sphere $S^{7}$. In fact this manifold $\partial \total^{\prime}$ is actually homeomorphic to the $7$-sphere. As a smooth manifold, it can be obtained by identifying the boundaries of two copies of the unit $7$-disk by a suitable (but possibly exotic) diffeomorphism between their boundary $6$-spheres. This fact is proved directly in \cite{milnor1956}, and is also a consequence of the Generalized Poincar\'e Hypothesis\index{Poincar\'e Hypothesis} as proved by \cite{smale1961}. Now starting with a smooth triangulation of the $6$-sphere and then extending to smooth triangulations of the two $7$-disks, it follows easily that \defemph{the manifold $\partial \total^{\prime}$ is even combinatorially equivalent to the $7$-sphere}.
 \end{example}
 
 Consider the Thom space $\thom=\thom(\xi)$. Evidently $\thom$ can be identified with the manifold obtained from $\total^{\prime}$ by adjoining a cone over $\partial \total^{\prime}$. Choosing a smooth triangulation of $\total^{\prime}$, since $\partial \total^{\prime}$ is a combinatorial sphere, \defemph{it follows that $\thom=\thom(\xi)$ can be triangulated as a piecewise linear manifold}\index{piecewise linear manifold}\index{triangulation}. That is it can be triangulated so that every point of $\thom$ has a neighborhood piecewise linearly homeomorphic to $\mathbb{R}^{8}$.
@@ -125,9 +125,9 @@ it follows that the other Pontrjagin number is given by
 \[
 \pontrjaginclass_{2}[\thom]=\dfrac{45+k^{2}}{7} .
 \]
-Here $k$ can be any integer congruent to $2$ modulo $4$. But if $k \equiv \pm 2\pmod{7}$ this is not an integer. (For example if $k=6$, then $\pontrjaginclass_{2}[\thom]$ is not an integer.) Since the Pontrjagin numbers of a smooth manifold must be integers, we have proved the following assertion.
+Here $k$ can be any integer congruent to $2$ modulo $4$. But if $k \not\equiv \pm 2\pmod{7}$ this is not an integer. (For example if $k=6$, then $\pontrjaginclass_{2}[\thom]$ is not an integer.) Since the Pontrjagin numbers of a smooth manifold must be integers, we have proved the following assertion.
 
-\defemph{For $k \equiv \pm 2\pmod 7$, the triangulated 8-dimensional manifold $\thom=\thom(\xi)$ possesses no smoothness structure which is compatible with the given triangulation.}\index{smoothness structure}
+\defemph{For $k \not\equiv \pm 2\pmod 7$, the triangulated 8-dimensional manifold $\thom=\thom(\xi)$ possesses no smoothness structure which is compatible with the given triangulation.}\index{smoothness structure}
 
 As a corollary, it follows that \defemph{the smooth $7$-dimensional manifold $\partial \total^{\prime}$ (which is homeomorphic to $S^{7}$) is not diffeomorphic to $S^{7}$}. For otherwise $\thom$ could clearly be given a compatible smoothness structure.\index{diffeomorphism}
 

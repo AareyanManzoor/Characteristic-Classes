@@ -51,7 +51,7 @@ and simultaneously
 \[
 \lim \,(x_{i_{j}}', v_{i_{j}}')=(x', 0) .
 \]
-Evidently the limit point $x=\Exp(x, 0)=\lim \Exp(x_{i_{j}}, v_{i_{j}})$ would be equal to the limit point $x'$. But then the equation $\Exp(x_{i_{j}}, v_{i_{j}})=\Exp(x_{i_{j}})', v_{i_{j}}'$ for large $j$ would contradict the statement that Exp is one-to-one throughout a neighborhood of $(x, 0)$.
+Evidently the limit point $x=\Exp(x, 0)=\lim \Exp(x_{i_{j}}, v_{i_{j}})$ would be equal to the limit point $x'$. But then the equation $\Exp(x_{i_{j}}, v_{i_{j}})=\Exp(x_{i_{j}}', v_{i_{j}}')$ for large $j$ would contradict the statement that Exp is one-to-one throughout a neighborhood of $(x, 0)$.
 
 Thus $\total(\varepsilon)$ is diffeomorphic to its image $N_{\varepsilon}$ for small $\varepsilon$. To complete the proof of \ref{thm:11.01}, we need only note that $E(\varepsilon)$ is also diffeomorphic to $E$, under the correspondence
 
@@ -118,7 +118,7 @@ with mod 2 coefficients maps the fundamental class $u$ to the Stiefel-Whitney cl
 \[
 \phi: \homology^{k}(M) \varrightarrow{} \homology^{2k}(E, E_{0})
 \]
-is equal to \[\pi^{*} s^{*}(u|_E) \smile u=(u|_E) \smile u=u \smile u=\steenrod^{k}(u).\] Therefore $s *(u|_E)$ is equal to $\phi^{-1} \steenrod^{k}(u)=\sw_{k}(\normalbundle{}^{k})$.
+is equal to \[\pi^{*} s^{*}(u|_E) \smile u=(u|_E) \smile u=u \smile u=\steenrod^{k}(u).\] Therefore $s^*(u|_E)$ is equal to $\phi^{-1} \steenrod^{k}(u)=\sw_{k}(\normalbundle{}^{k})$.
 
 Now, replacing $(E,E_{0})$ by the diffeomorphic pair $(N_{\varepsilon}, N_{\varepsilon}-M)$, it follows that the composition of the two restriction homomorphisms
 \[
@@ -127,7 +127,7 @@ Now, replacing $(E,E_{0})$ by the diffeomorphic pair $(N_{\varepsilon}, N_{\vare
 maps the class corresponding to $u$ to $\sw_{k}(\normalbundle{}^{k})$. Making use of the commutative diagram
 \[\begin{tikzcd}
 \homology^k (A, A-M) \arrow[d, "\cong"] \arrow[r] & \homology^k (A) \arrow[d] \\
-\homology^k(N_\epsilon, N_\epsilon - M) \arrow[r] & \homology^k(m) \\
+\homology^k(N_\epsilon, N_\epsilon - M) \arrow[r] & \homology^k(M) \\
 \end{tikzcd}\]
 the conclusion follows. The proof in the oriented case is completely analogous.
 \end{proof}

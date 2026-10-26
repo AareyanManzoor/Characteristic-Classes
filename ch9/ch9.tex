@@ -22,7 +22,7 @@ Similarly the cohomology group $\homology^{n}(V, V_{0} ; \mathbb{Z})$ associated
 
 Now consider a vector bundle $\xi$ of fiber dimension $n>0$.
 
-\begin{definition} An \defemph{orientation}\index{oriented bundle} for $\xi$ is a function which assigns an orientation to each fiber $F$ of $\xi$, subject to the following local compatibility condition. For every point $b_{0}$ in the base space there should exist a local coordinate system $(N, h)$, with $b_{0} \in n$ and $h: N \times \mathbb{R}^{n} \varrightarrow{} \pi^{-1}(N)$, so that for each fiber $F=\pi^{-1} (b)$ over $N$ the homomorphism $x \mapsto h(b, x)$ from $\mathbb{R}^n$ to $F$ is orientation preserving. (Or equivalently there should exist sections $s_{1}, \ldots, s_{n}: N \varrightarrow{} \pi^{-1}(N)$ so that the basis $s_{1}(b), \ldots, s_{n}(b)$ determines the required orientation of $\pi^{-1}(b)$ for each $b$ in $n$.)
+\begin{definition} An \defemph{orientation}\index{oriented bundle} for $\xi$ is a function which assigns an orientation to each fiber $F$ of $\xi$, subject to the following local compatibility condition. For every point $b_{0}$ in the base space there should exist a local coordinate system $(N, h)$, with $b_{0} \in N$ and $h: N \times \mathbb{R}^{n} \varrightarrow{} \pi^{-1}(N)$, so that for each fiber $F=\pi^{-1} (b)$ over $N$ the homomorphism $x \mapsto h(b, x)$ from $\mathbb{R}^n$ to $F$ is orientation preserving. (Or equivalently there should exist sections $s_{1}, \ldots, s_{n}: N \varrightarrow{} \pi^{-1}(N)$ so that the basis $s_{1}(b), \ldots, s_{n}(b)$ determines the required orientation of $\pi^{-1}(b)$ for each $b$ in $N$.)
 
 \end{definition}
 
@@ -149,7 +149,7 @@ to both sides. It follows easily that
 \]
 where the sign can be ignored since the right side of this equation is an element of order two whenever $m$ or $n$ is odd.
 
-Now suppose that $\base=\base^{\prime}$. Pulling both sides of this equation back to $\homology^{m+n}(\base ; \mathbb{Z})$ by means of the diagonal embedding\index{diagonal $\Delta$} $\base \varrightarrow{} \base \times \base$, we obtain the formula $\eulerclass(\xi \oplus \xi^{\prime})=\eulerclass(\xi^{\prime}) \smile \eulerclass(\xi^{\prime})$ for the Euler class of a Whitney sum.
+Now suppose that $\base=\base^{\prime}$. Pulling both sides of this equation back to $\homology^{m+n}(\base ; \mathbb{Z})$ by means of the diagonal embedding\index{diagonal $\Delta$} $\base \varrightarrow{} \base \times \base$, we obtain the formula $\eulerclass(\xi \oplus \xi^{\prime})=\eulerclass(\xi) \smile \eulerclass(\xi^{\prime})$ for the Euler class of a Whitney sum.
 \end{proof} 
 
 \begin{remark*}
@@ -188,7 +188,7 @@ To conclude this section we will describe some examples of bundles with non-zero
 
 \end{problem}
 
-\begin{problem}\label{pro:9-B} Now consider the complex Grassmann manifold $\grassmannian_{n}(\bC^{\infty})$\index{Grassmannian manifold!\indexline $\grassmannian_n(\bC^\infty)$}, consisting of all complex sub vector spaces of complex dimension $n$ in infinite complex coordinate space. (Compare $\S$\ref{ch:14}.) Since every complex $n$-plane can be thought of as a real oriented $2 n$-plane, it follows that there is a canonical oriented $2 n$-plane bundle $\xi^{2n}$ over $\grassmannian_{n}(\bC^{\infty})$. Show that the restriction of $\xi^{2 n}$ to the real sub-space $\grassmannian_{n}(\bR^{\infty})$ is isomorphic to $\tautological^{n} \oplus \tautological^{n}$, and hence that $\eulerclass(\xi^{2 n}) \neq 0$. (Remark: The group $\homology^{2 n}(\grassmannian_{n}(\bC^{\infty}) ; \mathbb{Z})$ is actually free abelian, with $\eulerclass(\xi^{2 n})$ as one of its generators\index{cohomology!\indexline of $\grassmannian_n(\bC^\infty)$}. See Lemma \ref{lem:14.03}.
+\begin{problem}\label{pro:9-B} Now consider the complex Grassmann manifold $\grassmannian_{n}(\bC^{\infty})$\index{Grassmannian manifold!\indexline $\grassmannian_n(\bC^\infty)$}, consisting of all complex sub vector spaces of complex dimension $n$ in infinite complex coordinate space. (Compare $\S$\ref{ch:14}.) Since every complex $n$-plane can be thought of as a real oriented $2 n$-plane, it follows that there is a canonical oriented $2 n$-plane bundle $\xi^{2n}$ over $\grassmannian_{n}(\bC^{\infty})$. Show that the restriction of $\xi^{2 n}$ to the real sub-space $\grassmannian_{n}(\bR^{\infty})$ is isomorphic to $\tautological^{n} \oplus \tautological^{n}$, and hence that $\eulerclass(\xi^{2 n}) \neq 0$. (Remark: The group $\homology^{2 n}(\grassmannian_{n}(\bC^{\infty}) ; \mathbb{Z})$ is actually free abelian, with $\eulerclass(\xi^{2 n})$ as one of its generators\index{cohomology!\indexline of $\grassmannian_n(\bC^\infty)$}. See Theorem~\ref{thm:14.05}.)
 
 \end{problem}
 

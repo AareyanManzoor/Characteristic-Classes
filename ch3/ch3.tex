@@ -335,12 +335,12 @@ vector bundle $T(\xi_1,\dots,\xi_k)$ satisfies the local triviality condition.
 
 \setcounter{remark}{0}
 \begin{remark}\label{rem:03.02}
-This construction can be translated into Steenrod's terminology as follows. Let $\GL_n = \GL_n(\bR)$\index{linear group $\GL_n$!\indexline real} denote the group of automorphisms of the vector space $\bR^n$. Then $T$ determines a continuous homomorphism from the product group $\GL_{n_1}\times\dots\times\GL_{n_k}$, to the group $\GL'$ of automorphisms of the vector space $T(\bR^{n_{1}}, \dots, \bR^{n_{k}})$. Hence given bundles $(\xi_1,\dots,\xi_k)$ over $\B$ with structural groups\index{structural group} $\GL_{n_1}\times\dots\times\GL_{n_k}$ respectively, there corresponds a bundle $T(\xi_1,\dots,\xi_k)$ with structural group $\GL'$ and with fiber $T(\bR^{n_{1}}, \dots, \bR^{n_{k}})$. For further discussion, see \cite[$\S$3.6]{hirzebruchalggeo1966}.
+This construction can be translated into Steenrod's terminology as follows. Let $\GL_n = \GL_n(\bR)$\index{linear group $\GL_n$!\indexline real} denote the group of automorphisms of the vector space $\bR^n$. Then $T$ determines a continuous homomorphism from the product group $\GL_{n_1}\times\dots\times\GL_{n_k}$, to the group $\GL'$ of automorphisms of the vector space $T(\bR^{n_{1}}, \dots, \bR^{n_{k}})$. Hence given bundles $(\xi_1,\dots,\xi_k)$ over $\B$ with structural groups\index{structural group} $\GL_{n_1},\dots,\GL_{n_k}$ respectively, there corresponds a bundle $T(\xi_1,\dots,\xi_k)$ with structural group $\GL'$ and with fiber $T(\bR^{n_{1}}, \dots, \bR^{n_{k}})$. For further discussion, see \cite[$\S$3.6]{hirzebruchalggeo1966}.
 \end{remark}
 
 
 \begin{remark}\label{rem:03.03}
-Given bundles $(\xi_1,\dots,\xi_k)$ over distinct base spaces, a similar construction gives rise to a vector bundle $\xhat{T}(\xi_1,\dots,\xi_k)$ over $\B(\xi_1)\times\dots\times\B(\xi_k)$, with typical fiber $T(F_{b_1}(\xi_1)\times\dots\times F_{b_1}(\xi_k))$. This yields a functor $\xhat{T}$ from the category\index{category} of vector bundles and bundle maps into itself. As an example, starting from the direct sum functor $\oplus$ on the category $\vectCat_{\mathbb{R}}$ one obtains the Cartesian product functor\index{Cartesian product}
+Given bundles $(\xi_1,\dots,\xi_k)$ over distinct base spaces, a similar construction gives rise to a vector bundle $\xhat{T}(\xi_1,\dots,\xi_k)$ over $\B(\xi_1)\times\dots\times\B(\xi_k)$, with typical fiber $T(F_{b_1}(\xi_1),\dots,F_{b_k}(\xi_k))$. This yields a functor $\xhat{T}$ from the category\index{category} of vector bundles and bundle maps into itself. As an example, starting from the direct sum functor $\oplus$ on the category $\vectCat_{\mathbb{R}}$ one obtains the Cartesian product functor\index{Cartesian product}
 \[
 \xi, \eta \mapsto \xi \xhat{\oplus} \eta=\xi \times \eta,
 \]
@@ -349,14 +349,14 @@ for vector bundles.
 
 
 \begin{remark}\label{rem:03.04}
-If $(\xi_1,\dots,\xi_k)$ are smooth vector bundles\index{vector bundle!\indexline smooth}\index{smooth vector bundle}, then $T(\xi_1,\dots,\xi_k)$ can also be given the structure of a smooth vector bundle. The proof is similar to that of Theorem~\ref{thm:03.06}. It is necessary to make use of the fact that the isomorphism $T(f_1,\dots,f_k)$ is a smooth function of the isomorphisms $T(f_1,\dots,f_k)$.
+If $(\xi_1,\dots,\xi_k)$ are smooth vector bundles\index{vector bundle!\indexline smooth}\index{smooth vector bundle}, then $T(\xi_1,\dots,\xi_k)$ can also be given the structure of a smooth vector bundle. The proof is similar to that of Theorem~\ref{thm:03.06}. It is necessary to make use of the fact that the isomorphism $T(f_1,\dots,f_k)$ is a smooth function of the isomorphisms $f_1,\dots,f_k$.
 This follows from \cite[p. 128]{chevalley1999}.
 \end{remark}
 
 
 As an illustration, let $M \varrightarrow{f} N$ be a smooth map\index{smooth function}. Then $\Hom(\tangentbundle{M},f^*\tangentbundle{N})$ is a smooth vector bundle over $M$. Note that $\differential{f}{}$\index{derivative} gives rise to a smooth cross-section of this vector bundle.
 
-As a second illustration, if $M\subset N$ with normal bundle $\normalbundle{}$, where $N$ is a smooth Riemannian manifold, then the \defemphi{second fundamental form} can be defined as a smooth symmetric cross-section of the bundle $\Hom(\tangentbundle{M}\otimes\tangentbundle{N}, \normalbundle{})$.
+As a second illustration, if $M\subset N$ with normal bundle $\normalbundle{}$, where $N$ is a smooth Riemannian manifold, then the \defemphi{second fundamental form} can be defined as a smooth symmetric cross-section of the bundle $\Hom(\tangentbundle{M}\otimes\tangentbundle{M}, \normalbundle{})$.
 (Compare \cite{bishop2011}, as well as \ref{prob-5-B}.)
 
 Here are six problems for the reader.
